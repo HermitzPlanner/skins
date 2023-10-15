@@ -1,0 +1,77 @@
+[
+  {
+    "prtsLink": "https://prts.wiki/w/文件:头像_提丰_skin1.png",
+    "plannerId": "typhon1",
+    "route": "portrait"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:立绘_提丰_skin1.png",
+    "plannerId": "typhon1",
+    "route": "art"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:立绘_芙兰卡_skin1.png",
+    "plannerId": "franka1",
+    "route": "art"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:头像_芙兰卡_skin1.png",
+    "plannerId": "franka1",
+    "route": "portrait"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:立绘_至简_skin1.png",
+    "plannerId": "minimalist1",
+    "route": "art"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:头像_至简_skin1.png",
+    "plannerId": "minimalist1",
+    "route": "portrait"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:立绘_令_skin2.png",
+    "plannerId": "ling2",
+    "route": "art"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:头像_令_skin2.png",
+    "plannerId": "ling2",
+    "route": "portrait"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:头像_九色鹿_skin1.png",
+    "plannerId": "ninecoloreddeer1",
+    "route": "portrait"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:半身像_卡缇_skin2.png",
+    "plannerId": "cardigan2",
+    "route": "icon"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:立绘_九色鹿_skin1.png",
+    "plannerId": "ninecoloreddeer1",
+    "route": "art"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:头像_卡缇_skin2.png",
+    "plannerId": "cardigan2",
+    "route": "portrait"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:头像_仇白_skin1.png",
+    "plannerId": "qiubai1",
+    "route": "portrait"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:立绘_仇白_skin1.png",
+    "plannerId": "qiubai1",
+    "route": "art"
+  },
+  {
+    "prtsLink": "https://prts.wiki/w/文件:立绘_卡缇_skin2.png",
+    "plannerId": "cardigan2",
+    "route": "art"
+  }
+]
