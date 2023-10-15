@@ -229,6 +229,7 @@ async function main() {
                     const skinOverlay = skin.querySelector(".skin-overlay")
                     skinOverlay.classList.add("overlay-true")
                     skin.querySelector(".planner-skins-model").textContent = "Already selected"
+                    skin.querySelector(".search-button").style.display = "none"
                 });
             } else {
                 skinsOfSameId.forEach(skin => {
@@ -240,6 +241,8 @@ async function main() {
                     const skinOverlay = skin.querySelector(".skin-overlay")
                     skinOverlay.classList.remove("overlay-true")
                     skin.querySelector(".planner-skins-model").textContent = originalName
+
+                    skin.querySelector(".search-button").style.display = "block"
                 });
             }
 
@@ -369,6 +372,9 @@ async function main() {
     })
 
     // Redirection
+    if (location.hash == "") {
+        document.querySelector(".planner-events-cbox").click()
+    }
     let newHash = location.hash.substring(1).replace("event-", "")
     //if (location.hash.substring(1).includes("event-")) {
     //location.hash.substring(1).replace("event-", "")

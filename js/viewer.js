@@ -277,5 +277,6 @@ function quitViewer() {
   const viewer = document.querySelector(".viewer")
   viewer.style.display = "none"
   perspectiveSelect.value = 'front'
+  location.hash = ""
 }
 

@@ -13,10 +13,16 @@ function summary() {
 
         summaryContainerElements.forEach(summaryContainer => {
             if (summaryContainer.querySelector(".summary-skins-container-scroll").children.length == 0) {
-                console.log("not have things")
-                console.log(summaryContainer.querySelector(".summary-skins-container-scroll"))
-                console.log(summaryContainer.querySelector(".summary-skins-container-scroll").children.length)
-                //summaryContainer.style.display = "none"
+                summaryContainer.style.display = "none"
+
+                
+            } else {
+                summaryContainer.style.display = "flex"
+
+                summaryContainer.querySelector(".summary-events-calcs").style.display = "none"
+                summaryContainer.querySelector(".summary-events-info").style.width = "auto"
+                summaryContainer.querySelector(".summary-events-body").style.width = "fit-content"
+                summaryContainer.querySelector(".summary-events-body").style.height = "fit-content"
             }
 
             function onlyNameDisplay() {
