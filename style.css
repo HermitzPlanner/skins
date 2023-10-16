@@ -24,16 +24,14 @@
     --prime: gold;
     --rerun: hsl(120, 60%, 61%);
     --sum: hsl(120, 60%, 61%);
-    ;
     --rest: hsl(0, 60%, 61%);
-    ;
     --disabled: hsla(0, 60%, 61%, 0.5);
     --disabled-outline: hsl(0, 80%, 61%);
     --highlight-dark: hsl(0, 1%, 21%);
     --background-events-dark: hsl(0, 1%, 9%);
     --background-events-body-dark: hsl(0, 1%, 6%);
     --background-events-content-dark: hsl(0, 1%, 3%);
-    --header-background: #111
+    --header-background: #111;
 
     --background-skins-dark: hsl(240, 2%, 13%);
     --background-skins-body-dark: hsl(240, 2%, 6%);
@@ -43,7 +41,7 @@
 
     --planner-events-width: 475px;
     --planner-events-info-width: 70%;
-    --planner-skins-body-width: 130px;
+    --planner-skins-body-width: 120px;
     --planner-content-header: 85px;
     --planner-header: 40px;
     --planner-events-image-padding: 10px;
@@ -160,11 +158,28 @@ input[type="number"],
 .prime {
     color: var(--highlight);
 }
-
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the default text color */
+    /* You can add more styling properties here as needed */
+}
 img {
     -webkit-user-drag: none;
 }
-
+#settings-dropdown {
+    display: none;
+}
+.settings-dropdown {
+    display: flex;
+    position: absolute;
+    left: 105px;
+    top: 43px;
+    background-color: var(--header-background);
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
+    padding: 10px;
+}
 button {
     background: none;
     color: inherit;
@@ -189,7 +204,10 @@ body {
     height: 100vh;
     position: relative;
 }
-
+.kofi {
+    filter: inherit !important;
+    height: inherit !important;
+}
 .planner-body {
     display: flex;
     height: calc(100vh - var(--planner-header));

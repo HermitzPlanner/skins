@@ -41,7 +41,7 @@ async function headerGallery() {
 
     async function gallerySorting() {
         const galleryBodyTemplate = document.getElementById("gallery-body")
-        plannerSkinsData.forEach(plannerSkin => {
+        plannerSkinsData.slice().reverse().forEach(plannerSkin => {
             // Import node
             const galleryNode = document.importNode(galleryBodyTemplate.content, true);
             // Modify node
