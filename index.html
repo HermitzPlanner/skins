@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-mobile.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="js/app.js"></script>
+    <script defer src="js/save-and-load.js"></script>
+    <script defer src="js/gallery.js"></script>
+    <script defer src="js/summary.js"></script>
+    <script defer src="js/viewer.js"></script>
+    <script defer src="js/theme.js"></script>
+</head>
+<!-- https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/gallery.svg
+https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/reset.svg
+https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/save.svg
+https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/load.svg -->
+<!-- <input type="checkbox" name="amogus" id="header-theme">
+        <label for="header-theme">header-theme</label> -->
+
+<body>
+    <header>
+        <!-- Reset Item -->
+        <input type="checkbox" name="" id="header-gallery" onclick="headerGallery()">
+        <label class="header-label" for="header-gallery">
+            <div class="header-item">
+                <img class="svg" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/gallery.svg"
+                    alt="Gallery SVG">
+                <div class="header-text header-gallery-text">Gallery</div>
+            </div>
+        </label>
+
+        <!-- Reset Item -->
+        <input type="checkbox" name="" id="header-reset" onclick="headerReset()">
+        <label class="header-label" for="header-reset">
+            <div class="header-item">
+                <img class="svg" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/reset.svg"
+                    alt="Reset SVG">
+                <div class="header-text">Reset</div>
+            </div>
+        </label>
+
+        <!-- Save Item -->
+        <input type="checkbox" name="" id="header-save" onclick="headerSave()">
+        <label class="header-label" for="header-save">
+            <div class="header-item">
+                <img class="svg" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/save.svg"
+                    alt="Save SVG">
+                <div class="header-text">Save</div>
+            </div>
+        </label>
+
+        <!-- Load Item -->
+        <input type="file" name="" id="header-load" onchange="headerLoad()">
+        <label class="header-label" for="header-load">
+            <div class="header-item">
+                <img class="svg" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/load.svg"
+                    alt="Load SVG">
+                <div class="header-text">Load</div>
+            </div>
+        </label>
+
+        <!-- Theme Item -->
+        <!-- <input type="checkbox" name="" id="header-theme" onclick="themeChange()">
+        <label class="header-label" for="header-theme">
+            <div class="header-item">
+                <img class="svg" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/sun-svgrepo-com.svg"
+                    alt="Gallery SVG">
+                <div class="header-text header-gallery-text">Theme</div>
+            </div>
+        </label> -->
+
+
+    </header>
+    <div class="planner-body">
+        <div class="planner-events">
+            <div class="planner-events-header">
+
+                <div class="planner-help">?</div>
+
+                <input type="checkbox" id="header-summary" onclick="summary()">
+                <label class="header-summary" for="header-summary">
+                    <div class="planner-skins-header-summary secondClass">Selection summary</div>
+                </label>
+
+                <div class="flex-column" style="padding-right: 10px; position: relative;">
+                    <div class="initial-text calc-text"><span style="color: var(--highlight);">* </span>initial primes
+                    </div>
+                    <input style="width: 140px;" type="number" class="initial-input" id="planner-events-initial-primes"
+                        value="0" min="0">
+                </div>
+
+                <script>
+                    document.getElementById("planner-events-initial-primes").addEventListener("keydown", function (event) {
+                        // Check if the key pressed is a negative sign or any non-numeric character
+                        if (event.key === "-" || (/\D/.test(event.key) && event.keyCode !== 8)) {
+                            // Prevent the input from being entered
+                            event.preventDefault();
+                        }
+                    });
+                </script>
+            </div>
+            <div class="planner-events-content">
+                <!-- planner-events-body -->
+            </div>
+
+        </div>
+        <div class="planner-skins">
+            <div class="planner-skins-header">
+                <div class="planner-skins-header-event">asdasd</div>
+                <input type="checkbox" id="header-reward">
+                <label class="header-reward" for="header-reward">
+                    <div class="planner-skins-header-reward secondClass">Reward</div>
+                </label>
+            </div>
+
+            <div class="planner-skins-content">
+                <!-- planner-skins-body -->
+                <div class="new-skins skins-container"></div>
+                <div class="rerun-skins skins-container">
+                    <div class="planner-skins-header-event rerun-header">Rerun skins</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="summary">
+            <div class="summary-header">
+                <div class="planner-skins-header-event">Selection summary</div>
+                <input type="checkbox" id="header-summary-2" onclick="summary()">
+                <label class="header-summary" for="header-summary-2">
+                    <div class="planner-skins-header-summary secondClass">Planner</div>
+                </label>
+            </div>
+            <div class="summary-content">
+                <!-- <div class="summary-body">summary body</div> -->
+            </div>
+        </div>
+    </div>
+    <section class="gallery" id="gallery">
+        <div class="gallery-header">
+            <div class="main-text flex">Skin Gallery</div>
+            <div class="gallery-header-options">
+                <div id="gal-input3" class="initial-input2 initial-input-text">Search skin <div style="color: red;">*
+                    </div>
+                </div>
+                <div id="gal-input4" class="initial-input2 initial-input-text">Brands<div style="color: red;">*</div>
+                </div>
+            </div>
+            <div class="gallery-header-options">
+                <input type="search" class="initial-input2 gallery-options" id="search">
+                <select class="initial-input2 gallery-options" name="brand-select" id="search2" data-search2>
+                    <option disabled value="">Select brand</option>
+                    <option selected value="">All brands</option>
+                </select>
+            </div>
+        </div>
+    </section>
+    <div class="viewer">
+        <div class="viewer-content">
+            <button class="quit-btn" id="quit-btn" onclick="quitViewer()">
+                <img width="60px" height="60px" style="filter: invert();"
+                    src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/x.svg" alt="">
+            </button>
+            <div class="viewer-information">
+                <div class="viewer-char-container">
+                    <div class="viewer-char-information">
+                        <div class="viewer-char-name">char-name</div>
+                        <div class="viewer-skin-name">skin-name</div>
+                    </div>
+                    <div class="viewer-icon">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="viewer-skin-details">
+                    <div class="viewer-price viewer-row">
+                        <div class="viewer-price-left">Price</div>
+                        <div class="viewer-price-information">Price Information Content</div>
+                    </div>
+                    <div class="viewer-brand viewer-row">
+                        <div class="viewer-brand-left">Brand</div>
+                        <div class="viewer-brand-information">Brand Information Content</div>
+                    </div>
+                    <div class="viewer-artist viewer-row">
+                        <div class="viewer-artist-left">Artist</div>
+                        <div class="viewer-artist-information">Artist Information Content</div>
+                    </div>
+                    
+                    <div class="viewer-release viewer-row">
+                        <div class="viewer-release-left">Release</div>
+                        <div class="viewer-release-information">Release Information Content</div>
+                    </div>
+                    <div class="viewer-obtain viewer-row">
+                        <div class="viewer-obtain-left">Obtain</div>
+                        <div class="viewer-obtain-information">Obtain Information Content</div>
+                    </div>
+                </div>
+
+                <div class="chibi-container" id="chibi-container">
+                    <!-- <div class="chibi"></div> -->
+                </div>
+
+
+                <div style="display: flex; justify-content: space-around; width: 100%; gap: 5%;">
+                    <select class="viewer-options" style="width: 40%;" name="perspective" id="perspective">
+                        <option selected value="front">Front</option>
+                        <option id="backpers" value="back">Back</option>
+                        <option value="build">Base</option>
+                    </select>
+
+                    <select class="viewer-options" style="width: 40%;" name="animation" id="animation">
+                    </select>
+
+                    <select class="viewer-options" style="width: 20%;" name="speed" id="speed">
+                        <option value="0.1">x0.1</option>
+                        <option value="0.5">x0.5</option>
+                        <option selected value="1">x1</option>
+                        <option value="2">x2</option>
+
+                    </select>
+
+                    <button class="download-button" onclick="downloadChibi();">
+                        <img width="20px" style="filter: invert();"
+                            src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/save.svg"
+                            alt="">
+                    </button>
+                    <script>
+                        function downloadChibi() {
+                            let name = document.querySelector(".viewer-char-name").innerHTML
+                            app.renderer.render(app.stage);
+
+                            const image = new Image();
+                            image.src = app.view.toDataURL();
+
+                            const link = document.createElement('a');
+                            link.href = image.src;
+                            link.download = `chibi-${name}`;
+                            link.click();
+                        }
+                    </script>
+                </div>
+
+            </div>
+            <div class="full-image">
+                <img id="full-image" src="" alt="">
+            </div>
+        </div>
+    </div>
+
+    <template id="planner-events-body">
+        <input class="planner-events-cbox" type="checkbox" name="" id="">
+        <label class="planner-events-cbox-label" for="">
+            <!-- <a class="planner-events-link" name="" href="" style="all: unset;"></a> -->
+            <div class="planner-events-body">
+                <div class="planner-events-info">
+                    <div class="planner-events-name">planner-events-name</div>
+                    <div class="planner-events-image">
+                        <img src=""
+                            alt="">
+                    </div>
+                </div>
+                <div class="planner-events-calcs">
+                    <div class="planner-events-current calcs">
+                        <div class="planner-event-calcs-left">
+                            <div class="calc-item">
+                                <img src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/puregem.png"
+                                    alt="Reset SVG">
+                                <div class="calc-text">Current</div>
+                            </div>
+                        </div>
+                        <div class="planner-events-current-value value">-</div>
+                    </div>
+                    <div class="planner-events-reward calcs">
+                        <div class="planner-event-calcs-left">
+                            <div class="calc-item">
+                                <img class="svg-light" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/reward.png"
+                                    alt="Reset SVG">
+                                <div class="calc-text">Reward</div>
+                            </div>
+                        </div>
+                        <div class="value">+<span class="planner-events-reward-value value">-</span></div>
+                    </div>
+                    <div class="planner-events-cost calcs">
+                        <div class="planner-event-calcs-left">
+                            <div class="calc-item">
+                                <img class="svg-light" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/cost.png"
+                                    alt="Reset SVG">
+                                <div class="calc-text">Cost</div>
+                            </div>
+                        </div>
+                        <div class="value"><span class="planner-events-cost-value value">-</span></div>
+                    </div>
+                    <div class="planner-events-total calcs">
+                        <div class="planner-event-calcs-left total-left">
+                            <div class="calc-item">
+                                <img style="opacity: 0;"
+                                    src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/puregem.png"
+                                    alt="Reset SVG">
+                                <div class="calc-text"></div>
+                            </div>
+                        </div>
+                        <div class="planner-events-total-value value">-</div>
+                    </div>
+                </div>
+                <div class="event-counter">1</div>
+            </div>
+        </label>
+
+    </template>
+
+    <template id="planner-skins-body">
+        <input class="planner-skins-cbox" type="checkbox" name="" id="">
+        <label class="planner-skins-cbox-label" for="" id="">
+            <div class="planner-skins-body">
+                <div class="planner-skins-image">
+                    <img src=""
+                        alt="">
+                </div>
+
+                <div class="planner-skins-model">model</div>
+                <div class="planner-skins-price">price</div>
+                <div class="skin-overlay"></div>
+                <div class="skin-background"></div>
+                <button class="search-button">
+                    <img src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/search.svg"
+                        alt="">
+                </button>
+            </div>
+        </label>
+
+    </template>
+
+    <template id="summary-body">
+        <div class="summary-container">
+            <div class="summary-events-body">
+                <div class="summary-events-info">
+                    <div class="summary-events-name">summary-events-name</div>
+                    <div class="summary-events-image">
+                        <img src=""
+                            alt="">
+                    </div>
+                </div>
+                <div class="summary-events-calcs">
+                    <div class="summary-events-current calcs">
+                        <div class="summary-event-calcs-left">current</div>
+                        <div class="summary-events-current-value value">-</div>
+                    </div>
+                    <div class="summary-events-reward calcs">
+                        <div class="summary-event-calcs-left">reward</div>
+                        <div class="summary-events-reward-value value">-</div>
+                    </div>
+                    <div class="summary-events-cost calcs">
+                        <div class="summary-event-calcs-left">cost</div>
+                        <div class="summary-events-cost-value value">-</div>
+                    </div>
+                    <div class="summary-events-total calcs">
+                        <div class="summary-event-calcs-left">total</div>
+                        <div class="summary-events-total-value value">-</div>
+                    </div>
+                </div>
+            </div>
+            <div class="summary-skins-container">
+                <div class="summary-skins-container-scroll"></div>
+            </div>
+            <!-- summary-skins-body -->
+        </div>
+    </template>
+
+    <template id="summary-skins-body">
+        <div class="summary-skins-body">
+            <div class="summary-events-name">amoya</div>
+            <div class="summary-events-image">
+                <img src="" alt="">
+            </div>
+        </div>
+    </template>
+
+    <template id="gallery-body">
+        <!-- href #${skin.id} -->
+        <a class="gallery-link" id="gallery-${skin.id}" href="">
+            <button class="gallery-btn" id="${skin.id}">
+                <div class="card-bg"></div>
+                <div class="gallery-fade"></div>
+                <img class="gallery-img"
+                    src="">
+                <div style="transform: skew(-10deg);">
+                    <span class="gallery-model">${skin.english}</span>
+                    <br>
+                    <span class="gallery-sub">${skin.skinnameenglish}</span>
+                </div>
+            </button>
+        </a>
+    </template>
+    
+    <script src="js/pixi/pixi.min.js"></script>
+    <script src="js/pixi/pixi-spine.js"></script>
+</body>
+
+</html>
