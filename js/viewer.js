@@ -59,7 +59,7 @@ async function viewer(plannerId) {
 
     perspective = "front"
     
-    chibiUpdate(plannerSkin.plannerId, plannerSkin.skinId)
+    chibiUpdate(plannerSkin.plannerId, plannerSkin.skinId.toLowerCase()) 
 
     // Image handling
     viewerFullImage.style.transform = 'scale(1)';
@@ -110,6 +110,9 @@ async function viewer(plannerId) {
 }
 
 function chibiUpdate(plannerId, skinId) {
+  //console.log ("entered function")
+  //console.log ("planner id", plannerId)
+  //console.log("skin id", skinId)
   
   // Reset
   globalPlannerId = plannerId
@@ -145,6 +148,22 @@ function chibiUpdate(plannerId, skinId) {
     const skinSpine = new PIXI.spine.Spine(skinAsset.spineData);
     const animationList = skinSpine.spineData.animations
     const animation = (perspective === "build") ? "Relax" : "Idle";
+
+    // Mulberry check
+    if (plannerId == "mulberry2") {
+      //spineData > Bones
+      // Front 207 211
+      // Back 34 39
+      // Build 207 211
+      if (perspective == "front" || perspective == "build") {
+        skinSpine.spineData.bones[207].transformMode = 0
+        skinSpine.spineData.bones[211].transformMode = 0
+      } if (perspective == "back") {
+        skinSpine.spineData.bones[34].transformMode = 0
+        skinSpine.spineData.bones[39].transformMode = 0
+      }
+      
+    }
 
     // Functions
     updateAnimationList(animationList)
@@ -204,7 +223,7 @@ function chibiUpdate(plannerId, skinId) {
     app.renderer.render(app.stage);
 
     // Debug
-    console.log(app.stage.children[0])
+    //console.log(app.stage.children[0])
 
   });
 
