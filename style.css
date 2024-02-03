@@ -736,6 +736,14 @@ body {
     filter: invert();
 }
 
+.viewer-appearances {
+    display: none;
+    align-items: center;
+}
+.viewer-appearances-left {
+    height: fit-content;
+}
+
 
 @media screen and (max-width: 1000px) {
 

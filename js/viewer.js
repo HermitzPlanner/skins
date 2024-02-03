@@ -28,6 +28,17 @@ async function viewer(plannerId) {
 
   plannerSkinsData.forEach(plannerSkin => {
     if (plannerId !== plannerSkin.plannerId) { return }
+    if (plannerSkinsData.appearances !== "") {
+      document.querySelector(".viewer-appearances ").style.display = "flex"
+      document.querySelector(".viewer-appearances-information").innerHTML = ""
+
+      let appearancesArray = plannerSkin.appearances.split(', ');
+      appearancesArray.forEach(appear => {
+        document.querySelector(".viewer-appearances-information").innerHTML +=  `- ${appear} <br>`
+      });
+      
+      
+    }
     // Selecting elements
     const viewerCharNameClone = document.querySelector(".viewer-char-name");
     const viewerSkinNameClone = document.querySelector(".viewer-skin-name");
@@ -35,7 +46,7 @@ async function viewer(plannerId) {
     const viewerBrandInformationClone = document.querySelector(".viewer-brand-information");
     const viewerArtistInformationClone = document.querySelector(".viewer-artist-information");
     const viewerPriceInformationClone = document.querySelector(".viewer-price-information");
-    const viewerReleaseInformationClone = document.querySelector(".viewer-release-information");
+    // const viewerReleaseInformationClone = document.querySelector(".viewer-release-information");
     const viewerObtainInformationClone = document.querySelector(".viewer-obtain-information");
 
     plannerSkin.skinNameEN = plannerSkin.skinNameEN || plannerSkin.skinNameCN;
@@ -54,8 +65,8 @@ async function viewer(plannerId) {
       viewerPriceInformationClone.textContent = "Free"
     }
 
-    viewerReleaseInformationClone.textContent = plannerSkin.getTimeCN
-    viewerObtainInformationClone.textContent = plannerSkin.obtainApproachCN
+    // viewerReleaseInformationClone.textContent = plannerSkin.getTimeCN
+    viewerObtainInformationClone.textContent = plannerSkin.obtainApproachEN
 
     perspective = "front"
     
