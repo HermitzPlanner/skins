@@ -9,10 +9,11 @@ async function main() {
     const summaryBodyTemplate = document.getElementById("summary-body")
     const summarySkinsBody = document.getElementById("summary-skins-body")
 
+    //const plannerEventsCall = await fetch('events.json')
     const plannerEventsCall = await fetch('https://raw.githubusercontent.com/HermitzPlanner/hermitzplanner.github.io/main/json/events.json')
-    //const plannerEventsCall = await fetch('json/events.json')
     const plannerEventsData = await plannerEventsCall.json()
 
+    //const plannerSkinsCall = await fetch('table_data.json')
     const plannerSkinsCall = await fetch('https://raw.githubusercontent.com/HermitzPlanner/hermitzplanner.github.io/main/json/table_data.json')
     const plannerSkinsData = await plannerSkinsCall.json()
 
@@ -26,6 +27,9 @@ async function main() {
         if (plannerEvent.eventcode == "warmupeventforch12") return;
         if (plannerEvent.eventcode == "warmupeventforch13") return;
         if (plannerEvent.eventcode == "0011yunseries") { plannerEvent.event = "0011 / Yun Series" }
+
+        
+        plannerEvent.fashion = parseInt(plannerEvent.fashion)
 
         let currentPrimes = 0
         if (counter > 1) {
