@@ -34,10 +34,10 @@ async function viewer(plannerId) {
 
       let appearancesArray = plannerSkin.appearances.split(', ');
       appearancesArray.forEach(appear => {
-        document.querySelector(".viewer-appearances-information").innerHTML +=  `- ${appear} <br>`
+        document.querySelector(".viewer-appearances-information").innerHTML += `- ${appear} <br>`
       });
-      
-      
+
+
     }
     // Selecting elements
     const viewerCharNameClone = document.querySelector(".viewer-char-name");
@@ -69,8 +69,8 @@ async function viewer(plannerId) {
     viewerObtainInformationClone.textContent = plannerSkin.obtainApproachEN
 
     perspective = "front"
-    
-    chibiUpdate(plannerSkin.plannerId, plannerSkin.skinId.toLowerCase()) 
+
+    chibiUpdate(plannerSkin.plannerId, plannerSkin.skinId.toLowerCase())
 
     // Image handling
     viewerFullImage.style.transform = 'scale(1)';
@@ -124,7 +124,7 @@ function chibiUpdate(plannerId, skinId) {
   //console.log ("entered function")
   //console.log ("planner id", plannerId)
   //console.log("skin id", skinId)
-  
+
   // Reset
   globalPlannerId = plannerId
   globalSkinId = skinId
@@ -173,7 +173,7 @@ function chibiUpdate(plannerId, skinId) {
         skinSpine.spineData.bones[34].transformMode = 0
         skinSpine.spineData.bones[39].transformMode = 0
       }
-      
+
     }
 
     // Functions
@@ -248,7 +248,7 @@ function chibiUpdate(plannerId, skinId) {
     circle.x = app.renderer.width / 2;
     circle.y = app.renderer.height / 2;
     app.stage.addChild(circle);
-  
+
     app.ticker.add(() => {
       circle.rotation += 0.1;
     });
@@ -259,6 +259,19 @@ animationSelect.addEventListener('change', function () {
   app.stage.children[0].state.setAnimation(0, animationSelect.value, true);
   if (animationSelect.value == "Sit") {
     app.stage.children[0].y = app.screen.height / 1.22
+  }
+  // mulberry is such an enigma...
+  if (animationSelect.value == "Sit" && globalPlannerId == "mulberry2") {
+    app.stage.children[0].spineData.bones[207].transformMode = 1
+    app.stage.children[0].spineData.bones[211].transformMode = 1
+  }
+  if (animationSelect.value !== "Sit" && globalPlannerId == "mulberry2") {
+    app.stage.children[0].spineData.bones[207].transformMode = 0
+    app.stage.children[0].spineData.bones[211].transformMode = 0
+  }
+  if (animationSelect.value == "Sleep" && globalPlannerId == "mulberry2") {
+    app.stage.children[0].spineData.bones[207].transformMode = 1
+    app.stage.children[0].spineData.bones[211].transformMode = 1
   }
 })
 
@@ -299,8 +312,8 @@ speedSelect.addEventListener("change", () => {
 document.addEventListener('keydown', function (event) {
   // Check if the pressed key is the Escape key (key code 27)
   if (event.key === 'Escape' || event.keyCode === 27) {
-      // Call the quitViewer function
-      quitViewer();
+    // Call the quitViewer function
+    quitViewer();
   }
 });
 function quitViewer() {

@@ -92,8 +92,8 @@ async function headerGallery() {
     const searchInput = document.getElementById("search")
     searchInput.addEventListener("input", e => {
         const value = e.target.value.toLowerCase()
-        console.log("e", e)
-        console.log(users)
+        //console.log("e", e)
+        //console.log(users)
         users.forEach(user => {
             const isVisible = user.name.toLowerCase().includes(value) && user.brand.includes(brandSelect)
             const sugmaball = document.getElementById(user.element.id)
@@ -116,7 +116,7 @@ async function headerGallery() {
     var alters2 = document.querySelectorAll('.gallery-model');
             alters2.forEach(function (alter) {
                 var words = alter.textContent.split(' ');
-                if (words.length >= 3) {
+                if (words.length >= 3 && alter.textContent !== "Terra Research Commission") {
                     alter.textContent = words[0] + ' Alter';
                 }
             });

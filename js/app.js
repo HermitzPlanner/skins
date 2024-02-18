@@ -164,7 +164,9 @@ async function main() {
     function primesInput() {
         //console.log("%cInput", "color: white; font-size: 18px; background: blue;")
         let primesInputValue = parseInt(initialPrimesInput.value)
-        if (primesInputValue == "") { console.log("empty value"); primesInputValue = 0 }
+        if (primesInputValue == "") { 
+            //console.log("empty value")
+            primesInputValue = 0 }
         const plannerEventsCurrentValue = document.querySelector(".planner-events-current-value")
         plannerEventsCurrentValue.textContent = primesInputValue
         //console.log(primesInputValue)
@@ -379,7 +381,7 @@ async function main() {
         const plannerRewardElement = document.querySelector(`.reward-event-${eventNumber}`)
         const plannerRewardOriginalValue = document.querySelector(`.reward-event-${eventNumber}`).classList[3].replace("reward-value-", "")
         //console.log(plannerRewardElement)
-        console.log("original value", plannerRewardOriginalValue)
+        //console.log("original value", plannerRewardOriginalValue)
         const state = headerRewardElement.textContent.split(" ")[0];
         //console.log("state", state)
         if (state === "Disable") {
@@ -453,7 +455,7 @@ function headerReset() {
 function headerSave() {
     // Save current
     const currentPrimes = document.getElementById("planner-events-initial-primes").value
-    console.log(currentPrimes)
+    //console.log(currentPrimes)
     // Save skins
     const skinElements = document.querySelectorAll(".planner-skins-cbox");
     let selectedSkins = []
@@ -461,7 +463,7 @@ function headerSave() {
         if (skin.checked) {
             const skinId = skin.id
             selectedSkins.push(skinId)
-            console.log(selectedSkins)
+            //console.log(selectedSkins)
         }
     });
     // TODO Event reward state + theme switch
@@ -515,7 +517,7 @@ function headerLoad() {
         // variable1
         contentarray = JSON.parse(variable1);
         contentarray.forEach(divs => {
-            console.log(divs)
+            //console.log(divs)
             var element = document.getElementById(divs);
             if (element) {
                 if (element.checked !== true) {
@@ -523,7 +525,7 @@ function headerLoad() {
                 }
             } else {
                 // Handle the case when the element does not exist
-                console.log(`Element with ID ${divs} does not exist.`);
+                //console.log(`Element with ID ${divs} does not exist.`);
             }
         })
        
