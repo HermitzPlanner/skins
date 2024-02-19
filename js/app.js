@@ -28,7 +28,7 @@ async function main() {
         if (plannerEvent.eventcode == "warmupeventforch13") return;
         if (plannerEvent.eventcode == "0011yunseries") { plannerEvent.event = "0011 / Yun Series" }
 
-        
+
         plannerEvent.fashion = parseInt(plannerEvent.fashion)
 
         let currentPrimes = 0
@@ -164,9 +164,10 @@ async function main() {
     function primesInput() {
         //console.log("%cInput", "color: white; font-size: 18px; background: blue;")
         let primesInputValue = parseInt(initialPrimesInput.value)
-        if (primesInputValue == "") { 
+        if (primesInputValue == "") {
             //console.log("empty value")
-            primesInputValue = 0 }
+            primesInputValue = 0
+        }
         const plannerEventsCurrentValue = document.querySelector(".planner-events-current-value")
         plannerEventsCurrentValue.textContent = primesInputValue
         //console.log(primesInputValue)
@@ -188,9 +189,19 @@ async function main() {
 
             let currentValue = ""
             if (calculesCounter !== 1) {
-                const previousEventNumber = eventNumber - 1
-                const previousEventTotalElement = document.querySelector(`.total-value-${previousEventNumber}`)
-                const previousEventTotalValue = parseInt(previousEventTotalElement.textContent)
+                let previousEventTotalValue = 0;
+                let previousEventNumber = eventNumber - 1;
+
+                while (previousEventNumber >= 0) {
+                    let previousEventTotalElement = document.querySelector(`.total-value-${previousEventNumber}`);
+
+                    if (previousEventTotalElement) {
+                        previousEventTotalValue = parseInt(previousEventTotalElement.textContent);
+                        break; // Exit the loop once the element is found
+                    } else {
+                        previousEventNumber--; // Decrement previousEventNumber and try again
+                    }
+                }
                 currentValue = previousEventTotalValue
                 eventCurrentElement.textContent = previousEventTotalValue
             } else {
@@ -528,9 +539,9 @@ function headerLoad() {
                 //console.log(`Element with ID ${divs} does not exist.`);
             }
         })
-       
 
-        
+
+
 
     }
 
