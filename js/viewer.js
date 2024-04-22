@@ -41,7 +41,8 @@ async function viewer(plannerId) {
     if (plannerSkin.dynamicCompile !== "") {
       document.querySelector(".viewer-dynamic").style.display = "flex"
       document.querySelector(".viewer-dynamic-information").innerHTML = `<a href=${plannerSkin.dynamicCompile} target="_blank">Link (official hg site)</a>`
-
+    } else {
+      document.querySelector(".viewer-dynamic").style.display = "none"
     }
     // Selecting elements
     const viewerCharNameClone = document.querySelector(".viewer-char-name");
