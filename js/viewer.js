@@ -29,7 +29,7 @@ async function viewer(plannerId) {
   plannerSkinsData.forEach(plannerSkin => {
     if (plannerId !== plannerSkin.plannerId) { return }
     if (plannerSkinsData.appearances !== "") {
-      document.querySelector(".viewer-appearances ").style.display = "flex"
+      document.querySelector(".viewer-appearances").style.display = "flex"
       document.querySelector(".viewer-appearances-information").innerHTML = ""
 
       let appearancesArray = plannerSkin.appearances.split(', ');
@@ -37,6 +37,10 @@ async function viewer(plannerId) {
         document.querySelector(".viewer-appearances-information").innerHTML += `- ${appear} <br>`
       });
 
+    }
+    if (plannerSkin.dynamicCompile !== "") {
+      document.querySelector(".viewer-dynamic").style.display = "flex"
+      document.querySelector(".viewer-dynamic-information").innerHTML = `<a href=${plannerSkin.dynamicCompile} target="_blank">Link (official hg site)</a>`
 
     }
     // Selecting elements

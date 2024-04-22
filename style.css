@@ -736,19 +736,27 @@ body {
     filter: invert();
 }
 
-.viewer-appearances {
+.viewer-appearances,
+.viewer-dynamic {
     display: none;
     align-items: center;
 }
-.viewer-appearances-left {
+.viewer-appearances-left,
+.viewer-dynamic-left {
     height: fit-content;
     width: 50%;
 }
 
-.viewer-appearances-information {
+.viewer-appearances-information,
+.viewer-dynamic-information {
     text-align: right;
     font-size: 90%;
     font-style: italic;
+    width: 50%;
+}
+
+.viewer-dynamic-information {
+    color: rgb(145, 180, 255);
 }
 
 
