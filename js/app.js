@@ -27,6 +27,7 @@ async function main() {
         if (plannerEvent.eventcode == "warmupeventforch12") return;
         if (plannerEvent.eventcode == "warmupeventforch13") return;
         if (plannerEvent.eventcode == "0011yunseries") { plannerEvent.event = "0011 / Yun Series" }
+        if (plannerEvent.eventN == "") return
 
 
         plannerEvent.fashion = parseInt(plannerEvent.fashion)
