@@ -21,6 +21,8 @@ async function main() {
     let counter = 1
 
     plannerEventsData.forEach(plannerEvent => {
+        plannerEvent.newSkins = plannerEvent.newSkins.split(",").map(skin => skin.trim());
+        plannerEvent.rerunSkins = plannerEvent.rerunSkins.split(",").map(skin => skin.trim());
         // Config
         //if (counter == 5) { return }
         if (plannerEvent.status === "end") return;
@@ -103,8 +105,12 @@ async function main() {
 
         // Skins sorting
         plannerSkinsData.slice().reverse().forEach(plannerSkin => {
+
             // Config
-            if (!(plannerEvent.newSkins.indexOf(plannerSkin.plannerId) !== -1 || plannerEvent.rerunSkins.indexOf(plannerSkin.plannerId) !== -1 || plannerSkin.fashionReview > 0 && plannerSkin.fashionReview <= plannerEvent.fashion)) { return }
+            if (!(plannerEvent.newSkins.indexOf(plannerSkin.plannerId) !== -1 || 
+            plannerEvent.rerunSkins.indexOf(plannerSkin.plannerId) !== -1 || 
+            plannerSkin.fashionReview > 0 && plannerSkin.fashionReview <= plannerEvent.fashion)) { return }
+           // console.log(plannerSkin.plannerId)
 
             // Import node
             const skinsNode = document.importNode(plannerSkinsBodyTemplate.content, true);
