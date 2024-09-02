@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skin Planner</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/pallas.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="assets/pallas.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/irene.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/irene.png" sizes="32x32">
     <script defer src="js/app.js"></script>
     <script defer src="js/gallery.js"></script>
     <script defer src="js/summary.js"></script>
@@ -34,52 +34,55 @@ https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/load.sv
         </label>
 
         <!-- Settings Item -->
-    <input type="checkbox" name="" id="header-settings" onclick="toggleSettings()">
-    <label class="header-label" for="header-settings">
-        <div class="header-item">
-            <img class="svg" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/settings.svg"
-                alt="Gallery SVG">
-            <div class="header-text header-gallery-text">Settings</div>
+        <input type="checkbox" name="" id="header-settings" onclick="toggleSettings()">
+        <label class="header-label" for="header-settings">
+            <div class="header-item">
+                <img class="svg"
+                    src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/settings.svg"
+                    alt="Gallery SVG">
+                <div class="header-text header-gallery-text">Settings</div>
+            </div>
+        </label>
+
+        <!-- Container for Reset, Load, and Save -->
+        <div id="settings-dropdown" class="settings-dropdown">
+            <!-- Reset Item -->
+            <input type="checkbox" name="" id="header-reset" onclick="headerReset()">
+            <label class="header-label" for="header-reset">
+                <div class="header-item">
+                    <img class="svg"
+                        src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/reset.svg"
+                        alt="Reset SVG">
+                    <div class="header-text">Reset</div>
+                </div>
+            </label>
+
+            <!-- Save Item -->
+            <input type="checkbox" name="" id="header-save" onclick="headerSave()">
+            <label class="header-label" for="header-save">
+                <div class="header-item">
+                    <img class="svg"
+                        src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/save.svg"
+                        alt="Save SVG">
+                    <div class="header-text">Save</div>
+                </div>
+            </label>
+
+            <!-- Load Item -->
+            <input type="file" name="" id="header-load" onchange="headerLoad()">
+            <label class="header-label" for="header-load">
+                <div class="header-item">
+                    <img class="svg"
+                        src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/load.svg"
+                        alt="Load SVG">
+                    <div class="header-text">Load</div>
+                </div>
+            </label>
         </div>
-    </label>
-
-    <!-- Container for Reset, Load, and Save -->
-    <div id="settings-dropdown" class="settings-dropdown">
-        <!-- Reset Item -->
-        <input type="checkbox" name="" id="header-reset" onclick="headerReset()">
-        <label class="header-label" for="header-reset">
-            <div class="header-item">
-                <img class="svg" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/reset.svg"
-                    alt="Reset SVG">
-                <div class="header-text">Reset</div>
-            </div>
-        </label>
-
-        <!-- Save Item -->
-        <input type="checkbox" name="" id="header-save" onclick="headerSave()">
-        <label class="header-label" for="header-save">
-            <div class="header-item">
-                <img class="svg" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/save.svg"
-                    alt="Save SVG">
-                <div class="header-text">Save</div>
-            </div>
-        </label>
-
-        <!-- Load Item -->
-        <input type="file" name="" id="header-load" onchange="headerLoad()">
-        <label class="header-label" for="header-load">
-            <div class="header-item">
-                <img class="svg" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/load.svg"
-                    alt="Load SVG">
-                <div class="header-text">Load</div>
-            </div>
-        </label>
-    </div>
 
         <!-- Discord Item -->
         <a class="header-item" href="https://discord.gg/uGRu9j88H9" target="_blank">
-            <img class="svg"
-                src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/discord.svg"
+            <img class="svg" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/discord.svg"
                 alt="Gallery SVG">
             <div class="header-text header-gallery-text">Discord</div>
         </a>
@@ -108,7 +111,7 @@ https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/load.sv
         function toggleSettings() {
             var dropdown = document.getElementById("settings-dropdown");
             var settingsCheckbox = document.getElementById("header-settings");
-    
+
             dropdown.style.display = settingsCheckbox.checked ? "flex" : "none";
         }
     </script>
@@ -180,7 +183,8 @@ https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/load.sv
         <div class="gallery-header">
             <div class="main-text flex">Skin Gallery</div>
             <div class="gallery-header-options">
-                <div id="gal-input3" class="initial-input2 initial-input-text">Search skin or operator <div style="color: red;">*
+                <div id="gal-input3" class="initial-input2 initial-input-text">Search skin or operator <div
+                        style="color: red;">*
                     </div>
                 </div>
                 <div id="gal-input4" class="initial-input2 initial-input-text">Brands<div style="color: red;">*</div>
