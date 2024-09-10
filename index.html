@@ -210,49 +210,16 @@ https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/load.sv
                     <div class="viewer-char-information">
                         <div class="viewer-char-name">char-name</div>
                         <div class="viewer-skin-name">skin-name</div>
+                        <!-- <div class="viewer-price-information">Price Information Content</div> -->
                     </div>
                     <div class="viewer-icon">
                         <img src="" alt="">
                     </div>
                 </div>
-                <div class="viewer-skin-details">
-                    <div class="viewer-dynamic">
-                        <div class="viewer-dynamic-left">Dynamic Illustration</div>
-                        <div class="viewer-dynamic-information"></div>
-                    </div>
-                    <div class="viewer-appearances viewer-row">
-                        <div class="viewer-appearances-left">Available in</div>
-                        <div class="viewer-appearances-information"></div>
-                    </div>
-                    <div class="viewer-price viewer-row">
-                        <div class="viewer-price-left">Price</div>
-                        <div class="viewer-price-information">Price Information Content</div>
-                    </div>
-                    <div class="viewer-brand viewer-row">
-                        <div class="viewer-brand-left">Brand</div>
-                        <div class="viewer-brand-information">Brand Information Content</div>
-                    </div>
-                    <div class="viewer-artist viewer-row">
-                        <div class="viewer-artist-left">Artist</div>
-                        <div class="viewer-artist-information">Artist Information Content</div>
-                    </div>
 
-                    <!-- <div class="viewer-release viewer-row">
-                        <div class="viewer-release-left">Release</div>
-                        <div class="viewer-release-information">Release Information Content</div>
-                    </div> -->
-                    <div class="viewer-obtain viewer-row">
-                        <div class="viewer-obtain-left">Obtain</div>
-                        <div class="viewer-obtain-information">Obtain Information Content</div>
-                    </div>
-                </div>
-
-                <div class="chibi-container" id="chibi-container">
-                    <!-- <div class="chibi"></div> -->
-                </div>
-
-
-                <div style="display: flex; justify-content: space-around; width: 100%; gap: 5%;">
+                <!-- ### CHIBI DIV ### -->
+                <div class="chibi-container" id="chibi-container"></div>
+                <div class="chibi-menu">
                     <select class="viewer-options" style="width: 40%;" name="perspective" id="perspective">
                         <option selected value="front">Front</option>
                         <option id="backpers" value="back">Back</option>
@@ -290,6 +257,88 @@ https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/load.sv
                         }
                     </script>
                 </div>
+
+
+                <!-- ### MAIN INFO ### -->
+
+                <!-- <div class="viewer-main-info">
+                    
+                </div> -->
+
+                <!-- ### BUTTONS ### -->
+
+                <div class="viewer-row-checkbox">
+                    <label class="viewer-label skin-compare">
+                        <input type="checkbox" class="viewer-checkbox viewer-checkbox-compare" onclick="compareOriginal()">
+                        <div class="compare-div">Compare with original</div> 
+                    </label>
+
+                    <label class="viewer-label e1" style="display: none;">
+                        <input type="checkbox" class="viewer-checkbox viewer-e1" onclick="e1()">
+                        <div class="compare-div">E0 Art</div> 
+                    </label>
+
+                    <label class="viewer-label extra-info">
+                        <input type="checkbox" class="viewer-checkbox viewer-extra-info" onclick="chibiExtraInfo()">
+                        <div class="extra-info-btn">Show info</div>
+                    </label>
+                </div>
+        
+                <!-- ### DETAILS DIV ### -->
+                <div class="viewer-skin-details" style="display: none;">
+
+                    <div class="viewer-dynamic">
+                        <div class="viewer-dynamic-left">Dynamic Illustration</div>
+                        <div class="viewer-dynamic-information viewer-right-column"></div>
+                    </div>
+                    
+                    <div class="viewer-price viewer-row">
+                        <div class="viewer-price-left">Price</div>
+                        <div class="viewer-price-information viewer-right-column">Price Information Content</div>
+                    </div>
+
+                    <div class="viewer-appearances viewer-row">
+                        <div class="viewer-appearances-left">Available in</div>
+                        <div class="viewer-appearances-information viewer-right-column"></div>
+                    </div>
+
+                    <div class="viewer-brand viewer-row">
+                        <div class="viewer-brand-left">Brand</div>
+                        <div class="viewer-brand-information viewer-right-column">Brand Information Content</div>
+                    </div>
+                    <div class="viewer-artist viewer-row">
+                        <div class="viewer-artist-left">Artist</div>
+                        <div class="viewer-artist-information viewer-right-column">Artist Information Content</div>
+                    </div>
+
+
+                    
+
+                    <div class="viewer-release viewer-row">
+                        <div class="viewer-release-left">CN Release</div>
+                        <div class="viewer-release-cn viewer-right-column">Release Information Content</div>
+                    </div>
+
+                    <div class="viewer-release viewer-row">
+                        <div class="viewer-release-left">Global Release</div>
+                        <div class="viewer-release-global viewer-right-column">Release Information Content</div>
+                    </div>
+
+                    <div class="viewer-obtain viewer-row">
+                        <div class="viewer-obtain-left">Obtain</div>
+                        <div class="viewer-obtain-information viewer-right-column">Obtain Information Content</div>
+                    </div>
+
+                    <div class="viewer-dialog">
+                        dialog here
+                    </div>
+                    
+                </div>
+
+
+
+
+
 
             </div>
             <div class="full-image">

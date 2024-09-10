@@ -46,6 +46,7 @@
     --planner-header: 40px;
     --planner-events-image-padding: 10px;
 }
+
 header {
     display: flex;
     align-items: left;
@@ -78,10 +79,12 @@ header {
 .header-item img {
     filter: invert(1);
 }
+
 .planner-events-total {
     justify-content: space-between;
-   
+
 }
+
 .planner-events-total-value {
     padding: 4px 0;
     padding-left: 12px;
@@ -89,9 +92,11 @@ header {
     border-top: 1px solid var(--highlight);
     /* border-bottom: 1px solid var(--highlight); */
 }
+
 .header-text {
     font-size: 16px;
 }
+
 .calc-text {
     font-size: 12px;
 }
@@ -133,6 +138,7 @@ header {
 input[type="file"] {
     display: none;
 }
+
 input[type="checkbox"] {
     display: none;
 }
@@ -158,17 +164,23 @@ input[type="number"],
 .prime {
     color: var(--highlight);
 }
+
 a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Use the default text color */
+    text-decoration: none;
+    /* Remove underline */
+    color: inherit;
+    /* Use the default text color */
     /* You can add more styling properties here as needed */
 }
+
 img {
     -webkit-user-drag: none;
 }
+
 #settings-dropdown {
     display: none;
 }
+
 .settings-dropdown {
     display: flex;
     position: absolute;
@@ -180,6 +192,7 @@ img {
     z-index: 2;
     padding: 10px;
 }
+
 button {
     background: none;
     color: inherit;
@@ -204,10 +217,12 @@ body {
     height: 100vh;
     position: relative;
 }
+
 .kofi {
     filter: inherit !important;
     height: inherit !important;
 }
+
 .planner-body {
     display: flex;
     height: calc(100vh - var(--planner-header));
@@ -219,13 +234,14 @@ body {
     height: calc(100% - var(--planner-content-header));
     width: 100%;
     position: relative;
-    overflow-y: auto; 
+    overflow-y: auto;
 }
 
 .planner-skins-content {
     display: flex;
     flex-direction: column;
 }
+
 .skins-container {
     display: flex;
     flex-wrap: wrap;
@@ -239,6 +255,7 @@ body {
 .rerun-skins {
     border-top: 1px solid var(--highlight-dark);
 }
+
 .rerun-header {
     width: 100%;
     text-align: center;
@@ -429,16 +446,19 @@ body {
     text-transform: uppercase;
     border-radius: 0 0 10px 0;
 }
+
 .skins-price-rerun {
     left: 27px;
     display: flex;
     align-items: center;
     gap: 4px;
 }
+
 .planner-skins-category {
     font-size: 85%;
     color: var(--rerun);
 }
+
 .skin-overlay,
 .skin-background {
     position: absolute;
@@ -447,9 +467,11 @@ body {
     top: 0;
     left: 0;
 }
+
 .skin-background {
     background: linear-gradient(0deg, var(--background-events-content-dark) 12%, rgba(255, 255, 255, 0) 40%);
 }
+
 .overlay-true {
     background: var(--disabled);
 }
@@ -457,6 +479,7 @@ body {
 .checked {
     outline: 2px solid var(--highlight);
 }
+
 .checked-text {
     color: var(--highlight)
 }
@@ -619,19 +642,26 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 23%;
+    width: 350px;
     background-color: var(--background-events-body-dark);
-    height: 90%;
+    height: fit-content;         /* Keep it tight */
+    max-height: 95vh;            /* Maximum height up to 95% of viewport */
+    overflow: auto;              /* Scroll your damn content */
     border-radius: 10px;
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 10px;
     align-items: center;
     padding: 10px;
     z-index: 2;
+    overflow-y: hidden;
 }
 
+
+
 .viewer-char-container {
+    outline: 0px solid red;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -653,36 +683,37 @@ body {
 }
 
 .viewer-row {
+    outline: 0px solid red;
     display: flex;
     justify-content: space-between;
 }
 
 .viewer-skin-details {
     width: 100%;
-    height: 25vh;
     outline: 0px solid cyan;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 17px;
+    overflow-y: scroll;
 }
 
 .viewer-icon img {
-    height: 15vh;
+    /* height: 15vh; */
+    height: 125px;
     border-radius: 7px;
 }
 
 .viewer-price-information {
-    position: relative;
+    display: flex;
+    gap: 5px;
 }
 
 .viewer-puregem {
     height: 19px;
-    position: absolute;
-    left: 0;
-    margin-left: -23px;
 }
 
 .chibi-container {
+    display: flex;
     height: 40vh;
     width: 100%;
     outline: 2px solid var(--highlight-dark);
@@ -741,6 +772,7 @@ body {
     display: none;
     align-items: center;
 }
+
 .viewer-appearances-left,
 .viewer-dynamic-left {
     height: fit-content;
@@ -755,10 +787,66 @@ body {
     width: 50%;
 }
 
+.viewer-appearances-information {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .viewer-dynamic-information {
     color: rgb(145, 180, 255);
 }
 
+
+.viewer-right-column {
+    padding-right: 10px;
+}
+
+.viewer-dialog {
+    font-style: italic;
+}
+
+.viewer-main-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chibi-menu {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 5%;
+}
+
+.viewer-row-button {
+    outline: 0px solid cyan;
+    width: 100%;
+    gap: 10px;
+    display: flex;
+}
+
+.viewer-row-button > button {
+    width: 50%;
+}
+
+.viewer-checkbox {
+    display: none; /* Hide the checkbox itself */
+}
+
+.viewer-label {
+    cursor: pointer; /* Make the label clickable */
+    padding: 5px 10px;
+    background: var(--highlight-dark);
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.viewer-label:hover {
+    background-color: #e0e0e0; /* Add a hover effect for better UX */
+}
 
 @media screen and (max-width: 1000px) {
 
@@ -780,6 +868,7 @@ body {
         .planner-skins {
             width: 100%;
         }
+
         .viewer-information {
             width: calc(100% - 40px);
             height: calc(100% - 40px);
@@ -791,5 +880,5 @@ body {
 
     }
 
-    
+
 }

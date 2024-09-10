@@ -19,12 +19,17 @@ async function headerGallery() {
     const search = document.getElementById('search2')
     const brandResponse = await fetch('https://raw.githubusercontent.com/HermitzPlanner/hermitzplanner.github.io/main/json/brand.json'); // grab json
     const brandData = await brandResponse.json(); // wait for json and make it data
+    brandData.sort();
+    brandData.forEach(brand => {
+        search.innerHTML += `<option value="${brand}">${brand}</option>`
+    });
+    
 
-    brandData.forEach(function (datajson) {
-        search.innerHTML += `
-        <option value="${datajson.brand}">${datajson.brand}</option>
-        `
-    })
+    // brandData.forEach(function (datajson) {
+    //     search.innerHTML += `
+    //     <option value="${datajson.brand}">${datajson.brand}</option>
+    //     `
+    // })
 
     if (headerGalleryButton.checked) {
         plannerBody.style.display = "none"

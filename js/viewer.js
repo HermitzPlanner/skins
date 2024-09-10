@@ -9,6 +9,13 @@ let chibiWidth
 let chibiHeight
 let globalPlannerId
 let globalSkinId
+let skinsData
+
+let originalIconUrl = ""
+let originalArtUrl = ""
+let originalSkinName = ""
+let originalPlannerId = ""
+let originalSkinId = ""
 
 async function viewer(plannerId) {
   const viewerFullImage = document.querySelector(".full-image img")
@@ -25,6 +32,7 @@ async function viewer(plannerId) {
 
   const plannerSkinsCall = await fetch('https://raw.githubusercontent.com/HermitzPlanner/hermitzplanner.github.io/main/json/table_data.json')
   const plannerSkinsData = await plannerSkinsCall.json()
+  skinsData = plannerSkinsData
 
   plannerSkinsData.forEach(plannerSkin => {
     if (plannerId !== plannerSkin.plannerId) { return }
@@ -34,7 +42,7 @@ async function viewer(plannerId) {
 
       let appearancesArray = plannerSkin.appearances.split(', ');
       appearancesArray.forEach(appear => {
-        document.querySelector(".viewer-appearances-information").innerHTML += `- ${appear} <br>`
+        document.querySelector(".viewer-appearances-information").innerHTML += `<div> - ${appear} </div>`
       });
 
     }
@@ -51,36 +59,42 @@ async function viewer(plannerId) {
     const viewerBrandInformationClone = document.querySelector(".viewer-brand-information");
     const viewerArtistInformationClone = document.querySelector(".viewer-artist-information");
     const viewerPriceInformationClone = document.querySelector(".viewer-price-information");
-    // const viewerReleaseInformationClone = document.querySelector(".viewer-release-information");
+    const viewerReleaseCNClone = document.querySelector(".viewer-release-cn");
+    const viewerReleaseGlobalClone = document.querySelector(".viewer-release-global");
     const viewerObtainInformationClone = document.querySelector(".viewer-obtain-information");
+    const viewerDialogClone = document.querySelector(".viewer-dialog");
 
     plannerSkin.skinNameEN = plannerSkin.skinNameEN || plannerSkin.skinNameCN;
 
     // Setting textContent to empty string
     viewerCharNameClone.textContent = plannerSkin.modelNameEN;
-    viewerSkinNameClone.textContent = plannerSkin.skinNameEN;
-    viewerIconClone.src = "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/icon/" + plannerSkin.plannerId + ".png"
-    viewerFullImage.src = "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/art/" + plannerSkin.plannerId + ".png"
+    viewerSkinNameClone.textContent = originalSkinName = plannerSkin.skinNameEN;
+    viewerIconClone.src = originalIconUrl = "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/icon/" + plannerSkin.plannerId + ".png"
+    viewerFullImage.src = originalArtUrl = "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/art/" + plannerSkin.plannerId + ".png"
     viewerBrandInformationClone.textContent = plannerSkin.brand;
     viewerArtistInformationClone.textContent = plannerSkin.drawerList;
 
     if (plannerSkin.skinPrice >= 15 && plannerSkin.skinPrice <= 24) {
-      viewerPriceInformationClone.innerHTML = plannerSkin.skinPrice + '<img class="viewer-puregem" src="' + puregemLink + '">';
+      viewerPriceInformationClone.innerHTML = '<img class="viewer-puregem" src="' + puregemLink + '">' + plannerSkin.skinPrice;
     } else {
       viewerPriceInformationClone.textContent = "Free"
     }
 
-    // viewerReleaseInformationClone.textContent = plannerSkin.getTimeCN
+    viewerReleaseCNClone.textContent = plannerSkin.getTimeCN
+    viewerReleaseGlobalClone.textContent = plannerSkin.getTimeEN
     viewerObtainInformationClone.textContent = plannerSkin.obtainApproachEN
+    viewerDialogClone.textContent = `"` + plannerSkin.dialog + `"`
 
     perspective = "front"
 
+    originalPlannerId = plannerSkin.plannerId
+    originalSkinId = plannerSkin.skinId
     chibiUpdate(plannerSkin.plannerId, plannerSkin.skinId.toLowerCase())
 
     // Image handling
     viewerFullImage.style.transform = 'scale(1)';
     viewerFullImage.style.top = '0'
-    viewerFullImage.style.left = '0'
+    viewerFullImage.style.left = '130px'
     viewerFullImage.style.transition = 'transform 0.3s ease-out'; // add transition
 
     // Zoom in-out
@@ -125,7 +139,13 @@ async function viewer(plannerId) {
   });
 }
 
-function chibiUpdate(plannerId, skinId) {
+function chibiUpdate(plannerId, skinId, original) {
+  let repo = "chibi-assets"
+  if (original != null) {
+    repo = "operator-chibi-assets"
+  } else {
+    repo = "chibi-assets"
+  }
   //console.log ("entered function")
   //console.log ("planner id", plannerId)
   //console.log("skin id", skinId)
@@ -153,9 +173,9 @@ function chibiUpdate(plannerId, skinId) {
   document.getElementById('chibi-container').appendChild(canvas);
 
   loadCircle();
-
+  // ${original}
   // Loading and handling the spine assets
-  PIXI.Assets.load(`https://raw.githubusercontent.com/HermitzPlanner/chibi-assets/main/${plannerId}/${perspective}/${skinId}.skel`).then((skinAsset) => {
+  PIXI.Assets.load(`https://raw.githubusercontent.com/HermitzPlanner/${repo}/main/${plannerId}/${perspective}/${skinId}.skel`).then((skinAsset) => {
     // Reset
     app.stage.removeChildren() // Removes circle
     chibiScale = 0.5
@@ -326,5 +346,130 @@ function quitViewer() {
   viewer.style.display = "none"
   perspectiveSelect.value = 'front'
   location.hash = ""
+
+  const checkboxExtraInfo = document.querySelector('.viewer-extra-info');
+  if (checkboxExtraInfo && checkboxExtraInfo.checked) {
+    // If the checkboxExtraInfo is checked (true), set it as unchecked (false)
+    checkboxExtraInfo.checked = false;
+    chibiExtraInfo()
+  }
+
+  const checkbox = document.querySelector('.viewer-checkbox-compare');
+  if (checkbox && checkbox.checked) {
+    checkbox.checked = false;
+    compareOriginal()
+  }
 }
 
+function chibiExtraInfo() {
+  const cbox = document.querySelector(".viewer-extra-info")
+  const divs = ["chibi-container", "chibi-menu"];
+  const extraInfoBtn = document.querySelector(".extra-info-btn");
+  const viewerSkinDetails = document.querySelector(".viewer-skin-details");
+
+  if (cbox.checked) {
+    // If the checkbox is checked, show viewerSkinDetails and hide divs
+    viewerSkinDetails.style.display = "flex";
+    extraInfoBtn.textContent = "Hide info";
+    divs.forEach((div) => {
+      const element = document.querySelector(`.${div}`);
+      if (element) {
+        element.style.display = "none";
+      }
+    });
+  } else {
+    // If the checkbox is unchecked, hide viewerSkinDetails and show divs
+    viewerSkinDetails.style.display = "none";
+    extraInfoBtn.textContent = "Show info";
+    divs.forEach((div) => {
+      const element = document.querySelector(`.${div}`);
+      if (element) {
+        element.style.display = "flex";
+      }
+    });
+  }
+}
+
+function compareOriginal() {
+  console.log("a")
+  const viewerCheckbox = document.querySelector(".viewer-checkbox-compare")
+  const compareDiv = document.querySelector(".compare-div")
+
+  const icon = document.querySelector(".viewer-icon img")
+  const art = document.getElementById("full-image")
+  const skinName = document.querySelector(".viewer-skin-name")
+
+  // where should i append the e2 art button
+  const viewerRowCheckbox = document.querySelector(".viewer-row-checkbox")
+
+  if (viewerCheckbox.checked) {
+
+    console.log("truers")
+    skinsData.forEach(data => {
+      if (data.skinNameEN == skinName.textContent) {
+        console.log("match")
+        icon.src = `https://raw.githubusercontent.com/HermitzPlanner/operator-icon/main/e0/${data.modelNameCN}.png`
+        //art.src = `https://raw.githubusercontent.com/HermitzPlanner/operator-art/main/e0/${data.modelNameCN}.png`
+
+
+
+        // Create an Image object to test if the URL is valid
+        const testImage = new Image();
+        const baseImageUrl = "https://raw.githubusercontent.com/HermitzPlanner/operator-art/main/";
+        const operatorName = data.modelNameCN;
+
+        // Define the full image and fallback image URLs
+        const fullImageUrl = `${baseImageUrl}e2/${operatorName}.png`;
+        const fallbackImageUrl = `${baseImageUrl}e0/${operatorName}.png`;
+
+        // Set up the onload and onerror event handlers
+        testImage.onload = function () {
+          // If the full image is valid, set it as the viewer's src
+          art.src = fullImageUrl;
+        };
+
+        testImage.onerror = function () {
+          // If the full image is not valid, use the fallback image
+          art.src = fallbackImageUrl;
+        };
+
+        // Attempt to load the full image
+        testImage.src = fullImageUrl;
+
+
+
+        skinName.textContent = "Default outfit"
+        compareDiv.textContent = "Compare with skin"
+
+        let plannerId = data.plannerId
+        if (!isNaN(plannerId.slice(-1))) {
+          // Replace the last character with '0'
+          plannerId = plannerId.slice(0, -1) + "0";
+        }
+
+        let skinId = data.skinId.toLowerCase()
+        // Step-by-step breakdown:
+        let parts = skinId.split("_"); // Split the string by '_'
+        parts.splice(-2); // Remove the last two elements
+        let result = parts.join("_"); // Join the remaining parts back together with '_'
+
+
+
+        chibiUpdate(plannerId, result, "operator-")
+      }
+    });
+
+  } else {
+    console.log("fals")
+    console.log("originalIconUrl", originalIconUrl)
+    icon.src = originalIconUrl
+    art.src = originalArtUrl
+    skinName.textContent = originalSkinName
+    compareDiv.textContent = "Compare with original"
+
+    console.log("globalPlannerId", globalPlannerId)
+    console.log("globalSkinId", globalSkinId)
+
+    chibiUpdate(originalPlannerId, originalSkinId, null)
+  }
+}
