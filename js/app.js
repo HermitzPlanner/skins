@@ -1,8 +1,4 @@
 async function main() {
-    // TODO fix poo
-    // TODO something for when there's negative primes in the current
-    // TODO pinterest addon
-    // TODO display future reruns for a skin
     // TODO hide rerun header when no rerun skins
     const plannerEventsBodyTemplate = document.getElementById("planner-events-body")
     const plannerSkinsBodyTemplate = document.getElementById("planner-skins-body")
@@ -30,6 +26,7 @@ async function main() {
         if (plannerEvent.eventcode == "warmupeventforch13") return;
         if (plannerEvent.eventcode == "0011yunseries") { plannerEvent.event = "0011 / Yun Series" }
         if (plannerEvent.eventN == "") return
+        if (plannerEvent.event == "") return
 
 
         plannerEvent.fashion = parseInt(plannerEvent.fashion)
@@ -458,6 +455,8 @@ async function main() {
         calcTextCounter++
     });
 
+    sortSkins()
+
 } main()
 
 
@@ -571,4 +570,34 @@ function themeChange() {
     document.querySelectorAll(".svg-light").forEach(svg => {
         svg.style.filter = "invert()"
     });
+}
+
+
+function sortSkins() {
+    return
+    const newSkinsDiv = document.querySelector(".new-skins");
+    if (!newSkinsDiv) {
+        console.error("Could not find .new-skins element. Maybe check your HTML next time?");
+        return;
+    }
+
+    // Get all the labels inside the newSkinsDiv
+    const labels = Array.from(newSkinsDiv.querySelectorAll(".planner-skins-cbox-label"));
+
+    // Sort labels first by price in descending order, then alphabetically by model
+    labels.sort((a, b) => {
+        const priceA = parseFloat(a.querySelector(".planner-skins-price").textContent.trim());
+        const priceB = parseFloat(b.querySelector(".planner-skins-price").textContent.trim());
+        
+        if (priceA !== priceB) {
+            return priceB - priceA; // Biggest to smallest price
+        } else {
+            const modelA = a.querySelector(".planner-skins-model").textContent.trim().toLowerCase();
+            const modelB = b.querySelector(".planner-skins-model").textContent.trim().toLowerCase();
+            return modelA.localeCompare(modelB); // Alphabetically if prices are equal
+        }
+    });
+
+    // Append sorted labels back to the parent div
+    labels.forEach(label => newSkinsDiv.appendChild(label));
 }
