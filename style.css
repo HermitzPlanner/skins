@@ -208,7 +208,7 @@ body {
     font-family: 'Roboto';
     font-weight: 400;
     /* width: 999px; */
-    width: calc(100vw - 20px);
+    width: calc(100vw - 0px);
     outline: 0px dashed fuchsia;
     margin: 0 auto;
     color: var(--text-light);
@@ -841,15 +841,40 @@ body {
     background: var(--highlight-dark);
     border-radius: 10px;
     display: inline-block;
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
 
 .viewer-label:hover {
-    background-color: #e0e0e0; /* Add a hover effect for better UX */
+    /* background-color: #e0e0e0; */
+    filter: invert();
 }
 
-@media screen and (max-width: 1000px) {
+.viewer-row-checkbox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+.chibi-art {
+    display: none;
+}
 
+.full-image-hide-art {
+    display: none;
+}
+@media screen and (max-width: 1000px) {
+    .chibi-art {
+        display: block;
+    }
+
+    .full-image-hide-art {
+        display: none;
+        position: relative;
+        top: 95%;
+        width: 50%;
+        margin: 0 auto;
+        z-index: 99;
+    }
     /* Your styles for screens less than 1000px go here */
     body {
         .planner-body {
@@ -857,11 +882,11 @@ body {
         }
 
         .planner-events {
-            height: 40%;
+            height: 45%;
         }
 
         .planner-skins {
-            height: 60%;
+            height: 55%;
         }
 
         .planner-events,

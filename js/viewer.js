@@ -278,6 +278,8 @@ function chibiUpdate(plannerId, skinId, original) {
       circle.rotation += 0.1;
     });
   }
+
+  compareSelect(plannerId)
 }
 
 animationSelect.addEventListener('change', function () {
@@ -364,7 +366,7 @@ function quitViewer() {
 function chibiExtraInfo() {
   const cbox = document.querySelector(".viewer-extra-info")
   const divs = ["chibi-container", "chibi-menu"];
-  const extraInfoBtn = document.querySelector(".extra-info-btn");
+  const extraInfoBtn = document.getElementById("extra-info-btn");
   const viewerSkinDetails = document.querySelector(".viewer-skin-details");
 
   if (cbox.checked) {
@@ -390,8 +392,39 @@ function chibiExtraInfo() {
   }
 }
 
+function compareSelect(plannerId) {
+  return
+  console.log("checking plannerID")
+  console.log(plannerId)
+  const skinObject = skinsData.find(obj => obj.plannerId === plannerId)
+  const rarity = skinObject.rarity.replace("TIER_", "")
+  const defaultOutfit = plannerId.slice(0, -1) + '0'
+  console.log(skinObject)
+  console.log(plannerId)
+  console.log(rarity)
+  if (rarity <= 3) {
+    console.log("low rarity")
+  }
+  
+  const compareItem = document.getElementById("compare");
+  const currentSkin = `<option value="build" selected>- ${skinObject.skinNameEN} (Current Skin)</option>`;
+  const defaultSkin = `<option value="build">- Default Skin </option>`;
+
+  // Now, only add defaultSkinTwo if the rarity is greater than 3
+  let htmlContent = currentSkin + defaultSkin;
+
+  // plannerId always ends in a number greater than 0
+  
+
+  if (rarity > 3) {
+    const defaultSkinTwo = `<option value="build">- Default Skin (Elite 2)</option>`;
+    htmlContent += defaultSkinTwo;
+  }
+
+  compareItem.innerHTML += htmlContent;
+}
+
 function compareOriginal() {
-  console.log("a")
   const viewerCheckbox = document.querySelector(".viewer-checkbox-compare")
   const compareDiv = document.querySelector(".compare-div")
 
@@ -404,10 +437,10 @@ function compareOriginal() {
 
   if (viewerCheckbox.checked) {
 
-    console.log("truers")
+    //console.log("truers")
     skinsData.forEach(data => {
       if (data.skinNameEN == skinName.textContent) {
-        console.log("match")
+        //console.log("match")
         icon.src = `https://raw.githubusercontent.com/HermitzPlanner/operator-icon/main/e0/${data.modelNameCN}.png`
         //art.src = `https://raw.githubusercontent.com/HermitzPlanner/operator-art/main/e0/${data.modelNameCN}.png`
 
@@ -460,16 +493,32 @@ function compareOriginal() {
     });
 
   } else {
-    console.log("fals")
-    console.log("originalIconUrl", originalIconUrl)
+    //console.log("fals")
+    //console.log("originalIconUrl", originalIconUrl)
     icon.src = originalIconUrl
     art.src = originalArtUrl
     skinName.textContent = originalSkinName
     compareDiv.textContent = "Compare with original"
 
-    console.log("globalPlannerId", globalPlannerId)
-    console.log("globalSkinId", globalSkinId)
+    //console.log("globalPlannerId", globalPlannerId)
+    //console.log("globalSkinId", globalSkinId)
 
     chibiUpdate(originalPlannerId, originalSkinId, null)
   }
+}
+
+
+function chibiArt(amongus) {
+  document.getElementById("full-image").style.top = "0px"
+    document.getElementById("full-image").style.left = "0px"
+
+    document.getElementById("full-image").style.display = "flex"
+    document.getElementById("viewer-information").style.display = "none"
+    document.getElementById("full-image-hide-art").style.display = "block"
+}
+
+function fullImageBack(amongus) {
+  document.getElementById("full-image").style.display = "none"
+  document.getElementById("viewer-information").style.display = "flex"
+  document.getElementById("full-image-hide-art").style.display = "none"
 }

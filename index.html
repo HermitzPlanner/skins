@@ -205,7 +205,7 @@ https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/load.sv
                 <img width="60px" height="60px" style="filter: invert();"
                     src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/x.svg" alt="">
             </button>
-            <div class="viewer-information">
+            <div class="viewer-information" id="viewer-information">
                 <div class="viewer-char-container">
                     <div class="viewer-char-information">
                         <div class="viewer-char-name">char-name</div>
@@ -268,19 +268,27 @@ https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/load.sv
                 <!-- ### BUTTONS ### -->
 
                 <div class="viewer-row-checkbox">
-                    <label class="viewer-label skin-compare">
-                        <input type="checkbox" class="viewer-checkbox viewer-checkbox-compare" onclick="compareOriginal()">
-                        <div class="compare-div">Compare with original</div> 
+                    <select class="viewer-options" style="width: 100%; display: none;" name="" id="compare">
+                        <option value="" disabled selected>Compare with skin</option>
+                        <!-- <option value="front">Front</option>
+                        <option id="backpers" value="back">Back</option>
+                        <option value="build">Base</option> -->
+                    </select>
+
+                    <label class="viewer-label extra-info chibi-art">
+                        <input type="checkbox" class="viewer-checkbox" onclick="chibiArt(this)" id="chibi-art">
+                        <div class="extra-info-btn" style="text-align: center;">Show Art</div>
                     </label>
 
-                    <label class="viewer-label e1" style="display: none;">
-                        <input type="checkbox" class="viewer-checkbox viewer-e1" onclick="e1()">
-                        <div class="compare-div">E0 Art</div> 
+
+                    <label class="viewer-label skin-compare">
+                        <input type="checkbox" class="viewer-checkbox viewer-checkbox-compare" onclick="compareOriginal()" id="viewer-checkbox-compare">
+                        <div class="compare-div" style="text-align: center;">Compare with original</div> 
                     </label>
 
                     <label class="viewer-label extra-info">
-                        <input type="checkbox" class="viewer-checkbox viewer-extra-info" onclick="chibiExtraInfo()">
-                        <div class="extra-info-btn">Show info</div>
+                        <input type="checkbox" class="viewer-checkbox viewer-extra-info" onclick="chibiExtraInfo()" id="viewer-extra-info">
+                        <div class="extra-info-btn" id="extra-info-btn" style="text-align: center;">Show info</div>
                     </label>
                 </div>
         
@@ -343,6 +351,10 @@ https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/load.sv
             </div>
             <div class="full-image">
                 <img id="full-image" src="" alt="">
+                <label class="viewer-label extra-info chibi-art full-image-hide-art" id="full-image-hide-art">
+                    <input type="checkbox" class="viewer-checkbox viewer-extra-info" onclick="fullImageBack(this)" id="full-image-back">
+                    <div class="extra-info-btn" style="text-align: center;">Back</div>
+                </label>
             </div>
         </div>
     </div>
