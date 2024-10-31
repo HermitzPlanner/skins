@@ -472,7 +472,7 @@ function compareOriginal() {
 
 
         skinName.textContent = "Default outfit"
-        compareDiv.textContent = "Compare with skin"
+        compareDiv.textContent = "Back to skin"
 
         let plannerId = data.plannerId
         if (!isNaN(plannerId.slice(-1))) {
