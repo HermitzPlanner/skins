@@ -485,6 +485,7 @@ section {
     outline: 1px solid var(--equip-border);
     padding: 10px 5px;
     border-radius: 6px;
+    color: var(--equip-txt);
 }
 
 #search2 {

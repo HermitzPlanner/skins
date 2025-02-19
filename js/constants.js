@@ -62,5 +62,8 @@ const obtainApproachesMap = {
 const cnSkinsInEnglish = {
     '繁霜满阶': '' // Matoi
 }
+
+const NoEffectSkins = {
     
+}
 

@@ -41,8 +41,11 @@ function parseSkinsData(cnData, enData) {
         }
 
         if (skin.displaySkin.skinName) {
+            let price = obtainApproach == '采购中心' ? 18 : 0
+            if (skin.dynIllustId) price = 21
+            if (skin.dynEntranceId) price = 24
             plannerIdMap[skin.displaySkin.skinName] = getPlannerId(modelName);
-            costMap[skin.displaySkin.skinName] = obtainApproach == '采购中心' ? 18 : 0
+            costMap[skin.displaySkin.skinName] = price
         }
     });
 
@@ -209,7 +212,7 @@ function main(skinsData, eventsData) {
 
     document.getElementById('search').addEventListener('input', function () {
         searchTerm = this.value.toLowerCase().trim();
-        debug({ searchTerm })
+        //debug({ searchTerm })
         revealItem()
     });
 
