@@ -1,51 +1,46 @@
-
-
 function summary() {
-    //console.log("amogus")
-    const plannerSkins = document.querySelector(".planner-skins")
-    const plannerEvents = document.querySelector(".planner-events")
-    const summary = document.querySelector(".summary")
-    summaryContainerElements = document.querySelectorAll(".summary-container")
-    if (window.getComputedStyle(summary).display === "none") {
-        plannerSkins.style.display = "none"
-        plannerEvents.style.display = "none"
-        summary.style.display = "block"
+    const container = getDiv('summary');
+    resetDiv('summary');
 
-        summaryContainerElements.forEach(summaryContainer => {
-            if (summaryContainer.querySelector(".summary-skins-container-scroll").children.length == 0) {
-                summaryContainer.style.display = "none"
+    const button = document.createElement('button')
+    button.classList.add('toggle-button')
+    button.style.width = "fit-content"
+    button.style.margin = '0 auto'
+    button.style.marginTop = '10px'
+    button.style.fontSize = '110%'
+    button.onclick = () => showSection('main');
 
-                
-            } else {
-                summaryContainer.style.display = "flex"
+    button.textContent = 'Back to planner'
 
-                summaryContainer.querySelector(".summary-events-calcs").style.display = "none"
-                summaryContainer.querySelector(".summary-events-info").style.width = "auto"
-                summaryContainer.querySelector(".summary-events-body").style.width = "fit-content"
-                summaryContainer.querySelector(".summary-events-body").style.height = "fit-content"
-            }
+    container.append(button)
 
-            function onlyNameDisplay() {
-                if (!summaryContainer.querySelector(".summary-skins-container-scroll").children.length) {
-                    summaryContainer.style.overflowX = "hidden"
-                    summaryContainer.querySelector(".summary-events-calcs").style.display = "none"
-                    summaryContainer.querySelector(".summary-events-image").style.display = "none"
-                    summaryContainer.querySelector(".summary-events-info").style.width = "auto"
-                    summaryContainer.querySelector(".summary-events-body").style.width = "fit-content"
-                    summaryContainer.querySelector(".summary-events-body").style.height = "auto"
-                } else {
-                    summaryContainer.style.overflowX = "scroll"
-                    summaryContainer.querySelector(".summary-events-calcs").style.display = "flex"
-                    summaryContainer.querySelector(".summary-events-image").style.display = "flex"
-                    summaryContainer.querySelector(".summary-events-info").style.width = "var(--planner-events-info-width)"
-                    summaryContainer.querySelector(".summary-events-body").style.width = "var(--planner-events-width)"
-                    summaryContainer.querySelector(".summary-events-body").style.height = "143.172px"
-                }
-            }
-        });
-    } else {
-        plannerSkins.style.display = "block"
-        plannerEvents.style.display = "block"
-        summary.style.display = "none"
-    }
+    const selectedSkins = [];
+    document.querySelectorAll('input[name="skin-cbox"]').forEach(skinCbox => {
+        if (skinCbox.checked) {
+            selectedSkins.push({
+                plannerId: skinCbox.getAttribute('data-plannerId'),
+                eventId: skinCbox.parentElement.getAttribute('data-event'),
+                modelName: skinCbox.parentElement.getAttribute('data-model'),
+                eventName: skinCbox.parentElement.getAttribute('data-eventName'),
+            });
+        }
+    });
+
+    const groupedEvents = selectedSkins.reduce((acc, { plannerId, eventId, modelName, eventName }) => {
+        if (!acc[eventId]) {
+            acc[eventId] = {
+                planners: [], // Store objects with plannerId and modelName
+                eventName: eventName
+            };
+        }
+        acc[eventId].planners.push({ plannerId, modelName });
+        return acc;
+    }, {});
+
+    Object.entries(groupedEvents).forEach(([eventId, { planners, eventName }]) => {
+        container.append(summaryRow(eventId, planners, eventName));
+    });
+
+    debug(groupedEvents);
 }
+

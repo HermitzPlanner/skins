@@ -1,0 +1,59 @@
+.calcs-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 10px;
+    text-align: start;
+    border-left: 1px solid var(--equip-border);
+    padding-left: 10px;
+}
+
+.calcs-row {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: var(--body-bg-2);
+    padding: 5px 10px;
+    width: 140px;
+}
+
+.initial-row {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+#initial-primes-text {
+    position: absolute;
+    top: -7px;
+    right: 14px;
+    font-size: 70%;
+    color: var(--body-txt);
+}
+
+.toggle-button {
+    border: 1px solid var(--equip-border);
+    background: var(--equip-bg);
+    color: var(--equip-text);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.toggle-button:hover {
+    cursor: pointer;
+    scale: 1.05;
+    transition: 300ms;
+}
+
+.initial-row > :first-child {
+    margin-right: auto; /* Pushes everything else to the right */
+}
+
+.income, .expense, .balance {
+    font-weight: bold;
+    /* color: var(--accent); */
+}

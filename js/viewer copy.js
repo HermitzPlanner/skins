@@ -1,5 +1,3 @@
-let lastSection = 'main'
-
 function viewer(plannerId, skinName, skinsData) {
     resetDiv('viewer');
     clearCanvas()
@@ -65,17 +63,6 @@ function infoRender(container, plannerId, skinName, skinsData) {
     // Header Div
     // ====================================================
 
-    const quitViewerButton = document.createElement('button')
-    quitViewerButton.textContent = 'X'
-    quitViewerButton.classList.add('quit-viewer-button')
-    quitViewerButton.onclick = () => {
-       // document.getElementById('viewer').style.display = 'none'
-        //getDiv(lastSection).style.display = 'flex'
-        showSection(lastSection)
-    }
-
-    infoDiv.append(quitViewerButton)
-
     const header = document.createElement('div')
     header.className = 'viewer-header'
 
@@ -119,129 +106,19 @@ function infoRender(container, plannerId, skinName, skinsData) {
 
     getDiv('viewer').style.background = gradient;
 
+
     // ====================================================
     // Canvas for the chibi
     // ====================================================
-    createCanvasDiv(infoDiv, plannerId, skinName, skinsData)
 
-    // ====================================================
-    // Information Rows
-    // ====================================================
-
-    const infoRows = document.createElement('div')
-    infoRows.className = 'info-rows'
-
-    const priceText = price == 'Free' ? 'Free Skin' : 'Price: ' + price
-
-    const skinPriceDiv = create(infoRows, 'div', priceText, 'viewer-row')
-    animateText(skinPriceDiv, 0.05)
-    if (price > 0) {
-        const originiteImage = document.createElement('img')
-        originiteImage.src = originiteLink
-        skinPriceDiv.append(originiteImage)
-        animate(originiteImage, 'viewer-show-image')
-    }
-
-
-    const artistDiv = create(infoRows, 'div', 'Artist: ' + artist, 'viewer-row')
-    animateText(artistDiv)
-    const obtainDiv = create(infoRows, 'div', obtainApproach, 'viewer-row')
-    animateText(obtainDiv)
-    const brandDiv = create(infoRows, 'div', brand, 'viewer-row')
-    animateText(brandDiv)
-    const cnReleaseDiv = create(infoRows, 'div', 'CN Release: ' + cnRelease, 'viewer-row')
-    animateText(cnReleaseDiv)
-    const enReleaseDiv = create(infoRows, 'div', enRelease == 'Not released' ? enRelease + ' in Global' : 'EN Release: ' + enRelease, 'viewer-row')
-    animateText(enReleaseDiv)
-
-    // ====================================================
-    // Upcoming Events Div
-    // ====================================================
-    // create(infoRows, 'div', 'Upcoming events: ', 'viewer-row-double')
-    upcomingEvents.forEach(upcomingEvent => {
-        const div = create(infoRows, 'div', '', 'viewer-row-double')
-        const cartImage = document.createElement('img')
-        cartImage.style.filter = 'invert()'
-        cartImage.style.marginLeft = '0'
-        cartImage.style.marginRight = '5px'
-        cartImage.src = cartLink
-        div.append(cartImage)
-        animate(cartImage, 'viewer-show-image')
-        div.append(upcomingEvent)
-
-    });
-
-    infoDiv.append(infoRows)
-
-    container.append(infoDiv)
-
-    // const hsl = hexToHSL(colorList[0])
-    // let match = hsl.match(/^hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)$/i);
-    // let [, hue, ,] = match; // We only need the hue, we'll adjust saturation and lightness
-    // let newHsl = `hsl(${hue}, 25%, 7%)`; // Set saturation to 11% and lightness to 7%
-
-
-    // const viewerElements = '.viewer-row, .viewer-model-name, .viewer-skin-name, .viewer-row-double, .chibi-row';
-    // document.querySelectorAll(viewerElements).forEach(element => {
-
-    //     element.style.backgroundColor = newHsl;
-    // });
-
-    function extraColors() {
-        const viewerElements = '.viewer-row, .viewer-model-name, .viewer-skin-name, .viewer-row-double, .chibi-row';
-
-
-        const usedColor = colorList[0]; // First color for viewer elements
-
-        document.getElementById('viewer-info').style.background = usedColor
-
-        // Apply background color to viewer elements
-        document.querySelectorAll(viewerElements).forEach(element => {
-            // element.style.backgroundColor = usedColor;
-        });
-
-        // Find a different color for chibi-row
-        let chibiColorIndex = 1; // Start from the next color
-        while (chibiColorIndex < colorList.length && (colorList[chibiColorIndex] === usedColor || !colorList[chibiColorIndex])) {
-            chibiColorIndex++; // Skip if same or empty
-        }
-
-        // Use the found color (or fallback to the last valid color)
-        const chibiColor = colorList[chibiColorIndex] || usedColor;
-
-        // Apply background color to chibi-row elements
-        document.querySelectorAll(viewerElements).forEach(element => {
-            element.style.backgroundColor = chibiColor;
-        });
-
-        //app.renderer.backgroundColor = `0x${colorList[0].replace('#', '')}`; // Changes to red
-    }
-}
-
-function operatorInfoRender(container, plannerId, skinsData) {
-    const infoDiv = document.createElement('div')
-    infoDiv.id = 'viewer-info'
-    //const skinName = '暗月的影子'
-    createCanvasDiv(infoDiv, plannerId, skinName, skinsData)
-    container.append(infoDiv)
-}
-
-function createCanvasDiv(infoDiv, plannerId, skinName, skinsData) {
     const canvas = document.createElement('div')
     canvas.className = 'viewer-canvas'
 
     const chibiButtons = document.createElement('div')
-    chibiButtons.className = 'chibi-buttons hide'
+    chibiButtons.className = 'chibi-buttons'
     const changeSkinButton = create(chibiButtons, 'button', "Change Skin", 'chibi-row')
     const animationListButton = create(chibiButtons, 'button', "Animation List", 'chibi-row')
     const perspectiveButton = create(chibiButtons, 'button', "Perspective", 'chibi-row')
-
-    const saveSvg = "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/save.svg"
-    const downloadChibiButton = create(chibiButtons, 'button', "", 'chibi-row')
-
-    const saveDiv = create(downloadChibiButton, 'img', saveSvg)
-    saveDiv.style.width = '15px'
-    saveDiv.style.filter = 'invert()'
 
     renderCanvas(plannerId, skinName, skinsData)
     infoDiv.append(canvas)
@@ -259,7 +136,7 @@ function createCanvasDiv(infoDiv, plannerId, skinName, skinsData) {
         const matches = getMatchingPlannerIds(plannerId, skinsData)
 
         matches.forEach((match, index) => {
-            if (match.includes('0')) return
+            //if (match.includes('0')) return
             const matchSkinName = getKeyByValue(skinsData.plannerIdMap, match)
             const matchDiv = document.createElement('button');
             matchDiv.className = 'change-skin';
@@ -300,7 +177,7 @@ function createCanvasDiv(infoDiv, plannerId, skinName, skinsData) {
             animationButton.onclick = () => {
                 // Check if the animation contains 'Begin' or 'End'
                 const loop = !animation.name.includes('Begin') && !animation.name.includes('End');
-                console.log(skinSpine)
+
                 // Set the animation with the appropriate loop value
                 skinSpine.state.setAnimation(0, animation.name, loop);
 
@@ -355,6 +232,13 @@ function createCanvasDiv(infoDiv, plannerId, skinName, skinsData) {
                     });
                 }
             };
+
+
+
+
+
+
+
         });
     }
 
@@ -379,18 +263,92 @@ function createCanvasDiv(infoDiv, plannerId, skinName, skinsData) {
 
     }
 
-    downloadChibiButton.onclick = () => {
-        let name = plannerId
-        app.renderer.render(app.stage);
+    // ====================================================
+    // Information Rows
+    // ====================================================
 
-        const image = new Image();
-        image.src = app.view.toDataURL();
+    const infoRows = document.createElement('div')
+    infoRows.className = 'info-rows'
 
-        const link = document.createElement('a');
-        link.href = image.src;
-        link.download = `chibi-${name}`;
-        link.click();
+    const priceText = price == 'Free' ? 'Free Skin' : 'Price: ' + price
+
+    const skinPriceDiv = create(infoRows, 'div', priceText, 'viewer-row')
+    animateText(skinPriceDiv, 0.05)
+    if (price > 0) {
+        const originiteImage = document.createElement('img')
+        originiteImage.src = originiteLink
+        skinPriceDiv.append(originiteImage)
+        animate(originiteImage, 'viewer-show-image')
     }
+
+
+    const artistDiv = create(infoRows, 'div', 'Artist: ' + artist, 'viewer-row')
+    animateText(artistDiv)
+    const obtainDiv = create(infoRows, 'div', obtainApproach, 'viewer-row')
+    animateText(obtainDiv)
+    const brandDiv = create(infoRows, 'div', brand, 'viewer-row')
+    animateText(brandDiv)
+    const cnReleaseDiv = create(infoRows, 'div', 'CN Release: ' + cnRelease, 'viewer-row')
+    animateText(cnReleaseDiv)
+    const enReleaseDiv = create(infoRows, 'div', enRelease == 'Not released' ? enRelease + ' in Global' : 'EN Release: ' + enRelease, 'viewer-row')
+    animateText(enReleaseDiv)
+
+    // ====================================================
+    // Upcoming Events Div
+    // ====================================================
+    // create(infoRows, 'div', 'Upcoming events: ', 'viewer-row-double')
+    upcomingEvents.forEach(upcomingEvent => {
+        const div = create(infoRows, 'div', '', 'viewer-row-double')
+        const cartImage = document.createElement('img')
+        cartImage.style.filter = 'invert()'
+        cartImage.style.marginLeft = '0'
+        cartImage.style.marginRight = '5px'
+        cartImage.src = cartLink
+        div.append(cartImage)
+        animate(cartImage, 'viewer-show-image')
+        div.append(upcomingEvent)
+
+    });
+
+    infoDiv.append(infoRows)
+
+    container.append(infoDiv)
+
+    function extraColors() {
+        const viewerElements = '.viewer-row, .viewer-model-name, .viewer-skin-name, .viewer-row-double, .chibi-row';
+
+
+        const usedColor = colorList[0]; // First color for viewer elements
+
+        document.getElementById('viewer-info').style.background = usedColor
+
+        // Apply background color to viewer elements
+        document.querySelectorAll(viewerElements).forEach(element => {
+            // element.style.backgroundColor = usedColor;
+        });
+
+        // Find a different color for chibi-row
+        let chibiColorIndex = 1; // Start from the next color
+        while (chibiColorIndex < colorList.length && (colorList[chibiColorIndex] === usedColor || !colorList[chibiColorIndex])) {
+            chibiColorIndex++; // Skip if same or empty
+        }
+
+        // Use the found color (or fallback to the last valid color)
+        const chibiColor = colorList[chibiColorIndex] || usedColor;
+
+        // Apply background color to chibi-row elements
+        document.querySelectorAll(viewerElements).forEach(element => {
+            element.style.backgroundColor = chibiColor;
+        });
+
+        //app.renderer.backgroundColor = `0x${colorList[0].replace('#', '')}`; // Changes to red
+    }
+}
+
+function operatorInfoRender(container, plannerId, skinsData) {
+    const infoDiv = document.createElement('div')
+    infoDiv.id = 'viewer-info'
+    container.append(infoDiv)
 }
 
 function animateText(textElement, delaySeconds = 0.1) {
