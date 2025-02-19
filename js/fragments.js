@@ -69,10 +69,12 @@ const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait') => {
     const skinName = eventSkin
     const skinNameEnglish = 'No translation'
     const skinObject = findSkinByName(skinsData.cnData, skinName)
-    const skinPrice = skinsData.costMap[skinName] > 0 ? skinsData.costMap[skinName] : 'Free'
+    let skinPrice = skinsData.costMap[skinName] > 0 ? skinsData.costMap[skinName] : 'Free'
+    
     //const modelName = eventSkin.operator
     const modelNameEnglish = skinObject.displaySkin.modelName
     const plannerId = skinsData.plannerIdMap[skinName]
+    if (NoEffectSkins.includes(plannerId)) skinPrice = '15'
     const img = imgrepo(size, plannerId)
 
     const missingSkin = {
@@ -114,7 +116,7 @@ const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait') => {
     label.setAttribute('data-event', eventCode)
     label.setAttribute('data-model', modelNameEnglish)
     label.setAttribute('data-eventName', eventData[0])
-    label.setAttribute('data-price', skinsData.costMap[skinName])
+    label.setAttribute('data-price', NoEffectSkins.includes(plannerId) ? '15' : skinsData.costMap[skinName])
 
     // ====================================================
     missingElementCheck(missingSkin, img)

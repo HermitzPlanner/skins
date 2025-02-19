@@ -56,7 +56,8 @@ function infoRender(container, plannerId, skinName, skinsData) {
     const enRelease = getReleaseTime(skinObjectGlobal?.displaySkin?.getTime || null)
     const colorList = skinObject.displaySkin.colorList
 
-    const price = skinsData.costMap[skinName] > 0 ? skinsData.costMap[skinName] : 'Free'
+    let price = skinsData.costMap[skinName] > 0 ? skinsData.costMap[skinName] : 'Free'
+    if (NoEffectSkins.includes(plannerId)) price = '15'
 
     const infoDiv = document.createElement('div')
     infoDiv.id = 'viewer-info'

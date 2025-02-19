@@ -63,7 +63,12 @@ const cnSkinsInEnglish = {
     '繁霜满阶': '' // Matoi
 }
 
-const NoEffectSkins = {
-    
-}
+const NoEffectSkins = [
+    "texas1", "specter1", "courier1", "exusiai1", "cliffheart1", "cuora1", "ifrit1", "sora1", "gummy1", "jessica1", "jessica2",
+    "pramanix1", "feater1", "liskarm1", "gavial1", "greythroat1", "midnight1", "beehunter1", "astesia1", "rope2", "provence1",
+    "platinum1", "croissant2", "april1", "glaucus1", "texas2", "dobermann1", "firewatch2", "gravel1", "hung1", "tachanka1",
+    "shirayuki1", "ayerscarpe1", "flint1", "courier2", "vigna2", "zima2", "folinic1", "perfumer2", "sideroca1", "jaye1",
+    "astesia2", "snowsant1", "andreana1", "kafka1", "feater2", "tuye1", "scavenger1", "aurora1", "reed1", "kirara1",
+    "blacknight1", "lapluma1", "kazemaru1", "greyyalter1", "mousse1"
+  ];
 
