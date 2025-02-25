@@ -355,6 +355,12 @@ function createCanvasDiv(infoDiv, plannerId, skinName, skinsData) {
                         }
                     });
                 }
+
+                if (animation.name == 'Sit') {
+                    app.stage.children[0].y = app.screen.height / 1.25
+                } else {
+                    app.stage.children[0].y = app.screen.height
+                }
             };
         });
     }

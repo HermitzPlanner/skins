@@ -53,13 +53,21 @@ function renderSkinSpine(plannerId, perspective, animation, skinAsset) {
 
     // Spine settings
     skinSpine.x = app.screen.width / 2;
-    skinSpine.y = app.screen.height;
+    if (animation !== 'Sit') {
+        skinSpine.y = app.screen.height;
+    } else {
+        skinSpine.y = app.screen.height / 2;
+    }
     skinSpine.scale.set(0.8)
     // Assuming 'skinSpine' is your Spine object and 'animation' is the variable holding the animation name
-    if (skinSpine.spineData.findAnimation('Start')) {
-        skinSpine.state.setAnimation(0, 'Start', false);
+    if (perspective !== 'build') {
+        if (skinSpine.spineData.findAnimation('Start')) {
+            skinSpine.state.setAnimation(0, 'Start', false);
+        } else {
+            skinSpine.state.setAnimation(0, 'Start_A', false);
+        }
     } else {
-        skinSpine.state.setAnimation(0, 'Start_A', false);
+        skinSpine.state.setAnimation(0, 'Relax', true);
     }
     skinSpine.interactive = true;
     skinSpine.buttonMode = true;
