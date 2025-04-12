@@ -64,23 +64,23 @@ const eventContainer = (eventData, skinsArray, eventRewards) => {
     return label
 }
 
-const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait') => {
+const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', modelNameFromData = '') => {
     const eventCode = normalizeEvent(eventData[0])
     const skinName = eventSkin
     const skinNameEnglish = 'No translation'
     const skinObject = findSkinByName(skinsData.cnData, skinName)
     let skinPrice = skinsData.costMap[skinName] > 0 ? skinsData.costMap[skinName] : 'Free'
     
-    //const modelName = eventSkin.operator
+    const modelName = modelNameFromData // eventSkin.operator
     const modelNameEnglish = skinObject.displaySkin.modelName
     const plannerId = skinsData.plannerIdMap[skinName]
     if (NoEffectSkins.includes(plannerId)) skinPrice = '15'
     const img = imgrepo(size, plannerId)
 
     const missingSkin = {
-        [art]: 'modelName',
-        [portrait]: 'modelName',
-        [icon]: 'modelName',
+        [art]: modelName,
+        [portrait]: modelName,
+        [icon]: modelName,
         "plannerId": plannerId
     }
 

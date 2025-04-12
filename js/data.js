@@ -150,7 +150,7 @@ function main(skinsData, eventsData) {
         if (eventRewards.length !== 0) containerOfRewards.append(rewardContainer(event, 'Disable', 'all-reward-cbox', false))
 
         eventSkins.forEach(eventSkin => {
-            containerOfSkins.append(skinContainer(event, eventSkin.name, skinsData))
+            containerOfSkins.append(skinContainer(event, eventSkin.name, skinsData, 'portrait', eventSkin.operator))
         });
 
         if (event[0].startsWith('fashion')) {
