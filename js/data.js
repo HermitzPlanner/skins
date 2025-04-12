@@ -32,9 +32,9 @@ function parseSkinsData(cnData, enData) {
         }
 
 
-        
 
-      
+
+
 
         if (obtainApproach) {
             obtainApproaches.add(obtainApproach);
@@ -182,7 +182,35 @@ function main(skinsData, eventsData) {
     skinButtonsLogic()
     rewardButtonsLogic()
     updateCalcs();
-    document.getElementById('initial').addEventListener('input', updateCalcs);
+
+    const input = document.getElementById('initial');
+
+    // Keep the existing input event listener
+    input.addEventListener('input', updateCalcs);
+
+    // Add keydown event listener for arrow keys
+    input.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+            event.preventDefault(); // Prevent default scrolling
+
+            // Get current value as a number, default to 0 if empty or invalid
+            let value = parseFloat(input.value) || 0;
+
+            // Increment or decrement by 1, but don't go below 0
+            if (event.key === 'ArrowUp') {
+                value += 1;
+            } else if (event.key === 'ArrowDown' && value > 0) {
+                value -= 1;
+            }
+
+            // Update the input value
+            input.value = value;
+
+            // Trigger updateCalcs
+            updateCalcs();
+        }
+    });
+
     document.querySelector('input[name="event"]').click()
 
     const search = document.getElementById('search2')
@@ -273,7 +301,7 @@ function eventButtonsLogic() {
             } else {
                 container.classList.remove('hide'); // Remove "hide" if more than 1 visible div
             }
-            
+
         })
     });
 }
