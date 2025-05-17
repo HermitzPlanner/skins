@@ -94,7 +94,7 @@ Promise.all([
         .then(response => response.json()),
 
     // Fetch events data
-    fetch('../static/data.txt')
+    fetch('static/data.txt')
         .then(response => response.text()),
 ]).then(([cnData, enData, eventsData]) => {
     const skinsData = parseSkinsData(cnData, enData);
