@@ -94,7 +94,7 @@ Promise.all([
         .then(response => response.json()),
 
     // Fetch events data
-    fetch('data.txt')
+    fetch('../static/data.txt')
         .then(response => response.text()),
 ]).then(([cnData, enData, eventsData]) => {
     const skinsData = parseSkinsData(cnData, enData);
@@ -271,6 +271,8 @@ function main(skinsData, eventsData) {
 
 
     setLocalStorage()
+
+    setupImageObserver();
 }
 
 function eventButtonsLogic() {
@@ -289,8 +291,8 @@ function eventButtonsLogic() {
             //getDiv('container-of-skins-h2-mandarin').textContent = eventName
 
             getDiv('container-of-skins').style.backgroundImage =
-                `linear-gradient(rgba(13, 13, 13, 0.82), 
-            rgba(3, 3, 3, 0.9)), 
+                `linear-gradient(var(--gradient-top-transparent), 
+            var(--gradient-bottom-transparent)), 
             url("https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/events/${eventCode}.jpg")`
 
             /* ??????? */
@@ -392,6 +394,43 @@ function updateCalcs(element) {
 
         previousBalance = parseInt(incomeValue + expenseValue + previousBalance)
     });
+}
+
+// IntersectionObserver to set src when image is visible
+function setupImageObserver() {
+    const images = document.querySelectorAll('img[alt]:not(.svg)'); // Select all images with alt text
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                // Only set src if alt is a valid URL (basic validation)
+                if (img.alt && isValidUrl(img.alt)) {
+                    img.src = img.alt;
+                } else {
+                    console.warn(`Invalid URL in alt text for image: ${img.alt}`);
+                    img.src = 'assets/yu.png'; // Optional: Set a fallback image
+                }
+                observer.unobserve(img); // Stop observing once src is set
+            }
+        });
+    }, {
+        root: null, // Use viewport as root
+        rootMargin: '0px', // Trigger when image is fully in view
+        threshold: 0.1 // Trigger when 10% of the image is visible
+    });
+
+    images.forEach(img => observer.observe(img));
+}
+
+// Basic URL validation (you can enhance this)
+function isValidUrl(string) {
+    try {
+        new URL(string);
+        return true;
+    } catch (_) {
+        return false;
+    }
 }
 
 

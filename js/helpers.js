@@ -100,6 +100,7 @@ toggleLanguage();
 function checkedCboxStyle(cbox, enableGlow = true, enableText = false) {
     cbox.parentElement.style.border = "1px solid var(--accent)";
     cbox.parentElement.style.background = "var(--accent-bg)";
+    cbox.parentElement.style.background = `linear-gradient(to bottom, var(--gradient-top), var(--gradient-bottom))`;
     if (enableText) cbox.parentElement.style.color = "var(--accent)";
     if (enableGlow) cbox.parentElement.style.boxShadow = "0px 0px 10px 2px var(--accent-bg)";
 }

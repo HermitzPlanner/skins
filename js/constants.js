@@ -43,6 +43,7 @@ const altersMap = {
     "Роса": "Poca",
     /* latin */
     "Młynar": "Mlynar",
+    "Wiš'adel": "Wisadel",
 }
 
 const obtainApproachesMap = {

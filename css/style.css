@@ -58,19 +58,35 @@
     }
 }
 
+img[alt] {
+    text-indent: -9999px; /* Push alt text off-screen */
+    display: block; /* Ensure consistent rendering */
+}
+
 :root {
     --accent: #f2f287;
     --accent-bg: hsl(60, 11%, 13%);
+
     --body-bg: hsl(255, 11%, 7%);
     --body-bg-transparent: hsla(255, 11%, 7%, 0.8);
     --body-bg-2: hsl(255, 11%, 11%);
     --body-txt: hsl(0, 0%, 67%);
+
     --equip-bg: hsl(255, 11%, 13%);
     --equip-bg: #1f1e25;
+
     --card-bg: hsl(250, 11%, 80%);
+
     --equip-txt: hsl(0, 0%, 87%);
+    --equip-txt-2: hsl(0, 0%, 87%);
     --equip-border: hsl(0, 0%, 20%);
+
+    --gradient-top: hsl(60, 11%, 13%);
+    --gradient-bottom: hsl(60, 11%, 13%);
+    --gradient-top-transparent: rgba(13, 13, 13, 0.82);
+    --gradient-bottom-transparent: rgba(3, 3, 3, 0.9);
 }
+
 
 ::-webkit-scrollbar {
     width: 7px;
@@ -330,6 +346,10 @@ section {
     text-align: center;
     font-weight: 500;
     background-color: var(--body-bg-2);
+}
+
+.model-name {
+    color: var(--equip-txt-2);
 }
 
 #container-of-skins .skin-price {

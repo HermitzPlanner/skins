@@ -137,10 +137,12 @@ function infoRender(container, plannerId, skinName, skinsData) {
     const skinPriceDiv = create(infoRows, 'div', priceText, 'viewer-row')
     animateText(skinPriceDiv, 0.05)
     if (price > 0) {
+        /*
         const originiteImage = document.createElement('img')
         originiteImage.src = originiteLink
         skinPriceDiv.append(originiteImage)
         animate(originiteImage, 'viewer-show-image')
+        */
     }
 
 
@@ -240,9 +242,13 @@ function createCanvasDiv(infoDiv, plannerId, skinName, skinsData) {
     const saveSvg = "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/save.svg"
     const downloadChibiButton = create(chibiButtons, 'button', "", 'chibi-row')
 
-    const saveDiv = create(downloadChibiButton, 'img', saveSvg)
+    const saveDiv = document.createElement("img") //create(downloadChibiButton, 'img', saveSvg)
+    saveDiv.src = saveSvg
+    saveDiv.className = 'svg'
     saveDiv.style.width = '15px'
     saveDiv.style.filter = 'invert()'
+
+    downloadChibiButton.append(saveDiv)
 
     renderCanvas(plannerId, skinName, skinsData)
     infoDiv.append(canvas)
@@ -400,7 +406,7 @@ function createCanvasDiv(infoDiv, plannerId, skinName, skinsData) {
     }
 }
 
-function animateText(textElement, delaySeconds = 0.1) {
+function oldanimateText(textElement, delaySeconds = 0.1) {
     const text = textElement.textContent;
 
     // Clear the text element to add letters individually
@@ -418,6 +424,32 @@ function animateText(textElement, delaySeconds = 0.1) {
         textElement.appendChild(span);
     });
 
+}
+
+function animateText(textElement, delaySeconds = 0.1) {
+    if (!textElement || !textElement.textContent) return; // Skip invalid or empty elements
+
+    const originalText = textElement.textContent.trim(); // Store original text
+    textElement.textContent = ''; // Clear text for animation
+
+    // Add each letter inside a span with a delay for animation
+    const letters = originalText.split('');
+    letters.forEach((letter, index) => {
+        const span = document.createElement('span');
+        span.classList.add('letter');
+        span.style.animationDelay = `${index * delaySeconds}s`;
+        span.textContent = letter === ' ' ? '\u00A0' : letter; // Non-breaking space for spaces
+        textElement.appendChild(span);
+    });
+
+    // Calculate total animation duration (last letter's delay + animation duration)
+    const totalDuration = (letters.length - 1) * delaySeconds + 0.5; // Adjust 0.5s to match your CSS animation duration
+
+    // Restore original text after animation completes
+    setTimeout(() => {
+        textElement.textContent = originalText; // Revert to plain text
+        textElement.classList.remove('animated'); // Optional: Remove animation class if used
+    }, totalDuration * 1000); // Convert to milliseconds
 }
 
 function createQuitButton(animationListDiv) {

@@ -2,11 +2,13 @@ const create = (parent, tag, text = "", classes = "", inputType = '') => {
     e = document.createElement(tag)
     if (tag !== 'img') {
         e.innerHTML = text
-        
+
     }
     if (tag === "img") {
-        e.src = text;
-        e.alt = text;
+        //e.src = text; // Only set src if valid
+        e.alt = text; // Consider a more descriptive alt text
+        e.loading = "lazy";
+
     }
     if (classes !== '') e.className = classes
     if (inputType !== '') e.type = inputType
@@ -70,7 +72,7 @@ const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', model
     const skinNameEnglish = 'No translation'
     const skinObject = findSkinByName(skinsData.cnData, skinName)
     let skinPrice = skinsData.costMap[skinName] > 0 ? skinsData.costMap[skinName] : 'Free'
-    
+
     const modelName = modelNameFromData // eventSkin.operator
     const modelNameEnglish = skinObject.displaySkin.modelName
     const plannerId = skinsData.plannerIdMap[skinName]
@@ -195,7 +197,8 @@ const gallerySkin = (skinsData, data) => {
     const button = document.createElement('button')
     //button.classList.add('show-block')
     const modelName = ""
-    const modelNameEnglish = skinObject.displaySkin.modelName
+    const modelNameEnglish = skinObject.displaySkin.modelName //  data.plannerId
+    //console.log(data.plannerId)
     const plannerId = data.plannerId
     const img = imgrepo('icon', plannerId)
 
@@ -207,13 +210,13 @@ const gallerySkin = (skinsData, data) => {
     create(button, 'div', modelNameEnglish, 'gallery-name')
     create(button, 'img', img)
 
-    
+
 
     button.onclick = () => {
         showSection('viewer')
         viewer(plannerId, skinName, skinsData);
         lastSection = 'gallery'
-    } 
+    }
 
     // ====================================================
     //missingElementCheck(missingSkin, img)
