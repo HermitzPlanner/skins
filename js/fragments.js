@@ -173,7 +173,11 @@ const summaryRow = (eventId, planners, eventName) => {
     eventDiv.classList.add('summary-event')
 
     create(eventDiv, 'div', eventName, 'name')
-    create(eventDiv, 'img', eventrepo(eventId))
+    //create(eventDiv, 'img', eventrepo(eventId))
+    const summaryEventImage = document.createElement("img")
+    summaryEventImage.src = eventrepo(eventId)
+
+    eventDiv.append(summaryEventImage)
 
     row.append(eventDiv)
 
@@ -182,7 +186,10 @@ const summaryRow = (eventId, planners, eventName) => {
         skinDiv.classList.add('summary-skin')
 
         create(skinDiv, 'div', planner.modelName, 'name')
-        create(skinDiv, 'img', imgrepo('icon', planner.plannerId))
+        const summarySkinImage = document.createElement("img")
+        summarySkinImage.src = imgrepo('icon', planner.plannerId)
+        skinDiv.append(summarySkinImage)
+        //create(skinDiv, 'img', imgrepo('icon', planner.plannerId))
 
 
         row.append(skinDiv)
