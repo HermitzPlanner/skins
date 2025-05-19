@@ -73,6 +73,7 @@ img[alt] {
     --body-txt: hsl(0, 0%, 67%);
 
     --equip-bg: hsl(255, 11%, 13%);
+    --equip-bg-2: hsl(255, 11%, 19%);
     --equip-bg: #1f1e25;
 
     --card-bg: hsl(250, 11%, 80%);
@@ -98,7 +99,7 @@ img[alt] {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--equip-bg);
+    background-color: var(--equip-bg-2);
     border-radius: 7px;
 }
 

@@ -209,8 +209,9 @@ const gallerySkin = (skinsData, data) => {
     const plannerId = data.plannerId
     const img = imgrepo('icon', plannerId)
 
-    const skinGroupId = skinObject.displaySkin.skinGroupId
-    const brand = skinsData.cnData.brandList[skinGroupId.split('#')[1]]?.brandCapitalName || 'CROSSOVER'
+    let skinGroupId = skinObject.displaySkin.skinGroupId.split('#')[1]
+    if (skinGroupId == "as") skinGroupId = "ambienceSynesthesia" 
+    const brand = skinsData.cnData.brandList[skinGroupId]?.brandCapitalName || 'CROSSOVER'
 
     button.setAttribute('data-brand', brand)
 

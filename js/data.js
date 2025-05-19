@@ -27,6 +27,7 @@ function parseSkinsData(cnData, enData) {
         const skinGroupId = skin.displaySkin.skinGroupId
         if (skinGroupId) {
             let skinGroupIdSplitted = skinGroupId.split('#')[1]
+            //if (skinGroupIdSplitted == "as") skinGroupIdSplitted = "ambienceSynesthesia" 
             const brand = cnData.brandList[skinGroupIdSplitted]?.brandCapitalName || 'CROSSOVER'
             brands.add(brand)
         }
