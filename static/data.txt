@@ -125,7 +125,7 @@ such is the joy of our reunion
 相见欢
 https://web.hycdn.cn/staging/announce/images/20250117/cde510fa14abead3de48b5beaab9b8cb.jpg
 活动时间：01月22日 16:00 - 02月19日 03:59
-["OR-ST-1", "OR-TR-1", "OR-1", "OR-2", "OR-3", "OR-4", "OR-5", "OR-ST-2", "OR-6", "OR-7", "OR-8", "OR-9", "OR-ST-3", "OR-EX-1", "OR-EX-1 CM", "OR-EX-2", "OR-EX-2 CM", "OR-EX-3", "OR-EX-3 CM", "OR-EX-4", "OR-EX-4 CM", "OR-EX-5", "OR-EX-5 CM", "OR-EX-6", "OR-EX-6 CM", "OR-EX-7", "OR-EX-7 CM", "OR-EX-8", "OR-EX-8 CM", "OR-S-1 CM", "OR-S-2 CM", "OR-S-3 CM", "OR-S-4 CM", "OR-MO-1"]
+["OR-ST-1", "OR-TR-1", "OR-1", "OR-2", "OR-3", "OR-4", "OR-5", "OR-ST-2", "OR-6", "OR-7", "OR-8", "OR-9", "OR-ST-3", "OR-EX-1", "OR-EX-1 CM", "OR-EX-2", "OR-EX-2 CM", "OR-EX-3", "OR-EX-3 CM", "OR-EX-4", "OR-EX-4 CM", "OR-EX-5", "OR-EX-5 CM", "OR-EX-6", "OR-EX-6 CM", "OR-EX-7", "OR-EX-7 CM", "OR-EX-8", "OR-EX-8 CM", "OR-S-1", "OR-S-2", "OR-S-3", "OR-S-4", "OR-S-1 CM", "OR-S-2 CM", "OR-S-3 CM", "OR-S-4 CM", "OR-MO-1"]
 ◆【0011制造】系列 - 春日宴 - 黍
 ◆【0011制造】系列 - 少年游 - 左乐
 ◆【0011制造】系列 - “杏仁”拼盘 - 杏仁
