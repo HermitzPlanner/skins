@@ -74,7 +74,7 @@ img[alt] {
 
     --equip-bg: hsl(255, 11%, 13%);
     --equip-bg-2: hsl(255, 11%, 19%);
-    --equip-bg: #1f1e25;
+    --equip-bg: hsl(255, 10%, 13%);
 
     --card-bg: hsl(250, 11%, 80%);
 
