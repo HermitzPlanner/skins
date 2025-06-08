@@ -204,7 +204,7 @@ const gallerySkin = (skinsData, data) => {
     const button = document.createElement('button')
     //button.classList.add('show-block')
     const modelName = ""
-    const modelNameEnglish = skinObject.displaySkin.modelName //  data.plannerId
+    const modelNameEnglish = data.plannerId // skinObject.displaySkin.modelName
     //console.log(data.plannerId)
     const plannerId = data.plannerId
     const img = imgrepo('icon', plannerId)

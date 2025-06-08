@@ -59,8 +59,10 @@
 }
 
 img[alt] {
-    text-indent: -9999px; /* Push alt text off-screen */
-    display: block; /* Ensure consistent rendering */
+    text-indent: -9999px;
+    /* Push alt text off-screen */
+    display: block;
+    /* Ensure consistent rendering */
 }
 
 :root {
@@ -414,7 +416,7 @@ section {
 
 #summary {
     flex-direction: column;
-    gap: 10px;
+    gap: 0px;
     overflow: scroll;
 }
 
@@ -543,6 +545,8 @@ section {
     img {
         width: 140px;
         display: block;
+        user-select: none !important;
+        pointer-events: none;
     }
 
 }
@@ -564,6 +568,8 @@ section {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    user-select: text !important;
 }
 
 #viewer {
@@ -584,9 +590,9 @@ section {
     scale: 1.5;
     filter: blur(2px);
     opacity: 0.1;
-    
+
     /* left: -100px; */
-    
+
 }
 
 #viewer-image {

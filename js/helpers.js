@@ -265,5 +265,8 @@ function hexToHSL(hex) {
     return `hsl(${Math.round(h)}, ${Math.round(s * 100)}%, ${Math.round(l * 100)}%)`;
 }
 
+function textToArray(text) {
+    return text.trim().split('\n').map(item => item.trim()).filter(item => item !== '');
+}
 
 

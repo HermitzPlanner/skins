@@ -5,8 +5,8 @@ function summary() {
     const button = document.createElement('button')
     button.classList.add('toggle-button')
     button.style.width = "fit-content"
-    button.style.margin = '0 auto'
-    button.style.marginTop = '10px'
+    button.style.margin = '10px auto'
+    //button.style.marginTop = '10px'
     button.style.fontSize = '110%'
     button.onclick = () => showSection('main');
 
