@@ -57,6 +57,7 @@ function infoRender(container, plannerId, skinName, skinsData) {
     const colorList = skinObject.displaySkin.colorList
 
     let price = skinsData.costMap[skinName] > 0 ? skinsData.costMap[skinName] : 'Free'
+    if (plannerId == "thorns1") price = 18
     if (NoEffectSkins.includes(plannerId)) price = '15'
 
     const infoDiv = document.createElement('div')
@@ -70,7 +71,7 @@ function infoRender(container, plannerId, skinName, skinsData) {
     quitViewerButton.textContent = 'X'
     quitViewerButton.classList.add('quit-viewer-button')
     quitViewerButton.onclick = () => {
-       // document.getElementById('viewer').style.display = 'none'
+        // document.getElementById('viewer').style.display = 'none'
         //getDiv(lastSection).style.display = 'flex'
         showSection(lastSection)
     }
@@ -173,6 +174,13 @@ function infoRender(container, plannerId, skinName, skinsData) {
         div.append(upcomingEvent)
 
     });
+
+    // const hideInfoDiv = document.createElement("button");
+    // hideInfoDiv.textContent = "Amogsdjlkdsf";
+    // hideInfoDiv.onclick = function () {
+    //     infoDiv.style.width = "0px"
+    // };
+    // infoRows.append(hideInfoDiv)
 
     infoDiv.append(infoRows)
 
