@@ -199,6 +199,24 @@ header {
  }  */
 }
 
+@keyframes lilpop {
+  0% {
+    transform: scale(1) rotate(0deg); /* Starting point: normal scale, no rotation */
+  }
+  /* 25% {
+    transform: scale(1) rotate(1deg); 
+  } */
+  50% {
+    transform: scale(1) rotate(0.75deg) rotateX(20deg); /* Back to normal scale, no rotation */
+  }
+  /* 75% {
+    transform: scale(1) rotate();
+  } */
+  100% {
+    transform: scale(1) rotate(-0.75deg); /* Back to normal scale, no rotation */
+  }
+}
+
 section {
     display: flex;
     height: 100vh;
@@ -341,6 +359,7 @@ section {
     scale: 1.05;
     transition: 300ms;
     cursor: pointer;
+    /* animation: lilpop 100ms; */
 }
 
 #container-of-skins .model-name {
