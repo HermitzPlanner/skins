@@ -2,6 +2,20 @@ fantasy in the mirage
 故事集
 https://web.hycdn.cn/announce/images/20250630/27b29b7437c05ad24a6754d47e6d6340.jpg
 关卡开放时间：07月08日 16:00 - 07月15日 03:59
+◆【时代】系列 - 凌云意 - 拜松
+◆【珊瑚海岸】系列 - 夏卉 FA137 - 林
+◆【0011/韵】系列 - 行梦侧畔 - 鸿雪
+◆【0011/韵】系列 - 与荷 - 蛇屠箱
+◆【时代】系列 - 注目深渊 - 乌尔比安
+◆【珊瑚海岸】系列 - 夏卉 FA317 - 琴柳
+◆【珊瑚海岸】系列 - 沙滩护卫 GT003 - 白铁
+◆【珊瑚海岸】系列 - 悠然假日 HD61 - 蜜蜡
+◆【珊瑚海岸】系列 - 夏卉 FA075 - 焰影苇草
+◆【珊瑚海岸】系列 - 温差 RT.RX07 - 提丰
+◆【珊瑚海岸】系列 - 悠然假日 HD78 - 但书
+◆【珊瑚海岸】系列 - 灿阳朝露 SDm09 - 铅踝
+◆【时代】系列 - 所愿 - 星源
+["FM-1", "FM-1 CM", "FM-2", "FM-2 CM", "FM-3", "FM-3 CM", "FM-S-1", "FM-4", "FM-4 CM", "FM-5", "FM-5 CM", "FM-6", "FM-6 CM", "FM-7", "FM-7 CM", "FM-8", "FM-8 CM", "FM-S-2"]
 
 trials for navigator 5
 #05「引航者试炼」
@@ -17,7 +31,7 @@ https://web.hycdn.cn/announce/images/20250603/268c0f87ce87513b19709c927d86323e.j
 ◆【时代】系列 - 我即潮汐 - 歌蕾蒂娅
 ◆【时代】系列 - 记叙 - 斥罪
 ◆【时代】系列 - 赴宴 - 玫拉
-["BP-ST-1", "BP-1", "BP-TR-1", "BP-2", "BP-3", "BP-4", "BP-5", "BP-6", "BP-ST-2", "BP-7", "BP-8", "BP-9", "BP-ST-3", "BP-EX-1", "BP-EX-1 CM", "纪耻柱-无谓的纷争", "BP-EX-2", "BP-EX-2 CM", "纪念坛-阿戈尔和平", "BP-EX-3", "BP-EX-3 CM", "大浴场-智识交会处", "BP-EX-4", "BP-EX-4 CM", "熔岩导桥-地幔脉搏", "BP-EX-5", "BP-EX-5 CM", "水脉中枢-洋流喷泉", "BP-EX-6", "BP-EX-6 CM", "探测基站-谜题之门", "BP-EX-7", "BP-EX-7 CM", "基因种质库-万物殿", "BP-EX-8", "BP-EX-8 CM"]
+["BP-ST-1", "BP-1", "BP-TR-1", "BP-2", "BP-3", "BP-4", "BP-5", "BP-6", "BP-ST-2", "BP-7", "BP-8", "BP-9", "BP-ST-3", "BP-EX-1", "BP-EX-1 CM", "BP-EX-2", "BP-EX-2 CM", "BP-EX-3", "BP-EX-3 CM", "BP-EX-4", "BP-EX-4 CM", "BP-EX-5", "BP-EX-5 CM", "BP-EX-6", "BP-EX-6 CM", "BP-EX-7", "BP-EX-7 CM", "BP-EX-8", "BP-EX-8 CM"]
 
 Wrankwood Act Or Die
 红丝绒
