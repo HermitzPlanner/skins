@@ -66,7 +66,7 @@ img[alt] {
 }
 
 :root {
-    --accent: #f2f287;
+    --accent: hsl(60, 80%, 74%);
     --accent-bg: hsl(60, 11%, 13%);
 
     --body-bg: hsl(255, 11%, 7%);
@@ -200,21 +200,26 @@ header {
 }
 
 @keyframes lilpop {
-  0% {
-    transform: scale(1) rotate(0deg); /* Starting point: normal scale, no rotation */
-  }
-  /* 25% {
+    0% {
+        transform: scale(1) rotate(0deg);
+        /* Starting point: normal scale, no rotation */
+    }
+
+    /* 25% {
     transform: scale(1) rotate(1deg); 
   } */
-  50% {
-    transform: scale(1) rotate(0.75deg) rotateX(20deg); /* Back to normal scale, no rotation */
-  }
-  /* 75% {
+    50% {
+        transform: scale(1) rotate(0.75deg) rotateX(20deg);
+        /* Back to normal scale, no rotation */
+    }
+
+    /* 75% {
     transform: scale(1) rotate();
   } */
-  100% {
-    transform: scale(1) rotate(-0.75deg); /* Back to normal scale, no rotation */
-  }
+    100% {
+        transform: scale(1) rotate(-0.75deg);
+        /* Back to normal scale, no rotation */
+    }
 }
 
 section {
@@ -303,6 +308,10 @@ section {
     padding-bottom: 10px;
     margin-bottom: 0px;
 
+    gap: 13px;
+    padding-bottom: 20px;
+    margin-bottom: 5px;
+
 }
 
 .reward {
@@ -324,6 +333,20 @@ section {
     width: 100%;
     place-content: flex-start;
     padding-bottom: 50px;
+    padding: 10px 0px 0px 28px;
+    gap: 15px;
+
+    /*
+    background-size: 
+    auto,
+    cover; 
+  background-repeat: 
+    no-repeat,
+    no-repeat; 
+  background-position: 
+    center, 
+    center;
+    */
 }
 
 #container-of-skins h2 {
@@ -359,6 +382,11 @@ section {
     scale: 1.05;
     transition: 300ms;
     cursor: pointer;
+    .skin-inspect {
+        transition: 300ms;
+        scale: 1.35;
+        translate: -4px 4px;
+    }
     /* animation: lilpop 100ms; */
 }
 
@@ -368,16 +396,32 @@ section {
     text-align: center;
     font-weight: 500;
     background-color: var(--body-bg-2);
+
+    /* new changes */
+
+    padding: 3px 0px;
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .model-name {
     color: var(--equip-txt-2);
+
+    /* new changes */
+
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 #container-of-skins .skin-price {
     position: absolute;
     left: 0px;
-    bottom: 0px;
+    /* bottom: 0px; */
     padding: 3px 7px;
     border-radius: 0 5px 0 0;
     text-align: center;
@@ -385,16 +429,25 @@ section {
     color: var(--accent);
     opacity: 0.8;
     font-size: 12px;
+
+    /* new */
+    top: 0;
+    border-radius: 0 0 5px 0;
 }
 
 .skin-inspect {
     position: absolute;
     right: 0px;
     top: 28px;
-    padding: 3px 7px;
+    /* padding: 3px 7px; */
     border-radius: 0 0 0 5px;
     background: var(--equip-bg);
     border: none;
+
+    /* new */
+    top: 0;
+    z-index: 3;
+    padding: 3px 5px 8px 8px;
 }
 
 .skin-inspect:hover {

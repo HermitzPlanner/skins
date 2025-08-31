@@ -65,7 +65,20 @@ const eventContainer = (eventData, skinsArray, eventRewards) => {
 
     return label
 }
+function getColorList(array) {
+    let colorList = array.filter(color => color && color.trim() !== '');
 
+    function fixHexColor(color) {
+        if (color.length === 6) { // Checks if it's like #91335
+            return color + '0'; // Adds 0, so #91335 becomes #913350
+        }
+        return color; // Returns unchanged if already valid
+    }
+
+    return colorList.map(fixHexColor);
+}
+const bg = new Image()
+bg.src = "static/img/classic_gacha.png"
 const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', modelNameFromData = '') => {
     const eventCode = normalizeEvent(eventData[0])
     const skinName = eventSkin
@@ -85,21 +98,126 @@ const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', model
         [icon]: modelName,
         "plannerId": plannerId
     }
-
+     const colors = getColorList(skinObject.displaySkin.colorList)
     // Elements ===========================================
+
+
 
     const label = document.createElement('label')
     label.className = 'skin hide' // hide
+    label.style.border = "3px solid"
+    label.style.borderImage = `linear-gradient(to right, ${colors.join(', ')}) 1`
+    label.style.borderRadius = "0"
+    label.style.boxShadow = "6px 6px 4px rgba(0, 0, 0, 0.7)"
     const input = create(label, 'input', '', '', 'checkbox')
     input.name = 'skin-cbox'
     input.id = eventCode + '-' + plannerId
+
+
+
+    const width = 180
+    const height = 360
+    const canvas = document.createElement("canvas")
+    canvas.width = width
+    canvas.height = height
+    canvas.style.position = "absolute"
+    canvas.style.borderRadius = "0"
+
+    const ctx = canvas.getContext("2d")
+
+    ctx.filter = 'grayscale(100%)';
+    ctx.drawImage(bg, 19, 389, 276, 608, 0, 0, width, height)
+    ctx.filter = 'none';
+    ctx.globalCompositeOperation = 'color';
+
+   
+
+    if (colors.length === 1) {
+        ctx.fillStyle = colors[0]; // Color sólido si hay un solo color
+    } else {
+        const gradient = ctx.createLinearGradient(0, 0, 0, 600); // Gradiente vertical
+        colors.forEach((color, index) => {
+            gradient.addColorStop(index / (colors.length - 1), color);
+        });
+        ctx.fillStyle = gradient;
+    }
+    ctx.fillRect(0, 0, 276, 608);
+    ctx.globalCompositeOperation = 'source-over'
+
+
+    label.append(canvas)
+
+
+
+
+
+
+
+
     const skinNameDiv = create(label, 'div', skinName, 'skin-name mandarin hide')
     const skinNameEnglishDiv = create(label, 'div', skinNameEnglish, 'skin-name english hide')
     //const modelNameDiv = create(label, 'div', modelName, 'model-name mandarin')
+
+
     const modelNameEnglishDiv = create(label, 'div', modelNameEnglish, 'model-name english')
+    modelNameEnglishDiv.style.background = "none"
+    modelNameEnglishDiv.classList.add("text-outline")
+    modelNameEnglishDiv.style.borderTop = "2px solid"
+    modelNameEnglishDiv.style.borderImage = `linear-gradient(to right, ${colors.join(', ')}) 1`
+
+    const bottomCanvas = document.createElement("canvas")
+    bottomCanvas.width = 180
+    bottomCanvas.height = 28
+    bottomCanvas.style.position = 'absolute'
+    bottomCanvas.style.left = '0'
+    bottomCanvas.style.borderRadius = '0'
+    bottomCanvas.style.zIndex = '-1'
+
+    const bottomCtx = bottomCanvas.getContext("2d")
+    bottomCtx.drawImage(bg, 538, 82, 200, 58, 0, 0, 180, 28)
+    bottomCtx.globalCompositeOperation = 'color';
+    if (colors.length === 1) {
+        bottomCtx.fillStyle = colors[0]; // Color sólido si hay un solo color
+    } else {
+        const gradient = bottomCtx.createLinearGradient(0, 0, 180, 0); // Gradiente horizontal
+        colors.forEach((color, index) => {
+            gradient.addColorStop(index / (colors.length - 1), color);
+        });
+        bottomCtx.fillStyle = gradient;
+    }
+    bottomCtx.fillRect(0, 0, 180, 28); // Ajustado al tamaño del canvas
+    bottomCtx.globalCompositeOperation = 'source-over';
+
+    modelNameEnglishDiv.append(bottomCanvas)
+    //modelNameEnglishDiv.style.background = `linear-gradient(to right, ${colors.join(', ')})`
+
+
+
     const plannerIdDiv = create(label, 'div', plannerId, 'planner-id hide')
     const imgDiv = create(label, 'img', img, 'skin-portrait')
     const eventCodeDiv = create(label, 'div', eventCode, 'hide')
+
+
+    const overlay = document.createElement("div")
+    overlay.classList.add("overlay")
+    overlay.classList.add("text-outline")
+    overlay.textContent = "Selected"
+    overlay.style.userSelect = "none"
+    overlay.style.opacity = "0"
+    overlay.style.transitionDelay = "1s"
+    overlay.style.transition = "300ms"
+    overlay.style.display = "flex"
+    overlay.style.justifyContent = "center"
+    overlay.style.alignItems = "center"
+    overlay.style.position = "absolute"
+    overlay.style.background = "hsla(60, 80%, 64%, 0.3)"
+    overlay.style.width = "100%"
+    overlay.style.height = "100%"
+    overlay.style.zIndex = "2"
+
+    label.append(overlay)
+
+
     const skinPriceDiv = create(label, 'div', skinPrice, 'skin-price text-outline')
     const button = document.createElement('button')
     button.onclick = () => {
@@ -110,6 +228,10 @@ const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', model
     button.classList.add('skin-inspect')
     create(button, 'img', inspectImg, 'skin-inspect-img')
     label.append(button)
+
+    
+
+
 
     //const skinPriceDiv = create(label, 'div', skinPrice, 'skin-price text-outline')
 
@@ -210,7 +332,7 @@ const gallerySkin = (skinsData, data) => {
     const img = imgrepo('icon', plannerId)
 
     let skinGroupId = skinObject.displaySkin.skinGroupId.split('#')[1]
-    if (skinGroupId == "as") skinGroupId = "ambienceSynesthesia" 
+    if (skinGroupId == "as") skinGroupId = "ambienceSynesthesia"
     const brand = skinsData.cnData.brandList[skinGroupId]?.brandCapitalName || 'CROSSOVER'
 
     button.setAttribute('data-brand', brand)

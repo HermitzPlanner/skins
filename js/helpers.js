@@ -96,6 +96,16 @@ document.querySelectorAll('input[name="language"]').forEach(input => {
 toggleLanguage();
 */
 
+function checkedSkin(element) {
+    //element.querySelector(".overlay").style.display = "flex"
+    element.querySelector(".overlay").style.opacity = "1"
+}
+
+function uncheckedSkin(element) {
+//element.querySelector(".overlay").style.display = "none"
+element.querySelector(".overlay").style.opacity = "0"
+}
+
 
 function checkedCboxStyle(cbox, enableGlow = true, enableText = false) {
     cbox.parentElement.style.border = "1px solid var(--accent)";
