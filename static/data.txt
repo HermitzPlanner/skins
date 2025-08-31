@@ -1,3 +1,16 @@
+shamare new skin 2025
+-
+-
+-
+◆【0011/韵】系列 - 绣云鹤 - 巫恋
+
+lunacub and ptilopsis skins rerun 2025
+-
+-
+-
+◆【0011/韵】系列 - 抚云间 - 白面鸮
+◆【0011/韵】系列 - 棠云巧梦 - 子月
+
 Inudi Harek Horakhet Rerun
 -
 -
@@ -10,6 +23,7 @@ Inudi Harek Horakhet Rerun
 ◆【错位巡礼】系列 - 流辉 - 夜莺
 ◆【错位巡礼】系列 - 沉思之庭 - 赫德雷
 ◆【错位巡礼】系列 - 倾听 - 温蒂
+["AS-ST-1", "AS-1", "AS-TR-1", "AS-2", "AS-3", "AS-4", "AS-5", "AS-ST-2", "AS-6", "AS-7", "AS-8", "AS-9", "AS-ST-3", "AS-EX-1", "AS-EX-1 CM", "AS-EX-2", "AS-EX-2 CM", "AS-EX-3", "AS-EX-3 CM", "AS-EX-4", "AS-EX-4 CM", "AS-EX-5", "AS-EX-5 CM", "AS-EX-6", "AS-EX-6 CM", "AS-EX-7", "AS-EX-7 CM", "AS-EX-8", "AS-EX-8 CM", "AS-S-1", "AS-S-1 CM", "AS-S-2", "AS-S-2 CM", "AS-S-3", "AS-S-3 CM", "AS-S-4", "AS-S-4 CM"]
 
 Arclight CCB#4
 -
@@ -26,6 +40,7 @@ https://web.hycdn.cn/upload/image/20250725/674f21bfbdfa086f0cfb9c180d0bb681.jpg
 ◆【珊瑚海岸】系列 - 夏卉 FA161 - 死芒
 ◆【玛尔特】系列 - 无际之帆 - 引星棘刺
 ◆【珊瑚海岸】系列 - 夏卉 FA054 - 梅
+["AT-ST-1", "AT-TR-1", "AT-1", "AT-2", "AT-3", "AT-4", "AT-TR-2", "AT-5", "AT-ST-2", "AT-6", "AT-P-1", "AT-P-2", "AT-P-3", "AT-7", "AT-8", "AT-ST-3", "AT-EX-1", "AT-EX-1 CM", "AT-EX-2", "AT-EX-2 CM", "AT-EX-3", "AT-EX-3 CM", "AT-EX-4", "AT-EX-4 CM", "AT-EX-5", "AT-EX-5 CM", "AT-EX-6", "AT-EX-6 CM", "AT-EX-7", "AT-EX-7 CM", "AT-EX-8", "AT-EX-8 CM", "AT-S-1", "AT-S-1 CM", "AT-S-2", "AT-S-2 CM", "AT-S-3", "AT-S-3 CM", "AT-S-4", "AT-S-4 CM"]
 
 arknights x taiko no tatsujin collab
 明日方舟×太鼓之达人
