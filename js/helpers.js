@@ -42,7 +42,7 @@ const normalizeEvent = (string) => {
     return string
         .replace('ü', 'u')
         .replace('contingency contract battleplan', 'ccb')
-        .replace(/[-.'" ()#]/g, "")
+        .replace(/[-.'" ()#!]/g, "")
         .toLowerCase()
 }
 const normalizeName = (string) => altersMap[string] || string
