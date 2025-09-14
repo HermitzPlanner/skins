@@ -151,9 +151,6 @@ babel rerun
 https://web.hycdn.cn/announce/images/20250411/cfd56a34beee525ca5d9123cd483f19e.jpg
 活动时间：04月21日 16:00 - 05月05日 03:59
 ["BB-ST-1", "BB-1", "BB-TR-1", "BB-2", "BB-3", "BB-ST-2", "BB-4", "BB-5", "BB-6", "BB-7", "BB-8", "BB-9", "BB-10", "BB-ST-3", "BB-EX-1", "BB-EX-1 CM", "BB-EX-2", "BB-EX-2 CM", "BB-EX-3", "BB-EX-3 CM", "BB-EX-4", "BB-EX-4 CM", "BB-EX-5", "BB-EX-5 CM", "BB-EX-6", "BB-EX-6 CM", "BB-EX-7", "BB-EX-7 CM", "BB-EX-8", "BB-EX-8 CM", "BB-S-1", "BB-S-1 CM", "BB-S-2", "BB-S-2 CM", "BB-S-3", "BB-S-3 CM", "BB-S-4", "BB-S-4 CM", "BB-MO-1"]
-◆【音律联觉】系列 - 漫步于黄金之梦 - 缪尔赛思
-◆【音律联觉】系列 - 幻语乐痕 - 莫斯提马
-◆【音律联觉】系列 - 辉煌的静谧 - 逻各斯
 ◆【斗争血脉】系列 - 燃烧天穹下 - 伊内丝
 ◆【斗争血脉】系列 - 锋潮 - 棘刺
 ◆【斗争血脉】系列 - 新枝 - 缪尔赛思
@@ -173,6 +170,9 @@ Dissociative Recombination EP 15
 https://web.hycdn.cn/staging/announce/images/20250401/f42cab6d3a0f8b90d762dce03edd396a.jpg
 开启时间：04月07日 16:00
 ["15-1","15-2","15-3","15-3 CM","15-4","15-4 CM","TR-26","15-5","15-5 CM","15-6","15-6 CM","15-7","15-7 CM","15-8","15-8 CM","15-9","15-9 CM","15-10","15-10 CM","15-11","15-11 CM","15-12","15-12 CM","15-13","15-13 CM","15-14","15-14 CM","15-15","15-15 CM","15-16","15-17","15-17 CM","15-18","15-18 CM","15-19","15-20","15-20 CM","15-21"]
+◆【音律联觉】系列 - 漫步于黄金之梦 - 缪尔赛思
+◆【音律联觉】系列 - 幻语乐痕 - 莫斯提马
+◆【音律联觉】系列 - 辉煌的静谧 - 逻各斯
 ◆【音律联觉】系列 - 糖果暴击 - 奥达
 ◆【音律联觉】系列 - 蝶舞华章 - 伊内丝
 ◆【音律联觉】系列 - 空心王冠 - 白铁
@@ -190,22 +190,3 @@ https://web.hycdn.cn/staging/announce/images/20250401/f42cab6d3a0f8b90d762dce03e
 ◆【音律联觉】系列 - 历世流风 - 霍尔海雅
 ◆【音律联觉】系列 - 律动方格 - 琳琅诗怀雅
 ◆【玛尔特】系列 - 下一顿午茶 - 斯卡蒂
-
-rhodes island icebreaker games #1
-促融共竞#1
-https://web.hycdn.cn/announce/images/20250311/140ff6d9305ca5665cc68f114eba76d4.jpg
-关卡开放时间：03月20日 16:00 - 04月10日 03:59
-◆【时代】系列 - 玩伴 - 红云
-◆【时代】系列 - 雪霁 - 铃兰
-◆【时代】系列 - 月宵 - 薄绿
-◆【时代】系列 - 别枝 - 稀音
-
-when elegies are ashes
-挽歌燃烧殆尽
-https://web.hycdn.cn/staging/announce/images/20250224/0f100481ff0b5d4a6a4565a1cd386146.jpg
-活动时间：03月07日 16:00 - 03月28日 03:59
-["EA-ST-1", "EA-1", "EA-TR-1", "EA-2", "EA-3", "EA-4", "EA-5", "EA-6", "EA-ST-2", "EA-7", "EA-8", "EA-ST-3", "EA-EX-1", "EA-EX-1 CM", "EA-EX-2", "EA-EX-2 CM", "EA-EX-3", "EA-EX-3 CM", "EA-EX-4", "EA-EX-4 CM", "EA-EX-5", "EA-EX-5 CM", "EA-EX-6", "EA-EX-6 CM", "EA-EX-7", "EA-EX-7 CM", "EA-EX-8", "EA-EX-8 CM"]
-◆【时代】系列 - 甜美配方 - 妮芙
-◆【时代】系列 - 林间暖阳 - 凛视
-◆【时代】系列 - 绒布蛋糕 - 坚雷
-◆【成就之星】系列 - 万物有灵 - 慑砂
