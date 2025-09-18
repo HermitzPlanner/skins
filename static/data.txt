@@ -7,6 +7,7 @@ Arknights x BanG Dream! Ave Mujica
 ◆【CROSSOVER】系列 - 笼中歌者 - 三角初华
 ◆【CROSSOVER】系列 - 情热魔术师 - 祐天寺若麦
 ◆【CROSSOVER】系列 - 提线的本我 - 若叶睦
+["SS-ST-1", "SS-TR-1", "SS-1", "SS-2", "SS-3", "SS-4", "SS-5", "SS-6", "SS-7", "SS-8", "SS-EX-1", "SS-EX-1 CM", "SS-EX-2", "SS-EX-2 CM", "SS-EX-3", "SS-EX-3 CM", "SS-EX-4", "SS-EX-4 CM", "SS-EX-5", "SS-EX-5 CM", "SS-EX-6", "SS-EX-6 CM", "SS-EX-7", "SS-EX-7 CM", "SS-EX-8", "SS-EX-8 CM"]
 
 shamare new skin 2025
 -
