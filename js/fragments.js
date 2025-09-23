@@ -79,7 +79,9 @@ function getColorList(array) {
 }
 const bg = new Image()
 bg.src = "static/img/classic_gacha.png"
-const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', modelNameFromData = '') => {
+const rerunImg = new Image()
+rerunImg.src = "static/img/replicate_warning.png"
+const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', modelNameFromData = '', isRerun = false) => {
     const eventCode = normalizeEvent(eventData[0])
     const skinName = eventSkin
     const skinNameEnglish = 'No translation'
@@ -98,7 +100,7 @@ const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', model
         [icon]: modelName,
         "plannerId": plannerId
     }
-     const colors = getColorList(skinObject.displaySkin.colorList)
+    const colors = getColorList(skinObject.displaySkin.colorList)
     // Elements ===========================================
 
 
@@ -130,7 +132,7 @@ const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', model
     ctx.filter = 'none';
     ctx.globalCompositeOperation = 'color';
 
-   
+
 
     if (colors.length === 1) {
         ctx.fillStyle = colors[0]; // Color sólido si hay un solo color
@@ -219,6 +221,42 @@ const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', model
 
 
     const skinPriceDiv = create(label, 'div', skinPrice, 'skin-price text-outline')
+
+    if (isRerun) {
+        Object.assign(skinPriceDiv.style, {
+            left: '27px',
+            borderRadius: '0'
+        })
+        const rerunCanvas = Object.assign(document.createElement("canvas"), {
+            width: 35-8,
+            height: 27-9
+        })
+        Object.assign(rerunCanvas.style, {
+            position: 'absolute',
+            top: '0px',
+            left: '0px',
+            borderRadius: '0',
+            boxShadow: "6px 6px 4px rgba(0, 0, 0, 0.7)"
+        })
+
+        const rerunCtx = rerunCanvas.getContext("2d")
+        rerunCtx.drawImage(rerunImg, 
+            4, 0, 27, 18, 
+            0, 0, rerunCanvas.width, rerunCanvas.height)
+        rerunCtx.globalCompositeOperation = 'color';
+        if (colors.length === 1) {
+            rerunCtx.fillStyle = colors[0]; // Color sólido si hay un solo color
+        } else {
+            const gradient = rerunCtx.createLinearGradient(0, 0, rerunCanvas.width, 0); // Gradiente horizontal
+            colors.forEach((color, index) => {
+                gradient.addColorStop(index / (colors.length - 1), color);
+            });
+            rerunCtx.fillStyle = gradient;
+        }
+        rerunCtx.fillRect(0, 0, rerunCanvas.width, rerunCanvas.height); // Ajustado al tamaño del canvas
+        rerunCtx.globalCompositeOperation = 'source-over';
+        label.append(rerunCanvas)
+    }
     const button = document.createElement('button')
     button.onclick = () => {
         showSection('viewer')
@@ -229,7 +267,7 @@ const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', model
     create(button, 'img', inspectImg, 'skin-inspect-img')
     label.append(button)
 
-    
+
 
 
 

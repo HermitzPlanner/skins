@@ -433,6 +433,7 @@ section {
     /* new */
     top: 0;
     border-radius: 0 0 5px 0;
+    opacity: 1;
 }
 
 .skin-inspect {

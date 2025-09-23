@@ -17,11 +17,13 @@ let skinSpine
 function renderCanvas(plannerId, skinName, skinsData, perspective = 'front') {
 
     const skinObject = findSkinByName(skinsData.cnData, skinName)
-    const skinId = skinObject.avatarId.replace('#', '_').toLowerCase()
+    const skinId = skinObject.avatarId.replace('#', '_')
+    console.log("skinId", skinId)
     let animation = perspective == 'build' ? 'Relax' : 'Start'
-    const chibiExntension = plannerId == 'texasalter2' ? '.json' : '.skel'
-    const chibiRepo = `https://raw.githubusercontent.com/HermitzPlanner/${'chibi-assets'}/main/${plannerId}/${perspective}/${skinId}${chibiExntension}`;
-    const chibiRepoBuild = `https://raw.githubusercontent.com/HermitzPlanner/${'chibi-assets'}/main/${plannerId}/${perspective}/build_${skinId}${chibiExntension}`;
+    const jsonSkels = ["texasalter2", "logos1", "muelsyse2", "mostima2"];
+    const chibiExtension = jsonSkels.includes(plannerId) ? '.json' : '.skel';
+    const chibiRepo = `https://raw.githubusercontent.com/HermitzPlanner/${'chibi-assets'}/main/${plannerId}/${perspective}/${skinId}${chibiExtension}`;
+    const chibiRepoBuild = `https://raw.githubusercontent.com/HermitzPlanner/${'chibi-assets'}/main/${plannerId}/${perspective}/build_${skinId}${chibiExtension}`;
 
     PIXI.Assets.load(chibiRepo)
         .then((skinAsset) => {

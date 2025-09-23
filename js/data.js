@@ -120,7 +120,18 @@ function main(skinsData, eventsData) {
                 if (match) {
                     eventSkins.push({
                         name: match[1],      // Extracted skin name
-                        operator: match[2]   // Extracted operator name
+                        operator: match[2],   // Extracted operator name
+                        isRerun: false
+                    });
+                }
+            }
+            if (item.startsWith("◆r")) {
+                const match = item.match(/◆r【.*】系列 - (.*?) - (.*)/);
+                if (match) {
+                    eventSkins.push({
+                        name: match[1],      // Extracted skin name
+                        operator: match[2],   // Extracted operator name
+                        isRerun: true
                     });
                 }
             }
@@ -151,7 +162,7 @@ function main(skinsData, eventsData) {
         if (eventRewards.length !== 0) containerOfRewards.append(rewardContainer(event, 'Disable', 'all-reward-cbox', false))
 
         eventSkins.forEach(eventSkin => {
-            containerOfSkins.append(skinContainer(event, eventSkin.name, skinsData, 'portrait', eventSkin.operator))
+            containerOfSkins.append(skinContainer(event, eventSkin.name, skinsData, 'portrait', eventSkin.operator, eventSkin.isRerun))
         });
 
         if (event[0].startsWith('fashion')) {
