@@ -81,12 +81,12 @@ const bg = new Image()
 bg.src = "static/img/classic_gacha.png"
 const rerunImg = new Image()
 rerunImg.src = "static/img/replicate_warning.png"
-const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', modelNameFromData = '', isRerun = false) => {
+const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', modelNameFromData = '', isRerun = false, getFromPack = false) => {
     const eventCode = normalizeEvent(eventData[0])
     const skinName = eventSkin
     const skinNameEnglish = 'No translation'
     const skinObject = findSkinByName(skinsData.cnData, skinName)
-    let skinPrice = skinsData.costMap[skinName] > 0 ? skinsData.costMap[skinName] : 'Free'
+    let skinPrice = getFromPack ? "$30" : skinsData.costMap[skinName] > 0 ? skinsData.costMap[skinName] : 'Free'
 
     const modelName = modelNameFromData // eventSkin.operator
     const modelNameEnglish = skinObject.displaySkin.modelName

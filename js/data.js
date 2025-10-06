@@ -121,7 +121,8 @@ function main(skinsData, eventsData) {
                     eventSkins.push({
                         name: match[1],      // Extracted skin name
                         operator: match[2],   // Extracted operator name
-                        isRerun: false
+                        isRerun: false,
+                        getFromPack: false
                     });
                 }
             }
@@ -131,7 +132,30 @@ function main(skinsData, eventsData) {
                     eventSkins.push({
                         name: match[1],      // Extracted skin name
                         operator: match[2],   // Extracted operator name
-                        isRerun: true
+                        isRerun: true,
+                        getFromPack: false
+                    });
+                }
+            }
+            if (item.startsWith("◆p")) {
+                const match = item.match(/◆p【.*】系列 - (.*?) - (.*)/);
+                if (match) {
+                    eventSkins.push({
+                        name: match[1],      // Extracted skin name
+                        operator: match[2],   // Extracted operator name
+                        isRerun: false,
+                        getFromPack: true
+                    });
+                }
+            }
+            if (item.startsWith("◆rp")) {
+                const match = item.match(/◆rp【.*】系列 - (.*?) - (.*)/);
+                if (match) {
+                    eventSkins.push({
+                        name: match[1],      // Extracted skin name
+                        operator: match[2],   // Extracted operator name
+                        isRerun: true,
+                        getFromPack: true
                     });
                 }
             }
@@ -162,7 +186,7 @@ function main(skinsData, eventsData) {
         if (eventRewards.length !== 0) containerOfRewards.append(rewardContainer(event, 'Disable', 'all-reward-cbox', false))
 
         eventSkins.forEach(eventSkin => {
-            containerOfSkins.append(skinContainer(event, eventSkin.name, skinsData, 'portrait', eventSkin.operator, eventSkin.isRerun))
+            containerOfSkins.append(skinContainer(event, eventSkin.name, skinsData, 'portrait', eventSkin.operator, eventSkin.isRerun, eventSkin.getFromPack))
         });
 
         if (event[0].startsWith('fashion')) {
@@ -309,7 +333,7 @@ function eventButtonsLogic() {
             var(--gradient-bottom-transparent)), 
             url("https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/events/${eventCode}.jpg")`
 
-            
+
 
             // getDiv('container-of-skins').style.backgroundImage =
             //     `linear-gradient(var(--gradient-top-transparent), 
