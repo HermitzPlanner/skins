@@ -42,9 +42,15 @@ function parseSkinsData(cnData, enData) {
         }
 
         if (skin.displaySkin.skinName) {
-            let price = obtainApproach == '采购中心' ? 18 : 0
-            if (skin.dynIllustId) price = 21
-            if (skin.dynEntranceId) price = 24
+            // let price = obtainApproach == '采购中心' ? 18 : 0
+            // if (skin.dynIllustId) price = 21
+            // if (skin.dynEntranceId) price = 24
+            let price = 0
+            if (obtainApproach == '采购中心') {
+                price = 18
+                if (skin.dynIllustId) price = 21
+                if (skin.dynEntranceId) price = 24
+            }
             plannerIdMap[skin.displaySkin.skinName] = getPlannerId(modelName);
             costMap[skin.displaySkin.skinName] = price
         }
