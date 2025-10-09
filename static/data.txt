@@ -41,6 +41,13 @@ Rebuilding Mandate
 ◆r【成就之星】系列 - 遗迹游学者 - 惊蛰
 ◆r【雷神推进者】系列 - 破晓 - 冰酿
 
+Ending a Grand Overture Rerun
+-
+-
+-
+◆【罗德厨房】系列 - 温情烘焙 - 波卜
+["GO-ST-1", "GO-1", "GO-TR-1", "GO-2", "GO-3", "GO-4", "GO-5", "GO-6", "GO-7", "GO-8", "GO-9", "GO-ST-2", "GO-EX-1", "GO-EX-1 CM", "GO-EX-2", "GO-EX-2 CM", "GO-EX-3", "GO-EX-3 CM", "GO-EX-4", "GO-EX-4 CM", "GO-EX-5", "GO-EX-5 CM", "GO-EX-6", "GO-EX-6 CM", "GO-EX-7", "GO-EX-7 CM", "GO-EX-8", "GO-EX-8 CM"]
+
 Arknights x BanG Dream! Ave Mujica
 -
 -
