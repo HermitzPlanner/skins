@@ -39,8 +39,8 @@ const eventContainer = (eventData, skinsArray, eventRewards) => {
     input.value = eventCode
     input.id = eventCode
     const eventCodeDiv = create(label, 'div', eventCode, 'event-code hide')
-    const eventNameDiv = create(label, 'div', eventName, 'event-name mandarin')
-    const eventNameEnglishDiv = create(label, 'div', eventNameEnglish, 'event-name-english english')
+    const eventNameDiv = create(label, 'div', eventName, 'event-name mandarin text-outline')
+    const eventNameEnglishDiv = create(label, 'div', eventNameEnglish, 'event-name-english english text-outline')
     const eventDateDiv = create(label, 'div', eventDate, 'event-date hide')
     const eventSkinsDiv = create(label, 'div', eventSkins, 'event-skins hide')
     const eventImgDiv = create(label, 'img', eventImg)
