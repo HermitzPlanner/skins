@@ -95,9 +95,9 @@ const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', model
     const img = imgrepo(size, plannerId)
 
     const missingSkin = {
-        [art]: modelName,
-        [portrait]: modelName,
-        [icon]: modelName,
+        [art]: modelName.replace("升变状态", "").replace(/（/g, "(").replace(/）/g, ")"),
+        [portrait]: modelName.replace("升变状态", "").replace(/（/g, "(").replace(/）/g, ")"),
+        [icon]: modelName.replace("升变状态", "").replace(/（/g, "(").replace(/）/g, ")"),
         "plannerId": plannerId
     }
     const colors = getColorList(skinObject.displaySkin.colorList)

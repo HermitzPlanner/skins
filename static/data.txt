@@ -1,3 +1,27 @@
+Medjehtiqedti Bound
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+◆【寒武纪】系列 - 夜归人 - 烛煌
+◆【寒武纪】系列 - 耀目之蓝 - 隐德来希
+◆【时代】系列 - 博物 - 焰影苇草
+◆【时代】系列 - 私人书房 - 薄绿
+["ME-ST-1", "ME-TR-1", "ME-1", "ME-2", "ME-3", "ME-4", "ME-5", "ME-6", "ME-ST-2", "ME-7", "ME-8", "ME-ST-3", "ME-EX-1", "ME-EX-1 CM", "ME-EX-2", "ME-EX-2 CM", "ME-EX-3", "ME-EX-3 CM", "ME-EX-4", "ME-EX-4 CM", "ME-EX-5", "ME-EX-5 CM", "ME-EX-6", "ME-EX-6 CM", "ME-EX-7", "ME-EX-7 CM", "ME-EX-8", "ME-EX-8 CM"]
+
+Trials for Navigator #6
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+◆【】系列 - 迎风之轮 - 泡泡
+
+Exodus from the Pale Sea rerun
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+◆【】系列 - 冒险启程 - 瑰盐
+["EP-ST-1", "EP-TR-1", "EP-1", "EP-2", "EP-3", "EP-4", "EP-5", "EP-6", "EP-ST-2", "EP-7", "EP-8", "EP-ST-3", "EP-EX-1", "EP-EX-1 CM", "EP-EX-2", "EP-EX-2 CM", "EP-EX-3", "EP-EX-3 CM", "EP-EX-4", "EP-EX-4 CM", "EP-EX-5", "EP-EX-5 CM", "EP-EX-6", "EP-EX-6 CM", "EP-EX-7", "EP-EX-7 CM", "EP-EX-8", "EP-EX-8 CM"]
+
+
 Unrealized Realities
 -
 -
@@ -20,6 +44,12 @@ An Accolade to a Rejuvenation rerun
 ◆r【CROSSOVER】系列 - 全能演员 - 重岳
 ◆r【CROSSOVER】系列 - 霹雳导演 - 年
 ◆r【CROSSOVER】系列 - 《上任达维镇》 - 涤火杰西卡
+
+IS6 Lee Skin
+-
+-
+-
+◆【】系列 - 鉴浮生 - 老鲤
 
 Portatori dei Velluti rerun
 -
@@ -163,20 +193,6 @@ lunacub and ptilopsis skins rerun 2025
 ◆r【0011/韵】系列 - 抚云间 - 白面鸮
 ◆r【0011/韵】系列 - 棠云巧梦 - 子月
 
-Inudi Harek Horakhet rerun
--
--
--
-◆【错位巡礼】系列 - 憩羽 - 衡沙
-◆r【珊瑚海岸】系列 - 夏卉 FA394 - 澄闪
-◆r【珊瑚海岸】系列 - 缤纷奇境 CW03 - 史尔特尔
-◆r【珊瑚海岸】系列 - 夏卉 FA062 - 桃金娘
-◆r【时代】系列 - 动感 - 苍苔
-◆r【错位巡礼】系列 - 流辉 - 夜莺
-◆r【错位巡礼】系列 - 沉思之庭 - 赫德雷
-◆r【错位巡礼】系列 - 倾听 - 温蒂
-["AS-ST-1", "AS-1", "AS-TR-1", "AS-2", "AS-3", "AS-4", "AS-5", "AS-ST-2", "AS-6", "AS-7", "AS-8", "AS-9", "AS-ST-3", "AS-EX-1", "AS-EX-1 CM", "AS-EX-2", "AS-EX-2 CM", "AS-EX-3", "AS-EX-3 CM", "AS-EX-4", "AS-EX-4 CM", "AS-EX-5", "AS-EX-5 CM", "AS-EX-6", "AS-EX-6 CM", "AS-EX-7", "AS-EX-7 CM", "AS-EX-8", "AS-EX-8 CM", "AS-S-1", "AS-S-1 CM", "AS-S-2", "AS-S-2 CM", "AS-S-3", "AS-S-3 CM", "AS-S-4", "AS-S-4 CM"]
-
 Arclight CCB#4
 -
 -
@@ -194,32 +210,11 @@ https://web.hycdn.cn/upload/image/20250725/674f21bfbdfa086f0cfb9c180d0bb681.jpg
 ◆【珊瑚海岸】系列 - 夏卉 FA054 - 梅
 ["AT-ST-1", "AT-TR-1", "AT-1", "AT-2", "AT-3", "AT-4", "AT-TR-2", "AT-5", "AT-ST-2", "AT-6", "AT-P-1", "AT-P-2", "AT-P-3", "AT-7", "AT-8", "AT-ST-3", "AT-EX-1", "AT-EX-1 CM", "AT-EX-2", "AT-EX-2 CM", "AT-EX-3", "AT-EX-3 CM", "AT-EX-4", "AT-EX-4 CM", "AT-EX-5", "AT-EX-5 CM", "AT-EX-6", "AT-EX-6 CM", "AT-EX-7", "AT-EX-7 CM", "AT-EX-8", "AT-EX-8 CM", "AT-S-1", "AT-S-1 CM", "AT-S-2", "AT-S-2 CM", "AT-S-3", "AT-S-3 CM", "AT-S-4", "AT-S-4 CM"]
 
-arknights x taiko no tatsujin collab
-明日方舟×太鼓之达人
-https://web.hycdn.cn/staging/announce/images/20250711/73a96c37ec478a2b343c73012aea00e0.jpg
-活动时间：07月22日 16:00 - 08月12日 03:59
-◆【CROSSOVER】系列 - 繁闹祭典 - 桃金娘
-◆r【时代】系列 - 远行前的野餐 - 纯烬艾雅法拉
-◆r【时代】系列 - 晚风休憩 - 青枳
-◆r【斗争血脉】系列 - 万重山 - 假日威龙陈
-◆r【珊瑚海岸】系列 - 悠然假日 HD26 - 百炼嘉维尔
-◆r【珊瑚海岸】系列 - 悠然假日 HDm74 - 至简
-
-fantasy in the mirage
-故事集
-https://web.hycdn.cn/announce/images/20250630/27b29b7437c05ad24a6754d47e6d6340.jpg
-关卡开放时间：07月08日 16:00 - 07月15日 03:59
-◆【时代】系列 - 凌云意 - 拜松
-◆【珊瑚海岸】系列 - 夏卉 FA137 - 林
-◆【0011/韵】系列 - 行梦侧畔 - 鸿雪
-◆【0011/韵】系列 - 与荷 - 蛇屠箱
-◆【时代】系列 - 注目深渊 - 乌尔比安
-◆r【珊瑚海岸】系列 - 夏卉 FA317 - 琴柳
-◆r【珊瑚海岸】系列 - 沙滩护卫 GT003 - 白铁
-◆r【珊瑚海岸】系列 - 悠然假日 HD61 - 蜜蜡
-◆r【珊瑚海岸】系列 - 夏卉 FA075 - 焰影苇草
-◆r【珊瑚海岸】系列 - 温差 RT.RX07 - 提丰
-◆r【珊瑚海岸】系列 - 悠然假日 HD78 - 但书
-◆r【珊瑚海岸】系列 - 灿阳朝露 SDm09 - 铅踝
-◆r【时代】系列 - 所愿 - 星源
-["FM-1", "FM-1 CM", "FM-2", "FM-2 CM", "FM-3", "FM-3 CM", "FM-S-1", "FM-4", "FM-4 CM", "FM-5", "FM-5 CM", "FM-6", "FM-6 CM", "FM-7", "FM-7 CM", "FM-8", "FM-8 CM", "FM-S-2"]
+Wishes From Stars
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+◆【忒斯特收藏】系列 - 于万千宇宙之中 - 阿米娅（近卫升变状态）
+◆【忒斯特收藏】系列 - 轻盈一梦 - 迷迭香
+◆【忒斯特收藏】系列 - 无息破局 - 左乐
+◆r【忒斯特收藏】系列 - 寰宇独奏 - 阿米娅（医疗升变状态）

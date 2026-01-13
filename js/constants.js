@@ -9,7 +9,14 @@ const imgrepo = (size, plannerId) => {
     }
 } 
 const defaultimgrepo = (size, plannerId) => `https://raw.githubusercontent.com/${gituser}/${defaultRepo}${size}/main/e0/${plannerId}.png`
-const eventrepo = (eventid) => `https://raw.githubusercontent.com/${gituser}/${repo}/main/events/resized/resized_${eventid}.jpg`
+const eventrepo = (eventid) => {
+  // Chequea si empieza con "is" + al menos un dígito
+  const esPng = /^is\d/.test(eventid);
+  
+  const extension = esPng ? '.png' : '.jpg';
+  
+  return `https://raw.githubusercontent.com/${gituser}/${repo}/main/events/resized/resized_${eventid}${extension}`;
+};
 const inspectImg = 'https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/search.svg'
 const originiteLink = 'https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/puregem.png'
 const cartLink = 'https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/cart.svg'

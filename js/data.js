@@ -21,7 +21,7 @@ function parseSkinsData(cnData, enData) {
 
         let modelName = skin.displaySkin.modelName
         const skinName = skin.displaySkin.skinName
-        if (skinName == '触及星辰') modelName = 'Amiya Guard'
+        if (skinName == '触及星辰' || skinName == '于万千宇宙之中') modelName = 'Amiya Guard'
         if (skinName == '寰宇独奏') modelName = 'Amiya Medic'
 
         const skinGroupId = skin.displaySkin.skinGroupId
