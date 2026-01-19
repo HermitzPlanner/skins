@@ -372,8 +372,10 @@ const gallerySkin = (skinsData, data) => {
     let skinGroupId = skinObject.displaySkin.skinGroupId.split('#')[1]
     if (skinGroupId == "as") skinGroupId = "ambienceSynesthesia"
     const brand = skinsData.cnData.brandList[skinGroupId]?.brandCapitalName || 'CROSSOVER'
+    const artist = skinObject.displaySkin.drawerList.join(', ')
 
     button.setAttribute('data-brand', brand)
+    button.setAttribute('data-artist', artist)
 
     create(button, 'div', modelNameEnglish, 'gallery-name')
     create(button, 'img', img)

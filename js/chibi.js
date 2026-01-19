@@ -25,6 +25,9 @@ function renderCanvas(plannerId, skinName, skinsData, perspective = 'front') {
     const chibiRepo = `https://raw.githubusercontent.com/HermitzPlanner/${'chibi-assets'}/main/${plannerId}/${perspective}/${skinId}${chibiExtension}`;
     const chibiRepoBuild = `https://raw.githubusercontent.com/HermitzPlanner/${'chibi-assets'}/main/${plannerId}/${perspective}/build_${skinId}${chibiExtension}`;
 
+    const amongus2 = "https://raw.githubusercontent.com/HermitzPlanner/chibi-assets/refs/heads/main/rosmontis2/front/char_391_rosmon_sale_16.skel"
+    const amongus = "https://raw.githubusercontent.com/HermitzPlanner/chibi-assets/main/rosmontis2/build/build_char_391_rosmon_sale_16.skel"
+    /**/
     PIXI.Assets.load(chibiRepo)
         .then((skinAsset) => {
             renderSkinSpine(plannerId, perspective, animation, skinAsset);
@@ -32,15 +35,19 @@ function renderCanvas(plannerId, skinName, skinsData, perspective = 'front') {
         .catch((error) => {
             console.error('Failed to load primary asset:', error);
             PIXI.Assets.load(chibiRepoBuild)
+                console.log("chibiRepoBuild", chibiRepoBuild)
                 .then((fallbackAsset) => {
+                    console.log("fallbackAsset", fallbackAsset)
                     renderSkinSpine(plannerId, perspective, animation, fallbackAsset);
                 })
                 .catch((fallbackError) => {
                     console.error('Failed to load fallback asset:', fallbackError);
-                    // Optionally, handle the scenario where both load attempts fail
-                    // For example, you might want to show an error message or use a default asset
                 });
         });
+        
+
+    PIXI.Assets.load(amongus)
+       
 
 }
 

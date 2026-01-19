@@ -588,7 +588,7 @@ section {
     color: var(--equip-txt);
 }
 
-#search2 {
+#search2, #search3 {
     background: var(--equip-bg);
     color: var(--equip-txt);
     padding: 10px 5px;

@@ -9,8 +9,10 @@ function parseSkinsData(cnData, enData) {
     const plannerIdMap = {}
     const plannerIdMapGlobal = {}
     const costMap = {}
-    const brands = new Set();
-    const obtainApproaches = new Set();
+    const brands = new Set()
+    const artistsUnordered = new Set()
+
+    const obtainApproaches = new Set()
     const missingChibis = []
 
     charSkins.forEach(element => {
@@ -31,6 +33,13 @@ function parseSkinsData(cnData, enData) {
             const brand = cnData.brandList[skinGroupIdSplitted]?.brandCapitalName || 'CROSSOVER'
             brands.add(brand)
         }
+
+        if (skin.displaySkin.drawerList) {
+            artistsUnordered.add(skin.displaySkin.drawerList.join(', '))
+        }
+        //console.log("skin.displaySkin.drawerList",skin.displaySkin.drawerList)
+        //const artist = skin.displaySkin.drawerList[0]
+        //if (artist) { artists.add(artist) }
 
 
 
@@ -58,9 +67,11 @@ function parseSkinsData(cnData, enData) {
 
     console.log("Unique obtainApproaches:", Array.from(obtainApproaches));
 
+    const artists = new Set(
+        [...artistsUnordered].sort((a, b) => a.localeCompare(b, 'es', { sensitivity: 'base' }))
+    );
 
-
-    return { cnData, enData, plannerIdMap, costMap, brands }
+    return { cnData, enData, plannerIdMap, costMap, brands, artists }
 }
 
 function parseEventsData(data) {
@@ -256,16 +267,29 @@ function main(skinsData, eventsData) {
     document.querySelector('input[name="event"]').click()
 
     const search = document.getElementById('search2')
+    const search3 = document.getElementById('search3')
     const brandData = skinsData.brands
+    const artistsData = skinsData.artists
     //brandData.sort();
     brandData.forEach(brand => {
         search.innerHTML += `<option value="${brand}">${brand}</option>`
+    });
+
+    artistsData.forEach(artist => {
+        search3.innerHTML += `<option value="${artist}">${artist}</option>`
     });
 
     let selectedBrand = ''
 
     search.addEventListener("change", brand => {
         selectedBrand = search.value
+        revealItem()
+    })
+
+    let selectedArtist = ''
+
+    search3.addEventListener("change", artist => {
+        selectedArtist = search3.value
         revealItem()
     })
 
@@ -303,8 +327,31 @@ function main(skinsData, eventsData) {
             // itemName.includes(searchTerm) ? visible(labelElement) : invis(labelElement);
 
             // Look only for the current visible items
+
+            /*
             if (button.classList.contains('show-block')) {
                 const shouldBeVisible = (button.getAttribute('data-brand') == selectedBrand || selectedBrand == 'all' || selectedBrand == '')
+                //need to check for
+                //button.getAttribute('data-artist') == selectedArtist || selectedArtist == 'all' || selectedArtist == ''
+                shouldBeVisible ? visible(button) : invis(button);
+            }
+            */
+
+            if (button.classList.contains('show-block')) {
+                const brandMatch = (
+                    button.getAttribute('data-brand') === selectedBrand ||
+                    selectedBrand === 'all' ||
+                    selectedBrand === ''
+                );
+
+                const artistMatch = (
+                    button.getAttribute('data-artist') === selectedArtist ||
+                    selectedArtist === 'all' ||
+                    selectedArtist === ''
+                );
+
+                const shouldBeVisible = brandMatch && artistMatch;
+
                 shouldBeVisible ? visible(button) : invis(button);
             }
 
