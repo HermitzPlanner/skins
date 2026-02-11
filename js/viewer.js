@@ -184,6 +184,44 @@ function infoRender(container, plannerId, skinName, skinsData) {
 
     infoDiv.append(infoRows)
 
+    if (videos[plannerId]) {
+
+        videos[plannerId].forEach(videoFile => {
+        const video = document.createElement("video");
+        video.src = `https://github.com/HermitzPlanner/chibi-assets/raw/refs/heads/main/chibiEffects/${plannerId}/${videoFile}`;     
+        video.autoplay = true  
+        video.controls = true;            // barra de play/pausa/tiempo/fullscreen
+        video.muted = true;               // para que autoplay funcione sin bronca del navegador
+        video.autoplay = true;           // ponelo true si querés que arranquen solos (pero muteados)
+        video.loop = true;             // si querés que se repitan
+        video.preload = "metadata";       // carga solo metadata al principio (más rápido)
+
+        // video.style.maxWidth = "600px";   // ajustá como quieras
+        // video.style.margin = "12px";
+        video.style.borderRadius = "8px";
+        video.style.boxShadow = "0 4px 10px rgba(0,0,0,0.3)"; // para que queden zarpados
+
+        infoDiv.appendChild(video);
+    });
+    }
+
+    
+
+
+
+    // const video = document.createElement("video")
+    // video.autoplay = true;       // descomentá si querés que arranque solo (mejor con muted)
+    // video.muted = true;             // para que autoplay funcione en la mayoría de navegadores
+    // video.loop = true;              // repite forever
+    // const source = document.createElement('source');
+    // source.src = 'static/ling2/g0omz8Pflx08vblOTvss010412001ez20E010.mp4';  // cambiá por tu ruta o URL
+    // source.type = 'video/mp4';
+
+    // // La metés adentro del video
+    // video.appendChild(source);
+
+
+
     container.append(infoDiv)
 
     // const hsl = hexToHSL(colorList[0])
