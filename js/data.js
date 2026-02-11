@@ -379,12 +379,21 @@ function eventButtonsLogic() {
             //getDiv('container-of-skins-h2-english').textContent = eventNameEnglish
             //getDiv('container-of-skins-h2-mandarin').textContent = eventName
 
-            /**/
+
 
             getDiv('container-of-skins').style.backgroundImage =
                 `linear-gradient(var(--gradient-top-transparent), 
             var(--gradient-bottom-transparent)), 
             url("https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/events/${eventCode}.jpg")`
+            /*
+                        
+            
+                        getDiv('container-of-skins').style.backgroundImage =
+                            `linear-gradient(var(--gradient-top-transparent), 
+                        var(--gradient-bottom-transparent)), 
+                        url("ep16abnormalspectrum.jpg")`
+            
+                        */
 
 
 

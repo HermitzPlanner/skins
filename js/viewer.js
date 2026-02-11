@@ -83,10 +83,46 @@ function infoRender(container, plannerId, skinName, skinsData) {
 
     const iconDiv = create(header, 'img', imgrepo('icon', plannerId), 'viewer-icon-image')
     animate(iconDiv, 'viewer-show-image')
+
+    function getTextColor(hex) {
+        // Sacamos el # si lo tiene
+        hex = hex.replace(/^#/, '');
+
+        // Si es formato corto (#abc) lo expandimos a #aabbcc
+        if (hex.length === 3) {
+            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+        }
+
+        // Ahora debería ser de 6 caracteres
+        if (hex.length !== 6) {
+            throw new Error("El hex tiene que ser válido, loco (#xxx o #xxxxxx)");
+        }
+
+        // Parseamos los valores RGB
+        const r = parseInt(hex.substr(0, 2), 16);
+        const g = parseInt(hex.substr(2, 2), 16);
+        const b = parseInt(hex.substr(4, 2), 16);
+
+        // La fórmula rápida que ya tenías (perceptual brightness)
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+
+        // > 125 → fondo claro → texto negro
+        // ≤ 125 → fondo oscuro → texto blanco
+        return brightness > 125 ? "#000000" : "#ffffff";
+    }
+
+    // rgb(118, 41, 42) → brightness ≈ 68 → devuelve blanco
+
     const modelNameDiv = create(header, 'div', skinObject.displaySkin.modelName, 'viewer-model-name')
+    console.log("colorList[0]", colorList[0])
+    //modelNameDiv.style.background = colorList[0]
+    //modelNameDiv.style.color = getTextColor(colorList[0])
     if (modelNameDiv.length > 1) modelNameDiv.style.fontSize = '35px'
     animateText(modelNameDiv)
+
     const skinNameDiv = create(header, 'div', skinNameGlobal, 'viewer-skin-name')
+    //skinNameDiv.style.background = colorList[0]
+    //skinNameDiv.style.color = getTextColor(colorList[0])
     //skinNameDiv.style.fontSize = '50px'
     animateText(skinNameDiv, 0.05)
 
@@ -186,26 +222,30 @@ function infoRender(container, plannerId, skinName, skinsData) {
 
     if (videos[plannerId]) {
 
-        videos[plannerId].forEach(videoFile => {
-        const video = document.createElement("video");
-        video.src = `https://github.com/HermitzPlanner/chibi-assets/raw/refs/heads/main/chibiEffects/${plannerId}/${videoFile}`;     
-        video.autoplay = true  
-        video.controls = true;            // barra de play/pausa/tiempo/fullscreen
-        video.muted = true;               // para que autoplay funcione sin bronca del navegador
-        video.autoplay = true;           // ponelo true si querés que arranquen solos (pero muteados)
-        video.loop = true;             // si querés que se repitan
-        video.preload = "metadata";       // carga solo metadata al principio (más rápido)
+        //videos[plannerId].forEach(videoFile => {
+        for (let index = 1; index <= videos[plannerId]; index++) {
 
-        // video.style.maxWidth = "600px";   // ajustá como quieras
-        // video.style.margin = "12px";
-        video.style.borderRadius = "8px";
-        video.style.boxShadow = "0 4px 10px rgba(0,0,0,0.3)"; // para que queden zarpados
 
-        infoDiv.appendChild(video);
-    });
+            const video = document.createElement("video");
+            video.src = `https://github.com/HermitzPlanner/chibi-assets/raw/refs/heads/main/chibiEffects/${plannerId}/${index}.mp4`;
+            video.autoplay = true
+            video.controls = true;            // barra de play/pausa/tiempo/fullscreen
+            video.muted = true;               // para que autoplay funcione sin bronca del navegador
+            video.autoplay = true;           // ponelo true si querés que arranquen solos (pero muteados)
+            video.loop = true;             // si querés que se repitan
+            video.preload = "metadata";       // carga solo metadata al principio (más rápido)
+
+            // video.style.maxWidth = "600px";   // ajustá como quieras
+            // video.style.margin = "12px";
+            video.style.borderRadius = "8px";
+            video.style.boxShadow = "0 4px 10px rgba(0,0,0,0.3)"; // para que queden zarpados
+
+            infoDiv.appendChild(video);
+        }
+        //});
     }
 
-    
+
 
 
 
