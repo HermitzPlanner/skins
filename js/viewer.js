@@ -68,7 +68,7 @@ function infoRender(container, plannerId, skinName, skinsData) {
     // ====================================================
 
     const quitViewerButton = document.createElement('button')
-    quitViewerButton.textContent = 'X'
+    quitViewerButton.textContent = 'Quit'
     quitViewerButton.classList.add('quit-viewer-button')
     quitViewerButton.onclick = () => {
         // document.getElementById('viewer').style.display = 'none'
@@ -78,11 +78,50 @@ function infoRender(container, plannerId, skinName, skinsData) {
 
     infoDiv.append(quitViewerButton)
 
+    const collapseOrExpandButton = document.createElement('button')
+    collapseOrExpandButton.textContent = 'Collapse'
+    collapseOrExpandButton.classList.add('quit-viewer-button')
+    collapseOrExpandButton.classList.add('collapse-viewer-button')
+    collapseOrExpandButton.onclick = () => {
+        // document.getElementById('viewer').style.display = 'none'
+        //getDiv(lastSection).style.display = 'flex'
+        //showSection(lastSection)
+        collapseOrExpand(collapseOrExpandButton)
+    }
+
+    infoDiv.append(collapseOrExpandButton)
+
+    // ====================================================
+    // Color List Div
+    // ====================================================
+
+    const colorListDiv = document.createElement('div');
+    colorListDiv.className = 'color-list-div';
+    let colorStyles = [];
+
+    colorList.forEach(color => {
+        if (color.trim() !== '') { // Skip empty strings
+            const colorDiv = document.createElement('div');
+            colorDiv.style.backgroundColor = color;
+            colorDiv.style.flex = '1'; // Each color div takes equal width
+            colorListDiv.appendChild(colorDiv);
+
+            // Convert hex to rgba with 10% opacity
+            colorStyles.push(hexToRgba(color, 0.1));
+        }
+    });
+
+    infoDiv.append(colorListDiv);
+
     const header = document.createElement('div')
     header.className = 'viewer-header'
 
-    const iconDiv = create(header, 'img', imgrepo('icon', plannerId), 'viewer-icon-image')
-    animate(iconDiv, 'viewer-show-image')
+    const iconBrandDiv = document.createElement("img")
+    iconBrandDiv.src = `static/img/brands/${brand}.png`
+    iconBrandDiv.classList.add("viewer-icon-image")
+    header.append(iconBrandDiv)
+
+    animate(iconBrandDiv, 'viewer-show-image')
 
     function getTextColor(hex) {
         // Sacamos el # si lo tiene
@@ -128,27 +167,7 @@ function infoRender(container, plannerId, skinName, skinsData) {
 
     infoDiv.append(header)
 
-    // ====================================================
-    // Color List Div
-    // ====================================================
-
-    const colorListDiv = document.createElement('div');
-    colorListDiv.className = 'color-list-div';
-    let colorStyles = [];
-
-    colorList.forEach(color => {
-        if (color.trim() !== '') { // Skip empty strings
-            const colorDiv = document.createElement('div');
-            colorDiv.style.backgroundColor = color;
-            colorDiv.style.flex = '1'; // Each color div takes equal width
-            colorListDiv.appendChild(colorDiv);
-
-            // Convert hex to rgba with 10% opacity
-            colorStyles.push(hexToRgba(color, 0.1));
-        }
-    });
-
-    infoDiv.append(colorListDiv);
+    
 
     // Apply the gradient with transparent colors
     let angle = 45; // Change this to any angle (0-360)
@@ -604,4 +623,40 @@ function addImageInteraction(img) {
     document.addEventListener('mouseup', e => {
         document.removeEventListener('mousemove', moveImage);
     });
+}
+
+function collapseOrExpand(collapseOrExpandButton) {
+    const viewerInfo = document.getElementById("viewer-info");
+    if (!viewerInfo) return;
+
+    const quiereColapsar = collapseOrExpandButton.textContent.trim() === "Collapse";
+
+    const excepciones = [
+        "collapse-viewer-button",
+        "animation-list-div"
+    ];
+
+    // Toggleamos los hijos (menos las excepciones)
+    Array.from(viewerInfo.children).forEach(child => {
+        if (excepciones.some(clase => child.classList.contains(clase))) {
+            return;
+        }
+        if (quiereColapsar) {
+            child.classList.add("hide");
+        } else {
+            child.classList.remove("hide");
+        }
+    });
+
+    // Cambiamos tamaño del contenedor principal
+    if (quiereColapsar) {
+        viewerInfo.style.width = "fit-content";
+        viewerInfo.style.height = "45px";
+    } else {
+        viewerInfo.style.width = "500px";
+        viewerInfo.style.height = "100%";
+    }
+
+    // Actualizamos el texto del botón
+    collapseOrExpandButton.textContent = quiereColapsar ? "Expand" : "Collapse";
 }
