@@ -227,7 +227,7 @@ function infoRender(container, plannerId, skinName, skinsData) {
 
 
             const video = document.createElement("video");
-            video.src = `https://github.com/HermitzPlanner/chibi-assets/raw/refs/heads/main/chibiEffects/${plannerId}/${index}.mp4`;
+            video.src = `https://github.com/HermitzPlanner/chibi-effects/raw/refs/heads/main/${plannerId}/${index}.mp4`;
             video.autoplay = true
             video.controls = true;            // barra de play/pausa/tiempo/fullscreen
             video.muted = true;               // para que autoplay funcione sin bronca del navegador
