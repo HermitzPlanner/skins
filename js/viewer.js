@@ -163,7 +163,7 @@ function infoRender(container, plannerId, skinName, skinsData, charData) {
     modelNameDiv.textContent = skinObject.displaySkin.modelName
 
     const professionImg = document.createElement("img")
-    professionImg.src = "static/friend_assist_profession_hub/icon_profession_" + charObject.profession + ".png"
+    professionImg.src = "static/friend_assist_profession_hub/icon_profession_" + charObject.profession.toLowerCase() + ".png"
     professionImg.className = "viewer-profession-icon dynamic-img-color"
     modelNameDiv.append(professionImg)
 
