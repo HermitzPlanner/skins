@@ -10,6 +10,7 @@ function parseSkinsData(cnData, enData) {
     const plannerIdMapGlobal = {}
     const costMap = {}
     const brands = new Set()
+    const brandsCN = {}
     const artistsUnordered = new Set()
 
     const obtainApproaches = new Set()
@@ -31,6 +32,10 @@ function parseSkinsData(cnData, enData) {
             let skinGroupIdSplitted = skinGroupId.split('#')[1]
             //if (skinGroupIdSplitted == "as") skinGroupIdSplitted = "ambienceSynesthesia" 
             const brand = cnData.brandList[skinGroupIdSplitted]?.brandCapitalName || 'CROSSOVER'
+            const brandName = cnData.brandList[skinGroupIdSplitted]?.brandName || 'CROSSOVER'
+
+            brandsCN[brandName.replace("系列", "").replace(" ", "").replace("™", "")] = brand;
+
             brands.add(brand)
         }
 
@@ -71,7 +76,7 @@ function parseSkinsData(cnData, enData) {
         [...artistsUnordered].sort((a, b) => a.localeCompare(b, 'es', { sensitivity: 'base' }))
     );
 
-    return { cnData, enData, plannerIdMap, costMap, brands, artists }
+    return { cnData, enData, plannerIdMap, costMap, brands, brandsCN, artists }
 }
 
 function parseEventsData(data) {
@@ -103,35 +108,53 @@ function parseEventsData(data) {
 // ====================================================
 
 Promise.all([
-    // Fetch CN skin data
     fetch('https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/refs/heads/master/zh_CN/gamedata/excel/skin_table.json')
         .then(response => response.json()),
-
-    // Fetch EN skin data
-    fetch('https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/refs/heads/main/en_US/gamedata/excel/skin_table.json')
+    fetch('https://raw.githubusercontent.com/ArknightsAssets/ArknightsGamedata/refs/heads/master/en/gamedata/excel/skin_table.json')
         .then(response => response.json()),
-
-    // Fetch events data
     fetch('static/data.txt')
         .then(response => response.text()),
-]).then(([cnData, enData, eventsData]) => {
+    fetch('https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/refs/heads/master/zh_CN/gamedata/excel/character_table.json')
+            .then(response => response.json()),
+]).then(([cnData, enData, eventsData, charData]) => {
     const skinsData = parseSkinsData(cnData, enData);
     const parsedEventsData = parseEventsData(eventsData);
-    main(skinsData, parsedEventsData);
+    main(skinsData, parsedEventsData, charData);
 }).catch(error => {
     console.error('Error fetching data:', error);
 });
 
 
-function main(skinsData, eventsData) {
+function main(skinsData, eventsData, charData) {
     console.log("skinsData", skinsData)
     console.log("eventsData", eventsData)
+    console.log("charData", charData)
     eventsData.slice().reverse().forEach((event, index) => {
 
         let eventSkins = [];
         let eventRewards = []
 
-        event.forEach(item => {
+        event.forEach((item, index) => {
+            if (item.startsWith("◆brand-single") ||
+                item.startsWith("◆brand-multiple") ||
+                item.startsWith("◆brand-rerun-single") ||
+                item.startsWith("◆brand-rerun-multiple")) {
+
+                const brandNameCN = event[index + 1].match(/【(.*?)】/)[1]
+                const brandNameCapital = skinsData.brandsCN[brandNameCN]
+                //console.log("brandNameCN", brandNameCN)
+                //console.log("brandNameCapital", brandNameCapital)
+
+                eventSkins.push({
+                    name: brandNameCapital,
+                    isBrand: true,
+                    isRerun: item.includes("rerun") ? true : false,
+                    isMultiple: item.includes("multiple") ? true : false
+                    // operator: match[2],  
+                    // isRerun: false,
+                    // getFromPack: false
+                });
+            }
             if (item.startsWith("◆")) {
                 const match = item.match(/◆【.*】系列 - (.*?) - (.*)/);
                 if (match) {
@@ -202,8 +225,51 @@ function main(skinsData, eventsData) {
 
         if (eventRewards.length !== 0) containerOfRewards.append(rewardContainer(event, 'Disable', 'all-reward-cbox', false))
 
-        eventSkins.forEach(eventSkin => {
-            containerOfSkins.append(skinContainer(event, eventSkin.name, skinsData, 'portrait', eventSkin.operator, eventSkin.isRerun, eventSkin.getFromPack))
+        eventSkins.forEach((eventSkin, index) => {
+            if (eventSkin.isBrand) {
+                const eventCode = normalizeEvent(event[0])
+                const template = document.getElementById('planner-brand-template');
+                const clone = template.content.cloneNode(true);
+                const bgLink = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/event-bg/${eventCode}`
+                const bgLink2 = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/events/${eventCode}`
+                const outfitAmount = eventSkin.isMultiple ? "outfits" : "outfit";
+
+                clone.querySelector(".planner-brand-name").textContent = eventSkin.name
+                clone.querySelector(".planner-brand-type").innerHTML = eventSkin.isRerun ? `rerun <br> ${outfitAmount}` : `new <br> ${outfitAmount}`
+                clone.querySelector(".planner-brand-image").src = `static/img/brands/${eventSkin.name}.png`
+                clone.querySelector('.planner-brand').style.setProperty('--bg-url', `url('')` /* `url('${bgLink2}.jpg')`*/)
+                clone.querySelector(".planner-brand").classList.add("hide")
+                clone.querySelector(".planner-brand").setAttribute('data-event', eventCode)
+
+
+
+                clone.querySelector(".break").classList.add("hide")
+                clone.querySelector(".break").setAttribute('data-event', eventCode)
+
+                let nextBrand = null;
+                let i = index > 0 ? index - 1 : 0;
+
+                while (i < eventSkins.length) {
+                    if (eventSkins[i].isBrand) {
+                        nextBrand = eventSkins[i];
+                        break;
+                    }
+                    i--;
+                }
+
+                if (nextBrand !== null) {
+                    if (!eventSkin.isMultiple && !nextBrand.isMultiple && eventSkin.name !== nextBrand.name) {
+                        clone.querySelector(".break").remove()
+                    }
+                }
+
+
+
+                getDiv('container-of-skins').append(clone)
+
+            } else {
+                containerOfSkins.append(skinContainer(event, eventSkin.name, skinsData, 'portrait', eventSkin.operator, eventSkin.isRerun, eventSkin.getFromPack, charData))
+            }
         });
 
         if (event[0].startsWith('fashion')) {
@@ -373,7 +439,9 @@ function eventButtonsLogic() {
             document.querySelectorAll('input[name="event"]').forEach(uncheckedCboxStyle)
             checkedCboxStyle(radio)
             resetAll('.skin');
+            resetAll('.planner-brand')
             resetAll('.reward');
+            resetAll('.break')
             revealIfElementMatchesEvent(eventCode)
 
             //getDiv('container-of-skins-h2-english').textContent = eventNameEnglish
@@ -386,14 +454,14 @@ function eventButtonsLogic() {
             var(--gradient-bottom-transparent)), 
             url("https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/events/${eventCode}.jpg")`
             */
-                        
-            
-                        getDiv('container-of-skins').style.backgroundImage =
-                            `linear-gradient(var(--gradient-top-transparent), 
+
+
+            getDiv('container-of-skins').style.backgroundImage =
+                `linear-gradient(var(--gradient-top-transparent), 
                         var(--gradient-bottom-transparent)), 
                         url("https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/event-bg/${eventCode}.jpg")`
-            
-                        
+
+
 
 
 
@@ -403,6 +471,12 @@ function eventButtonsLogic() {
             // url("../static/img/static_back.png")`
 
             /* ??????? */
+
+            // const brandImage = document.createElement("img")
+            // brandImage.src = "static/img/brands/CROSSOVER.png"
+            // getDiv('container-of-skins').append(brandImage)
+
+
             const container = getDiv('container-of-rewards')
             const visibleDivs = container.querySelectorAll('label:not(.hide)').length
             if (visibleDivs == 0) {
@@ -517,7 +591,7 @@ function setupImageObserver() {
                     img.src = img.alt;
                 } else {
                     console.warn(`Invalid URL in alt text for image: ${img.alt}`);
-                    img.src = 'assets/yu.png'; // Optional: Set a fallback image
+                    //img.src = 'assets/yu.png'; // Optional: Set a fallback image
                 }
                 observer.unobserve(img); // Stop observing once src is set
             }

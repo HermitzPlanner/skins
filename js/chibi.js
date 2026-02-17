@@ -3,11 +3,9 @@ let animationList = ''
 const app = new PIXI.Application({
     width: 800,
     height: 400,
-    //backgroundAlpha: 0,
     premultiplyAlpha: true,
     antialias: true,
-    backgroundColor: 0x111014,
-
+    backgroundAlpha: 0,
 });
 
 

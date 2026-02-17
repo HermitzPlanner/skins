@@ -81,7 +81,7 @@ const bg = new Image()
 bg.src = "static/img/classic_gacha.png"
 const rerunImg = new Image()
 rerunImg.src = "static/img/replicate_warning.png"
-const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', modelNameFromData = '', isRerun = false, getFromPack = false) => {
+const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', modelNameFromData = '', isRerun = false, getFromPack = false, charData) => {
     const eventCode = normalizeEvent(eventData[0])
     const skinName = eventSkin
     const skinNameEnglish = 'No translation'
@@ -260,7 +260,7 @@ const skinContainer = (eventData, eventSkin, skinsData, size = 'portrait', model
     const button = document.createElement('button')
     button.onclick = () => {
         showSection('viewer')
-        viewer(plannerId, skinName, skinsData);
+        viewer(plannerId, skinName, skinsData, charData);
         lastSection = 'main'
     }
     button.classList.add('skin-inspect')
@@ -384,7 +384,7 @@ const gallerySkin = (skinsData, data) => {
 
     button.onclick = () => {
         showSection('viewer')
-        viewer(plannerId, skinName, skinsData);
+        viewer(plannerId, skinName, skinsData, charData);
         lastSection = 'gallery'
     }
 

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/event-calcs.css">
     <script src="js/pixi/pixi.min.js"></script>
     <script src="js/pixi/pixi-spine.js"></script>
-     <script defer src="js/videos.js"></script>
+    <script defer src="js/videos.js"></script>
     <script defer src="js/constants.js"></script>
     <script defer src="js/operatorMap.js"></script>
     <script defer src="js/fashionReviewMap.js"></script>
@@ -125,6 +125,7 @@
         </label> -->
 
     </header>
+
     <section id="main">
         <div class="container" id="container-of-events">
 
@@ -152,25 +153,29 @@
             </div>
         </div>
     </section>
+
     <section id="summary">This is a summary :DD:DD</section>
+
     <section id="viewer"></section>
+
     <section id="gallery">
         <div class="gallery-header">
             <div class="main-text flex">Skin Gallery</div>
-            
-                <input type="search" class="initial-input2 gallery-options" id="search" placeholder="Search...">
-                <select class="initial-input2 gallery-options" name="brand-select" id="search2" data-search2>
-                    <option disabled value="">Select brand</option>
-                    <option selected value="all">All brands</option>
-                </select>
-                <select class="initial-input2 gallery-options" name="artist-select" id="search3" data-search3>
-                    <option disabled value="">Select Artist</option>
-                    <option selected value="all">All artist</option>
-                </select>
-            
+
+            <input type="search" class="initial-input2 gallery-options" id="search" placeholder="Search...">
+            <select class="initial-input2 gallery-options" name="brand-select" id="search2" data-search2>
+                <option disabled value="">Select brand</option>
+                <option selected value="all">All brands</option>
+            </select>
+            <select class="initial-input2 gallery-options" name="artist-select" id="search3" data-search3>
+                <option disabled value="">Select Artist</option>
+                <option selected value="all">All artist</option>
+            </select>
+
         </div>
         <div id="gallery-skins"></div>
     </section>
+
     <template id="template-event-calcs">
         <div class="calcs-div">
             <div class="calcs-row"><span class="english">Income</span><span class="mandarin">收入</span> <span
@@ -181,8 +186,20 @@
                     class="balance">0</div>
         </div>
     </template>
+
+    <template id="planner-brand-template">
+        <div class="break"></div>
+        <div class="planner-brand">
+            <img class="planner-brand-image" src="" alt="">
+            <div class="planner-brand-name">Brand Name Template</div>
+            <div class="planner-brand-type">New Or Rerun</div>
+        </div>
+    </template>
+
     <script>
         function showSection(sectionId) {
+            document.documentElement.style.setProperty('--scrollbar-track', `var(--body-bg)`)
+            document.documentElement.style.setProperty('--scrollbar-thumb', `var(--equip-bg-2)`)
             // Hide all sections
             document.querySelectorAll("section").forEach(section => {
                 section.style.display = "none";
@@ -206,6 +223,17 @@
 
         // Show the first section by default
         showSection("main");
+
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' || e.key === 'Esc') {  // por las dudas cubrimos ambos
+                const botonSalir = document.querySelector('.quit-viewer-button');
+                if (botonSalir) {
+                    botonSalir.click();
+                    // e.preventDefault();   // descomentalo si querés que no haga otras cosas el ESC
+                }
+            }
+        });
     </script>
 </body>
 
