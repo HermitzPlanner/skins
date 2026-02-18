@@ -364,7 +364,7 @@ function main(skinsData, eventsData, charData) {
     debug(plannerIds)
     plannerIds.slice().reverse().forEach(plannerId => {
         // if (plannerId.plannerId.includes("amiya")) console.log(plannerId)
-        getDiv('gallery-skins').append(gallerySkin(skinsData, plannerId))
+        getDiv('gallery-skins').append(gallerySkin(skinsData, plannerId, charData))
     });
 
 

@@ -358,7 +358,7 @@ const summaryRow = (eventId, planners, eventName) => {
     return row
 }
 
-const gallerySkin = (skinsData, data) => {
+const gallerySkin = (skinsData, data, charData) => {
     const skinName = data.name
     const skinObject = findSkinByName(skinsData.cnData, data.name)
     const button = document.createElement('button')
