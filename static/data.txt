@@ -60,7 +60,7 @@ cn-date-placeholder
 ◆brand-multiple
 ◆【寒武纪】系列 - 夜归人 - 烛煌
 ◆【寒武纪】系列 - 耀目之蓝 - 隐德来希
-◆brand-multiple
+◆brand-rerun-multiple
 ◆【时代】系列 - 博物 - 焰影苇草
 ◆【时代】系列 - 私人书房 - 薄绿
 ["ME-ST-1", "ME-TR-1", "ME-1", "ME-2", "ME-3", "ME-4", "ME-5", "ME-6", "ME-ST-2", "ME-7", "ME-8", "ME-ST-3", "ME-EX-1", "ME-EX-1 CM", "ME-EX-2", "ME-EX-2 CM", "ME-EX-3", "ME-EX-3 CM", "ME-EX-4", "ME-EX-4 CM", "ME-EX-5", "ME-EX-5 CM", "ME-EX-6", "ME-EX-6 CM", "ME-EX-7", "ME-EX-7 CM", "ME-EX-8", "ME-EX-8 CM"]
