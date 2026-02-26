@@ -350,8 +350,9 @@ section {
     padding: 10px;
     width: 100%;
     place-content: flex-start;
-    padding-bottom: 50px;
+    
     padding: 30px;
+    padding-bottom: 150px;
     gap: 15px;
 
     background-position: center center;
