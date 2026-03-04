@@ -149,19 +149,6 @@ Retracing Our Steps
 ◆r【音律联觉】系列 - 漫步于黄金之梦 - 缪尔赛思
 ["OS-ST-1", "OS-TR-1", "OS-1", "OS-2", "OS-3", "OS-4", "OS-ST-2", "OS-5", "OS-6", "OS-7", "OS-8", "OS-ST-3", "OS-9", "OS-10", "OS-ST-4", "OS-EX-1", "OS-EX-1 CM", "OS-EX-2", "OS-EX-2 CM", "OS-EX-3", "OS-EX-3 CM", "OS-EX-4", "OS-EX-4 CM", "OS-EX-5", "OS-EX-5 CM", "OS-EX-6", "OS-EX-6 CM", "OS-EX-7", "OS-EX-7 CM", "OS-EX-8", "OS-EX-8 CM", "OS-S-1", "OS-S-1 CM", "OS-S-2", "OS-S-2 CM", "OS-S-3", "OS-S-3 CM", "OS-S-4", "OS-S-4 CM", "OS-S-5", "OS-S-5 CM"]
 
-Arknights x Sanrio Characters
--
--
--
-◆brand-multiple
-◆【CROSSOVER】系列 - 雨霓行游客 - 流明
-◆【CROSSOVER】系列 - 绵绒小魔女 - 艾雅法拉
-◆【CROSSOVER】系列 - 蒸汽寻踪者 - 圣约送葬人
-◆brand-rerun-multiple
-◆r【CROSSOVER】系列 - 云上直播间 - U-Official
-◆r【CROSSOVER】系列 - 花房茶话会 - 澄闪
-◆r【CROSSOVER】系列 - 坊间凉茶铺 - 老鲤
-
 Rhodes Island Icebreaker Games #2
 -
 -
@@ -222,32 +209,15 @@ Rebuilding Mandate
 ◆r【成就之星】系列 - 遗迹游学者 - 惊蛰
 ◆r【雷神推进者】系列 - 破晓 - 冰酿
 
-Ending a Grand Overture rerun
--
--
--
-◆brand-single
-◆【罗德厨房】系列 - 温情烘焙 - 波卜
-["GO-ST-1", "GO-1", "GO-TR-1", "GO-2", "GO-3", "GO-4", "GO-5", "GO-6", "GO-7", "GO-8", "GO-9", "GO-ST-2", "GO-EX-1", "GO-EX-1 CM", "GO-EX-2", "GO-EX-2 CM", "GO-EX-3", "GO-EX-3 CM", "GO-EX-4", "GO-EX-4 CM", "GO-EX-5", "GO-EX-5 CM", "GO-EX-6", "GO-EX-6 CM", "GO-EX-7", "GO-EX-7 CM", "GO-EX-8", "GO-EX-8 CM"]
-
-shamare new skin 2025
--
--
--
-◆brand-single
-◆【0011/韵】系列 - 绣云鹤 - 巫恋
-◆brand-rerun-multiple
-◆r【0011/韵】系列 - 抚云间 - 白面鸮
-◆r【0011/韵】系列 - 棠云巧梦 - 子月
-
-Arknights x BanG Dream! Ave Mujica
+Arknights x Sanrio Characters
 -
 -
 -
 ◆brand-multiple
-◆【CROSSOVER】系列 - 旋律的主人 - 丰川祥子
-◆【CROSSOVER】系列 - 月下执行者 - 八幡海铃
-◆【CROSSOVER】系列 - 笼中歌者 - 三角初华
-◆【CROSSOVER】系列 - 情热魔术师 - 祐天寺若麦
-◆【CROSSOVER】系列 - 提线的本我 - 若叶睦
-["SS-ST-1", "SS-TR-1", "SS-1", "SS-2", "SS-3", "SS-4", "SS-5", "SS-6", "SS-7", "SS-8", "SS-EX-1", "SS-EX-1 CM", "SS-EX-2", "SS-EX-2 CM", "SS-EX-3", "SS-EX-3 CM", "SS-EX-4", "SS-EX-4 CM", "SS-EX-5", "SS-EX-5 CM", "SS-EX-6", "SS-EX-6 CM", "SS-EX-7", "SS-EX-7 CM", "SS-EX-8", "SS-EX-8 CM"]
+◆【CROSSOVER】系列 - 雨霓行游客 - 流明
+◆【CROSSOVER】系列 - 绵绒小魔女 - 艾雅法拉
+◆【CROSSOVER】系列 - 蒸汽寻踪者 - 圣约送葬人
+◆brand-rerun-multiple
+◆r【CROSSOVER】系列 - 云上直播间 - U-Official
+◆r【CROSSOVER】系列 - 花房茶话会 - 澄闪
+◆r【CROSSOVER】系列 - 坊间凉茶铺 - 老鲤
