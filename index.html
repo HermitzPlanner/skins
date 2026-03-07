@@ -16,26 +16,16 @@
     <link rel="stylesheet" href="css/event-calcs.css">
     <script src="js/pixi/pixi.min.js"></script>
     <script src="js/pixi/pixi-spine.js"></script>
-    <script defer src="js/videos.js"></script>
-    <script defer src="js/constants.js"></script>
-    <script defer src="js/operatorMap.js"></script>
-    <script defer src="js/fashionReviewMap.js"></script>
-    <script defer src="js/resetSaveLoad.js"></script>
-    <script defer src="js/localStorage.js"></script>
-    <script defer src="js/helpers.js"></script>
-    <script defer src="js/fragments.js"></script>
-    <script defer src="js/summary.js"></script>
-    <script defer src="js/gallery.js"></script>
-    <script defer src="js/chibi.js"></script>
-    <script defer src="js/viewer.js"></script>
-    <script defer src="js/data.js"></script>
+    <script defer type="module" src="js/main.js"></script>
+    <script defer src="js/reset-save-load.js"></script>
 
 </head>
 
 <body>
     <header>
+        <!-- <button style="display: flex;" id="skin-table">Skin Table</button> -->
         <label>
-            <input type="checkbox" name="" id="header-gallery-checkbox" onclick="gallery(this)">
+            <input type="checkbox" name="" id="header-gallery-checkbox">
 
             <div><img class="svg"
                     src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/gallery.svg"
@@ -130,7 +120,8 @@
         <div class="container" id="container-of-events">
 
             <div class="initial-row">
-                <button class="toggle-button" data-target="summary" onclick="summary()">Selection Summary</button>
+                <button class="toggle-button" data-target="summary" id="header-summary-button">Selection
+                    Summary</button>
                 <div id="initial-primes-text">Initial Primes: </div>
                 <input style="width: 140px;" type="number" class="initial-input" id="initial" value="0" min="0">
             </div>
@@ -176,6 +167,43 @@
         <div id="gallery-skins"></div>
     </section>
 
+    <template id="stage-reward-template">
+        <label class="reward">
+            <input type="checkbox" name="reward-cbox" id="">
+            <div class="stage-name"></div>
+        </label>
+    </template>
+
+    <template id="event-container-template">
+        <label class="event hide">
+            <input type="radio" name="event" id="">
+            <div class="event-code hide"></div>
+            <div class="event-name mandarin text-outline"></div>
+            <div class="event-name-english english text-outline"></div>
+            <div class="event-date hide"></div>
+            <div class="event-skins hide"></div>
+            <img alt="" src="">
+            <div class="calcs-div">
+                <div class="calcs-row">
+                    <span class="english">Income</span>
+                    <span class="mandarin">收入</span>
+                    <span class="income">0</span>
+                </div>
+                <div class="calcs-row cost">
+                    <span class="english">Expenses</span>
+                    <span class="mandarin">支出</span>
+                    <span class="expense">0</span>
+                </div>
+                <div class="calcs-row total">
+                    <span class="english">Balance</span>
+                    <span class="mandarin">余额</span>
+                    <span class="balance">0</span>
+                </div>
+            </div>
+        </label>
+    </template>
+
+
     <template id="template-event-calcs">
         <div class="calcs-div">
             <div class="calcs-row"><span class="english">Income</span><span class="mandarin">收入</span> <span
@@ -188,53 +216,42 @@
     </template>
 
     <template id="planner-brand-template">
-        <div class="break"></div>
-        <div class="planner-brand">
+        <div class="break hide"></div>
+        <div class="planner-brand hide">
             <img class="planner-brand-image" src="" alt="">
             <div class="planner-brand-name">Brand Name Template</div>
             <div class="planner-brand-type">New Or Rerun</div>
         </div>
     </template>
 
-    <script>
-        function showSection(sectionId) {
-            document.documentElement.style.setProperty('--scrollbar-track', `var(--body-bg)`)
-            document.documentElement.style.setProperty('--scrollbar-thumb', `var(--equip-bg-2)`)
-            // Hide all sections
-            document.querySelectorAll("section").forEach(section => {
-                section.style.display = "none";
-            });
+    <template id="planner-skin-template">
+        <label class="planner-skin-label skin hide">
+            <input type="checkbox" name="skin-cbox">
+            <canvas width="180" height="360" class="planner-skin-background-canvas" style="position: absolute; border-radius: 0px;"></canvas>
+            <div class="skin-name mandarin hide">雨霓行游客</div>
+            <div class="skin-name english hide">No translation</div>
+            <div class="model-name english text-outline">
+                modelName
+                <!-- <span class="model-name english">model-name english</span>
+                <span class="model-name mandarin">model-name mandarin</span> -->
+                
+            </div>
+            <canvas width="180" height="28" class="planner-skin-name-canvas"></canvas>
+            <div class="planner-id hide">planner-id</div>
+            <img alt="" class="skin-portrait" src="">
+            <div class="planner-skin-event-code hide">arknightsxsanriocharacters</div>
+            <div class="overlay text-outline">Selected</div>
+            <div class="skin-price text-outline">0</div>
+            <button class="skin-inspect">
+                <img alt="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/search.svg" class="skin-inspect-img"
+                    src="">
+            </button>
+        </label>
+    </template>
 
-            // Show the selected section
-            const activeSection = document.getElementById(sectionId);
-            if (activeSection) {
-                activeSection.style.display = "flex";
-            }
-        }
-
-        // Attach event listeners to buttons
-        document.querySelectorAll(".toggle-button").forEach(button => {
-            button.addEventListener("click", function () {
-
-                const target = this.getAttribute("data-target");
-                showSection(target);
-            });
-        });
-
-        // Show the first section by default
-        showSection("main");
-
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' || e.key === 'Esc') {  // por las dudas cubrimos ambos
-                const botonSalir = document.querySelector('.quit-viewer-button');
-                if (botonSalir) {
-                    botonSalir.click();
-                    // e.preventDefault();   // descomentalo si querés que no haga otras cosas el ESC
-                }
-            }
-        });
-    </script>
+    <template id="fashion-review-skin-template">
+        <img src="" alt="" class="hide">
+    </template>
 </body>
 
 </html>

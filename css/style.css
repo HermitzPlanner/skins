@@ -350,7 +350,7 @@ section {
     padding: 10px;
     width: 100%;
     place-content: flex-start;
-    
+
     padding: 30px;
     padding-bottom: 150px;
     gap: 15px;
@@ -389,18 +389,6 @@ section {
     display: none;
 }
 
-#container-of-skins label {
-    position: relative;
-    border: 1px solid var(--equip-border);
-    display: flex;
-    flex-direction: column;
-    width: 180px;
-    height: fit-content;
-    border-radius: 10px;
-    background-color: var(--equip-bg);
-    overflow: hidden;
-}
-
 /* .first-skin::before {
     content: "";
     position: absolute;
@@ -416,7 +404,6 @@ section {
     flex-basis: 100%;
     height: 0;
     display: none;
-    /* margin/padding 0 si querés */
 }
 
 .planner-brand {
@@ -518,7 +505,7 @@ section {
     padding: 5px 5px;
     text-align: center;
     font-weight: 500;
-    background-color: var(--body-bg-2);
+    /* background-color: var(--body-bg-2); */
 
     /* new changes */
 
@@ -535,10 +522,12 @@ section {
 
     /* new changes */
 
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     width: 100%;
     bottom: 0;
+    background: none;
+    border-top: 2px solid;
 }
 
 #container-of-skins .skin-price {
@@ -894,32 +883,32 @@ section {
 }
 
 @keyframes pop {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) scale(0) rotate(0deg);
-    /* Starting point: normal scale, no rotation */
-  }
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0) rotate(0deg);
+        /* Starting point: normal scale, no rotation */
+    }
 
-  25% {
-    transform: translateX(-50%) scale(1) rotate(2deg);
-    /* Scale up to 1.2, rotate slightly right */
-  }
+    25% {
+        transform: translateX(-50%) scale(1) rotate(2deg);
+        /* Scale up to 1.2, rotate slightly right */
+    }
 
-  50% {
-    transform: translateX(-50%) scale(1.1) rotate(0deg) rotateX(20deg);
-    /* Back to normal scale, no rotation */
-  }
+    50% {
+        transform: translateX(-50%) scale(1.1) rotate(0deg) rotateX(20deg);
+        /* Back to normal scale, no rotation */
+    }
 
-  75% {
-    transform: translateX(-50%) scale(1.1) rotate(-2deg);
-    /* Scale up to 1.2, rotate slightly left */
-  }
+    75% {
+        transform: translateX(-50%) scale(1.1) rotate(-2deg);
+        /* Scale up to 1.2, rotate slightly left */
+    }
 
-  100% {
-    opacity: 1;
-    transform: translateX(-50%) scale(1) rotate(0deg);
-    /* Back to normal scale, no rotation */
-  }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1) rotate(0deg);
+        /* Back to normal scale, no rotation */
+    }
 }
 
 
@@ -932,7 +921,7 @@ section {
     animation: pop 600ms forwards;
     /* filter: grayscale(1) brightness(2) drop-shadow(2px 2px 1px #ffffff33); */
     width: fit-content;
-    
+
 }
 
 .viewer-model-name {
@@ -1002,7 +991,7 @@ section {
 
 .viewer-canvas {
     position: relative;
-    outline: 1px solid var(--equip-border);
+    outline: 2px solid var(--equip-border);
     border-radius: 10px;
     gap: 0px;
     /* background-color: var(--equip-bg); */
@@ -1171,7 +1160,7 @@ canvas {
 
 .color-button {
     flex: 1;
-        border: 0px solid var(--equip-border);
+    border: 0px solid var(--equip-border);
     border-radius: 4px;
     box-shadow: inset 0 0 7px 2px rgba(0, 0, 0, 0.24), -3px -2px 10px 0px #ffffff0f, 1px 3px 7px 0px #000000a1;
 }
@@ -1182,7 +1171,8 @@ canvas {
     cursor: pointer;
 }
 
-.primary-color, .secondary-color {
+.primary-color,
+.secondary-color {
     transition: 100ms;
 }
 
@@ -1214,4 +1204,61 @@ canvas {
 
 .mandarin {
     display: none;
+}
+
+.selected-skin {
+    user-select: none;
+    opacity: 0;
+    transition: 300ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background: rgba(237, 237, 90, 0.3);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.planner-skin-label {
+    position: relative;
+    /* border: 1px solid var(--equip-border); */
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    height: fit-content;
+    background-color: var(--equip-bg);
+    overflow: hidden;
+
+    border: 3px solid;
+    box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.7);
+}
+
+.planner-skin-name-canvas {
+    position: absolute;
+    left: 0px;
+    border-radius: 0px;
+    z-index: 1;
+    bottom: -2px;
+}
+
+.overlay {
+    user-select: none;
+    opacity: 0;
+    transition:
+        opacity 300ms ease,
+        visibility 0s linear 1s;
+    /* el delay para que desaparezca del flujo después */
+    /* transition-delay: 1s; */
+    /* o podés dejarlo solo en la prop que querés */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+    /* shorthand piola para top/right/bottom/left: 0 */
+    width: 100%;
+    height: 100%;
+    background: hsla(60, 80%, 64%, 0.3);
+    z-index: 2;
 }

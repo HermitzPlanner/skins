@@ -1,9 +1,6 @@
-import { findSkinByName, findSkinByAvatar, getEventListByName, getReleaseTime, hexToRgba } from "./utils.js";
-
-
 let animationList = ''
 
-export const app = new PIXI.Application({
+const app = new PIXI.Application({
     width: 800,
     height: 400,
     premultiplyAlpha: true,
@@ -15,14 +12,7 @@ export const app = new PIXI.Application({
 
 let skinSpine
 
-export function renderCanvas(plannerId, skinName, skinsData, perspective = 'front') {
-
-    if (skinSpine) {
-        
-        app.stage.removeChild(skinSpine);
-        skinSpine.destroy(); // Free up resources
-        skinSpine = null; // Clear reference
-    }
+function renderCanvas(plannerId, skinName, skinsData, perspective = 'front') {
 
     const skinObject = findSkinByName(skinsData.cnData, skinName)
     const skinId = skinObject.avatarId.replace('#', '_')

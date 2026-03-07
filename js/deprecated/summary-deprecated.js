@@ -1,8 +1,5 @@
-import { resetDiv, showSection } from "./utils.js";
-import { summaryRow } from "./fragments.js";
-
-export function summary() {
-    const container = document.getElementById('summary');
+function summary() {
+    const container = getDiv('summary');
     resetDiv('summary');
 
     const button = document.createElement('button')
@@ -44,6 +41,6 @@ export function summary() {
         container.append(summaryRow(eventId, planners, eventName));
     });
 
-    //debug(groupedEvents);
+    debug(groupedEvents);
 }
 

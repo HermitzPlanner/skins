@@ -1,4 +1,4 @@
-const videos = {
+export const videos = {
     "beanstalk2": 5,
     "breeze1": 5,
     "dusk2": 6,

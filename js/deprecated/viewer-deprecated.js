@@ -1,42 +1,4 @@
-import { OBTAIN_APPROACHES_MAP, NO_EFFECT_SKINS } from "./constants.js";
-import { resetDiv } from "./utils.js";
 import { videos } from "./videos.js";
-import { findSkinByName, findSkinByAvatar, getEventListByName, getReleaseTime, hexToRgba, showSection } from "./utils.js";
-import { app, renderCanvas, skinSpine } from "./chibi.js";
-import { lastSection } from "./main.js";
-
-// ────────✦───────✦───────✦────────
-//    Close Viever with Escape key
-// ────────✦───────✦───────✦────────
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' || e.key === 'Esc') {  // por las dudas cubrimos ambos
-        const botonSalir = document.querySelector('.quit-viewer-button');
-        if (botonSalir) {
-            botonSalir.click();
-            // e.preventDefault();   // descomentalo si querés que no haga otras cosas el ESC
-        }
-    }
-});
-
-const create = (parent, tag, text = "", classes = "", inputType = '') => {
-    const e = document.createElement(tag)
-    if (tag !== 'img') {
-        e.innerHTML = text
-
-    }
-    if (tag === "img") {
-        //e.src = text; // Only set src if valid
-        e.alt = text; // Consider a more descriptive alt text
-        //e.loading = "lazy";
-
-    }
-    if (classes !== '') e.className = classes
-    if (inputType !== '') e.type = inputType
-    parent.append(e)
-
-    return e
-}
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' || e.key === 'Esc') {  // por las dudas cubrimos ambos
@@ -64,17 +26,17 @@ function getCharObject(char, charData) {
     return null; // Return null if no match is found
 }
 
+let lastSection = 'main'
 
-
-export function viewer(plannerId, skinName, skinsData, charData, isFashion = false) {
-    console.log("checkkins skinsData", skinsData)
+export function viewer(plannerId, skinName, skinsData, charData) {
     resetDiv('viewer');
-    const container = document.getElementById('viewer');
+    clearCanvas()
+    const container = getDiv('viewer');
 
     //if (!plannerId.includes('0')) {
     artRender(container, plannerId)
-    if (!plannerId.includes('0')) infoRender(container, plannerId, skinName, skinsData, charData, isFashion)
-    if (plannerId.includes('0')) operatorInfoRender(container, plannerId, skinsData, isFashion)
+    if (!plannerId.includes('0')) infoRender(container, plannerId, skinName, skinsData, charData)
+    if (plannerId.includes('0')) operatorInfoRender(container, plannerId, skinsData)
     //}
 
     create(container, 'div', 'drag the image with click <br> scroll to zoom', 'viewer-tips')
@@ -89,13 +51,12 @@ function animate(element, animation) {
 }
 
 function artRender(container, plannerId) {
-    const size = 'art'
     const img = document.createElement('img');
     const bg = document.createElement('img')
     img.id = 'viewer-image';
     bg.id = 'viewer-image-background';
-    img.src = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/${size}/${plannerId}.png`;
-    bg.src = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/${size}/${plannerId}.png`;
+    img.src = imgrepo('art', plannerId);
+    bg.src = imgrepo('art', plannerId);
 
     animate(img, 'viewer-show-image')
     animate(bg, 'viewer-show-image-background')
@@ -107,8 +68,7 @@ function artRender(container, plannerId) {
 }
 
 let dynamicColor = false
-function infoRender(container, plannerId, skinName, skinsData, charData, isFashion = false) {
-    console.log("checking skinName", skinName)
+function infoRender(container, plannerId, skinName, skinsData, charData) {
     const skinObject = findSkinByName(skinsData.cnData, skinName)
     const modelName = skinObject.displaySkin.modelName
     const charObject = getCharObject(modelName, charData)
@@ -119,10 +79,10 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
     const skinObjectGlobal = findSkinByAvatar(skinsData.enData, avatarId)
     const skinNameGlobal = skinObjectGlobal?.displaySkin?.skinName || skinName
     const artist = skinObject.displaySkin.drawerList
-    const obtainApproach = OBTAIN_APPROACHES_MAP[skinObject.displaySkin.obtainApproach]
+    const obtainApproach = obtainApproachesMap[skinObject.displaySkin.obtainApproach]
     const skinGroupId = skinObject.displaySkin.skinGroupId
     const brand = skinsData.cnData.brandList[skinGroupId?.split('#')[1]]?.brandCapitalName || 'CROSSOVER'
-    const upcomingEvents = getEventListByName(skinName, isFashion)
+    const upcomingEvents = getEventListByName(skinName)
     const cnRelease = getReleaseTime(skinObject.displaySkin.getTime)
     const enRelease = getReleaseTime(skinObjectGlobal?.displaySkin?.getTime || null)
 
@@ -130,7 +90,7 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
 
     let price = skinsData.costMap[skinName] > 0 ? skinsData.costMap[skinName] : 'Free'
     if (plannerId == "thorns1") price = 18
-    if (NO_EFFECT_SKINS.includes(plannerId)) price = '15'
+    if (NoEffectSkins.includes(plannerId)) price = '15'
 
     // ====================================================
     // Information column. Everything will be appended here
@@ -158,7 +118,7 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
     infoDiv.append(quitViewerButton)
     infoDiv.append(collapseOrExpandButton)
 
-    const rarityImg = document.createElement("img")
+    rarityImg = document.createElement("img")
     rarityImg.src = `static/gacha_detail_hub/star_${charObject.rarityNumber}.png`
     rarityImg.className = "viewer-rarity"
     //rarityImg.style.filter = getTextColor(primaryColor) !== "#ffffff" ? "grayscale(1) brightness(2) drop-shadow(2px 2px 1px #ffffff33) invert()" : "grayscale(1) brightness(2) drop-shadow(2px 2px 1px #ffffff33)"
@@ -254,7 +214,7 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
     if (price > 0) {
 
         const originiteImage = document.createElement('img')
-        originiteImage.src = 'https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/puregem.png'
+        originiteImage.src = originiteLink
         skinPriceDiv.append(originiteImage)
         animate(originiteImage, 'viewer-show-image')
 
@@ -292,7 +252,7 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
         cartImage.style.filter = 'invert()'
         cartImage.style.marginLeft = '0'
         cartImage.style.marginRight = '5px'
-        cartImage.src = 'https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/cart.svg'
+        cartImage.src = cartLink
         div.append(cartImage)
         animate(cartImage, 'viewer-show-image')
         console.log("upcomingEvent", upcomingEvent)
@@ -331,7 +291,7 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
     let angle = 45
     const linearGradient = true
     let gradient = linearGradient ? `linear-gradient(${angle}deg, ${colorStyles.join(', ')})` : `radial-gradient(circle, ${colorStyles.join(', ')})`;
-    document.getElementById('viewer').style.background = gradient;
+    getDiv('viewer').style.background = gradient;
 
     // const hsl = hexToHSL(colorList[0])
     // let match = hsl.match(/^hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)$/i);
@@ -551,6 +511,7 @@ function createCanvasDiv(infoDiv, plannerId, skinName, skinsData, primaryColor, 
             animationListDiv.append(perspectiveButton)
 
             perspectiveButton.onclick = () => {
+                clearCanvas()
                 renderCanvas(plannerId, skinName, skinsData, perspective)
             }
         });
@@ -670,6 +631,14 @@ function createQuitButton(animationListDiv) {
         animationListDiv.classList.add('hide')
     }
     animationListDiv.append(quitButton)
+}
+
+function clearCanvas() {
+    if (skinSpine) {
+        app.stage.removeChild(skinSpine);
+        skinSpine.destroy(); // Free up resources
+        skinSpine = null; // Clear reference
+    }
 }
 
 function addImageInteraction(img) {

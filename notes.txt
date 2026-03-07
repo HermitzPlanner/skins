@@ -1,0 +1,4 @@
+remove fragments and replace them for proper <template> elements
+add class icon in the planner (probably?)
+add rarity filter on gallery
+remove ◆ for brand catalog
