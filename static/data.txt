@@ -2,6 +2,7 @@ Crossing
 cn-event-name-placeholder
 image-link-placeholder
 cn-date-placeholder
+["CG-1", "CG-1 CM", "CG-2", "CG-2 CM", "CG-3", "CG-3 CM", "CG-4", "CG-4 CM", "CG-5", "CG-5 CM", "CG-6", "CG-6 CM", "CG-7", "CG-7 CM", "CG-8", "CG-8 CM", "CG-S-1", "CG-S-2"]
 ◆brand-single
 ◆【时代】系列 - 三元风情 - 红隼
 ◆brand-multiple

@@ -75,6 +75,7 @@ export const summaryRow = (eventId, planners, eventName) => {
     row.append(eventDiv)
 
     planners.forEach(planner => {
+        console.log("planner.modelName", planner)
         const skinDiv = document.createElement('div')
         skinDiv.classList.add('summary-skin')
 

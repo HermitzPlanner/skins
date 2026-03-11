@@ -179,7 +179,7 @@ function parseEventSkins(group, skinsData) {
                 eventSkins.push({
                     name: skinName,
                     nameEnglish: skinNameGlobal,
-                    modelName: skinObject.displaySkin.modelName,
+                    modelName: match[2],
                     modelNameEnglish: skinObject.displaySkin.modelName,
                     operator: match[2],
                     isRerun,

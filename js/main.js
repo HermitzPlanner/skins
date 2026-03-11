@@ -95,7 +95,7 @@ function renderPlannerSkin(eventSkin, event, data, size = "portrait-size") {
     const clone = template.content.cloneNode(true);
 
     clone.querySelector('label').setAttribute('data-event', event.code)
-    clone.querySelector('label').setAttribute('data-model', "modelNameEnglish")
+    clone.querySelector('label').setAttribute('data-model', eventSkin.modelNameEnglish)
     clone.querySelector('label').setAttribute('data-eventName', event.nameEnglish)
     clone.querySelector('label').style.borderImage = `linear-gradient(to right, ${eventSkin.colors.join(', ')}) 1`
     clone.querySelector('label').setAttribute('data-price', NO_EFFECT_SKINS.includes(eventSkin.plannerId) ? '15' : data.skinsData.costMap[eventSkin.name])
@@ -121,10 +121,16 @@ function renderPlannerSkin(eventSkin, event, data, size = "portrait-size") {
 
     document.getElementById('container-of-skins').append(clone)
 
+    /*
+    const art = "立绘"
+    const icon = "头像"
+    const portrait = "半身像"
+    */
+
     const missingSkin = {
-        ["art"]: eventSkin.modelNameEnglish.replace("升变状态", "").replace(/（/g, "(").replace(/）/g, ")"),
-        ["portrait"]: eventSkin.modelNameEnglish.replace("升变状态", "").replace(/（/g, "(").replace(/）/g, ")"),
-        ["icon"]: eventSkin.modelNameEnglish.replace("升变状态", "").replace(/（/g, "(").replace(/）/g, ")"),
+        ["立绘"]: eventSkin.modelName.replace("升变状态", "").replace(/（/g, "(").replace(/）/g, ")"),
+        ["半身像"]: eventSkin.modelName.replace("升变状态", "").replace(/（/g, "(").replace(/）/g, ")"),
+        ["头像"]: eventSkin.modelName.replace("升变状态", "").replace(/（/g, "(").replace(/）/g, ")"),
         "plannerId": eventSkin.plannerId
     }
 
@@ -212,7 +218,7 @@ function renderFashionSkins(data, event) {
         lastYear = year
 
         const skinName = displaySkin.skinName
-        
+
         if (skinName == '守岁人') console.log(value)
         const plannerId = data.skinsData.plannerIdMap[skinName]
         const colors = getColorList(displaySkin.colorList)
@@ -226,7 +232,7 @@ function renderFashionSkins(data, event) {
         // ────────✦───────✦───────✦────────✦────────✦────────✦────────✦────────✦────────
 
         clone.querySelector('label').setAttribute('data-event', event.code)
-        clone.querySelector('label').setAttribute('data-model', "modelNameEnglish")
+        clone.querySelector('label').setAttribute('data-model', modelNameEnglish)
         clone.querySelector('label').setAttribute('data-eventName', event.nameEnglish)
         clone.querySelector('label').style.border = '0px solid'
         clone.querySelector('label').style.borderRadius = '10px'
@@ -275,7 +281,7 @@ function renderFashionSkins(data, event) {
 function headerButtonsLogic(data) {
     document.getElementById('header-summary-button').onclick = () => { summary() }
     document.getElementById("header-gallery-checkbox").onclick = () => { gallery() }
-   // document.getElementById('skin-table').onclick = () => { skinTable(data) }
+    // document.getElementById('skin-table').onclick = () => { skinTable(data) }
 }
 
 function renderEvent(data, event, index) {

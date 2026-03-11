@@ -67,6 +67,10 @@ function getCharObject(char, charData) {
 
 
 export function viewer(plannerId, skinName, skinsData, charData, isFashion = false) {
+    console.log("%cViewer", "background: #28a745; color: white; padding: 4px 12px; border-radius: 4px; font-size: 16px;");
+
+    console.log(`%c${plannerId}`, "background: #28a745; color: white; padding: 4px 12px; border-radius: 4px; font-size: 16px;");
+
     console.log("checkkins skinsData", skinsData)
     resetDiv('viewer');
     const container = document.getElementById('viewer');
