@@ -1,3 +1,12 @@
+Stronghold Protocol Alliance #2
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+◆brand-single
+◆【玛尔特】系列 - 补水时间 - 慕斯
+★★★★★★：真言 / 忍冬 / 妮芙 / 乌尔比安
+★★★★★：响石 / 子月 / 和弦 / 温米 / 寻澜 / 波卜
+
 Crossing
 cn-event-name-placeholder
 image-link-placeholder
@@ -15,6 +24,8 @@ cn-date-placeholder
 ◆r【时代】系列 - 绒布蛋糕 - 坚雷
 ◆brand-rerun-single
 ◆r【成就之星】系列 - 万物有灵 - 慑砂
+★★★★★★：贝洛内（占6★出率的50%）
+★★★★★： 复奏 / 洋灰（占5★出率的50%）
 
 Vector Breakthrough #2
 cn-event-name-placeholder
@@ -26,6 +37,8 @@ cn-date-placeholder
 ◆r【时代】系列 - 寄自奥格尼斯科 - 薇薇安娜
 ◆r【时代】系列 - 风笛声声 - 风笛
 ◆r【时代】系列 - 繁霜满阶 - 缠丸
+★★★★★★：遥 / Mon3tr / 逻各斯 / 阿斯卡纶 / 维娜·维多利亚 / 艾丽妮
+★★★★★：夜半 / 折桠 / 承曦格雷伊 / 刺玫 / 录武官 / 晓歌
 
 Unveiling of Devotion 2026
 cn-event-name-placeholder
@@ -51,6 +64,8 @@ cn-date-placeholder
 ◆【0011制造】系列 - 愿清晓 - 余
 ◆【0011制造】系列 - 共凭栏 - 寻澜
 ◆【0011制造】系列 - 花绸曲 - 菲莱
+★★★★★★：余 / 黍 / 重岳（在6★剩余出率【30%】中以5倍权值出率提升）
+★★★★★：风絮（占5★出率的50%）
 
 Fashion Review 18
 cn-event-name-placeholder
@@ -100,6 +115,8 @@ cn-date-placeholder
 ◆【时代】系列 - 博物 - 焰影苇草
 ◆【时代】系列 - 私人书房 - 薄绿
 ["ME-ST-1", "ME-TR-1", "ME-1", "ME-2", "ME-3", "ME-4", "ME-5", "ME-6", "ME-ST-2", "ME-7", "ME-8", "ME-ST-3", "ME-EX-1", "ME-EX-1 CM", "ME-EX-2", "ME-EX-2 CM", "ME-EX-3", "ME-EX-3 CM", "ME-EX-4", "ME-EX-4 CM", "ME-EX-5", "ME-EX-5 CM", "ME-EX-6", "ME-EX-6 CM", "ME-EX-7", "ME-EX-7 CM", "ME-EX-8", "ME-EX-8 CM"]
+★★★★★★：缇缇（占6★出率的50%）
+★★★★★： 撷英调香师 / 海霓（占5★出率的50%
 
 Trials for Navigator #6
 cn-event-name-placeholder
@@ -115,7 +132,8 @@ cn-date-placeholder
 ◆brand-single
 ◆【成就之星】系列 - 冒险启程 - 瑰盐
 ["EP-ST-1", "EP-TR-1", "EP-1", "EP-2", "EP-3", "EP-4", "EP-5", "EP-6", "EP-ST-2", "EP-7", "EP-8", "EP-ST-3", "EP-EX-1", "EP-EX-1 CM", "EP-EX-2", "EP-EX-2 CM", "EP-EX-3", "EP-EX-3 CM", "EP-EX-4", "EP-EX-4 CM", "EP-EX-5", "EP-EX-5 CM", "EP-EX-6", "EP-EX-6 CM", "EP-EX-7", "EP-EX-7 CM", "EP-EX-8", "EP-EX-8 CM"]
-
+★★★★★★：引星棘刺（占6★出率的50%）
+★★★★★： 特克诺 / 杏仁（占5★出率的50%
 
 Unrealized Realities
 -
@@ -134,6 +152,8 @@ Unrealized Realities
 ◆brand-rerun-single
 ◆r【时代】系列 - 碎片之间 - 谜图
 ["UR-ST-1","UR-1","UR-TR-1","UR-2","UR-3","UR-4","UR-ST-2","UR-5","UR-6","UR-7","UR-8","UR-ST-3", "UR-EX-1", "UR-EX-1 CM", "UR-EX-2", "UR-EX-2 CM", "UR-EX-3", "UR-EX-3 CM", "UR-EX-4", "UR-EX-4 CM", "UR-EX-5", "UR-EX-5 CM", "UR-EX-6", "UR-EX-6 CM", "UR-EX-7", "UR-EX-7 CM", "UR-EX-8", "UR-EX-8 CM"]
+★★★★★★：娜斯提（占6★出率的50%）
+★★★★★： 响石 / 洛洛（占5★出率的50%
 
 An Accolade to a Rejuvenation rerun
 -
@@ -168,6 +188,8 @@ Stronghold Protocol Alliance
 -
 ◆brand-single
 ◆【玛尔特】系列 - 烈阳街景 - 休谟斯
+★★★★★★：乌尔比安 / 酒神 / 妮芙 / 娜仁图亚 / 玛恩纳 / 白铁
+★★★★★：渡桥 / 聆音 / 青枳 / 深律 / 濯尘芙蓉 / 阿罗玛
 
 Retracing Our Steps
 -
@@ -186,6 +208,8 @@ Retracing Our Steps
 ◆brand-rerun-single
 ◆r【音律联觉】系列 - 漫步于黄金之梦 - 缪尔赛思
 ["OS-ST-1", "OS-TR-1", "OS-1", "OS-2", "OS-3", "OS-4", "OS-ST-2", "OS-5", "OS-6", "OS-7", "OS-8", "OS-ST-3", "OS-9", "OS-10", "OS-ST-4", "OS-EX-1", "OS-EX-1 CM", "OS-EX-2", "OS-EX-2 CM", "OS-EX-3", "OS-EX-3 CM", "OS-EX-4", "OS-EX-4 CM", "OS-EX-5", "OS-EX-5 CM", "OS-EX-6", "OS-EX-6 CM", "OS-EX-7", "OS-EX-7 CM", "OS-EX-8", "OS-EX-8 CM", "OS-S-1", "OS-S-1 CM", "OS-S-2", "OS-S-2 CM", "OS-S-3", "OS-S-3 CM", "OS-S-4", "OS-S-4 CM", "OS-S-5", "OS-S-5 CM"]
+★★★★★★：凛御银灰 / 圣聆初雪 / 荒芜拉普兰德 / 维什戴尔 / 塑心
+★★★★★：雪猎（占5★出率的50%）
 
 Fashion Review 17
 cn-event-name-placeholder
@@ -220,6 +244,8 @@ Rhodes Island Icebreaker Games #2
 ◆r【时代】系列 - 复现荣光 - 耀骑士临光
 ◆r【时代】系列 - 拥抱新生 - 迷迭香
 ◆r【时代】系列 - 今昔须臾之梦 - 异客
+★★★★★★：澄闪 / 锏 / 蕾缪安 / 霍尔海雅
+★★★★★：刺玫 / 录武官 / 寒檀 / 掠风 / 晓歌 / 承曦格雷伊
 
 EP 16 Abnormal Spectrum
 -
@@ -245,45 +271,6 @@ EP 16 Abnormal Spectrum
 ◆brand-rerun-single
 ◆r【时代】系列 - 叙拉古的彼面 - 伺夜
 ["16-1","16-2","16-2 (CM)","16-3","16-3 (CM)","16-4","16-4 (CM)","16-5","16-5 (CM)","16-6","16-6 (CM)","16-7","16-7 (CM)","16-8","16-8 (CM)","16-9","16-10","16-10 (CM)","16-11","16-11 (CM)","16-12","16-12 (CM)","16-13","16-13 (CM)","16-14","16-14 (CM)","16-15","16-15 (CM)","16-16","16-16 (CM)","16-17","16-17 (CM)","16-18","16-19","TR-27","EG-7","EG-8","EG-9","EG-10","H16-1","H16-2","H16-3","H16-4"]
-
-IS6 Lava Purgatory Skin
--
--
--
-◆brand-single
-◆【0011/飙】系列 - 镇邪焱 - 炎狱炎熔
-
-Figurino Skin 2025
--
--
--
-◆brand-single
-◆【0011/韵】系列 - 桂影窗 - 裁度
-◆brand-rerun-single
-◆r【0011/韵】系列 - 松间月 - 铎铃
-
-Rebuilding Mandate
--
--
--
-◆brand-single
-◆【闪耀阶梯】系列 - 冷色摇滚 - 谜图
-◆brand-rerun-multiple
-◆r【成就之星】系列 - 至高判决 - 艾丽妮
-◆r【成就之星】系列 - 新手光环 - 寒芒克洛丝
-◆r【成就之星】系列 - 遗迹游学者 - 惊蛰
-◆brand-rerun-single
-◆r【雷神推进者】系列 - 破晓 - 冰酿
-
-Arknights x Sanrio Characters
--
--
--
-◆brand-multiple
-◆【CROSSOVER】系列 - 雨霓行游客 - 流明
-◆【CROSSOVER】系列 - 绵绒小魔女 - 艾雅法拉
-◆【CROSSOVER】系列 - 蒸汽寻踪者 - 圣约送葬人
-◆brand-rerun-multiple
-◆r【CROSSOVER】系列 - 云上直播间 - U-Official
-◆r【CROSSOVER】系列 - 花房茶话会 - 澄闪
-◆r【CROSSOVER】系列 - 坊间凉茶铺 - 老鲤
+★★★★★★：真言（占6★出率的50%）
+★★★★★： 折桠 / 铎铃（占5★出率的50%）
+★★★★：冬时（占4★出率的20%）
