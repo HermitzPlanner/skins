@@ -1,7 +1,7 @@
 import { findSkinByName, findSkinByAvatar, getEventListByName, getReleaseTime, hexToRgba } from "./utils.js";
 
 
-let animationList = ''
+export let animationList = ''
 
 export const app = new PIXI.Application({
     width: 800,
