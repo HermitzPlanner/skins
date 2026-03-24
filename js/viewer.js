@@ -341,7 +341,7 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
     */
 
     container.append(infoDiv)
-    enableDragScrollWithMomentum('viewer-info');
+    //enableDragScrollWithMomentum('viewer-info');
 
     let angle = 45
     const linearGradient = true
