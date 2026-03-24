@@ -1,4 +1,25 @@
+
+
+
+
+
+
+
+
+pending:
+
+add year filter in gallery
+2026-03-23 - rework viewer for proper html element
+26-03-22 - redownload all chibi effects as gif for better quality
 remove fragments and replace them for proper <template> elements
-add class icon in the planner (probably?)
-add rarity filter on gallery
-remove ◆ for brand catalog
+
+done:
+
+2026-03-24 - added skin cost and balance in summary
+2026-03-24 - added year filter for gallery
+2026-03-23 - fashion review skins can be filtered by year
+2026-03-22 - added rarity filter on gallery
+2026-03-22 - added price filter on gallery
+2026-03-22 - fixed viewer buttons
+2026-03-21 - added class icon in the planner 
+2026-03-17 - added inspect button to the summary skin + improved design

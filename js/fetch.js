@@ -1,5 +1,5 @@
-import { getPlannerId, getEventCode } from "./utils.js";
-import { CN_SKINS_ENGLISH } from "./constants.js";
+import { getPlannerId, getEventCode, getCharObject, setLightness, getYearFromTimestamp } from "./utils.js";
+import { CN_SKINS_ENGLISH, SKIN_ICON_REPOSITORY, SKIN_PORTRAIT_REPOSITORY, NO_EFFECT_SKINS } from "./constants.js";
 import { findSkinByName, getColorList, findSkinByAvatar } from "./utils.js";
 
 function parseSkinsData(cnData, enData) {
@@ -23,6 +23,11 @@ function parseSkinsData(cnData, enData) {
         const avatarId = skin.avatarId
 
         let modelName = skin.displaySkin.modelName
+        if (modelName) {
+            skin.displaySkin.modelName = skin.displaySkin.modelName.replace(". ", ".")
+            // <-- Mr.Nothing when he meets mr. nothing
+
+        }
         const skinName = skin.displaySkin.skinName
         if (skinName == '触及星辰' || skinName == '于万千宇宙之中') modelName = 'Amiya Guard'
         if (skinName == '寰宇独奏') modelName = 'Amiya Medic'
@@ -66,8 +71,11 @@ function parseSkinsData(cnData, enData) {
                 if (skin.dynEntranceId) price = 24
             }
             if (skin.displaySkin.skinName == '惬意') price = 18
-            plannerIdMap[skin.displaySkin.skinName] = getPlannerId(modelName);
-            costMap[skin.displaySkin.skinName] = price
+            const plannerId = getPlannerId(modelName)
+            plannerIdMap[skin.displaySkin.skinName] = plannerId;
+            if (NO_EFFECT_SKINS.includes(plannerId)) price = 15
+            costMap[skin.displaySkin.skinName] = price // ??
+            skin.price = price
         }
     });
 
@@ -80,7 +88,7 @@ function parseSkinsData(cnData, enData) {
     return { cnData, enData, plannerIdMap, costMap, brands, brandsCN, artists }
 }
 
-function parseEventsData(data, skinsData) {
+function parseEventsData(data, skinsData, charData) {
 
     const groups = [];
     let currentGroup = [];
@@ -110,13 +118,45 @@ function parseEventsData(data, skinsData) {
         event.nameMandarin = group[1]
         event.code = getEventCode(group[0])
         event.date = translateDateRange(group[3].replace(/关卡开放时间：|活动时间：/g, ''))
-        event.skins = parseEventSkins(group, skinsData)
+        event.skins = parseEventSkins(group, skinsData, charData)
         event.rewards = parseEventRewards(group)
+        event.rateUps = {
+            "sixStars": parseRateups(group, "★★★★★★："),
+            "fiveStars": parseRateups(group, "★★★★★："),
+            "fourStars": parseRateups(group, "★★★★："),
+        }
+
         events.push(event)
     });
 
     console.log("events", events)
     return events
+}
+
+function parseRateups(group, stars) {
+    let rateUps
+    group.forEach((item, index) => {
+        if (item.startsWith(stars)) {
+            //console.log("amogus")
+            //console.log(extraerNombres(item))
+            rateUps = extraerNombres(item)
+        }
+    })
+
+    return rateUps
+}
+
+function extraerNombres(str) {
+    // Quitamos todo lo que está antes de ： y todo lo que está después de （
+    const parteMedia = str.split('：')[1]?.split('（')[0]?.trim() || '';
+
+    // Separamos por / y limpiamos espacios
+    const nombres = parteMedia
+        .split('/')
+        .map(nombre => nombre.trim())
+        .filter(Boolean);  // por si hay algún espacio raro
+
+    return nombres;
 }
 
 function translateDateRange(chineseText, year = new Date().getFullYear()) {
@@ -135,13 +175,13 @@ function parseEventRewards(group) {
     return JSON.parse(rewardStr);
 }
 
-function parseEventSkins(group, skinsData) {
+function parseEventSkins(group, skinsData, charData) {
     let eventSkins = [];
     group.forEach((item, index) => {
-        if (item.startsWith("◆brand-single") ||
-            item.startsWith("◆brand-multiple") ||
-            item.startsWith("◆brand-rerun-single") ||
-            item.startsWith("◆brand-rerun-multiple")) {
+        if (item.startsWith("brand-single") ||
+            item.startsWith("brand-multiple") ||
+            item.startsWith("brand-rerun-single") ||
+            item.startsWith("brand-rerun-multiple")) {
 
             const brandNameCN = group[index + 1].match(/【(.*?)】/)[1]
             const brandNameCapital = skinsData.brandsCN[brandNameCN]
@@ -175,6 +215,15 @@ function parseEventSkins(group, skinsData) {
                 const avatarId = skinObject.avatarId
                 const skinObjectGlobal = findSkinByAvatar(skinsData.enData, avatarId)
                 const skinNameGlobal = skinObjectGlobal?.displaySkin?.skinName || skinName
+                //console.log("charData", charData)
+                const charObject = getCharObject(skinObject.displaySkin.modelName.toLowerCase(), charData)
+                const colors = getColorList(skinObject.displaySkin.colorList)
+                const gradientAngle = '90deg'
+                const darkColors = colors.map(color => setLightness(color, 0.10, 0.80));
+                const profession = charObject.profession.toLowerCase()
+                const getTime = skinObject.displaySkin.getTime
+                const year = getYearFromTimestamp(getTime)
+                //console.log("charObject", charObject)
 
                 eventSkins.push({
                     name: skinName,
@@ -184,12 +233,23 @@ function parseEventSkins(group, skinsData) {
                     operator: match[2],
                     isRerun,
                     getFromPack,
+                    darkColors: darkColors,
+                    linearGradientDarkSliceTwo: `linear-gradient(${gradientAngle}, ${darkColors.slice(-2).join(', ')})`,
 
                     plannerId: plannerId,
-                    price: getFromPack ? "$30" : skinsData.costMap[skinName] > 0 ? skinsData.costMap[skinName] : 'Free',
-                    colors: getColorList(skinObject.displaySkin.colorList),
+                    portraitRepository: SKIN_PORTRAIT_REPOSITORY(plannerId),
+                    iconRepository: SKIN_ICON_REPOSITORY(plannerId),
+                    price: getFromPack ? "$30" : skinObject.price, // > 0 ? skinsData.costMap[skinName] : 'Free',
+                    colors: colors,
+                    profession: profession,
+                    professionImage: "static/friend_assist_profession_hub/icon_profession_" + profession + ".png",
+                    gradientAngle: gradientAngle,
+                    borderGradient: `linear-gradient(${gradientAngle}, ${colors.join(', ')}) 1`,
+                    linearGradientArray: `linear-gradient(${gradientAngle}, ${colors.join(', ')})`,
+                    linearGradientArraySliceTwo: `linear-gradient(${gradientAngle}, ${colors.slice(0, 2).join(', ')})`,
                     width: 180,
-                    height: 360
+                    height: 360,
+                    year: year,
                 });
             }
         }
@@ -217,7 +277,7 @@ export const fetchGameData = async () => {
         ]);
 
         const skinsData = parseSkinsData(cnData, enData);
-        const eventsData = parseEventsData(rawEventsData, skinsData);
+        const eventsData = parseEventsData(rawEventsData, skinsData, charData);
         return { skinsData, eventsData, charData }; // Return the object
     } catch (error) {
         console.error('Error fetching data:', error);

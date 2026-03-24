@@ -1,4 +1,10 @@
 export const videos = {
+    "mousse2": 5,
+    "papyrus1": 5,
+    "raidian1": 6,
+    "leizithethunderbringer1": 6,
+    "kestrel1": 5,
+    "greyy2": 5,
     "beanstalk2": 5,
     "breeze1": 5,
     "dusk2": 6,

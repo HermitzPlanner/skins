@@ -1,4 +1,4 @@
-import { findSkinByName, showSection } from "./utils.js"
+import { findSkinByName, showSection, getNameWithPlannerId } from "./utils.js"
 import { SKIN_ICON_REPOSITORY, RESIZED_EVENT_REPOSITORY } from "./constants.js"
 import { viewer } from "./viewer.js"
 
@@ -21,45 +21,11 @@ const create = (parent, tag, text = "", classes = "", inputType = '') => {
     return e
 }
 
-export const gallerySkin = (skinsData, data, charData) => {
-    const skinName = data.name
-    const skinObject = findSkinByName(skinsData.cnData, data.name)
-    const button = document.createElement('button')
-    //button.classList.add('show-block')
-    const modelName = ""
-    const modelNameEnglish = data.plannerId // skinObject.displaySkin.modelName
-    //console.log(data.plannerId)
-    const plannerId = data.plannerId
-    const img = SKIN_ICON_REPOSITORY(plannerId)
-
-    let skinGroupId = skinObject.displaySkin.skinGroupId.split('#')[1]
-    if (skinGroupId == "as") skinGroupId = "ambienceSynesthesia"
-    const brand = skinsData.cnData.brandList[skinGroupId]?.brandCapitalName || 'CROSSOVER'
-    const artist = skinObject.displaySkin.drawerList.join(', ')
-
-    button.setAttribute('data-brand', brand)
-    button.setAttribute('data-artist', artist)
-
-    create(button, 'div', modelNameEnglish, 'gallery-name')
-    create(button, 'img', img)
-
-
-
-    button.onclick = () => {
-        showSection('viewer')
-        viewer(plannerId, skinName, skinsData, charData);
-    }
-
-    // ====================================================
-    //missingElementCheck(missingSkin, img)
-    // ====================================================
-
-    return button
-}
-
-export const summaryRow = (eventId, planners, eventName) => {
+export const summaryRow = (eventId, planners, eventName, data) => {
     const row = document.createElement('div')
     row.classList.add('summary-row')
+    
+
     //create(row, 'div', eventId)
 
     const eventDiv = document.createElement('div')
@@ -75,14 +41,38 @@ export const summaryRow = (eventId, planners, eventName) => {
     row.append(eventDiv)
 
     planners.forEach(planner => {
+        const skinName = getNameWithPlannerId(planner.plannerId, data)
         console.log("planner.modelName", planner)
         const skinDiv = document.createElement('div')
         skinDiv.classList.add('summary-skin')
+        skinDiv.style.position = 'relative'
 
         create(skinDiv, 'div', planner.modelName, 'name')
         const summarySkinImage = document.createElement("img")
+        summarySkinImage.className = "summary-icon"
         summarySkinImage.src = SKIN_ICON_REPOSITORY(planner.plannerId)
         skinDiv.append(summarySkinImage)
+
+        const button = document.createElement("button")
+        button.className = 'skin-inspect'
+        button.style.background = "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(24, 24, 24, 0.8))";
+        button.style.top = "30px"
+
+        const inspectImg = document.createElement("img")
+        inspectImg.src = "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/search.svg"
+        inspectImg.className = "skin-inspect-img"
+
+        button.append(inspectImg)
+
+        button.onclick = () => {
+            document.getElementById("current-section").textContent = "summary"
+            showSection('viewer')
+            viewer(planner.plannerId, skinName, data.skinsData, data.charData);
+            lastSection = 'planner'
+        }
+
+
+        skinDiv.append(button)
         //create(skinDiv, 'img', imgrepo('icon', planner.plannerId))
 
 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/portrait/executoralter2.png" alt="">
+    <style>
+        img:hover {
+            scale: 1.1;
+            transition: 300ms;
+        }
+    </style>
+
+    <script>
+        const img = new Image(); // Create an image object
+        img.src = "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/portrait/executoralter2.png";
+        function getTopColors(imgElement, cantidad = 4) {
+            console.log("imgElement.width", imgElement)
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+
+            canvas.width = imgElement.width;
+            canvas.height = imgElement.height;
+            ctx.drawImage(imgElement, 0, 0);
+
+            const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+            const map = new Map();
+
+            // Muestreamos cada 5–10 píxeles para ir más rápido
+            for (let i = 0; i < data.length; i += 20) {  // ← podés bajar a 12 o 8 si querés más precisión
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+                // ignoramos transparencia casi total
+                if (data[i + 3] < 30) continue;
+
+                const key = `${r},${g},${b}`;
+                map.set(key, (map.get(key) || 0) + 1);
+            }
+
+            // ordenamos por cantidad descendente
+            const sorted = [...map.entries()]
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, cantidad);
+
+            return sorted.map(([rgb]) => {
+                const [r, g, b] = rgb.split(',').map(Number);
+                return { rgb: [r, g, b], hex: `#${r.toString(16).padStart(2, 0)}${g.toString(16).padStart(2, 0)}${b.toString(16).padStart(2, 0)}` };
+            });
+        }
+
+        //const colores = getTopColors(img, 4);
+        img.onload = () => {
+            console.log("img", img)
+            const colores = getTopColors(img, 4);
+            console.log(colores);
+        }
+
+    </script>
+</body>
+
+</html>
