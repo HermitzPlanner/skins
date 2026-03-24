@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/loader.css">
     <link rel="icon" type="image/png" href="assets/ascalon1.png" sizes="16x16">
     <link rel="icon" type="image/png" href="assets/ascalon1.png" sizes="32x32">
     <title>Skin Planner</title>
@@ -14,15 +15,21 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/event-calcs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.2.6/color-thief.min.js"></script>
+    <script defer src="js/scroll-container.js"></script>
     <script src="js/pixi/pixi.min.js"></script>
     <script src="js/pixi/pixi-spine.js"></script>
     <script defer type="module" src="js/main.js"></script>
     <script defer src="js/reset-save-load.js"></script>
 
+
 </head>
 
 <body>
     <header>
+        <div id="current-section" style="display: none;">planner</div>
+        <div id="fashion-year" style="display: none;">none</div>
+        <div id="current-event-code" style="display: none;">none</div>
         <!-- <button style="display: flex;" id="skin-table">Skin Table</button> -->
         <label>
             <input type="checkbox" name="" id="header-gallery-checkbox">
@@ -116,8 +123,16 @@
 
     </header>
 
-    <section id="main">
-        <div class="container" id="container-of-events">
+    <div id="loader-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- ────────✦───────✦───────✦────────✦──────── -->
+    <!-- Sections -->
+    <!-- ────────✦───────✦───────✦────────✦──────── -->
+
+    <section id="planner">
+        <div class="container scroll-contaier" id="container-of-events">
 
             <div class="initial-row">
                 <button class="toggle-button" data-target="summary" id="header-summary-button">Selection
@@ -142,10 +157,26 @@
             <div id="container-of-rewards">
                 <span style="width: 100%; text-align: center;">Event Stages:</span>
             </div>
+            <div class="year-button-filters" id="year-button-filters" style="display: none;">
+                <!-- <button class="year-filter-button text-outline" type="submit" value="2026" id="button-filter-2026">2026</button>
+                <button class="year-filter-button text-outline" type="submit" value="2025" id="button-filter-2025">2025</button> -->
+                <button class="year-filter-button text-outline" type="submit" value="2024"
+                    id="button-filter-2024">2024</button>
+                <button class="year-filter-button text-outline" type="submit" value="2023"
+                    id="button-filter-2023">2023</button>
+                <button class="year-filter-button text-outline" type="submit" value="2022"
+                    id="button-filter-2022">2022</button>
+                <button class="year-filter-button text-outline" type="submit" value="2021"
+                    id="button-filter-2021">2021</button>
+                <button class="year-filter-button text-outline" type="submit" value="2020"
+                    id="button-filter-2020">2020</button>
+                <button class="year-filter-button text-outline" type="submit" value="2019"
+                    id="button-filter-2019">2019</button>
+            </div>
         </div>
     </section>
 
-    <section id="summary">This is a summary :DD:DD</section>
+    <section id="summary"></section>
 
     <section id="viewer"></section>
 
@@ -153,19 +184,103 @@
         <div class="gallery-header">
             <div class="main-text flex">Skin Gallery</div>
 
-            <input type="search" class="initial-input2 gallery-options" id="search" placeholder="Search...">
-            <select class="initial-input2 gallery-options" name="brand-select" id="search2" data-search2>
-                <option disabled value="">Select brand</option>
-                <option selected value="all">All brands</option>
+            <input type="search" class="initial-input2 gallery-options" id="gallery-search-bar" placeholder="Search...">
+
+            <select class="initial-input2 gallery-options" name="year-select" id="gallery-year-filter" data-year-filter>
+                <option disabled value="">Select year</option>
+                <option value="all">All years (too many skins may lag)</option>
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
             </select>
-            <select class="initial-input2 gallery-options" name="artist-select" id="search3" data-search3>
+
+            <select class="initial-input2 gallery-options" name="brand-select" id="gallery-brand-filter"
+                data-brand-filter>
+                <option disabled value="">Select Brand</option>
+                <option selected value="all">All Brands</option>
+            </select>
+
+            <select class="initial-input2 gallery-options" name="artist-select" id="gallery-artist-filter"
+                data-artist-filter>
                 <option disabled value="">Select Artist</option>
-                <option selected value="all">All artist</option>
+                <option selected value="all">All Artists</option>
+            </select>
+
+            <select class="initial-input2 gallery-options" name="rarity-select" id="gallery-rarity-filter"
+                data-rarity-filter>
+                <option disabled value="">Select Rarity</option>
+                <option selected value="all">All Rarities</option>
+            </select>
+
+            <select class="initial-input2 gallery-options" name="price-select" id="gallery-price-filter"
+                data-price-filter>
+                <option disabled value="">Select Price</option>
+                <option selected value="all">All Prices</option>
             </select>
 
         </div>
         <div id="gallery-skins"></div>
     </section>
+
+    <!-- ────────✦───────✦───────✦────────✦──────── -->
+    <!-- Viewer Templates -->
+    <!-- ────────✦───────✦───────✦────────✦──────── -->
+
+    <template id="viewer-template">
+        <img id="viewer-image" src="" alt="">
+        <img src="" alt="" id="viewer-image-background">
+        <div id="viewer-info">
+            <button class="quit-viewer-button">Quit</button>
+            <button class="quit-viewer-button collapse-viewer-button">Collapse</button>
+            <img src="" alt="" class="viewer-rarity">
+            <div class="color-list-div"></div>
+            <div class="viewer-header">
+                <img class="viewer-icon-image dynamic-img-color viewer-show-image" src="" alt="">
+                <div class="viewer-model-name primary-color"></div>
+                <div class="viewer-skin-name primary-color"></div>
+            </div>
+
+            <div id="chibi-canvas">
+                <canvas width="500" height="250"></canvas>
+                <div class="chibi-buttons primary-color show">
+                    <button class="chibi-row secondary-color">Change Skin</button>
+                    <button class="chibi-row secondary-color">Animation List</button>
+                    <button class="chibi-row secondary-color">Perspective</button>
+                    <button class="chibi-row secondary-color">
+                        <img src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/save.svg"
+                            class="svg chibi-save-img" style="width: 15px;">
+                    </button>
+                </div>
+                <div class="animation-list-div show"></div>
+                <div class="info-rows">
+                    <div class="viewer-row primary-color"></div>
+
+                    <div class="viewer-row primary-color viewer-price"></div>
+                    <div class="viewer-row primary-color viewer-artist"></div>
+                    <div class="viewer-row primary-color viewer-acquisition"></div>
+                    <div class="viewer-row primary-color viewer-brand"></div>
+                    <div class="viewer-row primary-color viewer-cn-release"></div>
+                    <div class="viewer-row primary-color viewer-en-release"></div>
+                    <div class="viewer-row-double secondary-color viewer-upcoming-event"></div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="viewer-tips">drag the image with click <br> scroll to zoom</div>
+    </template>
+
+    <!-- ────────✦───────✦───────✦────────✦──────── -->
+    <!-- Planner Templates -->
+    <!-- ────────✦───────✦───────✦────────✦──────── -->
 
     <template id="stage-reward-template">
         <label class="reward">
@@ -203,18 +318,6 @@
         </label>
     </template>
 
-
-    <template id="template-event-calcs">
-        <div class="calcs-div">
-            <div class="calcs-row"><span class="english">Income</span><span class="mandarin">收入</span> <span
-                    class="income">0</span></div>
-            <div class="calcs-row cost"><span class="english">Expenses</span><span class="mandarin">支出</span> <span
-                    class="expense">0</div>
-            <div class="calcs-row total"><span class="english">Balance</span><span class="mandarin">余额</span> <span
-                    class="balance">0</div>
-        </div>
-    </template>
-
     <template id="planner-brand-template">
         <div class="break hide"></div>
         <div class="planner-brand hide">
@@ -227,14 +330,15 @@
     <template id="planner-skin-template">
         <label class="planner-skin-label skin hide">
             <input type="checkbox" name="skin-cbox">
-            <canvas width="180" height="360" class="planner-skin-background-canvas" style="position: absolute; border-radius: 0px;"></canvas>
+            <canvas width="180" height="360" class="planner-skin-background-canvas"
+                style="position: absolute; border-radius: 0px;"></canvas>
             <div class="skin-name mandarin hide">雨霓行游客</div>
             <div class="skin-name english hide">No translation</div>
             <div class="model-name english text-outline">
                 modelName
                 <!-- <span class="model-name english">model-name english</span>
                 <span class="model-name mandarin">model-name mandarin</span> -->
-                
+
             </div>
             <canvas width="180" height="28" class="planner-skin-name-canvas"></canvas>
             <div class="planner-id hide">planner-id</div>
@@ -242,15 +346,85 @@
             <div class="planner-skin-event-code hide">arknightsxsanriocharacters</div>
             <div class="overlay text-outline">Selected</div>
             <div class="skin-price text-outline">0</div>
+            <img class="planner-skin-profession" src="" alt="">
             <button class="skin-inspect">
-                <img alt="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/search.svg" class="skin-inspect-img"
-                    src="">
+                <img alt="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/search.svg"
+                    class="skin-inspect-img" src="">
             </button>
+            <div class="effect-overlay"></div>
         </label>
     </template>
 
     <template id="fashion-review-skin-template">
         <img src="" alt="" class="hide">
+    </template>
+
+    <template id="template-event-calcs">
+        <div class="calcs-div">
+            <div class="calcs-row"><span class="english">Income</span><span class="mandarin">收入</span> <span
+                    class="income">0</span></div>
+            <div class="calcs-row cost"><span class="english">Expenses</span><span class="mandarin">支出</span> <span
+                    class="expense">0</div>
+            <div class="calcs-row total"><span class="english">Balance</span><span class="mandarin">余额</span> <span
+                    class="balance">0</div>
+        </div>
+    </template>
+
+    <!-- ────────✦───────✦───────✦────────✦──────── -->
+    <!-- Gallery Templates -->
+    <!-- ────────✦───────✦───────✦────────✦──────── -->
+
+    <template id="gallery-skin-template">
+        <button class="gallery-skin-button">
+            <canvas class="gallery-name-canvas" width="138" height="29"></canvas>
+            <div class="gallery-name text-outline">xingzhu1</div>
+            <canvas class="gallery-icon-canvas" width="140" height="171"></canvas>
+            <img class="gallery-icon" alt="" loading="lazy" src="">
+        </button>
+    </template>
+
+    <!-- ────────✦───────✦───────✦────────✦──────── -->
+    <!-- Summary Templates -->
+    <!-- ────────✦───────✦───────✦────────✦──────── -->
+
+    <template id="summary-event-template">
+        <div class="summary-row">
+            <div class="summary-event">
+                <div class="name"></div>
+                <img src="">
+            </div>
+            <div class="calcs-div">
+                <div class="calcs-row income">
+                    <span class="english">Income</span>
+                    <span class="mandarin">收入</span>
+                    <span class="income">0</span>
+                </div>
+                <div class="calcs-row cost">
+                    <span class="english">Expenses</span>
+                    <span class="mandarin">支出</span>
+                    <span class="expense span-expense">0</span>
+                </div>
+                <div class="calcs-row total">
+                    <span class="english">Balance</span>
+                    <span class="mandarin">余额</span>
+                    <span class="balance span-balance">0</span>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="summary-skin-template">
+        <div class="summary-skin" style="position: relative;">
+            <canvas class="gallery-name-canvas" width="100" height="30"></canvas>
+            <div class="name"></div>
+            <canvas class="gallery-icon-canvas" width="100" height="100"></canvas>
+            <img class="summary-icon" src="">
+            <button class="skin-inspect"
+                style="background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(24, 24, 24, 0.8)); top: 30px;">
+                <img src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/search.svg"
+                    class="skin-inspect-img">
+            </button>
+        </div>
     </template>
 </body>
 
