@@ -1,8 +1,8 @@
-import { OBTAIN_APPROACHES_MAP, NO_EFFECT_SKINS } from "./constants.js";
+import { OBTAIN_APPROACHES_MAP, NO_EFFECT_SKINS, SKIN_ICON_REPOSITORY } from "./constants.js";
 import { resetDiv } from "./utils.js";
 import { videos } from "./videos.js";
-import { findSkinByName, findSkinByAvatar, getEventListByName, getReleaseTime, hexToRgba, showSection } from "./utils.js";
-import { app, renderCanvas, skinSpine } from "./chibi.js";
+import { findSkinByName, findSkinByAvatar, getEventListByName, getReleaseTime, hexToRgba, showSection, trimCanvas, getMatchingPlannerIds, getKeyByValue } from "./utils.js";
+import { app, renderCanvas, skinSpine, animationList } from "./chibi.js";
 import { lastSection } from "./main.js";
 
 // ────────✦───────✦───────✦────────
@@ -38,16 +38,6 @@ const create = (parent, tag, text = "", classes = "", inputType = '') => {
     return e
 }
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' || e.key === 'Esc') {  // por las dudas cubrimos ambos
-        const botonSalir = document.querySelector('.quit-viewer-button');
-        if (botonSalir) {
-            botonSalir.click();
-            // e.preventDefault();   // descomentalo si querés que no haga otras cosas el ESC
-        }
-    }
-});
-
 function getCharObject(char, charData) {
 
     for (const key in charData) {
@@ -75,6 +65,8 @@ export function viewer(plannerId, skinName, skinsData, charData, isFashion = fal
     resetDiv('viewer');
     const container = document.getElementById('viewer');
 
+
+
     //if (!plannerId.includes('0')) {
     artRender(container, plannerId)
     if (!plannerId.includes('0')) infoRender(container, plannerId, skinName, skinsData, charData, isFashion)
@@ -96,16 +88,20 @@ function artRender(container, plannerId) {
     const size = 'art'
     const img = document.createElement('img');
     const bg = document.createElement('img')
+    const trimmedBg = document.createElement('img')
     img.id = 'viewer-image';
     bg.id = 'viewer-image-background';
+    trimmedBg.id = 'viewer-image-trimmed'
     img.src = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/${size}/${plannerId}.png`;
     bg.src = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/${size}/${plannerId}.png`;
+    //trimmedBg.src = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/${size}/${plannerId}.png`;
 
     animate(img, 'viewer-show-image')
     animate(bg, 'viewer-show-image-background')
 
     container.append(img)
     container.append(bg)
+    container.append(trimmedBg)
 
     addImageInteraction(img)
 }
@@ -126,6 +122,10 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
     const obtainApproach = OBTAIN_APPROACHES_MAP[skinObject.displaySkin.obtainApproach]
     const skinGroupId = skinObject.displaySkin.skinGroupId
     const brand = skinsData.cnData.brandList[skinGroupId?.split('#')[1]]?.brandCapitalName || 'CROSSOVER'
+    //${brand}
+
+
+
     const upcomingEvents = getEventListByName(skinName, isFashion)
     const cnRelease = getReleaseTime(skinObject.displaySkin.getTime)
     const enRelease = getReleaseTime(skinObjectGlobal?.displaySkin?.getTime || null)
@@ -148,10 +148,12 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
     // Top Buttons
     // ====================================================
 
+    console.log("tangtang my beloved")
+
     const quitViewerButton = document.createElement('button')
     quitViewerButton.textContent = 'Quit'
     quitViewerButton.classList.add('quit-viewer-button')
-    quitViewerButton.onclick = () => { showSection(lastSection) }
+    quitViewerButton.onclick = () => { showSection(document.getElementById('current-section').textContent) }
 
     const collapseOrExpandButton = document.createElement('button')
     collapseOrExpandButton.textContent = 'Collapse'
@@ -313,6 +315,7 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
 
     infoDiv.append(infoRows)
 
+    /**/
     if (videos[plannerId] && videos[plannerId] > 0) {
         for (let index = 1; index <= videos[plannerId]; index++) {
             const video = document.createElement("video");
@@ -329,13 +332,28 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
             infoDiv.appendChild(video);
         }
     }
+    
+
+    /*
+    const gifFile = document.createElement("img")
+    gifFile.src = 'static/3.gif'
+    infoDiv.append(gifFile)
+    */
 
     container.append(infoDiv)
+    enableDragScrollWithMomentum('viewer-info');
 
     let angle = 45
     const linearGradient = true
     let gradient = linearGradient ? `linear-gradient(${angle}deg, ${colorStyles.join(', ')})` : `radial-gradient(circle, ${colorStyles.join(', ')})`;
-    document.getElementById('viewer').style.background = gradient;
+    //document.getElementById('viewer').style.background = gradient;
+
+    // document.getElementById("viewer").style.backgroundImage =
+    //   `linear-gradient(var(--gradient-top-transparent), var(--gradient-bottom-transparent)), url("static/img/brands-bg/${brand}.png")` 
+
+    document.getElementById("viewer").style.setProperty('--viewer-bg', '') // `url('../static/img/brands-bg/${brand}.png')`)
+    document.getElementById("chibi-canvas").style.setProperty('--viewer-bg', '') // `url('../static/img/brands-bg/${brand}.png')`)
+
 
     // const hsl = hexToHSL(colorList[0])
     // let match = hsl.match(/^hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)$/i);
@@ -396,17 +414,11 @@ function createCanvasDiv(infoDiv, plannerId, skinName, skinsData, primaryColor, 
     canvas.style.background = "none" // : getTextColor(primaryColor) == "#ffffff" ? "hsl(0deg 0% 0% / 50%)" : "hsl(0deg 0% 100% / 50%)"
 
     const chibiButtons = document.createElement('div')
-
     chibiButtons.className = 'chibi-buttons primary-color hide'
 
     const changeSkinButton = create(chibiButtons, 'button', "Change Skin", 'chibi-row secondary-color')
-
-
     const animationListButton = create(chibiButtons, 'button', "Animation List", 'chibi-row secondary-color')
-
-
     const perspectiveButton = create(chibiButtons, 'button', "Perspective", 'chibi-row secondary-color')
-
 
     const saveSvg = "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/save.svg"
     const downloadChibiButton = create(chibiButtons, 'button', "", 'chibi-row secondary-color')
@@ -447,7 +459,8 @@ function createCanvasDiv(infoDiv, plannerId, skinName, skinsData, primaryColor, 
 
             const img = document.createElement('img');
             //img.src = match.includes('0') ? defaultimgrepo('icon', operatorMap[match]) : imgrepo('icon', match);
-            img.src = imgrepo('icon', match);
+            //img.src = imgrepo('icon', match);
+            img.src = SKIN_ICON_REPOSITORY(match)
 
             matchDiv.append(img);
 
@@ -680,11 +693,11 @@ function addImageInteraction(img) {
     // Image handling
     img.style.transform = 'scale(1)';
     img.style.top = '0'
-    img.style.left = '0'
+    img.style.left = '200px'
     img.style.transition = 'transform 0.3s ease-out'; // add transition
 
     // Zoom in-out
-    let scale = 1;
+    let scale = 1.3;
     const minScale = 0.5;
     const maxScale = 5;
     img.addEventListener('wheel', (e) => {
