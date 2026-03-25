@@ -14,7 +14,7 @@ import { skinTable } from "./skin-table.js";
 export let EVENTS_DATA = ""
 export let lastSection = 'planner'
 
-const isMobile = navigator.userAgentData?.mobile === true
+export const isMobile = navigator.userAgentData?.mobile === true
     || /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 console.log(isMobile ? "Estás en un móvil" : "Estás en PC o tablet grande");

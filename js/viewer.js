@@ -3,7 +3,7 @@ import { resetDiv } from "./utils.js";
 import { videos } from "./videos.js";
 import { findSkinByName, findSkinByAvatar, getEventListByName, getReleaseTime, hexToRgba, showSection, trimCanvas, getMatchingPlannerIds, getKeyByValue } from "./utils.js";
 import { app, renderCanvas, skinSpine, animationList } from "./chibi.js";
-import { lastSection } from "./main.js";
+import { lastSection, isMobile } from "./main.js";
 
 // ────────✦───────✦───────✦────────
 //    Close Viever with Escape key
@@ -332,7 +332,7 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
             infoDiv.appendChild(video);
         }
     }
-    
+
 
     /*
     const gifFile = document.createElement("img")
@@ -341,7 +341,7 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
     */
 
     container.append(infoDiv)
-    enableDragScrollWithMomentum('viewer-info');
+    if (!isMobile) enableDragScrollWithMomentum('viewer-info');
 
     let angle = 45
     const linearGradient = true
