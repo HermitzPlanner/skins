@@ -218,16 +218,17 @@ body {
 
 header {
     background-color: var(--body-bg);
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 
     input,
     button {
         display: none;
     }
 
-    padding: 10px;
-
-    display: flex;
-    gap: 10px;
+    
 
     div {
         display: flex;
@@ -423,6 +424,13 @@ section {
     display: none;
 }
 
+#header-show-events-button {
+    width: 100%;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
 
 #initial {
     background-color: var(--equip-bg);
@@ -1569,4 +1577,8 @@ section {
 
 .scroll-container:active {
     cursor: grabbing;
+}
+
+.mobile-toggle {
+    display: none;
 }

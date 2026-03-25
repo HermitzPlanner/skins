@@ -290,7 +290,17 @@ export function showSection(sectionId) {
     document.documentElement.style.setProperty('--scrollbar-thumb', `var(--equip-bg-2)`)
     // Hide all sections
     document.querySelectorAll("section").forEach(section => {
-        section.style.display = "none";
+       if (sectionId == 'show-skins' && section.id == 'planner') {
+        document.getElementById('container-of-events').style.display = 'none'
+        document.getElementById('container-of-skins').style.display = 'flex'
+        return
+       }  
+       if (sectionId == 'show-events' && section.id == 'planner') {
+        document.getElementById('container-of-events').style.display = 'flex'
+        document.getElementById('container-of-skins').style.display = 'none'
+        return
+       } 
+       section.style.display = "none";
     });
 
     // Show the selected section

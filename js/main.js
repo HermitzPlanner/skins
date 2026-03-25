@@ -14,6 +14,48 @@ import { skinTable } from "./skin-table.js";
 export let EVENTS_DATA = ""
 export let lastSection = 'planner'
 
+const isMobile = navigator.userAgentData?.mobile === true
+    || /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+console.log(isMobile ? "Estás en un móvil" : "Estás en PC o tablet grande");
+
+document.getElementById('container-of-skins').style.display = isMobile ? 'none' : 'flex'
+
+if (isMobile) {
+    const mobileToggles = document.querySelectorAll('.mobile-toggle')
+    mobileToggles.forEach(element => {
+        element.style.display = 'flex'
+    });
+
+    document.getElementById("gallery").style.flexDirection = 'column'
+
+    document.getElementById("header-summary-button").style.padding = '2px 20px'
+    document.getElementById("header-summary-button").style.height = ("-webkit-fill-available")
+    document.getElementById("header-summary-button").style.alignItems = ("center")
+    document.getElementById("header-show-skins-button").style.padding = '2px 20px'
+    document.getElementById("header-show-skins-button").style.height = ("-webkit-fill-available")
+    document.getElementById("header-show-skins-button").style.alignItems = ("center")
+
+    const galleryHeader = document.querySelector('.gallery-header')
+    galleryHeader.style.width = '100%';
+    galleryHeader.style.alignItems = 'center';
+    galleryHeader.style.flexDirection = 'row';
+    galleryHeader.style.overflowX = 'scroll'
+
+    const initialRow = document.querySelector('.initial-row')
+    initialRow.style.position = 'sticky'
+    initialRow.style.zIndex = '2'
+    initialRow.style.top = '0'
+    initialRow.style.backdropFilter = 'blur(5px)'
+    initialRow.style.background = '#000000bd'
+    initialRow.style.borderRadius = '10px'
+
+    document.getElementById('initial-primes-text').style.top = '3px'
+
+    document.getElementById('container-of-skins').style.paddingTop = '5px'
+    document.getElementById('container-of-events').style.paddingTop = '5px'
+}
+
 
 
 // ────────✦───────✦───────✦────────✦────────
@@ -83,6 +125,9 @@ fetchGameData().then(data => {
     });
 
     document.querySelector('input[name="event"]').click()
+
+    if (isMobile) document.getElementById('container-of-skins').appendChild(document.getElementById('container-of-rewards'))
+
     const meow = document.createElement('div')
     meow.textContent = 'meow'
 
@@ -141,7 +186,7 @@ function renderEvent(data, event, index) {
     clone.querySelector('.event-date').textContent = event.date
     clone.querySelector('.event-skins').textContent = event.skins
     clone.querySelector('img').alt = RESIZED_EVENT_REPOSITORY(event.code)
-    
+
     clone.querySelector('.income').id = 'income-' + event.code
     clone.querySelector('.expense').id = 'expense-' + event.code
     clone.querySelector('.balance').id = 'balance-' + event.code
@@ -203,7 +248,7 @@ function eventButtonsLogic() {
 
     document.querySelectorAll('input[name="event"]').forEach(radio => {
         const eventCode = radio.value
-        
+
         const eventName = radio.parentElement.querySelector('.event-name').textContent
         const eventNameEnglish = radio.parentElement.querySelector('.event-name-english').textContent
         radio.addEventListener("click", () => {

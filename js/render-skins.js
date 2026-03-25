@@ -10,14 +10,14 @@ export function renderSkins(data, event) {
     //    renderFashionSkins(data, event)
 
     //} else {
-        event.skins.forEach((eventSkin, skinIndex) => {
-            if (eventSkin.isBrand) {
-                renderBrandLogos(skinIndex, eventSkin, event)
-            } else {
-                renderPlannerSkin(eventSkin, event, data, 'portrait-size')
-                //document.getElementById("container-of-skins").append(skinContainer(event, eventSkin.name, data.skinsData, 'portrait', eventSkin.operator, eventSkin.isRerun, eventSkin.getFromPack, data.charData))
-            }
-        });
+    event.skins.forEach((eventSkin, skinIndex) => {
+        if (eventSkin.isBrand) {
+            renderBrandLogos(skinIndex, eventSkin, event)
+        } else {
+            renderPlannerSkin(eventSkin, event, data, 'portrait-size')
+            //document.getElementById("container-of-skins").append(skinContainer(event, eventSkin.name, data.skinsData, 'portrait', eventSkin.operator, eventSkin.isRerun, eventSkin.getFromPack, data.charData))
+        }
+    });
     //}
 }
 
@@ -30,20 +30,18 @@ function renderPlannerSkin(eventSkin, event, data) {
     const template = document.getElementById('planner-skin-template');
     const clone = template.content.cloneNode(true);
 
-    clone.querySelector('label').setAttribute('data-event', event.code)
-    clone.querySelector('label').setAttribute('data-model', eventSkin.modelNameEnglish)
-    clone.querySelector('label').setAttribute('data-eventName', event.nameEnglish)
-    clone.querySelector('label').setAttribute('data-price', eventSkin.price)
-    clone.querySelector('label').setAttribute('data-year', eventSkin.year)
-    //clone.querySelector('label').setAttribute('data-is-fashion', event.nameEnglish.includes("Fashion Review") ? "true" : "false")
-    if (event.nameEnglish.includes("Fashion Review")) clone.querySelector('label').setAttribute('data-is-fashion', "true")
-    clone.querySelector('label').style.borderImage = eventSkin.borderGradient
-    clone.querySelector('label').addEventListener("mouseenter", function () {
+    const label = clone.querySelector('label')
+    label.setAttribute('data-event', event.code)
+    label.setAttribute('data-model', eventSkin.modelNameEnglish)
+    label.setAttribute('data-eventName', event.nameEnglish)
+    label.setAttribute('data-price', eventSkin.price)
+    label.setAttribute('data-year', eventSkin.year)
+    label.setAttribute(event.nameEnglish.includes("Fashion Review") ? 'data-is-fashion' : 'data-regular-skin', "true")
+    label.addEventListener("mouseenter", function () {
         let angle = 90;
         let opacity = 0
         let colorIndex = 0
 
-        const label = this;
         const modelNameBorder = label.querySelector('.model-name.english')
         const effectOverlay = label.querySelector('.effect-overlay')
 
@@ -76,9 +74,12 @@ function renderPlannerSkin(eventSkin, event, data) {
             effectOverlay.style.opacity = 0
         }, { once: true });
     });
+    label.style.borderImage = eventSkin.borderGradient
 
-    clone.querySelector('input').setAttribute('data-plannerId', eventSkin.plannerId)
-    clone.querySelector('input').id = event.code + '-' + eventSkin.plannerId
+    const input = clone.querySelector('input')
+    input.setAttribute('data-plannerId', eventSkin.plannerId)
+    input.id = event.code + '-' + eventSkin.plannerId
+    
     clone.querySelector('.skin-name.mandarin').textContent = eventSkin.name
     clone.querySelector('.skin-name.english').textContent = eventSkin.nameEnglish
     clone.querySelector('.model-name.english').textContent = eventSkin.modelNameEnglish

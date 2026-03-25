@@ -1,44 +1,51 @@
 /* ──────────────── LOADER ──────────────── */
-    #loader-overlay {
-      position: fixed;
-      inset: 0;
-      background: #121212;          /* fondo oscuro o el color que prefieras */
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: opacity 0.4s ease;
-      background-image: url("../static/img/bg.png");
-    }
+#loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: #121212;
+  /* fondo oscuro o el color que prefieras */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s ease;
+  background-image: url("../static/img/bg.png");
+  box-shadow: rgb(0 0 0) 0px 0px 150px 50px inset;
+  filter: brightness(70%) blur(0px);
+}
 
-    #loader-overlay.hidden {
-      opacity: 0;
-      pointer-events: none;       /* ya no intercepta clics */
-    }
+#loader-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+  /* ya no intercepta clics */
+}
 
-    .spinner {
-      width: 60px;
-      height: 60px;
-      border: 6px solid #333;
-      border-top: 6px solid #0d6efd;   /* color principal (azul bootstrap por ej) */
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #333;
+  border-top: 6px solid #0d6efd;
+  /* color principal (azul bootstrap por ej) */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-    /* Ocultamos todo el contenido mientras carga */
-    body.loading main,
-    body.loading section {
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.6s ease;
-    }
+/* Ocultamos todo el contenido mientras carga */
+body.loading main,
+body.loading section {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
 
-    body.loaded main,
-    body.loaded section {
-      visibility: visible;
-      opacity: 1;
-    }
+body.loaded main,
+body.loaded section {
+  visibility: visible;
+  opacity: 1;
+}

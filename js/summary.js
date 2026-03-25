@@ -4,8 +4,19 @@ import { viewer } from "./viewer.js";
 //import { summaryRow } from "./fragments.js";
 
 export function summary(data) {
-    const container = document.getElementById('summary');
+    //document.getElementById('current-section').textContent = 'summary'
+
+    const gallerySvg = `<img class="svg" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/gallery.svg" alt="Gallery SVG">`
+    const plannerSvg = `<img class="svg" src="https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/svg/planner.svg" alt="Gallery SVG">`
+
+    const headerCheckbox = document.getElementById("header-gallery-checkbox")
+    const headerGalleryDiv = document.getElementById('header-gallery-checkbox').nextElementSibling
+    headerGalleryDiv.innerHTML = plannerSvg + 'Planner' 
+    headerCheckbox.checked = true
+    
     resetDiv('summary');
+
+    const container = document.getElementById('summary');
 
     const button = document.createElement('button')
     button.classList.add('toggle-button')
@@ -17,7 +28,7 @@ export function summary(data) {
 
     button.textContent = 'Back to planner'
 
-    container.append(button)
+    //container.append(button)
 
     const selectedSkins = [];
     document.querySelectorAll('input[name="skin-cbox"]').forEach(skinCbox => {
