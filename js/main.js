@@ -19,8 +19,6 @@ export const isMobile = navigator.userAgentData?.mobile === true
 
 console.log(isMobile ? "Estás en un móvil" : "Estás en PC o tablet grande");
 
-document.getElementById('container-of-skins').style.display = isMobile ? 'none' : 'flex'
-
 if (isMobile) {
     const mobileToggles = document.querySelectorAll('.mobile-toggle')
     mobileToggles.forEach(element => {
@@ -46,14 +44,33 @@ if (isMobile) {
     initialRow.style.position = 'sticky'
     initialRow.style.zIndex = '2'
     initialRow.style.top = '0'
-    initialRow.style.backdropFilter = 'blur(5px)'
+    initialRow.style.backdropFilter = 'none'
     initialRow.style.background = '#000000bd'
     initialRow.style.borderRadius = '10px'
 
     document.getElementById('initial-primes-text').style.top = '3px'
 
-    document.getElementById('container-of-skins').style.paddingTop = '5px'
-    document.getElementById('container-of-events').style.paddingTop = '5px'
+    const containerOfSkins = document.getElementById('container-of-skins')
+    containerOfSkins.style.paddingTop = '5px'
+    containerOfSkins.style.display = 'none'
+
+    const containerOfEvents = document.getElementById('container-of-events')
+    containerOfEvents.style.paddingTop = '5px'
+    containerOfEvents.style.backdropFilter = 'none'
+
+    const gallerySkins = document.getElementById('gallery-skins')
+    gallerySkins.style.gap = '5px'
+    gallerySkins.style.padding = '25px 5px'
+    gallerySkins.style.placeContent = 'unset'
+    gallerySkins.style.justifyContent = 'center'
+
+    const header = document.querySelector('header')
+    header.style.gap = '5px'
+
+    const headerElements = document.querySelectorAll('.header-elements')
+    headerElements.forEach(element => {
+        element.style.gap = '1px'
+    });
 }
 
 

@@ -144,6 +144,12 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
     infoDiv.style.backgroundColor = hexToHsl("#111014")
     infoDiv.id = 'viewer-info'
 
+    if (isMobile) {
+        infoDiv.style.position = 'relative'
+        infoDiv.style.height = 'unset'
+        infoDiv.style.backdropFilter = 'none'
+    }
+
     // ====================================================
     // Top Buttons
     // ====================================================
@@ -279,6 +285,15 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
     brandDiv.classList.add("primary-color")
     cnReleaseDiv.classList.add("primary-color")
     enReleaseDiv.classList.add("primary-color")
+
+    if (isMobile) {
+        skinPriceDiv.style.width = 'unset'
+        artistDiv.style.width = 'unset'
+        obtainDiv.style.width = 'unset'
+        brandDiv.style.width = 'unset'
+        cnReleaseDiv.style.width = 'unset'
+        enReleaseDiv.style.width = 'unset'
+    }
 
     animateText(skinPriceDiv, 0.05)
     animateText(artistDiv)
@@ -763,9 +778,15 @@ function collapseOrExpand(collapseOrExpandButton) {
     if (quiereColapsar) {
         viewerInfo.style.width = "fit-content";
         viewerInfo.style.height = "45px";
+        viewerInfo.style.background = 'none'
+        viewerInfo.style.boxShadow = 'none'
+        viewerInfo.style.backdropFilter = 'none'
     } else {
         viewerInfo.style.width = "500px";
         viewerInfo.style.height = "100%";
+        viewerInfo.style.background = 'rgba(8, 8, 10, 0.5)'
+        viewerInfo.style.boxShadow = 'inset 0 0 20px 20px hsla(0, 0%, 0%, 0.2)'
+        viewerInfo.style.backdropFilter = 'blur(12px)'
     }
 
     // Actualizamos el texto del botón

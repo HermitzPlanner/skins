@@ -2,6 +2,7 @@ const isMobile = navigator.userAgentData?.mobile === true
     || /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 function enableDragScrollWithMomentum(containerId) {
+  return
   if (isMobile) return
   const container = document.getElementById(containerId);
   if (!container) {
