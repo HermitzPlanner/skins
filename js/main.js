@@ -2,13 +2,10 @@ import { fetchGameData } from "./fetch.js"
 import { renderSkins } from "./render-skins.js";
 import { checkedCboxStyle, uncheckedCboxStyle, checkedButtonStyle, uncheckedButtonStyle, resetAll, revealIfElementMatchesEvent, findSkinByName, getColorList, checkedSkin, uncheckedSkin, getEditionFromTimestamp, showSection, drawSkinBackground, drawSkinBottomBackground, setLightness, missingElementCheck, revealFashion } from "./utils.js"
 import { RESIZED_EVENT_REPOSITORY } from "./constants.js";
-
 import { gallery, galleryLogic } from "./gallery.js";
 import { summary } from "./summary.js";
-
 import { setLocalStorage } from "./local-storage.js";
 import { renderBanners } from "./render-banners.js";
-
 import { skinTable } from "./skin-table.js";
 
 export let EVENTS_DATA = ""
@@ -90,6 +87,7 @@ showSection("planner");
 
 export const missingAssets = []
 const planBanners = false
+let stopInFirstElement = false
 
 fetchGameData().then(data => {
 
@@ -101,7 +99,7 @@ fetchGameData().then(data => {
 
     console.log('Exported data:', data);
 
-    let stopInFirstElement = false
+    
 
     data.eventsData.slice().reverse().forEach((event, eventIndex) => {
         if (stopInFirstElement) return
@@ -116,7 +114,7 @@ fetchGameData().then(data => {
             renderSkins(data, event)
         }
 
-        //stopInFirstElement = true
+        stopInFirstElement = false
     });
 
     eventButtonsLogic()

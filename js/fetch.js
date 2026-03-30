@@ -217,6 +217,7 @@ function parseEventSkins(group, skinsData, charData) {
                 const skinNameGlobal = skinObjectGlobal?.displaySkin?.skinName || skinName
                 //console.log("charData", charData)
                 const charObject = getCharObject(skinObject.displaySkin.modelName.toLowerCase(), charData)
+                const rarity = charObject.rarity.match(/\d+/)[0]
                 const colors = getColorList(skinObject.displaySkin.colorList)
                 const gradientAngle = '90deg'
                 const darkColors = colors.map(color => setLightness(color, 0.10, 0.80));
@@ -250,6 +251,7 @@ function parseEventSkins(group, skinsData, charData) {
                     width: 180,
                     height: 360,
                     year: year,
+                    rarity: rarity
                 });
             }
         }

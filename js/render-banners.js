@@ -4,12 +4,16 @@ import { CHAR_ICON_REPOSITORY, CHAR_PORTRAIT_REPOSITORY, CHAR_PORTRAIT_REPOSITOR
 
 export function renderBanners(data, event) {
 
+    // #e7b568,#df6148,#fffaf3,#302d29
+    // #6c594a,#d0af69,#74675d,#ceab62
+    // #544365,#453159,#e0d4c4,#9288ac
+
     const sixStars = event.rateUps.sixStars
     if (sixStars) {
         sixStars.forEach(char => {
             if (char.includes("[限定]")) char.replace(" [限定]", "")
             const charObject = getCharObjectWithName(char, data.charData)
-            charObject.colors = ["#ff4000", "#df7020", "#9f8060"]
+            charObject.colors = ["#e7b568","#df6148","#fffaf3","#302d29"]
             renderPlannerSkin(event, charObject)
         });
     }
@@ -18,7 +22,7 @@ export function renderBanners(data, event) {
     if (fiveStars) {
         fiveStars.forEach(char => {
             const charObject = getCharObjectWithName(char, data.charData)
-            charObject.colors = ["#ffaa00", "#dfbf20", "#b3aa80"]
+            charObject.colors = ["#6c594a","#d0af69","#74675d","#ceab62"]
             renderPlannerSkin(event, charObject)
         });
     }
@@ -27,7 +31,7 @@ export function renderBanners(data, event) {
     if (fourStars) {
         fourStars.forEach(char => {
             const charObject = getCharObjectWithName(char, data.charData)
-            charObject.colors = ["hsl(260, 100%, 50%)", "#7f20df", "#b380b3"]
+            charObject.colors = ["#544365","#453159","#e0d4c4","#9288ac"]
             renderPlannerSkin(event, charObject)
         });
     }

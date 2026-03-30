@@ -228,7 +228,7 @@ header {
         display: none;
     }
 
-    
+
 
     div {
         display: flex;
@@ -651,6 +651,7 @@ section {
 
 .skin-portrait {
     width: 180px;
+    object-fit: cover;
     /* min-height: 360px; */
 }
 
@@ -692,7 +693,6 @@ section {
     padding: 2px 2px;
     width: 23px;
     text-align: center;
-    box-shadow: 3px 2px 3px 0px #0000009c;
 }
 
 .planner-skin-profession {
@@ -702,7 +702,13 @@ section {
     left: 0px;
     padding: 2px;
     border-radius: 0 0 5px 0;
-    box-shadow: 3px 2px 3px 0px #0000009c;
+}
+
+.planner-skin-rarity {
+    position: absolute;
+    height: 20px;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .planner-skin-profession-shadow {
@@ -842,7 +848,9 @@ section {
     img {
         background: none;
         z-index: 1;
-    };
+    }
+
+    ;
 
     canvas {
         position: absolute;
@@ -1523,7 +1531,7 @@ section {
     display: flex;
     flex-direction: column;
     width: 177px;
-    height: fit-content;
+    height: 340px;
     background-color: var(--equip-bg);
     overflow: hidden;
 
@@ -1537,7 +1545,8 @@ section {
     border-radius: 0px;
     z-index: 1;
     bottom: -2px;
-    filter: brightness(0.8);
+    filter: invert(1) hue-rotate(180deg) brightness(60%) contrast(150%);
+    
 }
 
 .overlay {

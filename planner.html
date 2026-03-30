@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container-of-skins"></div>
+    <template id="planner-skin-template">
+        <label class="planner-skin-label" for="">
+            <input type="checkbox" name="" id="">
+            <canvas class="planner-skin-canvas" width="180" height="360"></canvas>
+            <canvas class="planner-skin-bottom-canvas" width="180" height="28"></canvas>
+            <img class="skin-portrait" src="" alt="">
+            <div class="top-box-borders"></div>
+            <div class="bottom-box-borders"></div>
+        </label>
+    </template>
+
+    <style>
+        body {
+            --planner-skin-padding: 7px;
+            --planner-box-borders: 1px;
+            background-color: #222;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #container-of-skins {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            perspective: 800px;
+            perspective-origin: 50% 50%;
+        }
+
+        input {
+            display: none;
+        }
+
+        .planner-skin-canvas,
+        .planner-skin-bottom-canvas {
+            position: absolute;
+        }
+
+        .planner-skin-bottom-canvas {
+            z-index: 1;
+            bottom: var(--planner-skin-padding);
+            filter: invert(1) hue-rotate(180deg);
+        }
+
+        .planner-skin-label {
+            position: relative;
+            display: flex;
+            width: fit-content;
+            outline: 0px solid #0f0;
+            border: 0px solid transparent;
+            padding: var(--planner-skin-padding);
+            transform-style: preserve-3d;
+        }
+
+        .skin-portrait {
+            position: relative;
+        }
+
+        .top-box-borders {
+            width: 100%;
+            position: absolute;
+            height: 90px;
+            border: var(--planner-box-borders) solid #fff;
+            border-bottom: 0;
+            top: calc(var(--planner-box-borders) * -1);
+            left: calc(var(--planner-box-borders) * -1);
+        }
+
+        .bottom-box-borders {
+            width: 100%;
+            position: absolute;
+            height: 120px;
+            border: var(--planner-box-borders) solid #fff;
+            border-top: 0;
+            bottom: calc(var(--planner-box-borders) * -1);
+            left: calc(var(--planner-box-borders) * -1);
+        }
+    </style>
+
+    <script>
+        const bg = new Image()
+        bg.src = "static/img/classic_gacha.png"
+
+        function main() {
+
+            let angle = 20
+            const ave = ["togawasakiko1", "wakabamutsumi1", "misumiuika1", "yūtenjinyamu1", "yahataumiri1"]
+            const link = "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/portrait/"
+            const arrayOfColors = [
+                ["#464b54", "#181f2a", "#0055ff", "#004be0"],
+                ["#203a41", "#e0ebda", "#547e7a"],
+                ["#87321a", "#2c2825", "#d14a2d"],
+                ["#8b0e4d", "#242036", "#db346f"],
+                ["#54545a", "#161521", "#211a96", "#534d3c", "#1e178e"],
+
+            ]
+            const colors = ["#584565", "#674951", "#4b4e93", "#7372c0", "#1e2327"]
+            const translateZs = [40, 10, 0, 10, 40];
+            const translateXs = [-12, 0, 0, 0, 12];
+
+            for (let index = 0; index < 5; index++) {
+
+                const template = document.getElementById('planner-skin-template');
+                const clone = template.content.cloneNode(true);
+
+                clone.querySelector('img').src = link + ave[index] + ".png"
+                //clone.querySelector('img').style.border = '1px solid'
+                //clone.querySelector('img').style.borderImage = `linear-gradient(${"90deg"}, ${arrayOfColors[index].join(', ')}) 1`
+                //clone.querySelector('.top-box-borders').style.borderImage = `linear-gradient(${"90deg"}, ${arrayOfColors[index].join(', ')}) 1`
+                //clone.querySelector('.bottom-box-borders').style.borderImage = `linear-gradient(${"90deg"}, ${arrayOfColors[index].join(', ')}) 1`
+
+                /*
+                clone.querySelector('.planner-skin-label').style.transform = `
+                rotateY(${angle}deg) 
+                translateZ(${translateZs[index]}px) 
+                translateX(${translateXs[index]}px)`;
+                */
+
+                clone.querySelector('.planner-skin-bottom-canvas').textContent = 'Amogus'
+
+                drawSkinBackground(clone.querySelector('.planner-skin-canvas'), arrayOfColors[index])
+                drawSkinTopBackground(clone.querySelector('.planner-skin-bottom-canvas'), arrayOfColors[index])
+
+                document.getElementById('container-of-skins').append(clone)
+
+                angle -= 10
+
+            }
+
+
+        }
+
+
+        function drawSkinBackground(canvas, colors) {
+            const ctx = canvas.getContext("2d")
+            ctx.filter = 'grayscale(100%)';
+            ctx.drawImage(bg, 19, 389, 276, 608, 0, 0, 180, 360)
+            ctx.filter = 'none';
+            ctx.globalCompositeOperation = 'color';
+
+            if (colors.length === 1) {
+                ctx.fillStyle = colors[0]; // Color sólido si hay un solo color
+            } else {
+                const gradient = ctx.createLinearGradient(0, 0, 0, 600); // Gradiente vertical
+                colors.forEach((color, index) => {
+                    gradient.addColorStop(index / (colors.length - 1), color);
+                });
+                ctx.fillStyle = gradient;
+            }
+            ctx.fillRect(0, 0, 276, 608);
+            ctx.globalCompositeOperation = 'source-over'
+        }
+
+        function drawSkinTopBackground(bottomCanvas, colors) {
+            const bottomCtx = bottomCanvas.getContext("2d")
+
+            //bottomCtx.drawImage(bg, 538, 82, 200, 58, 0, 0, 180, 28)
+            bottomCtx.drawImage(bg, 770, 219, 200, 28, 0, 0, 180, 28) // 194 224
+            //bottomCtx.filter = "none"
+
+            bottomCtx.globalCompositeOperation = 'color';
+            if (colors.length === 1) {
+                bottomCtx.fillStyle = colors[0]; // Color sólido si hay un solo color
+            } else {
+                const gradient = bottomCtx.createLinearGradient(0, 0, 180, 0); // Gradiente horizontal
+                colors.forEach((color, index) => {
+                    gradient.addColorStop(index / (colors.length - 1), color);
+                });
+                bottomCtx.fillStyle = gradient;
+            }
+            bottomCtx.fillRect(0, 0, 180, 28); // Ajustado al tamaño del canvas
+            bottomCtx.globalCompositeOperation = 'source-over';
+        }
+
+        window.onload = function () {
+            main();
+        };
+    </script>
+</body>
+
+</html>

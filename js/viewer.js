@@ -272,6 +272,7 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
 
     }
 
+    //infoDiv.innerHTML += colorList
 
     const artistDiv = create(infoRows, 'div', 'Artist: ' + artist, 'viewer-row')
     const obtainDiv = create(infoRows, 'div', obtainApproach, 'viewer-row')

@@ -86,6 +86,7 @@ function renderPlannerSkin(eventSkin, event, data) {
     clone.querySelector('.model-name.english').style.borderImage = eventSkin.borderGradient
     clone.querySelector('.planner-id').textContent = eventSkin.plannerId
     clone.querySelector('.skin-portrait').alt = eventSkin.portraitRepository
+    clone.querySelector('.planner-skin-rarity').src = `static/rarity/rarity_yellow_${eventSkin.rarity - 1}.png`
     clone.querySelector('.planner-skin-event-code').textContent = event.code
     clone.querySelector('.planner-skin-profession').src = eventSkin.professionImage
     clone.querySelector('.planner-skin-profession').style.background = eventSkin.linearGradientArraySliceTwo

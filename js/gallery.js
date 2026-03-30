@@ -133,7 +133,7 @@ export function galleryLogic(data) {
 
         const template = document.getElementById('gallery-skin-template');
         const clone = template.content.cloneNode(true);
-        clone.querySelector('.gallery-name').textContent = modelName
+        clone.querySelector('.gallery-name').textContent = plannerId // modelName
         clone.querySelector('img').alt = SKIN_ICON_REPOSITORY(plannerId)
 
         drawSkinTopBackground(clone.querySelector('.gallery-name-canvas'), skinObject)
