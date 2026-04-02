@@ -1,3 +1,40 @@
+People a People
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-rerun-multiple
+◆r【忒斯特收藏】系列 - 超新星 - 维什戴尔
+◆r【忒斯特收藏】系列 - 至虔者荣光 - 空弦
+◆r【忒斯特收藏】系列 - 无我唯识 - 塑心
+◆r【忒斯特收藏】系列 - 轻盈一梦 - 迷迭香
+brand-rerun-multiple
+◆r【时代】系列 - 礼遇 - 仇白
+◆r【时代】系列 - 逸趣 - 蚀清
+◆r【时代】系列 - 全新业务 - 洋灰
+◆r【时代】系列 - 远行的季节 - 松果
+◆r【时代】系列 - 湖畔歌者 - 晓歌
+◆r【时代】系列 - 恍惚 - W
+◆r【时代】系列 - 拥抱新生 - 迷迭香
+◆r【时代】系列 - 复现荣光 - 耀骑士临光
+◆r【时代】系列 - 幽兰秘辛 - 缄默德克萨斯
+brand-rerun-multiple
+◆r【斗争血脉】系列 - 燃烧天穹下 - 伊内丝
+◆r【斗争血脉】系列 - 锋潮 - 棘刺
+◆r【斗争血脉】系列 - 新枝 - 缪尔赛思
+◆r【斗争血脉】系列 - 审判日 - 菲亚梅塔
+◆r【斗争血脉】系列 - 升华 - 浊心斯卡蒂
+◆r【斗争血脉】系列 - 残余 - 凯尔希
+◆r【斗争血脉】系列 - 生而为一 - 归溟幽灵鲨
+brand-rerun-multiple
+◆r【命途迭代】系列 - 红女爵 - 浊心斯卡蒂
+◆r【命途迭代】系列 - 哀律西昂夜曲 - 蓝毒
+◆r【命途迭代】系列 - 苍茫怒号 - 玛恩纳
+◆r【命途迭代】系列 - 破翼者 - 缄默德克萨斯
+brand-rerun-single
+◆r【成就之星】系列 - 永恒玩家 - 水月
+brand-rerun-single
+◆r【音律联觉】系列 - 漫步于黄金之梦 - 缪尔赛思
+
 When Elegies Are Ashes rerun
 cn-event-name-placeholder
 image-link-placeholder
@@ -13,6 +50,7 @@ brand-rerun-multiple
 ◆【音律联觉】系列 - 律动方格 - 琳琅诗怀雅
 ◆【音律联觉】系列 - 历世流风 - 霍尔海雅
 ◆【音律联觉】系列 - 不融冰 - 银灰
+["EA-ST-1","EA-1","EA-TR-1","EA-2","EA-3","EA-4","EA-5","EA-6","EA-ST-2","EA-7","EA-8","EA-ST-3","EA-EX-1","EX-1-CM","EA-EX-2","EX-2-CM","EA-EX-3","EX-3-CM","EA-EX-4","EX-4-CM","EA-EX-5","EX-5-CM","EA-EX-6","EX-6-CM","EA-EX-7","EX-7-CM","EA-EX-8","EX-8-CM"]
 ★★★★★★：死芒（占6★出率的50%）
 ★★★★★： 钼铅 / 火哨（占5★出率的50%）
 

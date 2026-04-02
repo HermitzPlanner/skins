@@ -230,7 +230,7 @@ function parseEventSkins(group, skinsData, charData) {
                     name: skinName,
                     nameEnglish: skinNameGlobal,
                     modelName: match[2],
-                    modelNameEnglish: skinObject.displaySkin.modelName,
+                    modelNameEnglish: skinObject.displaySkin.modelName.replace(" The ", " ").replace(" the ", " "),
                     operator: match[2],
                     isRerun,
                     getFromPack,

@@ -83,7 +83,10 @@ function renderPlannerSkin(eventSkin, event, data) {
     clone.querySelector('.skin-name.mandarin').textContent = eventSkin.name
     clone.querySelector('.skin-name.english').textContent = eventSkin.nameEnglish
     clone.querySelector('.model-name.english').textContent = eventSkin.modelNameEnglish
-    clone.querySelector('.model-name.english').style.borderImage = eventSkin.borderGradient
+    
+    clone.querySelector('.model-name.english').style.fontSize = eventSkin.modelNameEnglish.length > 20 ? "15px" : "18px"
+    //clone.querySelector('.model-name.english').style.borderImage = eventSkin.borderGradient
+    clone.querySelector('.planner-skin-name-canvas').style.borderImage = eventSkin.borderGradient
     clone.querySelector('.planner-id').textContent = eventSkin.plannerId
     clone.querySelector('.skin-portrait').alt = eventSkin.portraitRepository
     clone.querySelector('.planner-skin-rarity').src = `static/rarity/rarity_yellow_${eventSkin.rarity - 1}.png`

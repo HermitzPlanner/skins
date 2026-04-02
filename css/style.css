@@ -536,7 +536,7 @@ section {
 .planner-brand {
     position: relative;
     display: flex;
-    gap: 15px;
+    gap: 0px;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -605,7 +605,6 @@ section {
 }
 
 .planner-brand-image {
-    padding: 15px 0;
     z-index: 1;
     width: 180px;
     height: 180px;
@@ -671,6 +670,11 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 0;
 }
 
 .model-name {
@@ -683,7 +687,7 @@ section {
     width: 100%;
     bottom: 0;
     background: none;
-    border-top: 3px solid;
+    height: 29px;
 }
 
 #container-of-skins .skin-price {
@@ -1546,6 +1550,7 @@ section {
     z-index: 1;
     bottom: -2px;
     filter: invert(1) hue-rotate(180deg) brightness(60%) contrast(150%);
+    border-top: 3px solid;
     
 }
 
