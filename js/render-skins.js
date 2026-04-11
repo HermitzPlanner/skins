@@ -75,6 +75,8 @@ function renderPlannerSkin(eventSkin, event, data) {
         }, { once: true });
     });
     label.style.borderImage = eventSkin.borderGradient
+    label.style.filter = eventSkin.isNullSkin ? "grayscale(1)" : ""
+    label.style.pointerEvents = eventSkin.isNullSkin ? "none" : ""
 
     const input = clone.querySelector('input')
     input.setAttribute('data-plannerId', eventSkin.plannerId)
@@ -82,7 +84,7 @@ function renderPlannerSkin(eventSkin, event, data) {
     
     clone.querySelector('.skin-name.mandarin').textContent = eventSkin.name
     clone.querySelector('.skin-name.english').textContent = eventSkin.nameEnglish
-    clone.querySelector('.model-name.english').textContent = eventSkin.modelNameEnglish
+    clone.querySelector('.model-name.english').textContent = eventSkin.isNullSkin ? "Skin not out yet" : eventSkin.modelNameEnglish
     
     clone.querySelector('.model-name.english').style.fontSize = eventSkin.modelNameEnglish.length > 20 ? "15px" : "18px"
     //clone.querySelector('.model-name.english').style.borderImage = eventSkin.borderGradient

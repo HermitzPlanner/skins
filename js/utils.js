@@ -135,7 +135,9 @@ export function findSkinByName(skinsData, skinName) {
             return skinsData.charSkins[key]; // Return the matching object
         }
     }
-    return null; // Return null if no match is found
+    const nullObject = skinsData.charSkins["char_002_amiya@test#1"]
+    nullObject.isNullSkin = true
+    return nullObject; // Return null if no match is found
 }
 
 export function findSkinByAvatar(skinsData, avatar) {
@@ -182,7 +184,7 @@ export function getColorList(array) {
         }
 
         // Si no matchea nada → logueamos y devolvemos negro o transparente
-        console.warn(`Color hex inválido o raro: "${raw}" → lo ponemos negro`);
+       // console.warn(`Color hex inválido o raro: "${raw}" → lo ponemos negro`);
         return '#000000';
         // O si preferís tirar error: throw new Error(`Color inválido: ${raw}`);
     }

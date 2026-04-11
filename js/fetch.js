@@ -114,10 +114,10 @@ function parseEventsData(data, skinsData, charData) {
 
     groups.forEach((group, index) => {
         const event = {}
-        event.nameEnglish = group[0]
-        event.nameMandarin = group[1]
-        event.code = getEventCode(group[0])
-        event.date = translateDateRange(group[3].replace(/关卡开放时间：|活动时间：/g, ''))
+        event.nameEnglish = group[1]
+        event.nameMandarin = group[2]
+        event.code = getEventCode(group[1])
+        event.date = translateDateRange(group[4].replace(/关卡开放时间：|活动时间：/g, ''))
         event.skins = parseEventSkins(group, skinsData, charData)
         event.rewards = parseEventRewards(group)
         event.rateUps = {
@@ -212,6 +212,7 @@ function parseEventSkins(group, skinsData, charData) {
                 const skinName = match[1]
                 const plannerId = skinsData.plannerIdMap[skinName]
                 const skinObject = findSkinByName(skinsData.cnData, skinName)
+                //console.log("skinObject", skinObject)
                 const avatarId = skinObject.avatarId
                 const skinObjectGlobal = findSkinByAvatar(skinsData.enData, avatarId)
                 const skinNameGlobal = skinObjectGlobal?.displaySkin?.skinName || skinName
@@ -227,6 +228,7 @@ function parseEventSkins(group, skinsData, charData) {
                 //console.log("charObject", charObject)
 
                 eventSkins.push({
+                    isNullSkin: skinObject.isNullSkin,
                     name: skinName,
                     nameEnglish: skinNameGlobal,
                     modelName: match[2],
