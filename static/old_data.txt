@@ -1,5 +1,76 @@
 
 ────────✦───────✦───────✦────────
+Trials for Navigator #6
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【玛尔特】系列 - 迎风之轮 - 泡泡
+
+────────✦───────✦───────✦────────
+Exodus from the Pale Sea rerun
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【成就之星】系列 - 冒险启程 - 瑰盐
+["EP-ST-1", "EP-TR-1", "EP-1", "EP-2", "EP-3", "EP-4", "EP-5", "EP-6", "EP-ST-2", "EP-7", "EP-8", "EP-ST-3", "EP-EX-1", "EP-EX-1 CM", "EP-EX-2", "EP-EX-2 CM", "EP-EX-3", "EP-EX-3 CM", "EP-EX-4", "EP-EX-4 CM", "EP-EX-5", "EP-EX-5 CM", "EP-EX-6", "EP-EX-6 CM", "EP-EX-7", "EP-EX-7 CM", "EP-EX-8", "EP-EX-8 CM"]
+★★★★★★：引星棘刺（占6★出率的50%）
+★★★★★： 特克诺 / 杏仁（占5★出率的50%
+
+────────✦───────✦───────✦────────
+Unrealized Realities
+-
+-
+-
+brand-multiple
+◆【冰原信使】系列 - 闪焰之夜 - 焰影苇草
+◆【冰原信使】系列 - 纯净乐段 - 历阵锐枪芬
+brand-rerun-multiple
+◆r【闪耀阶梯】系列 - 梦幻高空 - 莱伊
+◆r【闪耀阶梯】系列 - 巅峰现场 - 龙舌兰
+◆r【冰原信使】系列 - 偶尔醉陶 - 斥罪
+◆r【冰原信使】系列 - 舞 - 月禾
+◆r【冰原信使】系列 - 回礼 - 雪绒
+◆r【冰原信使】系列 - 邀雪 - 哈洛德
+brand-rerun-single
+◆r【时代】系列 - 碎片之间 - 谜图
+["UR-ST-1","UR-1","UR-TR-1","UR-2","UR-3","UR-4","UR-ST-2","UR-5","UR-6","UR-7","UR-8","UR-ST-3", "UR-EX-1", "UR-EX-1 CM", "UR-EX-2", "UR-EX-2 CM", "UR-EX-3", "UR-EX-3 CM", "UR-EX-4", "UR-EX-4 CM", "UR-EX-5", "UR-EX-5 CM", "UR-EX-6", "UR-EX-6 CM", "UR-EX-7", "UR-EX-7 CM", "UR-EX-8", "UR-EX-8 CM"]
+★★★★★★：娜斯提（占6★出率的50%）
+★★★★★： 响石 / 洛洛（占5★出率的50%
+
+────────✦───────✦───────✦────────
+An Accolade to a Rejuvenation rerun
+-
+-
+-
+brand-rerun-multiple
+◆r【CROSSOVER】系列 - 全能演员 - 重岳
+◆r【CROSSOVER】系列 - 霹雳导演 - 年
+◆r【CROSSOVER】系列 - 《上任达维镇》 - 涤火杰西卡
+
+────────✦───────✦───────✦────────
+IS6 Lee Skin
+-
+-
+-
+brand-single
+◆【0011/飙】系列 - 鉴浮生 - 老鲤
+
+────────✦───────✦───────✦────────
+Portatori dei Velluti rerun
+-
+-
+-
+brand-single
+◆【命途迭代】系列 - 夜之终局 - 弑君者
+brand-rerun-single
+◆r【0011/飙】系列 - 幻火 - 止颂
+["PV-ST-1", "PV-TR-1", "PV-1", "PV-2", "PV-3", "PV-4", "PV-ST-2", "PV-5", "PV-6", "PV-7", "PV-8", "PV-ST-3", "PV-9", "PV-10", "PV-ST-4", "PV-EX-1", "PV-EX-1 CM", "PV-EX-2", "PV-EX-2 CM", "PV-EX-3", "PV-EX-3 CM", "PV-EX-4", "PV-EX-4 CM", "PV-EX-5", "PV-EX-5 CM", "PV-EX-6", "PV-EX-6 CM", "PV-EX-7", "PV-EX-7 CM", "PV-EX-8", "PV-EX-8 CM", "PV-S-1", "PV-S-1 CM", "PV-S-2", "PV-S-2 CM", "PV-S-3", "PV-S-3 CM", "PV-S-4", "PV-S-4 CM", "PV-S-5", "PV-S-5 CM"]
+
+
+
+────────✦───────✦───────✦────────
 Stronghold Protocol Alliance
 -
 -
