@@ -1,8 +1,21 @@
 ────────✦───────✦───────✦────────
+Leaves Chasing Fire rerun
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【0011/韵】系列 - 撷香霭 - 折桠
+brand-rerun-multiple
+◆【0011/韵】系列 - 步芳兰 - 小满
+◆【0011/韵】系列 - 寄遥思 - 露托
+["CF-ST-1","CF-1","CF-TR-1","CF-2","CF-3","CF-4","CF-ST-2","CF-5","CF-6","CF-7","CF-8","CF-9","CF-ST-3","CF-P-1","CF-EX-1","EX-1-CM","CF-EX-2","EX-2-CM","CF-EX-3","EX-3-CM","CF-EX-4","EX-4-CM","CF-EX-5","EX-5-CM","CF-EX-6","EX-6-CM","CF-EX-7","EX-7-CM","CF-EX-8","CF-EX-8-CM","CF-S-1"]
+
+────────✦───────✦───────✦────────
 Positional Football Championship
 cn-event-name-placeholder
 image-link-placeholder
 cn-date-placeholder
+◆【玛尔特系列】系列 - 跃动节拍 - 钼铅
 
 ────────✦───────✦───────✦────────
 Thunder in the Azure Dream
@@ -10,7 +23,7 @@ cn-event-name-placeholder
 image-link-placeholder
 cn-date-placeholder
 brand-single
-◆【CROSSOVER】系列 - 露营时间喵！- 罗德岛隐秘队
+◆【CROSSOVER】系列 - 露营时间喵！ - 罗德岛隐秘队
 brand-single
 ◆【时代】系列 - 失焦 - 忍冬
 brand-single
@@ -24,6 +37,8 @@ brand-rerun-multiple
 ◆【时代】系列 - 栖息 - 淬羽赫默
 brand-rerun-single
 ◆【罗德厨房】系列 - 甜品大奖 - 隐现
+brand-rerun-single
+◆【CROSSOVER】系列 - 跃上街头 - 泰拉大陆调查团
 ["TD-ST-1","TD-1","TD-TR-1","TD-2","TD-3","TD-4","TD-5","TD-6","TD-7","TD-8","TD-ST-2","TD-P-1","TD-EX-1","EX-1-CM","TD-EX-2","EX-2-CM","TD-EX-3","EX-3-CM","TD-EX-4","EX-4-CM","TD-EX-5","EX-5-CM","TD-EX-6","EX-6-CM","TD-EX-7","EX-7-CM","TD-EX-8","TD-EX-8-CM"]
 
 
