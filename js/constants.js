@@ -21,6 +21,7 @@ export const ALTERS_MAP = {
     "Истина": "Istina",
     "Позёмка": "Pozyomka",
     "Роса": "Poca",
+    "Веточки": "Vetochki",
     /* latin */
     "Młynar": "Mlynar",
     "Wiš'adel": "Wisadel",
