@@ -69,6 +69,7 @@ function parseSkinsData(cnData, enData) {
                 price = 18
                 if (skin.dynIllustId) price = 21
                 if (skin.dynEntranceId) price = 24
+                if (skin.spDynIllustId) price = 27
             }
             if (skin.displaySkin.skinName == '惬意') price = 18
             const plannerId = getPlannerId(modelName)

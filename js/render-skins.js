@@ -179,6 +179,7 @@ function renderFashionSkins0(data, event) {
             price = 18
             if (value.dynIllustId) price = 21
             if (value.dynEntranceId) price = 24
+            if (value.spDynIllustId) price = 27
         }
 
         if (displaySkin.skinName == '惬意') price = 18
