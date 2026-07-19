@@ -1,3 +1,51 @@
+────────✦───────✦───────✦────────
+Such is the Joy of Our Reunion rerun
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+["OR-ST-1", "OR-TR-1", "OR-1", "OR-2", "OR-3", "OR-4", "OR-5", "OR-ST-2", "OR-6", "OR-7", "OR-8", "OR-9", "OR-ST-3", "OR-EX-1", "OR-EX-1 CM", "OR-EX-2", "OR-EX-2 CM", "OR-EX-3", "OR-EX-3 CM", "OR-EX-4", "OR-EX-4 CM", "OR-EX-5", "OR-EX-5 CM", "OR-EX-6", "OR-EX-6 CM", "OR-EX-7", "OR-EX-7 CM", "OR-EX-8", "OR-EX-8 CM", "OR-S-1", "OR-S-2", "OR-S-3", "OR-S-4", "OR-S-1 CM", "OR-S-2 CM", "OR-S-3 CM", "OR-S-4 CM", "OR-MO-1"]
+brand-single
+◆【时代】系列 - 留影 - 行箸
+brand-rerun-single
+◆r【时代】系列 - 万顷阳光 - 万顷
+brand-rerun-multiple
+◆r【0011制造】系列 - 春日宴 - 黍
+◆r【0011制造】系列 - 少年游 - 左乐
+◆r【0011制造】系列 - “杏仁”拼盘 - 杏仁
+◆r【0011制造】系列 - 草原小帮手 - 贝娜
+◆r【0011制造】系列 - 何处栖 - 重岳
+◆r【0011制造】系列 - 列瑶台 - 林
+◆r【0011制造】系列 - 洇灵雨 - 蜜莓
+◆r【0011制造】系列 - 及山海 - 海沫
+◆r【0011制造】系列 - 乐逍遥 - 年
+◆r【0011制造】系列 - 染尘烟 - 夕
+◆r【0011制造】系列 - 濯缨 - 令
+brand-rerun-single
+◆r【生命之地】系列 - 字句中的雪原 - 鸿雪
+
+────────✦───────✦───────✦────────
+Arknights x Rilakkuma Collab
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-multiple
+◆【CROSSOVER】系列 - 常伴我身 - 早露
+◆【CROSSOVER】系列 - 轻松旅途 - 伊芙利特
+
+────────✦───────✦───────✦────────
+Medjehtiqedti Bound
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-multiple
+◆【寒武纪】系列 - 夜归人 - 烛煌
+◆【寒武纪】系列 - 耀目之蓝 - 隐德来希
+brand-rerun-multiple
+◆【时代】系列 - 博物 - 焰影苇草
+◆【时代】系列 - 私人书房 - 薄绿
+["ME-ST-1", "ME-TR-1", "ME-1", "ME-2", "ME-3", "ME-4", "ME-5", "ME-6", "ME-ST-2", "ME-7", "ME-8", "ME-ST-3", "ME-EX-1", "ME-EX-1 CM", "ME-EX-2", "ME-EX-2 CM", "ME-EX-3", "ME-EX-3 CM", "ME-EX-4", "ME-EX-4 CM", "ME-EX-5", "ME-EX-5 CM", "ME-EX-6", "ME-EX-6 CM", "ME-EX-7", "ME-EX-7 CM", "ME-EX-8", "ME-EX-8 CM"]
+★★★★★★：缇缇（占6★出率的50%）
+★★★★★： 撷英调香师 / 海霓（占5★出率的50%
 
 ────────✦───────✦───────✦────────
 Trials for Navigator #6
