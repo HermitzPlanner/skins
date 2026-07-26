@@ -1,5 +1,5 @@
 import { resetDiv, showSection, getNameWithPlannerId, findSkinByName, getColorList, drawSkinTopBackground, drawSkinBackground } from "./utils.js";
-import { RESIZED_EVENT_REPOSITORY, SKIN_ICON_REPOSITORY } from "./constants.js";
+import { RESIZED_EVENT_REPOSITORY, SKIN_ICON_REPOSITORY, NEW_SKIN_ICON_REPOSITORY } from "./constants.js";
 import { viewer } from "./viewer.js";
 //import { summaryRow } from "./fragments.js";
 
@@ -116,7 +116,7 @@ function renderSummarySkin(eventRowClone, planner, data) {
     const clone = template.content.cloneNode(true)
 
     clone.querySelector('.name').textContent = planner.modelName
-    clone.querySelector('.summary-icon').src = SKIN_ICON_REPOSITORY(planner.plannerId)
+    clone.querySelector('.summary-icon').src = NEW_SKIN_ICON_REPOSITORY(skinObject)
     clone.querySelector('.summary-skin').style.background = `linear-gradient(${'90deg'}, ${colors.join(', ')}) border-box, #ffffff padding-box`
 
     drawSkinTopBackground(clone.querySelector('.gallery-name-canvas'), skinObject)
