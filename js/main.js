@@ -453,6 +453,8 @@ function setupImageObserver() {
     );
 
     const logs = [];
+    //logs.push(`.${plannerId}{ scale: 6; transform: translate(-0px, 19px); }`);
+                        //console.log(logs.join('\n'));
 
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -465,16 +467,6 @@ function setupImageObserver() {
                     const plannerId = img.getAttribute('data-plannerid')
                     if (plannerId) {
                         img.classList.add(plannerId)
-                        //console.log("observer planner id")
-                        //console.log(plannerId)}
-                        // console.table(`.${plannerId}{
-                        // }`)
-
-                        // Dentro del bucle donde tienes el console.log:
-                        logs.push(`.${plannerId}{ scale: 6; transform: translate(-0px, 19px); }`);
-
-                        // Al final (fuera del bucle):
-                        console.log(logs.join('\n'));
                     }
 
 

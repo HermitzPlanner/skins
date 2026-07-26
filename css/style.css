@@ -20,6 +20,16 @@
     }
 }
 
+@keyframes showArt {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes flipCard {
     from {
         transform: rotateY(180deg);
@@ -170,6 +180,10 @@ img[alt] {
 .show {
     display: flex !important;
     animation: slideUp 0.5s ease-out forwards;
+}
+
+.show-art {
+    animation: showArt 0.5s ease-out forwards;
 }
 
 .show-card {
