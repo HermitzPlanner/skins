@@ -1,5 +1,5 @@
 export function skinTable(data) {
-    return
+    
     const skinTable = document.createElement("div")
     skinTable.style.width = "100%"
     skinTable.style.height = "100%"
@@ -90,7 +90,8 @@ const fashionReviews = [
     { edition: 15, timestamp: 1678161600 },
     { edition: 16, timestamp: 1689667200 },
     { edition: 17, timestamp: 1697961600 },
-    { edition: 18, timestamp: 1705564800 }
+    { edition: 18, timestamp: 1705564800 },
+    { edition: 19, timestamp: 1714032000}
 ];
 
 function getEditionFromTimestamp(getTime) {

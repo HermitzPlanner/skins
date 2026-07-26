@@ -83,6 +83,7 @@ export const NO_EFFECT_SKINS = [
 
 export const RESIZED_EVENT_REPOSITORY = (eventId) => `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/events/resized/resized_${eventId}.jpg`
 export const SKIN_ICON_REPOSITORY = (plannerId) => `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/icon/${plannerId}.png`
+export const NEW_SKIN_ICON_REPOSITORY = (skinObject) => `https://raw.githubusercontent.com/HermitzPlanner/ArknightsResource/main/avatar/ASSISTANT/${skinObject.skinId.replace(/[@#]/g, "_")}.png`
 export const SKIN_PORTRAIT_REPOSITORY = (plannerId) => `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/portrait/${plannerId}.png`
 export const CHAR_ICON_REPOSITORY = (charId) => `https://raw.githubusercontent.com/fexli/ArknightsResource/main/avatar/ASSISTANT/${charId}_1.png`
 export const CHAR_PORTRAIT_REPOSITORY = (charId) => `https://raw.githubusercontent.com/fexli/ArknightsResource/main/charpor/${charId}_1.png`
@@ -106,5 +107,6 @@ export const FASHION_REVIEWS = [
     { edition: 15, timestamp: 1678161600 },
     { edition: 16, timestamp: 1689667200 },
     { edition: 17, timestamp: 1697961600 },
-    { edition: 18, timestamp: 1705564800 }
+    { edition: 18, timestamp: 1705564800 },
+    { edition: 19, timestamp: 1714032000 }
 ];

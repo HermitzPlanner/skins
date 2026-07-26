@@ -75,6 +75,9 @@ function renderPlannerSkin(eventSkin, event, data) {
         }, { once: true });
     });
     label.style.borderImage = eventSkin.borderGradient
+    if (eventSkin.plannerId == 'breeze1') {
+        label.style.borderImage = "linear-gradient(90deg, #c7332f, #B39476, #D4BAA2, #c7332f) 1"
+    }
     label.style.filter = eventSkin.isNullSkin ? "grayscale(1)" : ""
     label.style.pointerEvents = eventSkin.isNullSkin ? "none" : ""
 
@@ -90,7 +93,10 @@ function renderPlannerSkin(eventSkin, event, data) {
     //clone.querySelector('.model-name.english').style.borderImage = eventSkin.borderGradient
     clone.querySelector('.planner-skin-name-canvas').style.borderImage = eventSkin.borderGradient
     clone.querySelector('.planner-id').textContent = eventSkin.plannerId
-    clone.querySelector('.skin-portrait').alt = eventSkin.portraitRepository
+    clone.querySelector('.skin-portrait').alt = event.nameEnglish.includes("Fashion Review") ? eventSkin.portraitRepository : eventSkin.newRepo
+    if (!event.nameEnglish.includes("Fashion Review")) clone.querySelector('.skin-portrait').setAttribute('data-plannerid', eventSkin.plannerId)
+    
+    //clone.querySelector('.skin-portrait').classList.add(eventSkin.plannerId)
     clone.querySelector('.planner-skin-rarity').src = `static/rarity/rarity_yellow_${eventSkin.rarity - 1}.png`
     clone.querySelector('.planner-skin-event-code').textContent = event.code
     clone.querySelector('.planner-skin-profession').src = eventSkin.professionImage

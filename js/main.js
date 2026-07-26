@@ -99,7 +99,7 @@ fetchGameData().then(data => {
 
     console.log('Exported data:', data);
 
-    
+
 
     data.eventsData.slice().reverse().forEach((event, eventIndex) => {
         if (stopInFirstElement) return
@@ -184,7 +184,7 @@ fetchGameData().then(data => {
 function headerButtonsLogic(data) {
     document.getElementById('header-summary-button').onclick = () => { summary(data) }
     document.getElementById("header-gallery-checkbox").onclick = () => { gallery() }
-    // document.getElementById('skin-table').onclick = () => { skinTable(data) }
+    document.getElementById('skin-table').onclick = () => { skinTable(data) }
 }
 
 function renderEvent(data, event, index) {
@@ -269,7 +269,7 @@ function eventButtonsLogic() {
         radio.addEventListener("click", () => {
             document.querySelectorAll('.year-filter-button').forEach(uncheckedButtonStyle)
             document.getElementById("year-button-filters").style.display = eventNameEnglish.includes("Fashion Review") ? "flex" : "none"
-            document.getElementById("button-filter-2024").style.display = eventNameEnglish.includes("Fashion Review 18") ? "block" : "none"
+            //document.getElementById("button-filter-2024").style.display = eventNameEnglish.includes("Fashion Review 18") ? "block" : "none"
             document.getElementById("container-of-skins").style.justifyContent = eventNameEnglish.includes("Fashion Review") ? "center" : "left"
 
             document.getElementById("current-event-code").textContent = eventCode
@@ -447,7 +447,13 @@ function skinButtonsLogic() {
 
 // IntersectionObserver to set src when image is visible
 function setupImageObserver() {
-    const images = document.querySelectorAll('img[alt]:not(.svg):not(.planner-brand-image)'); // Select all images with alt text
+    //const images = document.querySelectorAll('img[alt]:not(.svg):not(.planner-brand-image)'); // Select all images with alt text
+    const images = document.querySelectorAll(
+        'img[alt]:not(.svg, .planner-brand-image, .planner-skin-profession, .planner-skin-rarity)'
+    );
+
+    const logs = [];
+
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -456,6 +462,21 @@ function setupImageObserver() {
                 // Only set src if alt is a valid URL (basic validation)
                 if (img.alt && isValidUrl(img.alt)) {
                     img.src = img.alt;
+                    const plannerId = img.getAttribute('data-plannerid')
+                    if (plannerId) {
+                        img.classList.add(plannerId)
+                        //console.log("observer planner id")
+                        //console.log(plannerId)}
+                        // console.table(`.${plannerId}{
+                        // }`)
+
+                        // Dentro del bucle donde tienes el console.log:
+                        logs.push(`.${plannerId}{ scale: 6; transform: translate(-0px, 19px); }`);
+
+                        // Al final (fuera del bucle):
+                        console.log(logs.join('\n'));
+                    }
+
 
                     const linkTest = new Image(); // Create an image object
                     linkTest.src = img.alt;
@@ -469,6 +490,7 @@ function setupImageObserver() {
                     };
                 } else {
                     console.warn(`Invalid URL in alt text for image: ${img.alt}, ${entry}`);
+                    console.warn(img)
                     //img.src = 'assets/yu.png'; // Optional: Set a fallback image
                 }
                 observer.unobserve(img); // Stop observing once src is set

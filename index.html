@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/portrait.css">
     <link rel="stylesheet" href="css/loader.css">
     <link rel="icon" type="image/png" href="assets/ascalon1.png" sizes="16x16">
     <link rel="icon" type="image/png" href="assets/ascalon1.png" sizes="32x32">
@@ -15,6 +16,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/event-calcs.css">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.2.6/color-thief.min.js"></script>
     <script defer src="js/scroll-container.js"></script>
     <script src="js/pixi/pixi.min.js"></script>
@@ -30,7 +32,7 @@
         <div id="current-section" style="display: none;">planner</div>
         <div id="fashion-year" style="display: none;">none</div>
         <div id="current-event-code" style="display: none;">none</div>
-        <!-- <button style="display: flex;" id="skin-table">Skin Table</button> -->
+        <button style="display: none;" id="skin-table">Skin Table</button>
         <label>
             <input type="checkbox" name="" id="header-gallery-checkbox">
 
@@ -355,6 +357,8 @@
                     class="skin-inspect-img" src="">
             </button>
             <div class="effect-overlay"></div>
+            <div class="allign-overlay"></div>
+            <div class="shadow-overlay"></div>
         </label>
     </template>
 

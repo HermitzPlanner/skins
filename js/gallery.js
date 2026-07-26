@@ -1,5 +1,5 @@
 import { invis, visible, showSection, findSkinByName, getCharObject, drawSkinBackground, drawSkinTopBackground, getYearFromTimestamp } from "./utils.js"
-import { SKIN_ICON_REPOSITORY } from "./constants.js"
+import { SKIN_ICON_REPOSITORY, NEW_SKIN_ICON_REPOSITORY } from "./constants.js"
 import { viewer } from "./viewer.js"
 import { getColorList } from "./utils.js"
 
@@ -134,7 +134,7 @@ export function galleryLogic(data) {
         const template = document.getElementById('gallery-skin-template');
         const clone = template.content.cloneNode(true);
         clone.querySelector('.gallery-name').textContent = plannerId // modelName
-        clone.querySelector('img').alt = SKIN_ICON_REPOSITORY(plannerId)
+        clone.querySelector('img').alt = NEW_SKIN_ICON_REPOSITORY(skinObject)
 
         drawSkinTopBackground(clone.querySelector('.gallery-name-canvas'), skinObject)
         drawSkinBackground(clone.querySelector('.gallery-icon-canvas'), skinObject)

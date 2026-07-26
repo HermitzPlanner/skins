@@ -651,7 +651,27 @@ section {
 .skin-portrait {
     width: 180px;
     object-fit: cover;
+    /* width: 720px;
+    translate: -270px; */
     /* min-height: 360px; */
+    /* scale: 6;
+    transform: translate(-0px, 19px); */
+}
+
+.allign-overlay {
+        position: absolute;
+    width: 90px;
+    height: 97px;
+    /* background-color: #0f0; */
+    opacity: 0.5;
+    margin-top: 19px;
+}
+
+.shadow-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset -1px 0px 30px 2px #000000b5;
 }
 
 
@@ -697,6 +717,7 @@ section {
     padding: 2px 2px;
     width: 23px;
     text-align: center;
+    z-index: 99;
 }
 
 .planner-skin-profession {
@@ -706,6 +727,7 @@ section {
     left: 0px;
     padding: 2px;
     border-radius: 0 0 5px 0;
+    z-index: 99;
 }
 
 .planner-skin-rarity {
@@ -713,6 +735,7 @@ section {
     height: 20px;
     left: 50%;
     transform: translate(-50%);
+    z-index: 99;
 }
 
 .planner-skin-profession-shadow {
@@ -1551,7 +1574,7 @@ section {
     bottom: -2px;
     filter: invert(1) hue-rotate(180deg) brightness(60%) contrast(150%);
     border-top: 3px solid;
-    
+
 }
 
 .overlay {

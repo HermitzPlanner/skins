@@ -242,6 +242,8 @@ function parseEventSkins(group, skinsData, charData) {
 
                     plannerId: plannerId,
                     portraitRepository: SKIN_PORTRAIT_REPOSITORY(plannerId),
+                    //portraitRepository: `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/art/${plannerId}.png`,
+                    newRepo: `https://raw.githubusercontent.com/HermitzPlanner/ArknightsResource/main/charpack/${skinObject.skinId.replace(/[@#]/g, "_")}.png`,
                     iconRepository: SKIN_ICON_REPOSITORY(plannerId),
                     price: getFromPack ? "$30" : skinObject.price, // > 0 ? skinsData.costMap[skinName] : 'Free',
                     colors: colors,
