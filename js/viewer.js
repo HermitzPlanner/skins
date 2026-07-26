@@ -1,4 +1,4 @@
-import { OBTAIN_APPROACHES_MAP, NO_EFFECT_SKINS, SKIN_ICON_REPOSITORY } from "./constants.js";
+import { OBTAIN_APPROACHES_MAP, NO_EFFECT_SKINS, SKIN_ICON_REPOSITORY, NEW_SKIN_ICON_REPOSITORY } from "./constants.js";
 import { resetDiv } from "./utils.js";
 import { videos } from "./videos.js";
 import { findSkinByName, findSkinByAvatar, getEventListByName, getReleaseTime, hexToRgba, showSection, trimCanvas, getMatchingPlannerIds, getKeyByValue } from "./utils.js";
@@ -68,7 +68,7 @@ export function viewer(plannerId, skinName, skinsData, charData, isFashion = fal
 
 
     //if (!plannerId.includes('0')) {
-    artRender(container, plannerId)
+    artRender(container, plannerId, findSkinByName(skinsData.cnData, skinName))
     if (!plannerId.includes('0')) infoRender(container, plannerId, skinName, skinsData, charData, isFashion)
     if (plannerId.includes('0')) operatorInfoRender(container, plannerId, skinsData, isFashion)
     //}
@@ -84,7 +84,7 @@ function animate(element, animation) {
     };
 }
 
-function artRender(container, plannerId) {
+function artRender(container, plannerId, skinObject) {
     const size = 'art'
     const img = document.createElement('img');
     const bg = document.createElement('img')
@@ -92,8 +92,11 @@ function artRender(container, plannerId) {
     img.id = 'viewer-image';
     bg.id = 'viewer-image-background';
     trimmedBg.id = 'viewer-image-trimmed'
-    img.src = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/${size}/${plannerId}.png`;
-    bg.src = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/${size}/${plannerId}.png`;
+    //`https://raw.githubusercontent.com/HermitzPlanner/ArknightsResource/main/charpack/${skinObject.skinId.replace(/[@#]/g, "_")}.png`,
+    //img.src = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/${size}/${plannerId}.png`;
+    //bg.src = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/${size}/${plannerId}.png`;
+    img.src = `https://raw.githubusercontent.com/HermitzPlanner/ArknightsResource/main/charpack/${skinObject.skinId.replace(/[@#]/g, "_")}.png`;
+    bg.src = `https://raw.githubusercontent.com/HermitzPlanner/ArknightsResource/main/charpack/${skinObject.skinId.replace(/[@#]/g, "_")}.png`;
     //trimmedBg.src = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/${size}/${plannerId}.png`;
 
     animate(img, 'viewer-show-image')
