@@ -108,5 +108,6 @@ export const FASHION_REVIEWS = [
     { edition: 16, timestamp: 1689667200 },
     { edition: 17, timestamp: 1697961600 },
     { edition: 18, timestamp: 1705564800 },
-    { edition: 19, timestamp: 1714032000 }
+    { edition: 19, timestamp: 1714032000 },
+    { edition: 20, timestamp: 1720497600 },
 ];

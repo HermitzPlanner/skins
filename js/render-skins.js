@@ -5,20 +5,27 @@ import { viewer } from "./viewer.js";
 
 
 export function renderSkins(data, event) {
-    //if (event.nameEnglish.startsWith('Fashion')) {
 
-    //    renderFashionSkins(data, event)
+    function defaultSkinRender() {
+        event.skins.forEach((eventSkin, skinIndex) => {
+            if (eventSkin.isBrand) {
+                renderBrandLogos(skinIndex, eventSkin, event)
+            } else {
+                renderPlannerSkin(eventSkin, event, data, 'portrait-size')
+                //document.getElementById("container-of-skins").append(skinContainer(event, eventSkin.name, data.skinsData, 'portrait', eventSkin.operator, eventSkin.isRerun, eventSkin.getFromPack, data.charData))
+            }
+        });
+    }
 
-    //} else {
-    event.skins.forEach((eventSkin, skinIndex) => {
-        if (eventSkin.isBrand) {
-            renderBrandLogos(skinIndex, eventSkin, event)
-        } else {
-            renderPlannerSkin(eventSkin, event, data, 'portrait-size')
-            //document.getElementById("container-of-skins").append(skinContainer(event, eventSkin.name, data.skinsData, 'portrait', eventSkin.operator, eventSkin.isRerun, eventSkin.getFromPack, data.charData))
+    function fashionSkinRender() {
+        if (event.nameEnglish.startsWith('Fashion')) {
+
+            renderFashionSkins(data, event)
+
         }
-    });
-    //}
+    }
+
+    defaultSkinRender()
 }
 
 function createHoverEffect() {
@@ -84,18 +91,18 @@ function renderPlannerSkin(eventSkin, event, data) {
     const input = clone.querySelector('input')
     input.setAttribute('data-plannerId', eventSkin.plannerId)
     input.id = event.code + '-' + eventSkin.plannerId
-    
+
     clone.querySelector('.skin-name.mandarin').textContent = eventSkin.name
     clone.querySelector('.skin-name.english').textContent = eventSkin.nameEnglish
     clone.querySelector('.model-name.english').textContent = eventSkin.isNullSkin ? "Skin not out yet" : eventSkin.modelNameEnglish
-    
+
     clone.querySelector('.model-name.english').style.fontSize = eventSkin.modelNameEnglish.length > 20 ? "15px" : "18px"
     //clone.querySelector('.model-name.english').style.borderImage = eventSkin.borderGradient
     clone.querySelector('.planner-skin-name-canvas').style.borderImage = eventSkin.borderGradient
     clone.querySelector('.planner-id').textContent = eventSkin.plannerId
     clone.querySelector('.skin-portrait').alt = event.nameEnglish.includes("Fashion Review") ? eventSkin.portraitRepository : eventSkin.newRepo
     if (!event.nameEnglish.includes("Fashion Review")) clone.querySelector('.skin-portrait').setAttribute('data-plannerid', eventSkin.plannerId)
-    
+
     //clone.querySelector('.skin-portrait').classList.add(eventSkin.plannerId)
     clone.querySelector('.planner-skin-rarity').src = `static/rarity/rarity_yellow_${eventSkin.rarity - 1}.png`
     clone.querySelector('.planner-skin-event-code').textContent = event.code
@@ -328,6 +335,7 @@ function renderFashionSkins(data, event) {
 
 
     const fashionNumber = event.nameEnglish.split(' ').pop()
+    console.log("fashionNumber", fashionNumber)
     const skinsData = data.skinsData.cnData.charSkins
     //const sortedDataSkins = Object.entries(skinsData)
     //    .sort(([, a], [, b]) => a.displaySkin.getTime - b.displaySkin.getTime)
@@ -409,7 +417,8 @@ function renderFashionSkins(data, event) {
         const brandCN = data.skinsData.cnData.brandList[skinGroupId?.split('#')[1]]?.brandName || '合作款'
 
         fashionReviewArray.push(`◆r【${brandCN.trim()}】系列 - ${skinName} - ${charObject.name}`)
-        console.log("fashionReviewArray", fashionReviewArray)
+        console.log(`◆r【${brandCN.trim()}】系列 - ${skinName} - ${charObject.name}`)
+        //console.log("fashionReviewArray", fashionReviewArray)
 
         const template = document.getElementById('planner-skin-template');
         const clone = template.content.cloneNode(true);

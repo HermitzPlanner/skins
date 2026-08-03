@@ -91,9 +91,9 @@ export function revealFashion(eventCode) {
 
 
         if (eventCode == skinEvent && element.getAttribute("data-year") == fashionYear) {
-            console.log("fashionYear", fashionYear)
-            console.log("skinEvent", skinEvent)
-            console.log("skinYear", skinYear)
+            //console.log("fashionYear", fashionYear)
+            //console.log("skinEvent", skinEvent)
+            //console.log("skinYear", skinYear)
             if (element)
                 if (!element.classList.contains('show')) {
                     element.classList.add('show');
