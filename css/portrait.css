@@ -428,6 +428,11 @@
     transform: translate(-4px, 31px);
 }
 
+.scene2 {
+    scale: 7;
+    transform: translate(4px, 31px);
+}
+
 .gladiia2 {
     scale: 8;
     transform: translate(-7px, 25px);

@@ -289,6 +289,8 @@ Obliteration CCB#5
 cn-event-name-placeholder
 image-link-placeholder
 cn-date-placeholder
+brand-single
+◆【生命之地】系列 - 新地形 - 稀音
 brand-multiple-rerun
 ◆【时代】系列 - 我即潮汐 - 歌蕾蒂娅
 ◆【时代】系列 - 记叙 - 斥罪
