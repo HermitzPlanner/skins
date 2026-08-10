@@ -253,6 +253,8 @@ Bolivar Diagnosed
 cn-event-name-placeholder
 image-link-placeholder
 cn-date-placeholder
+brand-single
+◆【音律联觉】系列 - 曙光祝颂 - 圣聆初雪
 brand-multiple
 ◆【珊瑚海岸】系列 - 悠然假日 HDm25 - 隐现
 ◆【珊瑚海岸】系列 - 夏卉 FA098 - 莱伊
