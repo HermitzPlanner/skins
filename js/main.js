@@ -473,9 +473,12 @@ function setupImageObserver() {
                     const linkTest = new Image(); // Create an image object
                     linkTest.src = img.alt;
 
+                    // Event pop
+                    /*
                     if (img.parentElement.classList.contains('event')) {
                         img.parentElement.classList.add('animate-event-pop')
                     }
+                    */
 
                     linkTest.onerror = () => {
                         if (img.classList.contains('gallery-icon')) img.src = "static/img/missing.png"

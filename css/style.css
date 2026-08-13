@@ -154,7 +154,7 @@ img[alt] {
 
     --scrollbar-track: var(--body-bg);
     --scrollbar-thumb: var(--equip-bg-2);
-    --scrollbar-width: 3px;
+    --scrollbar-width: 4px;
     --scrollbar-height: 7px;
 }
 
@@ -378,7 +378,7 @@ section {
 
 #container-of-events label {
     display: none;
-    opacity: 0;
+    opacity: 1;
     grid-template-columns: 1fr auto;
     /* Two columns: one for divs, one for calcs-div */
     grid-template-rows: auto;

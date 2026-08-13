@@ -275,6 +275,7 @@ brand-rerun-multiple
 ◆【时代】系列 - 搁浅 - 海沫
 brand-rerun-single
 ◆【命途迭代】系列 - 趋光之暗 - 阿斯卡纶
+["BD-1", "BD-1 CM", "BD-2", "BD-2 CM", "BD-3", "BD-3 CM", "BD-4", "BD-4 CM", "BD-5", "BD-5 CM", "BD-6", "BD-6 CM", "BD-7", "BD-7 CM", "BD-8", "BD-8 CM", "BD-S-1", "BD-S-2"]
 
 ────────✦───────✦───────✦────────
 Arknights x My Little Pony
