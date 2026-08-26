@@ -1,3 +1,23 @@
+────────✦───────✦───────✦────────
+Crossing
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+["CG-1", "CG-1 CM", "CG-2", "CG-2 CM", "CG-3", "CG-3 CM", "CG-4", "CG-4 CM", "CG-5", "CG-5 CM", "CG-6", "CG-6 CM", "CG-7", "CG-7 CM", "CG-8", "CG-8 CM", "CG-S-1", "CG-S-2"]
+brand-single
+◆【时代】系列 - 三元风情 - 红隼
+brand-multiple
+◆【成就之星】系列 - 血翼蔷薇 - 司霆惊蛰
+◆【成就之星】系列 - 乱数法则 - 电弧
+◆【成就之星】系列 - 下一个任务 - 莎草
+brand-rerun-multiple
+◆r【时代】系列 - 甜美配方 - 妮芙
+◆r【时代】系列 - 林间暖阳 - 凛视
+◆r【时代】系列 - 绒布蛋糕 - 坚雷
+brand-rerun-single
+◆r【成就之星】系列 - 万物有灵 - 慑砂
+★★★★★★：贝洛内（占6★出率的50%）
+★★★★★： 复奏 / 洋灰（占5★出率的50%）
 
 ────────✦───────✦───────✦────────
 Vector Breakthrough #2

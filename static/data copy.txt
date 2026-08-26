@@ -1,304 +1,73 @@
 ────────✦───────✦───────✦────────
-Wrankwood Act Or Die rerun
+Ato rerun
 cn-event-name-placeholder
 image-link-placeholder
 cn-date-placeholder
+["AT-ST-1", "AT-TR-1", "AT-1", "AT-2", "AT-3", "AT-4", "AT-TR-2", "AT-5", "AT-ST-2", "AT-6", "AT-P-1", "AT-P-2", "AT-P-3", "AT-7", "AT-8", "AT-ST-3", "AT-EX-1", "AT-EX-1 CM", "AT-EX-2", "AT-EX-2 CM", "AT-EX-3", "AT-EX-3 CM", "AT-EX-4", "AT-EX-4 CM", "AT-EX-5", "AT-EX-5 CM", "AT-EX-6", "AT-EX-6 CM", "AT-EX-7", "AT-EX-7 CM", "AT-EX-8", "AT-EX-8 CM", "AT-S-1", "AT-S-1 CM", "AT-S-2", "AT-S-2 CM", "AT-S-3", "AT-S-3 CM", "AT-S-4", "AT-S-4 CM"]
 brand-single
-◆【时代】系列 - 底绒舞会 - Miss.Christine
-brand-rerun-multiple
-◆【珊瑚海岸】系列 - 悠然假日 HD79 - 假日威龙陈
-◆【珊瑚海岸】系列 - 夏卉 FA161 - 死芒
-◆【珊瑚海岸】系列 - 夏卉 FA054 - 梅
-◆【珊瑚海岸】系列 - 悠然假日 HD26 - 百炼嘉维尔
-◆【珊瑚海岸】系列 - 夏卉 FA394 - 澄闪
-brand-rerun-multiple
-◆【时代】系列 - 远行前的野餐 - 纯烬艾雅法拉
-◆【时代】系列 - 晚风休憩 - 青枳
-brand-rerun-single
-◆【玛尔特】系列 - 无际之帆 - 引星棘刺
-brand-rerun-single
-◆【斗争血脉】系列 - 万重山 - 假日威龙陈
-brand-rerun-single
-◆【错位巡礼】系列 - 星移 - 佩佩
-
-────────✦───────✦───────✦────────
-Bolivar Diagnosed
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-multiple
-◆【珊瑚海岸】系列 - 悠然假日 HDm25 - 隐现
-◆【珊瑚海岸】系列 - 夏卉 FA098 - 莱伊
-◆【珊瑚海岸】系列 - 夏卉 FA240 - 陨星
-◆【珊瑚海岸】系列 - 悠然假日 HD59 - 卡达
-brand-rerun-multiple
-◆【珊瑚海岸】系列 - 夏卉 FA137 - 林
-◆【珊瑚海岸】系列 - 夏卉 FA075 - 焰影苇草
-◆【珊瑚海岸】系列 - 温差 RT.RX07 - 提丰
-◆【珊瑚海岸】系列 - 悠然假日 HD78 - 但书
-◆【珊瑚海岸】系列 - 灿阳朝露 SDm09 - 铅踝
-brand-rerun-multiple
-◆【0011/韵】系列 - 行梦侧畔 - 鸿雪
-◆【0011/韵】系列 - 与荷 - 蛇屠箱
-brand-rerun-multiple
-◆【时代】系列 - 注目深渊 - 乌尔比安
-◆【时代】系列 - 翻涌 - 海霓
-◆【时代】系列 - 搁浅 - 海沫
-brand-rerun-single
-◆【命途迭代】系列 - 趋光之暗 - 阿斯卡纶
-
-────────✦───────✦───────✦────────
-Arknights x My Little Pony
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-multiple
-◆【CROSSOVER】系列 - 善良坚强之心 - 瑕光
-◆【CROSSOVER】系列 - 求知的魔法 - 林
-◆【CROSSOVER】系列 - 率直诚实之人 - 娜仁图亚
-
-────────✦───────✦───────✦────────
-Obliteration CCB#5
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
+◆【忒斯特收藏】系列 - 暮时宝光 - 松桐
 brand-multiple-rerun
-◆【时代】系列 - 我即潮汐 - 歌蕾蒂娅
-◆【时代】系列 - 记叙 - 斥罪
-◆【时代】系列 - 赴宴 - 玫拉
-◆【时代】系列 - 层流 - 深巡
+◆【错位巡礼】系列 - 流辉 - 夜莺
+◆【错位巡礼】系列 - 沉思之庭 - 赫德雷
+◆【错位巡礼】系列 - 倾听 - 温蒂
+◆【错位巡礼】系列 - 憩羽 - 衡沙
+brand-single-rerun
+◆【珊瑚海岸】系列 - 缤纷奇境 CW03 - 史尔特尔
+brand-single-rerun
+◆【时代】系列 - 动感 - 苍苔
 
 ────────✦───────✦───────✦────────
-Leaves Chasing Fire rerun
+Interactive Exhibition
 cn-event-name-placeholder
 image-link-placeholder
 cn-date-placeholder
 brand-single
-◆【0011/韵】系列 - 撷香霭 - 折桠
-brand-rerun-multiple
-◆【0011/韵】系列 - 步芳兰 - 小满
-◆【0011/韵】系列 - 寄遥思 - 露托
-["CF-ST-1","CF-1","CF-TR-1","CF-2","CF-3","CF-4","CF-ST-2","CF-5","CF-6","CF-7","CF-8","CF-9","CF-ST-3","CF-P-1","CF-EX-1","EX-1-CM","CF-EX-2","EX-2-CM","CF-EX-3","EX-3-CM","CF-EX-4","EX-4-CM","CF-EX-5","EX-5-CM","CF-EX-6","EX-6-CM","CF-EX-7","EX-7-CM","CF-EX-8","CF-EX-8-CM","CF-S-1"]
+◆【珊瑚海岸】系列 - 悠然假日 HD91 - 协律
+brand-single
+◆【0011/韵】系列 - 渡澄空 - 云迹
+brand-multiple-rerun
+◆【0011/韵】系列 - 抚云间 - 白面鸮
+◆【0011/韵】系列 - 绣云鹤 - 巫恋
 
 ────────✦───────✦───────✦────────
-Positional Football Championship
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-◆【玛尔特系列】系列 - 跃动节拍 - 钼铅
-
-────────✦───────✦───────✦────────
-Thunder in the Azure Dream
+Till the Lands Become an Orange
 cn-event-name-placeholder
 image-link-placeholder
 cn-date-placeholder
 brand-single
-◆【CROSSOVER】系列 - 露营时间喵！ - 罗德岛隐秘队
-brand-single
-◆【时代】系列 - 失焦 - 忍冬
-brand-single
-◆【成就之星】系列 - 蔷薇之谜 - 刺玫
-brand-single
-◆【忒斯特收藏】系列 - 幽然灵竹 - 泡普卡
-brand-rerun-multiple
-◆【时代】系列 - 雪霁 - 铃兰
-◆【时代】系列 - 月宵 - 薄绿
-◆【时代】系列 - 别枝 - 稀音
-◆【时代】系列 - 栖息 - 淬羽赫默
-brand-rerun-single
-◆【罗德厨房】系列 - 甜品大奖 - 隐现
-brand-rerun-single
-◆【CROSSOVER】系列 - 跃上街头 - 泰拉大陆调查团
-["TD-ST-1","TD-1","TD-TR-1","TD-2","TD-3","TD-4","TD-5","TD-6","TD-7","TD-8","TD-ST-2","TD-P-1","TD-EX-1","EX-1-CM","TD-EX-2","EX-2-CM","TD-EX-3","EX-3-CM","TD-EX-4","EX-4-CM","TD-EX-5","EX-5-CM","TD-EX-6","EX-6-CM","TD-EX-7","EX-7-CM","TD-EX-8","TD-EX-8-CM"]
-
+◆【0011/飙】系列 - 一闪极意 - 斩业星熊
+brand-multiple-rerun
+◆【时代】系列 - 后来的故事 - 纯烬艾雅法拉
+◆【时代】系列 - 清新布景 - 蒂比
+◆【时代】系列 - 轻闲快照 - 绮良
+["TO-ST-1","TO-TR-1","TO-1","TO-2","TO-3","TO-4","TO-ST-2","TO-5","TO-6","TO-7","TO-8","TO-9","TO-ST-3","TO-EX-1","TO-EX-1 CM","TO-EX-2","TO-EX-2 CM","TO-EX-3","TO-EX-3 CM","TO-EX-4","TO-EX-4 CM","TO-EX-5","TO-EX-5 CM","TO-EX-6","TO-EX-6 CM","TO-EX-7","TO-EX-7 CM","TO-EX-8","TO-EX-8 CM", "TO-S-1", "TO-S-1 CM", "TO-S-2", "TO-S-2 CM", "TO-S-3", "TO-S-3 CM", "TO-S-4", "TO-S-4 CM", "TO-MO-1"]
 
 ────────✦───────✦───────✦────────
-The Masses Travels rerun
+Fashion Review 20
 cn-event-name-placeholder
 image-link-placeholder
 cn-date-placeholder
-brand-single
-◆【斗争血脉】系列 - 天穹肇始 - 信仰搅拌机
-["MT-ST-1", "MT-1", "MT-TR-1", "MT-2", "MT-3", "MT-4", "MT-ST-2", "MT-5", "MT-6", "MT-7", "MT-8", "MT-9", "MT-10", "MT-ST-3", "MT-ST-4", "MT-EX-1", "MT-EX-1 CM", "MT-EX-2", "MT-EX-2 CM", "MT-EX-3", "MT-EX-3 CM", "MT-EX-4", "MT-EX-4 CM", "MT-EX-5", "MT-EX-5 CM", "MT-EX-6", "MT-EX-6 CM", "MT-EX-7", "MT-EX-7 CM", "MT-EX-8", "MT-EX-8 CM", "MT-S-1", "MT-S-1 CM", "MT-S-2", "MT-S-2 CM", "MT-S-3", "MT-S-3 CM", "MT-S-4", "MT-S-4 CM", "MT-S-5", "MT-S-5 CM"]
-
-────────✦───────✦───────✦────────
-Relaunch Anchor
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-◆【玛尔特】系列 - 硬派速度 - 山
-
-────────✦───────✦───────✦────────
-Chapter 17 Critical Phase Transition
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-single
-◆【忒斯特收藏】系列 - 又一年秋季 - 暴行
-brand-single
-◆【时代】系列 - 舒心野趣 - 阿罗玛
-brand-multiple
-◆【命途迭代】系列 - 寻翼之歌 - 新约能天使
-◆【命途迭代】系列 - 常世之幻 - 遥
-◆【命途迭代】系列 - 幽蓝渡灵师 - 诺威尔
-brand-multiple
-◆【斗争血脉】系列 - 锋锐 - Mon3tr
-◆【斗争血脉】系列 - 追想涤尘 - 聆音
-["17-1","17-2","17-2 CM","17-3","17-3 CM","17-4","17-4 CM","17-5","17-5 CM","17-6","17-6 CM","17-7","17-7 CM","17-8","17-8 CM","17-9","17-9 CM","17-10","17-10 CM","17-11","17-11 CM","17-12","17-12 CM","17-13","17-13 CM","17-14","17-15","17-15 CM","17-16","17-17","17-17 CM","17-18","17-19","17-20","17-21","EG-11","h17-1","h17-2","h17-3","h17-4","TR-28"]
-
-────────✦───────✦───────✦────────
-Ambience Synesthesia 2026
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-multiple
-◆【音律联觉】系列 - 黑白冷峻 - 塞雷娅
-◆【音律联觉】系列 - 暮星安魂曲 - 蕾缪安
-◆【音律联觉】系列 - 晶化信念 - 死芒
-
-────────✦───────✦───────✦────────
-People a People
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-multiple
-◆【音律联觉】系列 - 繁花梦幻谈 - 妮芙
-◆【音律联觉】系列 - 超然序曲 - 史尔特尔
-brand-rerun-multiple
-◆r【忒斯特收藏】系列 - 超新星 - 维什戴尔
-◆r【忒斯特收藏】系列 - 至虔者荣光 - 空弦
-◆r【忒斯特收藏】系列 - 无我唯识 - 塑心
-◆r【忒斯特收藏】系列 - 轻盈一梦 - 迷迭香
-brand-rerun-multiple
+◆r【珊瑚海岸】系列 - 温差 RT.RX07 - 提丰
+◆r【珊瑚海岸】系列 - 悠然假日 HD78 - 但书
+◆r【珊瑚海岸】系列 - 灿阳朝露 SDm09 - 铅踝
+◆r【罗德厨房】系列 - 甜品大奖 - 隐现
+◆r【0011/韵系列】系列 - 步芳兰 - 小满
+◆r【时代】系列 - 我即潮汐 - 歌蕾蒂娅
+◆r【时代】系列 - 记叙 - 斥罪
+◆r【时代】系列 - 赴宴 - 玫拉
+◆r【时代】系列 - 栖息 - 淬羽赫默
+◆r【斗争血脉】系列 - 锋潮 - 棘刺
+◆r【命途迭代】系列 - 哀律西昂夜曲 - 蓝毒
+◆r【音律联觉】系列 - 历世流风 - 霍尔海雅
+◆r【音律联觉】系列 - 律动方格 - 琳琅诗怀雅
 ◆r【时代】系列 - 礼遇 - 仇白
 ◆r【时代】系列 - 逸趣 - 蚀清
 ◆r【时代】系列 - 全新业务 - 洋灰
-◆r【时代】系列 - 远行的季节 - 松果
-◆r【时代】系列 - 湖畔歌者 - 晓歌
-◆r【时代】系列 - 恍惚 - W
-◆r【时代】系列 - 拥抱新生 - 迷迭香
-◆r【时代】系列 - 复现荣光 - 耀骑士临光
-◆r【时代】系列 - 幽兰秘辛 - 缄默德克萨斯
-brand-rerun-multiple
-◆r【斗争血脉】系列 - 燃烧天穹下 - 伊内丝
-◆r【斗争血脉】系列 - 锋潮 - 棘刺
-◆r【斗争血脉】系列 - 新枝 - 缪尔赛思
-◆r【斗争血脉】系列 - 审判日 - 菲亚梅塔
-◆r【斗争血脉】系列 - 升华 - 浊心斯卡蒂
-◆r【斗争血脉】系列 - 残余 - 凯尔希
-◆r【斗争血脉】系列 - 生而为一 - 归溟幽灵鲨
-brand-rerun-multiple
-◆r【命途迭代】系列 - 红女爵 - 浊心斯卡蒂
-◆r【命途迭代】系列 - 哀律西昂夜曲 - 蓝毒
-◆r【命途迭代】系列 - 苍茫怒号 - 玛恩纳
-◆r【命途迭代】系列 - 破翼者 - 缄默德克萨斯
-brand-rerun-single
-◆r【成就之星】系列 - 永恒玩家 - 水月
-brand-rerun-single
-◆r【音律联觉】系列 - 漫步于黄金之梦 - 缪尔赛思
-["PA-ST-1","PA-1","PA-TR-1","PA-2","PA-3","PA-4","PA-5","PA-6","PA-7","PA-8","PA-ST-2","PA-EX-1","EX-1-CM","PA-EX-2","EX-2-CM","PA-EX-3","EX-3-CM","PA-EX-4","EX-4-CM","PA-EX-5","EX-5-CM","PA-EX-6","EX-6-CM","PA-EX-7","EX-7-CM","PA-EX-8","PA-EX-8-CM"]
-★★★★★★：怒潮凛冬（占6★出率的50%）
-★★★★★： 乌啾 / 渡桥（占5★出率的50%）
-
-────────✦───────✦───────✦────────
-When Elegies Are Ashes rerun
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-single
-◆【时代】系列 - 轻语入梦 - 水灯心
-brand-rerun-multiple
-◆【音律联觉】系列 - 漫步于黄金之梦 - 缪尔赛思
-◆【音律联觉】系列 - 幻语乐痕 - 莫斯提马
-◆【音律联觉】系列 - 辉煌的静谧 - 逻各斯
-◆【音律联觉】系列 - 空心王冠 - 白铁
-◆【音律联觉】系列 - 蝶舞华章 - 伊内丝
-◆【音律联觉】系列 - 律动方格 - 琳琅诗怀雅
-◆【音律联觉】系列 - 历世流风 - 霍尔海雅
-◆【音律联觉】系列 - 不融冰 - 银灰
-["EA-ST-1","EA-1","EA-TR-1","EA-2","EA-3","EA-4","EA-5","EA-6","EA-ST-2","EA-7","EA-8","EA-ST-3","EA-EX-1","EX-1-CM","EA-EX-2","EX-2-CM","EA-EX-3","EX-3-CM","EA-EX-4","EX-4-CM","EA-EX-5","EX-5-CM","EA-EX-6","EX-6-CM","EA-EX-7","EX-7-CM","EA-EX-8","EX-8-CM"]
-★★★★★★：死芒（占6★出率的50%）
-★★★★★： 钼铅 / 火哨（占5★出率的50%）
-
-────────✦───────✦───────✦────────
-Stronghold Protocol Alliance #2
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-single
-◆【玛尔特】系列 - 补水时间 - 慕斯
-★★★★★★：真言 / 忍冬 / 妮芙 / 乌尔比安
-★★★★★：响石 / 子月 / 和弦 / 温米 / 寻澜 / 波卜
-
-────────✦───────✦───────✦────────
-Crossing
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-["CG-1", "CG-1 CM", "CG-2", "CG-2 CM", "CG-3", "CG-3 CM", "CG-4", "CG-4 CM", "CG-5", "CG-5 CM", "CG-6", "CG-6 CM", "CG-7", "CG-7 CM", "CG-8", "CG-8 CM", "CG-S-1", "CG-S-2"]
-brand-single
-◆【时代】系列 - 三元风情 - 红隼
-brand-multiple
-◆【成就之星】系列 - 血翼蔷薇 - 司霆惊蛰
-◆【成就之星】系列 - 乱数法则 - 电弧
-◆【成就之星】系列 - 下一个任务 - 莎草
-brand-rerun-multiple
-◆r【时代】系列 - 甜美配方 - 妮芙
-◆r【时代】系列 - 林间暖阳 - 凛视
-◆r【时代】系列 - 绒布蛋糕 - 坚雷
-brand-rerun-single
-◆r【成就之星】系列 - 万物有灵 - 慑砂
-★★★★★★：贝洛内（占6★出率的50%）
-★★★★★： 复奏 / 洋灰（占5★出率的50%）
-
-────────✦───────✦───────✦────────
-Vector Breakthrough #2
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-single
-◆【时代】系列 - 都会送报员 - 格雷伊
-brand-rerun-multiple
-◆r【时代】系列 - 寄自奥格尼斯科 - 薇薇安娜
-◆r【时代】系列 - 风笛声声 - 风笛
-◆r【时代】系列 - 繁霜满阶 - 缠丸
-★★★★★★：遥 / Mon3tr / 逻各斯 / 阿斯卡纶 / 维娜·维多利亚 / 艾丽妮
-★★★★★：夜半 / 折桠 / 承曦格雷伊 / 刺玫 / 录武官 / 晓歌
-
-────────✦───────✦───────✦────────
-Unveiling of Devotion 2026
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-multiple
-◆【待予花冠】系列 - 半甜草莓 - 微风
-◆【待予花冠】系列 - 红丝带之约 - 豆苗
-brand-rerun-multiple
-◆r【待予花冠】系列 - 湖畔的少女 - 夜魔
-◆r【待予花冠】系列 - 浪漫满厢 - 濯尘芙蓉
+◆r【时代】系列 - 远行的季节 - 松果 
 ◆r【待予花冠】系列 - 装点 - 和弦
 ◆r【待予花冠】系列 - 危险邀约 - 芳汀
-
-────────✦───────✦───────✦────────
-First of a Thousand Autumns
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-["TA-ST-1", "TA-1", "TA-TR-1", "TA-2", "TA-3", "TA-4", "TA-5", "TA-6", "TA-7", "TA-8", "TA-9", "TA-10", "TA-11", "TA-ST-2", "TA-EX-1", "TA-EX-1 CM", "TA-EX-2", "TA-EX-2 CM", "TA-EX-3", "TA-EX-3 CM", "TA-EX-4", "TA-EX-4 CM", "TA-EX-5", "TA-EX-5 CM", "TA-EX-6", "TA-EX-6 CM", "TA-EX-7", "TA-EX-7 CM", "TA-EX-8", "TA-EX-8 CM", "TA-S-1", "TA-S-1 CM", "TA-S-2", "TA-S-2 CM", "TA-S-3", "TA-S-3 CM", "TA-S-4", "TA-S-4 CM"]
-brand-multiple
-◆【0011制造】系列 - 方遒卷 - 令
-◆【0011制造】系列 - 青玉砚 - 夕
-◆【0011制造】系列 - 愿清晓 - 余
-◆【0011制造】系列 - 共凭栏 - 寻澜
-◆【0011制造】系列 - 花绸曲 - 菲莱
-★★★★★★：余 / 黍 / 重岳（在6★剩余出率【30%】中以5倍权值出率提升）
-★★★★★：风絮（占5★出率的50%）
-
-────────✦───────✦───────✦────────
-Fashion Review 18
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
+◆r【0011™制造】系列 - 及山海 - 海沫
+◆r【0011™制造】系列 - 洇灵雨 - 蜜莓
 ◆r【0011/韵系列】系列 - 伴青莲 - 截云
 ◆r【时代】系列 - 私人书房 - 薄绿
 ◆r【时代】系列 - 碎片之间 - 谜图
@@ -307,7 +76,7 @@ cn-date-placeholder
 ◆r【冰原信使】系列 - 回礼 - 雪绒
 ◆r【时代】系列 - 皇家近卫 - 风笛
 ◆r【时代】系列 - 正午余光 - 苦艾
-◆r【时代】系列 - 卡利斯卡群枪 - 灰毫 (new additions)
+◆r【时代】系列 - 卡利斯卡群枪 - 灰毫
 ◆r【时代】系列 - 叙拉古的彼面 - 伺夜
 ◆r【巫异盛宴】系列 - 命运主宰 - 多萝西
 ◆r【巫异盛宴】系列 - 至圣誓言 - 菲亚梅塔
@@ -485,3 +254,443 @@ cn-date-placeholder
 ◆r【寒武纪™系列】系列 - 寒冬信使 - 德克萨斯
 ◆r【寒武纪™系列】系列 - 暗流 - 幽灵鲨
 ◆r【寒武纪™系列】系列 - 新航线 - 讯使
+
+────────✦───────✦───────✦────────
+Wrankwood Act Or Die rerun
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【时代】系列 - 底绒舞会 - Miss.Christine
+brand-rerun-multiple
+◆【珊瑚海岸】系列 - 悠然假日 HD79 - 假日威龙陈
+◆【珊瑚海岸】系列 - 夏卉 FA161 - 死芒
+◆【珊瑚海岸】系列 - 夏卉 FA054 - 梅
+◆【珊瑚海岸】系列 - 悠然假日 HD26 - 百炼嘉维尔
+◆【珊瑚海岸】系列 - 夏卉 FA394 - 澄闪
+brand-rerun-multiple
+◆【时代】系列 - 远行前的野餐 - 纯烬艾雅法拉
+◆【时代】系列 - 晚风休憩 - 青枳
+brand-rerun-single
+◆【玛尔特】系列 - 无际之帆 - 引星棘刺
+brand-rerun-single
+◆【斗争血脉】系列 - 万重山 - 假日威龙陈
+brand-rerun-single
+◆【错位巡礼】系列 - 星移 - 佩佩
+["AD-ST-1","AD-TR-1","AD-1","AD-2","AD-3","AD-4","AD-ST-2","AD-5","AD-6","AD-7","AD-8","AD-ST-3","AD-EX-1","AD-EX-1 CM","AD-EX-2","AD-EX-2 CM","AD-EX-3","AD-EX-3 CM","AD-EX-4","AD-EX-4 CM","AD-EX-5","AD-EX-5 CM","AD-EX-6","AD-EX-6 CM","AD-EX-7","AD-EX-7 CM","AD-EX-8","AD-EX-8 CM"]
+
+────────✦───────✦───────✦────────
+Bolivar Diagnosed
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【音律联觉】系列 - 曙光祝颂 - 圣聆初雪
+brand-multiple
+◆【珊瑚海岸】系列 - 悠然假日 HDm25 - 隐现
+◆【珊瑚海岸】系列 - 夏卉 FA098 - 莱伊
+◆【珊瑚海岸】系列 - 夏卉 FA240 - 陨星
+◆【珊瑚海岸】系列 - 悠然假日 HD59 - 卡达
+brand-rerun-multiple
+◆【珊瑚海岸】系列 - 夏卉 FA137 - 林
+◆【珊瑚海岸】系列 - 夏卉 FA075 - 焰影苇草
+◆【珊瑚海岸】系列 - 温差 RT.RX07 - 提丰
+◆【珊瑚海岸】系列 - 悠然假日 HD78 - 但书
+◆【珊瑚海岸】系列 - 灿阳朝露 SDm09 - 铅踝
+brand-rerun-multiple
+◆【0011/韵】系列 - 行梦侧畔 - 鸿雪
+◆【0011/韵】系列 - 与荷 - 蛇屠箱
+brand-rerun-multiple
+◆【时代】系列 - 注目深渊 - 乌尔比安
+◆【时代】系列 - 翻涌 - 海霓
+◆【时代】系列 - 搁浅 - 海沫
+brand-rerun-single
+◆【命途迭代】系列 - 趋光之暗 - 阿斯卡纶
+["BD-1", "BD-1 CM", "BD-2", "BD-2 CM", "BD-3", "BD-3 CM", "BD-4", "BD-4 CM", "BD-5", "BD-5 CM", "BD-6", "BD-6 CM", "BD-7", "BD-7 CM", "BD-8", "BD-8 CM", "BD-S-1", "BD-S-2"]
+
+────────✦───────✦───────✦────────
+Arknights x My Little Pony
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-multiple
+◆【CROSSOVER】系列 - 善良坚强之心 - 瑕光
+◆【CROSSOVER】系列 - 求知的魔法 - 林
+◆【CROSSOVER】系列 - 率直诚实之人 - 娜仁图亚
+
+────────✦───────✦───────✦────────
+Obliteration CCB#5
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【生命之地】系列 - 新地形 - 稀音
+brand-multiple-rerun
+◆【时代】系列 - 我即潮汐 - 歌蕾蒂娅
+◆【时代】系列 - 记叙 - 斥罪
+◆【时代】系列 - 赴宴 - 玫拉
+◆【时代】系列 - 层流 - 深巡
+
+────────✦───────✦───────✦────────
+Leaves Chasing Fire rerun
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【0011/韵】系列 - 撷香霭 - 折桠
+brand-rerun-multiple
+◆【0011/韵】系列 - 步芳兰 - 小满
+◆【0011/韵】系列 - 寄遥思 - 露托
+["CF-ST-1","CF-1","CF-TR-1","CF-2","CF-3","CF-4","CF-ST-2","CF-5","CF-6","CF-7","CF-8","CF-9","CF-ST-3","CF-P-1","CF-EX-1","EX-1-CM","CF-EX-2","EX-2-CM","CF-EX-3","EX-3-CM","CF-EX-4","EX-4-CM","CF-EX-5","EX-5-CM","CF-EX-6","EX-6-CM","CF-EX-7","EX-7-CM","CF-EX-8","CF-EX-8-CM","CF-S-1"]
+
+────────✦───────✦───────✦────────
+Positional Football Championship
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+◆【玛尔特系列】系列 - 跃动节拍 - 钼铅
+
+────────✦───────✦───────✦────────
+Thunder in the Azure Dream
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【CROSSOVER】系列 - 露营时间喵！ - 罗德岛隐秘队
+brand-single
+◆【时代】系列 - 失焦 - 忍冬
+brand-single
+◆【成就之星】系列 - 蔷薇之谜 - 刺玫
+brand-single
+◆【忒斯特收藏】系列 - 幽然灵竹 - 泡普卡
+brand-rerun-multiple
+◆【时代】系列 - 雪霁 - 铃兰
+◆【时代】系列 - 月宵 - 薄绿
+◆【时代】系列 - 别枝 - 稀音
+◆【时代】系列 - 栖息 - 淬羽赫默
+brand-rerun-single
+◆【罗德厨房】系列 - 甜品大奖 - 隐现
+brand-rerun-single
+◆【CROSSOVER】系列 - 跃上街头 - 泰拉大陆调查团
+["TD-ST-1","TD-1","TD-TR-1","TD-2","TD-3","TD-4","TD-5","TD-6","TD-7","TD-8","TD-ST-2","TD-P-1","TD-EX-1","EX-1-CM","TD-EX-2","EX-2-CM","TD-EX-3","EX-3-CM","TD-EX-4","EX-4-CM","TD-EX-5","EX-5-CM","TD-EX-6","EX-6-CM","TD-EX-7","EX-7-CM","TD-EX-8","TD-EX-8-CM"]
+
+
+────────✦───────✦───────✦────────
+The Masses Travels rerun
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【斗争血脉】系列 - 天穹肇始 - 信仰搅拌机
+["MT-ST-1", "MT-1", "MT-TR-1", "MT-2", "MT-3", "MT-4", "MT-ST-2", "MT-5", "MT-6", "MT-7", "MT-8", "MT-9", "MT-10", "MT-ST-3", "MT-ST-4", "MT-EX-1", "MT-EX-1 CM", "MT-EX-2", "MT-EX-2 CM", "MT-EX-3", "MT-EX-3 CM", "MT-EX-4", "MT-EX-4 CM", "MT-EX-5", "MT-EX-5 CM", "MT-EX-6", "MT-EX-6 CM", "MT-EX-7", "MT-EX-7 CM", "MT-EX-8", "MT-EX-8 CM", "MT-S-1", "MT-S-1 CM", "MT-S-2", "MT-S-2 CM", "MT-S-3", "MT-S-3 CM", "MT-S-4", "MT-S-4 CM", "MT-S-5", "MT-S-5 CM"]
+
+────────✦───────✦───────✦────────
+Relaunch Anchor
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+◆【玛尔特】系列 - 硬派速度 - 山
+
+────────✦───────✦───────✦────────
+Chapter 17 Critical Phase Transition
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【忒斯特收藏】系列 - 又一年秋季 - 暴行
+brand-single
+◆【时代】系列 - 舒心野趣 - 阿罗玛
+brand-multiple
+◆【命途迭代】系列 - 寻翼之歌 - 新约能天使
+◆【命途迭代】系列 - 常世之幻 - 遥
+◆【命途迭代】系列 - 幽蓝渡灵师 - 诺威尔
+brand-multiple
+◆【斗争血脉】系列 - 锋锐 - Mon3tr
+◆【斗争血脉】系列 - 追想涤尘 - 聆音
+["17-1","17-2","17-2 CM","17-3","17-3 CM","17-4","17-4 CM","17-5","17-5 CM","17-6","17-6 CM","17-7","17-7 CM","17-8","17-8 CM","17-9","17-9 CM","17-10","17-10 CM","17-11","17-11 CM","17-12","17-12 CM","17-13","17-13 CM","17-14","17-15","17-15 CM","17-16","17-17","17-17 CM","17-18","17-19","17-20","17-21","EG-11","h17-1","h17-2","h17-3","h17-4","TR-28"]
+
+────────✦───────✦───────✦────────
+Fashion Review 19
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+◆r【音律联觉】系列 - 历世流风 - 霍尔海雅
+◆r【音律联觉】系列 - 律动方格 - 琳琅诗怀雅
+◆r【时代】系列 - 礼遇 - 仇白
+◆r【时代】系列 - 逸趣 - 蚀清
+◆r【时代】系列 - 全新业务 - 洋灰
+◆r【时代】系列 - 远行的季节 - 松果 
+◆r【待予花冠】系列 - 装点 - 和弦
+◆r【待予花冠】系列 - 危险邀约 - 芳汀
+◆r【0011™制造】系列 - 及山海 - 海沫
+◆r【0011™制造】系列 - 洇灵雨 - 蜜莓
+◆r【0011/韵系列】系列 - 伴青莲 - 截云
+◆r【时代】系列 - 私人书房 - 薄绿
+◆r【时代】系列 - 碎片之间 - 谜图
+◆r【冰原信使】系列 - 偶尔醉陶 - 斥罪
+◆r【冰原信使】系列 - 舞 - 月禾
+◆r【冰原信使】系列 - 回礼 - 雪绒
+◆r【时代】系列 - 皇家近卫 - 风笛
+◆r【时代】系列 - 正午余光 - 苦艾
+◆r【时代】系列 - 卡利斯卡群枪 - 灰毫
+◆r【时代】系列 - 叙拉古的彼面 - 伺夜
+◆r【巫异盛宴】系列 - 命运主宰 - 多萝西
+◆r【巫异盛宴】系列 - 至圣誓言 - 菲亚梅塔
+◆r【巫异盛宴】系列 - 树影吟游 - 夏栎
+◆r【巫异盛宴】系列 - 幽邃隐修 - 絮雨
+◆r【珊瑚海岸】系列 - 悠然假日 HDm74 - 至简
+◆r【0011/韵系列】系列 - 棠云巧梦 - 子月
+◆r【珊瑚海岸】系列 - 夏卉 FA062 - 桃金娘
+◆r【时代】系列 - 所愿 - 星源
+◆r【珊瑚海岸】系列 - 夏卉 FA317 - 琴柳
+◆r【珊瑚海岸】系列 - 沙滩护卫 GT003 - 白铁
+◆r【珊瑚海岸】系列 - 悠然假日 HD61 - 蜜蜡
+◆r【生命之地】系列 - 荒野寻音 - 车尔尼
+◆r【忒斯特收藏】系列 - 彼有 - 嵯峨
+◆r【0011/飙系列】系列 - 捉风 - 远牙
+◆r【0011/飙系列】系列 - 结果 - 暮落
+◆r【0011/飙系列】系列 - 来路 - 明椒
+◆r【斗争血脉】系列 - 变奏 - 黑键
+◆r【音律联觉】系列 - 灿海浮梦 - 流明
+◆r【音律联觉】系列 - 飞羽 - 艾丽妮
+◆r【音律联觉】系列 - 待绘的作品 - 罗比菈塔
+◆r【玛尔特】系列 - 下一顿午茶 - 斯卡蒂
+◆r【时代】系列 - 化花 - 号角
+◆r【时代】系列 - 书信零落 - 海蒂
+◆r【时代】系列 - 邀约 - 和弦
+◆r【时代】系列 - 雪霁 - 铃兰
+◆r【时代】系列 - 月宵 - 薄绿
+◆r【时代】系列 - 别枝 - 稀音
+◆r【时代】系列 - 拾翼 - 见行者
+◆r【时代】系列 - 面纱之下 - 狮蝎
+◆r【生命之地】系列 - 秋高气爽 - 但书
+◆r【生命之地】系列 - 营地炊烟 - 慕斯
+◆r【0011™制造】系列 - 灯如昼 - 晓歌
+◆r【0011™制造】系列 - 照冰轮 - 桑葚
+◆r【0011™制造】系列 - 廊下游 - 寒芒克洛丝
+◆r【冰原信使】系列 - 喜夜侍者 - 澄闪
+◆r【冰原信使】系列 - 未讲述的故事 - 埃拉托
+◆r【冰原信使】系列 - 演出后的王子 - 承曦格雷伊
+◆r【时代】系列 - 灵巧侍者 - 耶拉
+◆r【时代】系列 - 荒野之后 - 蜜莓
+◆r【时代】系列 - 如歌 - 空
+◆r【巫异盛宴】系列 - 镜中来访 - 爱丽丝
+◆r【巫异盛宴】系列 - 幻影轻悄 - 风丸
+◆r【时代】系列 - 正义缔造者 - 野鬃
+◆r【时代】系列 - 读者 - 山
+◆r【时代】系列 - 心性 - 赤冬
+◆r【珊瑚海岸】系列 - 夏卉 FA210 - 羽毛笔
+◆r【珊瑚海岸】系列 - 灿阳朝露 SDm11 - 极境
+◆r【珊瑚海岸】系列 - 灿阳朝露 SD08 - 卡涅利安
+◆r【珊瑚海岸】系列 - 悠然假日 HDm04 - 炎客
+◆r【珊瑚海岸】系列 - 夏卉 FA641 - 夜半
+◆r【成就之星】系列 - 小健将 - 焰尾
+◆r【成就之星】系列 - 光铳调试员 - 奥斯塔
+◆r【成就之星】系列 - 前沿玩家 - 绮良
+◆r【斗争血脉】系列 - 返航 - 歌蕾蒂娅
+◆r【斗争血脉】系列 - 先驱 - 灵知
+◆r【斗争血脉】系列 - 极昼捕手 - 极光
+◆r【音律联觉】系列 - 黑曜石 - 泥岩
+◆r【音律联觉】系列 - 开牌制胜 - 龙舌兰
+◆r【音律联觉】系列 - 翡翠假日 - 苇草
+◆r【雷神推进者】系列 - 摧城 - 推进之王
+◆r【雷神推进者】系列 - 悍将 - 因陀罗
+◆r【雷神推进者】系列 - 生存 - 清道夫
+◆r【生命之地】系列 - 幽苔 - 暴雨
+◆r【时代】系列 - 识芳 - 琴柳
+◆r【时代】系列 - 植药 - 桑葚
+◆r【时代】系列 - 培翠 - 图耶
+◆r【0011/飙系列】系列 - 无拘无束 - 刻俄柏
+◆r【0011/飙系列】系列 - 街道狂花 - 槐琥
+◆r【0011™制造】系列 - 冷山月 - 乌有
+◆r【0011™制造】系列 - 且试箸 - 食铁兽
+◆r【0011™制造】系列 - 暮影藤萝 - 炎狱炎熔
+◆r【冰原信使】系列 - 霍恩洛厄的寒沙 - 卡涅利安
+◆r【冰原信使】系列 - 希望巡游 - 莱恩哈特
+◆r【冰原信使】系列 - 纸板仙子 - 卡夫卡
+◆r【时代】系列 - 原野的馈赠 - 罗宾
+◆r【时代】系列 - 传承 - 帕拉斯
+◆r【时代】系列 - 杰作 - 早露
+◆r【时代】系列 - 暗矢 - 安哲拉
+◆r【巫异盛宴】系列 - 异月灾裔 - 瑕光
+◆r【巫异盛宴】系列 - 魔城回响 - 巫恋
+◆r【巫异盛宴】系列 - 天命勇者 - 雪雉
+◆r【时代】系列 - 荣耀之紫 - 鞭刃
+◆r【闪耀阶梯】系列 - 宣传策略 - 空弦
+◆r【闪耀阶梯】系列 - 殿堂上的游禽 - 星极
+◆r【珊瑚海岸】系列 - 轻风 LB01 - 红
+◆r【珊瑚海岸】系列 - 静谧午夜 DN06 - 泥岩
+◆r【珊瑚海岸】系列 - 轻风 LB03 - 铸铁
+◆r【珊瑚海岸】系列 - 沙滩护卫 GT002 - 孑
+◆r【珊瑚海岸】系列 - 夏卉 FA018 - 艾雅法拉
+◆r【珊瑚海岸】系列 - 夏卉 FA017 - 安洁莉娜
+◆r【珊瑚海岸】系列 - 静谧午夜 DN04 - 特米米
+◆r【时代】系列 - 白沙 - 蜜蜡
+◆r【时代】系列 - 伦式巫女 - 月禾
+◆r【时代】系列 - 闲适午后 - 调香师
+◆r【生命之地】系列 - 残葛 - 亚叶
+◆r【合作款】系列 - 惬意 - 棘刺
+◆r【合作款】系列 - 自由//失效 - 史尔特尔
+◆r【合作款】系列 - 乌萨斯IO79 - 凛冬
+◆r【斗争血脉】系列 - 乌云 - 山
+◆r【斗争血脉】系列 - 熔锻铸匠 - 森蚺
+◆r【斗争血脉】系列 - 受验者 - 断崖
+◆r【斗争血脉】系列 - 绚烂夏花 - 燧石
+◆r【合作款】系列 - 爆裂菲林 - 煌
+◆r【合作款】系列 - 无言狂响 - 讯使
+◆r【合作款】系列 - 漆黑热浪 - 红豆
+◆r【斗争血脉】系列 - 歧路幻影 - 赫拉格
+◆r【斗争血脉】系列 - 曲刃晴风 - 白雪
+◆r【雷神推进者】系列 - 天际线 - 黑
+◆r【雷神推进者】系列 - 超载 - 雷蛇
+◆r【0011™制造】系列 - 百面郎中 - 阿
+◆r【0011™制造】系列 - 一介车夫 - 吽
+◆r【寒武纪™系列】系列 - 软绒 - 柏喙
+◆r【寒武纪™系列】系列 - 随性 - 芳汀
+◆r【寒武纪™系列】系列 - 模特之夜 - 砾
+◆r【忒斯特收藏】系列 - 铁律 - 塞雷娅
+◆r【冰原信使】系列 - 糖果仙子 - 温蒂
+◆r【冰原信使】系列 - 雪夜回音 - 极境
+◆r【冰原信使】系列 - 覆雪 - 守林人
+◆r【时代】系列 - 意志 - 德克萨斯
+◆r【时代】系列 - 少尉 - 杜宾
+◆r【缠梦古堡】系列 - 梦魇之梦 - 傀影
+◆r【缠梦古堡】系列 - 庭院寻梦尖兵 - 梅尔
+◆r【缠梦古堡】系列 - 广场扫荡客 - 格劳克斯
+◆r【时代】系列 - 美妙时光 - 格拉尼
+◆r【生命之地】系列 - 弃土花开 - 铃兰
+◆r【生命之地】系列 - 宝藏行家 - 莱恩哈特
+◆r【生命之地】系列 - 远望 - 四月
+◆r【珊瑚海岸】系列 - 探寻者 SKm01 - 银灰
+◆r【珊瑚海岸】系列 - 夏卉 FA333 - 刻俄柏
+◆r【珊瑚海岸】系列 - 探寻者 SK03 - 可颂
+◆r【珊瑚海岸】系列 - 驭浪 WR04 - 斯卡蒂
+◆r【珊瑚海岸】系列 - 悠然假日 HD08 - 普罗旺斯
+◆r【珊瑚海岸】系列 - 灿阳朝露 SD05 - 白金
+◆r【珊瑚海岸】系列 - 灿阳朝露 SD01 - 临光
+◆r【珊瑚海岸】系列 - 夏卉 FA008 - 暗索
+◆r【时代】系列 - 除魅 - 莫斯提马
+◆r【时代】系列 - 寻耀 - 星极
+◆r【罗德厨房】系列 - 回味冰霜雪 - 麦哲伦
+◆r【罗德厨房】系列 - 书味 - 真理
+◆r【罗德厨房】系列 - 掠蜜能手 - 猎蜂
+◆r【斗争血脉】系列 - 坚城 - 塞雷娅
+◆r【斗争血脉】系列 - 质素访客 - 安洁莉娜
+◆r【斗争血脉】系列 - 典雅噩兆 - 拉普兰德
+◆r【斗争血脉】系列 - 无题密令 - 送葬人
+◆r【斗争血脉】系列 - 归巢 - 灰喉
+◆r【斗争血脉】系列 - 第七夜苏醒魔君 - 月见夜
+◆r【时代】系列 - 战医 - 嘉维尔
+◆r【0011™制造】系列 - 狩标浪人 - 星熊
+◆r【玛尔特】系列 - 整装待发 - 凛冬
+◆r【0011™制造】系列 - 岁红霞 - 陈
+◆r【0011™制造】系列 - 富贵荣华 - 诗怀雅
+◆r【0011™制造】系列 - 春竜 - 雷蛇
+◆r【玛尔特】系列 - 片场一角 - 食铁兽
+◆r【冰原信使】系列 - 厚礼 - 黑
+◆r【冰原信使】系列 - 约克的寒风 - 银灰
+◆r【冰原信使】系列 - 开斯特之霜 - 初雪
+◆r【生命之地】系列 - 枯柏 - 守林人
+◆r【生命之地】系列 - 燃灰 - 杰西卡
+◆r【巫异盛宴】系列 - 挽歌 - 夜莺
+◆r【巫异盛宴】系列 - 盛宴 - 华法琳
+◆r【巫异盛宴】系列 - 魔术师 - 克洛丝
+◆r【雷神开拓者】系列 - 石墨 - 陨星
+◆r【雷神开拓者】系列 - 漆匠 - 赫默
+◆r【雷神开拓者】系列 - 铁块 - 杰西卡
+◆r【珊瑚海岸】系列 - 日晒 SS.SP - 伊芙利特
+◆r【珊瑚海岸】系列 - 夏卉 FA361 - 空
+◆r【珊瑚海岸】系列 - 夏卉 FA011 - 古米
+◆r【珊瑚海岸】系列 - 静谧午夜 DN02 - 闪灵
+◆r【珊瑚海岸】系列 - 温差 RT.RX01 - 天火
+◆r【珊瑚海岸】系列 - 悠然假日 HD01 - 红豆
+◆r【生命之地】系列 - 野地秘行 - 能天使
+◆r【生命之地】系列 - 孤攀客 - 崖心
+◆r【生命之地】系列 - 四边形 - 蛇屠箱
+◆r【寒武纪™系列】系列 - 寒冬信使 - 德克萨斯
+◆r【寒武纪™系列】系列 - 暗流 - 幽灵鲨
+◆r【寒武纪™系列】系列 - 新航线 - 讯使
+
+────────✦───────✦───────✦────────
+Ambience Synesthesia 2026
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-multiple
+◆【音律联觉】系列 - 黑白冷峻 - 塞雷娅
+◆【音律联觉】系列 - 暮星安魂曲 - 蕾缪安
+◆【音律联觉】系列 - 晶化信念 - 死芒
+
+────────✦───────✦───────✦────────
+People a People
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-multiple
+◆【音律联觉】系列 - 繁花梦幻谈 - 妮芙
+◆【音律联觉】系列 - 超然序曲 - 史尔特尔
+brand-rerun-multiple
+◆r【忒斯特收藏】系列 - 超新星 - 维什戴尔
+◆r【忒斯特收藏】系列 - 至虔者荣光 - 空弦
+◆r【忒斯特收藏】系列 - 无我唯识 - 塑心
+◆r【忒斯特收藏】系列 - 轻盈一梦 - 迷迭香
+brand-rerun-multiple
+◆r【时代】系列 - 礼遇 - 仇白
+◆r【时代】系列 - 逸趣 - 蚀清
+◆r【时代】系列 - 全新业务 - 洋灰
+◆r【时代】系列 - 远行的季节 - 松果
+◆r【时代】系列 - 湖畔歌者 - 晓歌
+◆r【时代】系列 - 恍惚 - W
+◆r【时代】系列 - 拥抱新生 - 迷迭香
+◆r【时代】系列 - 复现荣光 - 耀骑士临光
+◆r【时代】系列 - 幽兰秘辛 - 缄默德克萨斯
+brand-rerun-multiple
+◆r【斗争血脉】系列 - 燃烧天穹下 - 伊内丝
+◆r【斗争血脉】系列 - 锋潮 - 棘刺
+◆r【斗争血脉】系列 - 新枝 - 缪尔赛思
+◆r【斗争血脉】系列 - 审判日 - 菲亚梅塔
+◆r【斗争血脉】系列 - 升华 - 浊心斯卡蒂
+◆r【斗争血脉】系列 - 残余 - 凯尔希
+◆r【斗争血脉】系列 - 生而为一 - 归溟幽灵鲨
+brand-rerun-multiple
+◆r【命途迭代】系列 - 红女爵 - 浊心斯卡蒂
+◆r【命途迭代】系列 - 哀律西昂夜曲 - 蓝毒
+◆r【命途迭代】系列 - 苍茫怒号 - 玛恩纳
+◆r【命途迭代】系列 - 破翼者 - 缄默德克萨斯
+brand-rerun-single
+◆r【成就之星】系列 - 永恒玩家 - 水月
+brand-rerun-single
+◆r【音律联觉】系列 - 漫步于黄金之梦 - 缪尔赛思
+["PA-ST-1","PA-1","PA-TR-1","PA-2","PA-3","PA-4","PA-5","PA-6","PA-7","PA-8","PA-ST-2","PA-EX-1","EX-1-CM","PA-EX-2","EX-2-CM","PA-EX-3","EX-3-CM","PA-EX-4","EX-4-CM","PA-EX-5","EX-5-CM","PA-EX-6","EX-6-CM","PA-EX-7","EX-7-CM","PA-EX-8","PA-EX-8-CM"]
+★★★★★★：怒潮凛冬（占6★出率的50%）
+★★★★★： 乌啾 / 渡桥（占5★出率的50%）
+
+────────✦───────✦───────✦────────
+When Elegies Are Ashes rerun
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【时代】系列 - 轻语入梦 - 水灯心
+brand-rerun-multiple
+◆【音律联觉】系列 - 漫步于黄金之梦 - 缪尔赛思
+◆【音律联觉】系列 - 幻语乐痕 - 莫斯提马
+◆【音律联觉】系列 - 辉煌的静谧 - 逻各斯
+◆【音律联觉】系列 - 空心王冠 - 白铁
+◆【音律联觉】系列 - 蝶舞华章 - 伊内丝
+◆【音律联觉】系列 - 律动方格 - 琳琅诗怀雅
+◆【音律联觉】系列 - 历世流风 - 霍尔海雅
+◆【音律联觉】系列 - 不融冰 - 银灰
+["EA-ST-1","EA-1","EA-TR-1","EA-2","EA-3","EA-4","EA-5","EA-6","EA-ST-2","EA-7","EA-8","EA-ST-3","EA-EX-1","EX-1-CM","EA-EX-2","EX-2-CM","EA-EX-3","EX-3-CM","EA-EX-4","EX-4-CM","EA-EX-5","EX-5-CM","EA-EX-6","EX-6-CM","EA-EX-7","EX-7-CM","EA-EX-8","EX-8-CM"]
+★★★★★★：死芒（占6★出率的50%）
+★★★★★： 钼铅 / 火哨（占5★出率的50%）
+
+────────✦───────✦───────✦────────
+Stronghold Protocol Alliance #2
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【玛尔特】系列 - 补水时间 - 慕斯
+★★★★★★：真言 / 忍冬 / 妮芙 / 乌尔比安
+★★★★★：响石 / 子月 / 和弦 / 温米 / 寻澜 / 波卜

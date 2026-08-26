@@ -622,3 +622,58 @@
     scale: 6;
     transform: translate(-3px, 24px);
 }
+
+.akkord1 {
+    scale: 5;
+    transform: translate(1px, 32px);
+}
+
+.contrail1 {
+    scale: 6;
+    transform: translate(-23px, 40px);
+}
+
+.ptilopsis2 {
+    scale: 6.5;
+    transform: translate(-11px, 20px);
+}
+
+.shamare2 {
+    scale: 6.1;
+    transform: translate(-13px, 24px);
+}
+
+.matsukiri1 {
+    scale: 8;
+    transform: translate(6px, 34px);
+}
+
+.nightingale2 {
+    scale: 6;
+    transform: translate(16px, 22px);
+}
+
+.hoederer1 {
+    scale: 8;
+    transform: translate(-3px, 40px);
+}
+
+.weedy2 {
+    scale: 7;
+    transform: translate(2px, 35px);
+}
+
+.sandreckoner1 {
+    scale: 5.8;
+    transform: translate(-17px, 16px);
+}
+
+.surtr2 {
+    scale: 7;
+    transform: translate(-5px, 5px);
+}
+
+.bryophyta1 {
+    scale: 6.5;
+    transform: translate(2px, 41px);
+}
