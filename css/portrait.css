@@ -677,3 +677,28 @@
     scale: 6.5;
     transform: translate(2px, 41px);
 }
+
+.makotoyuki1 {
+        scale: 10;
+    transform: translate(-1px, 26px);
+}
+
+.yukaritakeba1{
+    scale: 9;
+    transform: translate(-3.5px, 27px);
+}
+
+.aegis1{
+    scale: 6.5;
+    transform: translate(-10px, 19px);
+}
+
+.koromaru1{
+    scale: 4;
+    transform: translate(14px, 15px);
+}
+
+.bobbing1{
+    scale: 6;
+    transform: translate(-2px, 50px);
+}

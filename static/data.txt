@@ -1,4 +1,18 @@
 ────────✦───────✦───────✦────────
+Sur Le Lac Lune Vivante
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+["SR-ST-1","SR-TR-1","SR-1","SR-2","SR-3","SR-4","SR-5","SR-6","SR-7","SR-8","SR-ST-2","SR-EX-1","SR-EX-1 CM","SR-EX-2","SR-EX-2 CM","SR-EX-3","SR-EX-3 CM","SR-EX-4","SR-EX-4 CM","SR-EX-5","SR-EX-5 CM","SR-EX-6","SR-EX-6 CM","SR-EX-7","SR-EX-7 CM","SR-EX-8","SR-EX-8 CM"]
+brand-multiple
+◆【CROSSOVER】系列 - 见证荣光 - 结城理
+◆【CROSSOVER】系列 - 戍卫晨昏 - 岳羽由加莉
+◆【CROSSOVER】系列 - 静思真谛 - 埃癸斯
+◆【CROSSOVER】系列 - 飞越甜蜜之城 - 虎狼丸
+brand-single-rerun
+◆【罗德厨房】系列 - 温情烘焙 - 波卜
+
+────────✦───────✦───────✦────────
 Ato rerun
 cn-event-name-placeholder
 image-link-placeholder
@@ -664,33 +678,3 @@ brand-rerun-single
 ["PA-ST-1","PA-1","PA-TR-1","PA-2","PA-3","PA-4","PA-5","PA-6","PA-7","PA-8","PA-ST-2","PA-EX-1","EX-1-CM","PA-EX-2","EX-2-CM","PA-EX-3","EX-3-CM","PA-EX-4","EX-4-CM","PA-EX-5","EX-5-CM","PA-EX-6","EX-6-CM","PA-EX-7","EX-7-CM","PA-EX-8","PA-EX-8-CM"]
 ★★★★★★：怒潮凛冬（占6★出率的50%）
 ★★★★★： 乌啾 / 渡桥（占5★出率的50%）
-
-────────✦───────✦───────✦────────
-When Elegies Are Ashes rerun
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-single
-◆【时代】系列 - 轻语入梦 - 水灯心
-brand-rerun-multiple
-◆【音律联觉】系列 - 漫步于黄金之梦 - 缪尔赛思
-◆【音律联觉】系列 - 幻语乐痕 - 莫斯提马
-◆【音律联觉】系列 - 辉煌的静谧 - 逻各斯
-◆【音律联觉】系列 - 空心王冠 - 白铁
-◆【音律联觉】系列 - 蝶舞华章 - 伊内丝
-◆【音律联觉】系列 - 律动方格 - 琳琅诗怀雅
-◆【音律联觉】系列 - 历世流风 - 霍尔海雅
-◆【音律联觉】系列 - 不融冰 - 银灰
-["EA-ST-1","EA-1","EA-TR-1","EA-2","EA-3","EA-4","EA-5","EA-6","EA-ST-2","EA-7","EA-8","EA-ST-3","EA-EX-1","EX-1-CM","EA-EX-2","EX-2-CM","EA-EX-3","EX-3-CM","EA-EX-4","EX-4-CM","EA-EX-5","EX-5-CM","EA-EX-6","EX-6-CM","EA-EX-7","EX-7-CM","EA-EX-8","EX-8-CM"]
-★★★★★★：死芒（占6★出率的50%）
-★★★★★： 钼铅 / 火哨（占5★出率的50%）
-
-────────✦───────✦───────✦────────
-Stronghold Protocol Alliance #2
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-single
-◆【玛尔特】系列 - 补水时间 - 慕斯
-★★★★★★：真言 / 忍冬 / 妮芙 / 乌尔比安
-★★★★★：响石 / 子月 / 和弦 / 温米 / 寻澜 / 波卜
