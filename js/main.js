@@ -153,7 +153,7 @@ fetchGameData().then(data => {
         "opacity": "0.75"
     })
 
-    document.querySelector('input[name="event"]').parentElement.append(meow)
+    document.querySelector('input[name="event"]').parentElement.parentElement.append(meow)
 
     console.warn("Missing Assets:", missingAssets)
 
