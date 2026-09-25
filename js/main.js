@@ -144,12 +144,13 @@ fetchGameData().then(data => {
     if (isMobile) document.getElementById('container-of-skins').appendChild(document.getElementById('container-of-rewards'))
 
     const meow = document.createElement('div')
-    meow.textContent = 'meow'
+    meow.textContent = '🛈 The order of events or skins available are subject to change'
 
     Object.assign(meow.style, {
         "position": "absolute",
-        "right": "9px",
-        "opacity": "0.05"
+        "top": "0",
+        "left": "9px",
+        "opacity": "0.75"
     })
 
     document.querySelector('input[name="event"]').parentElement.append(meow)

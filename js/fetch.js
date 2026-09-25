@@ -273,11 +273,11 @@ function parseEventSkins(group, skinsData, charData) {
 export const fetchGameData = async () => {
     try {
         const [cnData, enData, charData, rawEventsData] = await Promise.all([
-            fetch('https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/refs/heads/master/zh_CN/gamedata/excel/skin_table.json')
+            fetch('https://raw.githubusercontent.com/HermitzPlanner/ArknightsGameData/refs/heads/master/zh_CN/gamedata/excel/skin_table.json')
                 .then(response => response.json()),
-            fetch('https://raw.githubusercontent.com/ArknightsAssets/ArknightsGamedata/refs/heads/master/en/gamedata/excel/skin_table.json')
+            fetch('https://raw.githubusercontent.com/HermitzPlanner/ArknightsGamedataAssets/refs/heads/master/en/gamedata/excel/skin_table.json')
                 .then(response => response.json()),
-            fetch('https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/refs/heads/master/zh_CN/gamedata/excel/character_table.json')
+            fetch('https://raw.githubusercontent.com/HermitzPlanner/ArknightsGameData/refs/heads/master/zh_CN/gamedata/excel/character_table.json')
                 .then(response => response.json()),
             fetch('static/data.txt')
                 .then(response => response.text()),

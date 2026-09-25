@@ -103,6 +103,11 @@ function artRender(container, plannerId, skinObject) {
     animate(bg, 'viewer-show-image-background')
 
     container.append(img)
+
+    //const dynamicIllustration = document.createElement("video")
+    //dynamicIllustration.src = "https://web.hycdn.cn/upload/video/20260403/4e53fdddfa7f860b36ffc33c3470372a.mp4"
+    //container.append(dynamicIllustration)
+
     container.append(bg)
     container.append(trimmedBg)
 
