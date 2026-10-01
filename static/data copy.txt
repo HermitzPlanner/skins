@@ -50,7 +50,7 @@ image-link-placeholder
 cn-date-placeholder
 brand-single
 ◆【0011/飙】系列 - 一闪极意 - 斩业星熊
-brand-multiple-rerun
+brand-rerun
 ◆【时代】系列 - 后来的故事 - 纯烬艾雅法拉
 ◆【时代】系列 - 清新布景 - 蒂比
 ◆【时代】系列 - 轻闲快照 - 绮良
