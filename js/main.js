@@ -7,6 +7,7 @@ import { summary } from "./summary.js";
 import { setLocalStorage } from "./local-storage.js";
 import { renderBanners } from "./render-banners.js";
 import { skinTable } from "./skin-table.js";
+import { skinWaiting } from "./skin-waiting.js";
 
 export let EVENTS_DATA = ""
 export let lastSection = 'planner'
@@ -186,6 +187,7 @@ function headerButtonsLogic(data) {
     document.getElementById('header-summary-button').onclick = () => { summary(data) }
     document.getElementById("header-gallery-checkbox").onclick = () => { gallery() }
     document.getElementById('skin-table').onclick = () => { skinTable(data) }
+    document.getElementById('skin-waiting').onclick = () => { skinWaiting(data) }
 }
 
 function renderEvent(data, event, index) {

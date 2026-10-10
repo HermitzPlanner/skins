@@ -1,4 +1,58 @@
 ────────✦───────✦───────✦────────
+Yet Another Wave
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+["YW-ST-1","YW-TR-1","YW-1","YW-2","YW-3","YW-4","YW-ST-2","YW-5","YW-6","YW-7","YW-8","YW-ST-3","YW-EX-1","YW-EX-1 CM","YW-EX-2","YW-EX-2 CM","YW-EX-3","YW-EX-3 CM","YW-EX-4","YW-EX-4 CM","YW-EX-5","YW-EX-5 CM","YW-EX-6","YW-EX-6 CM","YW-EX-7","YW-EX-7 CM","YW-EX-8","YW-EX-8 CM"]
+brand-multiple
+◆【错位巡礼】系列 - 真我自扼 - 酒神
+◆【错位巡礼】系列 - 万籁俱寂 - 真言
+◆【错位巡礼】系列 - 来日欢歌 - 烈夏
+brand-multiple-rerun
+◆【破格视界】系列 - 链锯陪护者 - 娜仁图亚
+◆【破格视界】系列 - 无影灯下 - 渡桥
+◆【破格视界】系列 - 生化沉溺 - 承曦格雷伊
+◆【破格视界】系列 - 疗养地怪谈 - 夜烟
+brand-multiple-rerun
+◆【巫异盛宴】系列 - 暗月的影子 - 锏
+◆【巫异盛宴】系列 - 易爆蓝焰 - 煌
+◆【巫异盛宴】系列 - 夜空星芒 - 深律
+◆【巫异盛宴】系列 - 魔女的秋千 - 泡普卡
+
+────────✦───────✦───────✦────────
+IS7 Greyy Alter Skin
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【生命之地】系列 - 千尺俯瞰 - 承曦格雷伊
+
+────────✦───────✦───────✦────────
+Vector Breakthrough #3
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【时代】系列 - 慵怠哼唱 - 空构
+
+────────✦───────✦───────✦────────
+Dolly's Playground
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【0011/韵】系列 - 照寰瀛 - 录武官
+brand-multiple-rerun
+◆【成就之星】系列 - 至高判决 - 艾丽妮
+◆【成就之星】系列 - 遗迹游学者 - 惊蛰
+◆【成就之星】系列 - 新手光环 - 寒芒克洛丝
+brand-single-rerun
+◆【雷神推进者】系列 - 破晓 - 冰酿
+brand-multiple-rerun
+◆【0011/韵】系列 - 松间月 - 铎铃
+◆【0011/韵】系列 - 桂影窗 - 裁度
+
+────────✦───────✦───────✦────────
 Sur Le Lac Lune Vivante
 cn-event-name-placeholder
 image-link-placeholder
@@ -362,7 +416,8 @@ Positional Football Championship
 cn-event-name-placeholder
 image-link-placeholder
 cn-date-placeholder
-◆【玛尔特系列】系列 - 跃动节拍 - 钼铅
+brand-single
+◆【玛尔特】系列 - 跃动节拍 - 钼铅
 
 ────────✦───────✦───────✦────────
 Thunder in the Azure Dream
@@ -403,6 +458,7 @@ Relaunch Anchor
 cn-event-name-placeholder
 image-link-placeholder
 cn-date-placeholder
+brand-single
 ◆【玛尔特】系列 - 硬派速度 - 山
 
 ────────✦───────✦───────✦────────
@@ -624,57 +680,3 @@ cn-date-placeholder
 ◆r【寒武纪™系列】系列 - 寒冬信使 - 德克萨斯
 ◆r【寒武纪™系列】系列 - 暗流 - 幽灵鲨
 ◆r【寒武纪™系列】系列 - 新航线 - 讯使
-
-────────✦───────✦───────✦────────
-Ambience Synesthesia 2026
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-multiple
-◆【音律联觉】系列 - 黑白冷峻 - 塞雷娅
-◆【音律联觉】系列 - 暮星安魂曲 - 蕾缪安
-◆【音律联觉】系列 - 晶化信念 - 死芒
-
-────────✦───────✦───────✦────────
-People a People
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-multiple
-◆【音律联觉】系列 - 繁花梦幻谈 - 妮芙
-◆【音律联觉】系列 - 超然序曲 - 史尔特尔
-brand-rerun-multiple
-◆r【忒斯特收藏】系列 - 超新星 - 维什戴尔
-◆r【忒斯特收藏】系列 - 至虔者荣光 - 空弦
-◆r【忒斯特收藏】系列 - 无我唯识 - 塑心
-◆r【忒斯特收藏】系列 - 轻盈一梦 - 迷迭香
-brand-rerun-multiple
-◆r【时代】系列 - 礼遇 - 仇白
-◆r【时代】系列 - 逸趣 - 蚀清
-◆r【时代】系列 - 全新业务 - 洋灰
-◆r【时代】系列 - 远行的季节 - 松果
-◆r【时代】系列 - 湖畔歌者 - 晓歌
-◆r【时代】系列 - 恍惚 - W
-◆r【时代】系列 - 拥抱新生 - 迷迭香
-◆r【时代】系列 - 复现荣光 - 耀骑士临光
-◆r【时代】系列 - 幽兰秘辛 - 缄默德克萨斯
-brand-rerun-multiple
-◆r【斗争血脉】系列 - 燃烧天穹下 - 伊内丝
-◆r【斗争血脉】系列 - 锋潮 - 棘刺
-◆r【斗争血脉】系列 - 新枝 - 缪尔赛思
-◆r【斗争血脉】系列 - 审判日 - 菲亚梅塔
-◆r【斗争血脉】系列 - 升华 - 浊心斯卡蒂
-◆r【斗争血脉】系列 - 残余 - 凯尔希
-◆r【斗争血脉】系列 - 生而为一 - 归溟幽灵鲨
-brand-rerun-multiple
-◆r【命途迭代】系列 - 红女爵 - 浊心斯卡蒂
-◆r【命途迭代】系列 - 哀律西昂夜曲 - 蓝毒
-◆r【命途迭代】系列 - 苍茫怒号 - 玛恩纳
-◆r【命途迭代】系列 - 破翼者 - 缄默德克萨斯
-brand-rerun-single
-◆r【成就之星】系列 - 永恒玩家 - 水月
-brand-rerun-single
-◆r【音律联觉】系列 - 漫步于黄金之梦 - 缪尔赛思
-["PA-ST-1","PA-1","PA-TR-1","PA-2","PA-3","PA-4","PA-5","PA-6","PA-7","PA-8","PA-ST-2","PA-EX-1","EX-1-CM","PA-EX-2","EX-2-CM","PA-EX-3","EX-3-CM","PA-EX-4","EX-4-CM","PA-EX-5","EX-5-CM","PA-EX-6","EX-6-CM","PA-EX-7","EX-7-CM","PA-EX-8","PA-EX-8-CM"]
-★★★★★★：怒潮凛冬（占6★出率的50%）
-★★★★★： 乌啾 / 渡桥（占5★出率的50%）

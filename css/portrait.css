@@ -679,26 +679,120 @@
 }
 
 .makotoyuki1 {
-        scale: 10;
+    scale: 10;
     transform: translate(-1px, 26px);
 }
 
-.yukaritakeba1{
+.yukaritakeba1 {
     scale: 9;
     transform: translate(-3.5px, 27px);
 }
 
-.aegis1{
+.aegis1 {
     scale: 6.5;
     transform: translate(-10px, 19px);
 }
 
-.koromaru1{
+.koromaru1 {
     scale: 4;
     transform: translate(14px, 15px);
 }
 
-.bobbing1{
+.bobbing1 {
     scale: 6;
     transform: translate(-2px, 50px);
+}
+
+.recordkeeper1 {
+    scale: 8;
+    transform: translate(-2px, 31px);
+}
+
+.irene2 {
+    scale: 7;
+    transform: translate(1px, 22px);
+}
+
+.leizi1 {
+    scale: 7;
+    transform: translate(11px, 18px);
+}
+
+.kroosalter2 {
+        scale: 6;
+    transform: translate(1px, 42px);
+}
+
+.coldshot1 {
+           scale: 7;
+    transform: translate(-7px, 33px);
+}
+
+.windchimes1 {
+    scale: 8;
+    transform: translate(11px, 25px);
+}
+
+.figurino1 {
+    scale: 8;
+    transform: translate(17px, 19px);
+}
+
+.spuria1 {
+    scale: 7;
+    transform: translate(-5px, 26px);
+}
+
+.tragodia1 {
+    scale: 7;
+    transform: translate(7px, 20px);
+}
+
+.mantra1 {
+    scale: 7;
+    transform: translate(22px, 21px);
+}
+
+.leto1 {
+    scale: 6;
+    transform: translate(20px, 13px);
+}
+
+.narantuya1 {
+    scale: 7;
+    transform: translate(-8px, 25px);
+}
+
+.mitm1 {
+    scale: 9;
+    transform: translate(6px, 14px);
+}
+
+.greyyalter2 {
+    scale: 6;
+    transform: translate(7px, 25px);
+}
+.haze1 {
+    scale: 4;
+    transform: translate(5px, 30px);
+}
+.degenbrecher1 {
+    scale: 8;
+    transform: translate(-7px, 22px);
+}
+.blaze2 {
+    scale: 7;
+    transform: translate(-2px, 28px);
+}
+.bassline1 {
+    scale: 7;
+    transform: translate(3px, 28px);
+}
+.popukar1 {
+    scale: 6;
+    transform: translate(-7px, 23px);
+}
+.greyyalter3 {
+    scale: 6;
+    transform: translate(4px, 7px);
 }

@@ -22,6 +22,7 @@ export const ALTERS_MAP = {
     "Позёмка": "Pozyomka",
     "Роса": "Poca",
     "Веточки": "Vetochki",
+    "Лето": "Leto",
     /* latin */
     "Młynar": "Mlynar",
     "Wiš'adel": "Wisadel",
@@ -64,7 +65,9 @@ export const CERT_SKINS = [
     '八音蛋匠人',
     '无畏',
     '光影',
-    '孤寒峭'
+    '孤寒峭',
+    '夏卉 FA661',
+    '小憩初醒'
 ]
 
 
