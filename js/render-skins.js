@@ -1,5 +1,5 @@
 import { checkedCboxStyle, uncheckedCboxStyle, resetAll, revealIfElementMatchesEvent, findSkinByName, getColorList, checkedSkin, uncheckedSkin, getEditionFromTimestamp, showSection, drawSkinBackground, drawSkinBottomBackground, setLightness, missingElementCheck, getCharObject } from "./utils.js"
-
+import { cropScreenshot } from "./crop-screenshot.js";
 import { NO_EFFECT_SKINS, RESIZED_EVENT_REPOSITORY, SKIN_ICON_REPOSITORY, SKIN_PORTRAIT_REPOSITORY, CERT_SKINS } from "./constants.js";
 import { viewer } from "./viewer.js";
 
@@ -38,6 +38,7 @@ function renderPlannerSkin(eventSkin, event, data) {
     const clone = template.content.cloneNode(true);
 
     const label = clone.querySelector('label')
+    label.id = event.code + '-' + eventSkin.plannerId + '-label'
     label.setAttribute('data-event', event.code)
     label.setAttribute('data-model', eventSkin.modelNameEnglish)
     label.setAttribute('data-eventName', event.nameEnglish)
@@ -100,8 +101,16 @@ function renderPlannerSkin(eventSkin, event, data) {
     //clone.querySelector('.model-name.english').style.borderImage = eventSkin.borderGradient
     clone.querySelector('.planner-skin-name-canvas').style.borderImage = eventSkin.borderGradient
     clone.querySelector('.planner-id').textContent = eventSkin.plannerId
-    clone.querySelector('.skin-portrait').alt = event.nameEnglish.includes("Fashion Review") ? eventSkin.portraitRepository : eventSkin.newRepo
-    if (!event.nameEnglish.includes("Fashion Review")) clone.querySelector('.skin-portrait').setAttribute('data-plannerid', eventSkin.plannerId)
+    clone.querySelector('.skin-portrait').id = event.code + '-' + eventSkin.plannerId + '-portrait'
+
+    //clone.querySelector('.skin-portrait').alt = event.nameEnglish.includes("Fashion Review") ? eventSkin.portraitRepository : eventSkin.newRepo
+    clone.querySelector('.skin-portrait').alt = event.nameEnglish.includes("Fashion Review") ? eventSkin.portraitRepository : "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/cropped-art/crop-" + eventSkin.plannerId + ".jpg"
+    
+    // Note: The observer it's the one that sets the .src for the image
+    if (!event.nameEnglish.includes("Fashion Review")) {
+        clone.querySelector('.skin-portrait').setAttribute('data-plannerid', eventSkin.plannerId)
+        //clone.querySelector('.skin-portrait').classList.add(eventSkin.plannerId)
+    } 
 
     //clone.querySelector('.skin-portrait').classList.add(eventSkin.plannerId)
     clone.querySelector('.planner-skin-rarity').src = `static/rarity/rarity_yellow_${eventSkin.rarity - 1}.png`
@@ -118,7 +127,11 @@ function renderPlannerSkin(eventSkin, event, data) {
         clone.querySelector('.planner-skin-profession').style.top = '0'
     }
 
-    clone.querySelector('button').onclick = () => {
+    // clone.querySelector('button.skin-crop').onclick = () => {
+    //     cropScreenshot(event.code + '-' + eventSkin.plannerId + '-label', eventSkin.plannerId)
+    // }
+
+    clone.querySelector('button.skin-inspect').onclick = () => {
         showSection('viewer')
         viewer(eventSkin.plannerId, eventSkin.name, data.skinsData, data.charData);
     }

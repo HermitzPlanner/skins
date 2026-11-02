@@ -268,8 +268,10 @@ function eventButtonsLogic() {
         const eventCode = radio.value
 
         const eventName = radio.parentElement.querySelector('.event-name').textContent
+        
         const eventNameEnglish = radio.parentElement.querySelector('.event-name-english').textContent
         radio.addEventListener("click", () => {
+            document.getElementById("container-of-skins-event-name").textContent = eventNameEnglish
             document.querySelectorAll('.year-filter-button').forEach(uncheckedButtonStyle)
             document.getElementById("year-button-filters").style.display = eventNameEnglish.includes("Fashion Review") ? "flex" : "none"
             //document.getElementById("button-filter-2024").style.display = eventNameEnglish.includes("Fashion Review 18") ? "block" : "none"
@@ -469,7 +471,7 @@ function setupImageObserver() {
                     img.src = img.alt;
                     const plannerId = img.getAttribute('data-plannerid')
                     if (plannerId) {
-                        img.classList.add(plannerId)
+                        //img.classList.add(plannerId)
                     }
 
 

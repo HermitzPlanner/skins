@@ -153,6 +153,7 @@
             </script>
         </div>
         <div class="container" id="container-of-skins">
+            <div class="planner-brand-type" style="width: 100%; border-bottom: 1px solid var(--equip-border); padding-bottom: 11px; color: #fff;" id="container-of-skins-event-name">Event Name Placeholder</div>
             <button class="toggle-button mobile-toggle" data-target="show-events" id="header-show-events-button">Show events</button>
             <h2 class="hide" id="container-of-skins-h2">
                 <span id="container-of-skins-h2-english" class="english"></span>
@@ -332,7 +333,9 @@
     </template>
 
     <template id="planner-skin-template">
+        
         <label class="planner-skin-label skin hide">
+            <!-- <button class="skin-crop" style="z-index: 102; display: none;" disabled>crop -></button> -->
             <input type="checkbox" name="skin-cbox">
             <canvas width="180" height="360" class="planner-skin-background-canvas"
                 style="position: absolute; border-radius: 0px;"></canvas>

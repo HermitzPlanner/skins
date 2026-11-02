@@ -323,11 +323,6 @@
     transform: translate(-0px, 28.5px);
 }
 
-.exusiaithenewcovenant1 {
-    scale: 9;
-    transform: translate(-3.5px, 11.5px);
-}
-
 .haruka1 {
     scale: 8;
     transform: translate(4px, 15px);
@@ -719,12 +714,12 @@
 }
 
 .kroosalter2 {
-        scale: 6;
+    scale: 6;
     transform: translate(1px, 42px);
 }
 
 .coldshot1 {
-           scale: 7;
+    scale: 7;
     transform: translate(-7px, 33px);
 }
 
@@ -772,27 +767,78 @@
     scale: 6;
     transform: translate(7px, 25px);
 }
+
 .haze1 {
     scale: 4;
     transform: translate(5px, 30px);
 }
+
 .degenbrecher1 {
     scale: 8;
     transform: translate(-7px, 22px);
 }
+
 .blaze2 {
     scale: 7;
     transform: translate(-2px, 28px);
 }
+
 .bassline1 {
     scale: 7;
     transform: translate(3px, 28px);
 }
+
 .popukar1 {
     scale: 6;
     transform: translate(-7px, 23px);
 }
+
 .greyyalter3 {
     scale: 6;
     transform: translate(4px, 7px);
+}
+
+.exusiaithenewcovenant1 {
+    scale: 9;
+    transform: translate(-3.5px, 11.5px);
+}
+
+.shu2 {
+    scale: 7;
+    transform: translate(6.5px, 31.5px);
+}
+
+.blazetheignitingspark2 {
+    scale: 8;
+    transform: translate(-4.5px, 15.5px);
+}
+
+.swirealter2 {
+    scale: 9;
+    transform: translate(-1.5px, 18.5px);
+}
+
+.alanna1 {
+    scale: 8;
+    transform: translate(3.5px, 25.5px);
+}
+
+.silverashthereignfrost1 {
+    scale: 9;
+    transform: translate(-19px, 33px);
+}
+
+.viviana2 {
+    scale: 8;
+    transform: translate(-8.5px, 19.5px);
+}
+
+.horn2 {
+    scale: 7;
+    transform: translate(1.5px, 25px);
+}
+
+.catherine1 {
+    scale: 6;
+    transform: translate(8.5px, 38.5px);
 }

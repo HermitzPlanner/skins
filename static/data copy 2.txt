@@ -1,0 +1,17 @@
+────────✦───────✦───────✦────────
+Time To Move Forward
+cn-event-name-placeholder
+image-link-placeholder
+cn-date-placeholder
+brand-single
+◆【啸风】系列 - 赤土拉力 - 阿兰娜
+brand-single
+◆【忒斯特收藏】系列 - 雪覆伦城 - 凛御银灰
+brand-multiple
+◆【时代】系列 - 还愿礼 - 薇薇安娜
+◆【时代】系列 - 锋光初现 - 号角
+brand-single
+◆【罗德厨房】系列 - 暖冬教室 - 凯瑟琳
+brand-rerun-single
+◆【命途迭代】系列 - 寻翼之歌 - 新约能天使
+["TL-ST-1", "TL-1", "TL-TR-1", "TL-2", "TL-3", "TL-4", "TL-ST-2", "TL-5", "TL-6", "TL-7", "TL-8", "TL-9", "TL-10", "TL-ST-3", "TL-ST-4", "TL-EX-1", "TL-EX-1 CM", "TL-EX-2", "TL-EX-2 CM", "TL-EX-3", "TL-EX-3 CM", "TL-EX-4", "TL-EX-4 CM", "TL-EX-5", "TL-EX-5 CM", "TL-EX-6", "TL-EX-6 CM", "TL-EX-7", "TL-EX-7 CM", "TL-EX-8", "TL-EX-8 CM", "TL-S-1", "TL-S-1 CM", "TL-S-2", "TL-S-2 CM", "TL-S-3", "TL-S-3 CM", "TL-S-4", "TL-S-4 CM"]
