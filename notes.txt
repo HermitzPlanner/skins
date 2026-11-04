@@ -9,6 +9,9 @@ skin to rarity
 2 - feater
 1 - puzzle
 
+2026-11-04 - fixed local storage and save.txt system
+2026-11-04 - changed events appearance
+2026-11-04 - added interface ui packs
 
 
 

@@ -11,9 +11,9 @@ export function summary(data) {
 
     const headerCheckbox = document.getElementById("header-gallery-checkbox")
     const headerGalleryDiv = document.getElementById('header-gallery-checkbox').nextElementSibling
-    headerGalleryDiv.innerHTML = plannerSvg + 'Planner' 
+    headerGalleryDiv.innerHTML = plannerSvg + 'Planner'
     headerCheckbox.checked = true
-    
+
     resetDiv('summary');
 
     const container = document.getElementById('summary');
@@ -73,7 +73,7 @@ function renderSummaryEvent(container, eventId, planners, eventName, data) {
     clone.querySelector('.summary-row').style.setProperty('--bg-url', `url('https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/events/${eventId}.jpg')`)
     clone.querySelector('.name').textContent = eventName
     clone.querySelector('img').src = RESIZED_EVENT_REPOSITORY(eventId)
-    
+
     const calcsDiv = clone.querySelector('.calcs-div')
     calcsDiv.style.marginLeft = "0"
     calcsDiv.style.paddingLeft = '0'
@@ -84,7 +84,7 @@ function renderSummaryEvent(container, eventId, planners, eventName, data) {
     //calcsDiv.style.left = '211px'
     calcsDiv.style.flexDirection = 'row'
     calcsDiv.style.gap = '61px'
-    calcsDiv.style.backdropFilter = 'blur(8px) brightness(0.5)' 
+    calcsDiv.style.backdropFilter = 'blur(8px) brightness(0.5)'
 
     clone.querySelectorAll('.calcs-row').forEach(element => {
         element.style.width = '100px'
@@ -94,20 +94,21 @@ function renderSummaryEvent(container, eventId, planners, eventName, data) {
 
     clone.querySelector('.span-expense').textContent = document.getElementById(`expense-${eventId}`).textContent
     clone.querySelector('.span-balance').textContent = document.getElementById(`balance-${eventId}`).textContent
-    
+
     clone.querySelector('.income').remove()
 
     planners.forEach(planner => {
-        renderSummarySkin(clone.querySelector('.summary-row'), planner, data)
+        renderSummarySkin(clone.querySelector('.summary-row'), planner, data, eventId)
     });
 
     container.append(clone)
 }
 
-function renderSummarySkin(eventRowClone, planner, data) {
+function renderSummarySkin(eventRowClone, planner, data, eventId) {
 
     const skinName = getNameWithPlannerId(planner.plannerId, data)
     const skinObject = findSkinByName(data.skinsData.cnData, skinName)
+    console.log("skinOjbect from summary.js", skinObject)
     const colors = getColorList(skinObject.displaySkin.colorList)
 
     skinObject.colors = colors
@@ -115,8 +116,11 @@ function renderSummarySkin(eventRowClone, planner, data) {
     const template = document.getElementById("summary-skin-template")
     const clone = template.content.cloneNode(true)
 
+    const uiPacksrc = "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/interfacePacks/resized/resized_" + eventId + "-interface.jpg"
+
     clone.querySelector('.name').textContent = planner.modelName
-    clone.querySelector('.summary-icon').src = NEW_SKIN_ICON_REPOSITORY(skinObject)
+    clone.querySelector('.summary-icon').src = skinObject.charId !== "char_285_medic2" ? NEW_SKIN_ICON_REPOSITORY(skinObject) : uiPacksrc
+    
     clone.querySelector('.summary-skin').style.background = `linear-gradient(${'90deg'}, ${colors.join(', ')}) border-box, #ffffff padding-box`
 
     drawSkinTopBackground(clone.querySelector('.gallery-name-canvas'), skinObject)
@@ -127,6 +131,11 @@ function renderSummarySkin(eventRowClone, planner, data) {
         document.getElementById("current-section").textContent = "summary"
         showSection('viewer')
         viewer(planner.plannerId, skinName, data.skinsData, data.charData);
+    }
+
+    if (skinObject.charId == "char_285_medic2") {
+        clone.querySelector('.summary-icon').style.objectFit = "cover"
+        button.remove()
     }
 
     eventRowClone.append(clone)

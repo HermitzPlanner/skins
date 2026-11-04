@@ -470,13 +470,4 @@ brand-rerun-single
 brand-rerun-single
 ◆【CROSSOVER】系列 - 跃上街头 - 泰拉大陆调查团
 ["TD-ST-1","TD-1","TD-TR-1","TD-2","TD-3","TD-4","TD-5","TD-6","TD-7","TD-8","TD-ST-2","TD-P-1","TD-EX-1","EX-1-CM","TD-EX-2","EX-2-CM","TD-EX-3","EX-3-CM","TD-EX-4","EX-4-CM","TD-EX-5","EX-5-CM","TD-EX-6","EX-6-CM","TD-EX-7","EX-7-CM","TD-EX-8","TD-EX-8-CM"]
-
-
-────────✦───────✦───────✦────────
-The Masses Travels rerun
-cn-event-name-placeholder
-image-link-placeholder
-cn-date-placeholder
-brand-single
-◆【斗争血脉】系列 - 天穹肇始 - 信仰搅拌机
-["MT-ST-1", "MT-1", "MT-TR-1", "MT-2", "MT-3", "MT-4", "MT-ST-2", "MT-5", "MT-6", "MT-7", "MT-8", "MT-9", "MT-10", "MT-ST-3", "MT-ST-4", "MT-EX-1", "MT-EX-1 CM", "MT-EX-2", "MT-EX-2 CM", "MT-EX-3", "MT-EX-3 CM", "MT-EX-4", "MT-EX-4 CM", "MT-EX-5", "MT-EX-5 CM", "MT-EX-6", "MT-EX-6 CM", "MT-EX-7", "MT-EX-7 CM", "MT-EX-8", "MT-EX-8 CM", "MT-S-1", "MT-S-1 CM", "MT-S-2", "MT-S-2 CM", "MT-S-3", "MT-S-3 CM", "MT-S-4", "MT-S-4 CM", "MT-S-5", "MT-S-5 CM"]
+interface-pack

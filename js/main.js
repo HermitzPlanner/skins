@@ -8,6 +8,7 @@ import { setLocalStorage } from "./local-storage.js";
 import { renderBanners } from "./render-banners.js";
 import { skinTable } from "./skin-table.js";
 import { skinWaiting } from "./skin-waiting.js";
+import { renderInterfacePacks } from "./render-interface-packs.js";
 
 export let EVENTS_DATA = ""
 export let lastSection = 'planner'
@@ -111,8 +112,12 @@ fetchGameData().then(data => {
 
         if (planBanners == false) {
             renderStagesList(event.rewards, event)
+
             renderEvent(data, event, eventIndex)
+
+            if (event.interfacePack) renderInterfacePacks(data, event)
             renderSkins(data, event)
+            
         }
 
         stopInFirstElement = false
@@ -217,7 +222,7 @@ function renderEvent(data, event, index) {
     document.getElementById('container-of-events').append(clone)
 }
 
-function updateCalcs(element) {
+export function updateCalcs(element) {
     console.log("updating calcs")
     if (element?.name == "skin-cbox") {
         const skinEvent = element.parentElement.getAttribute('data-event')
@@ -284,6 +289,7 @@ function eventButtonsLogic() {
             resetAll('.planner-brand')
             resetAll('.reward');
             resetAll('.break')
+            resetAll('.interface-pack')
             revealIfElementMatchesEvent(eventCode)
 
             const eventBackground = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/event-bg/${eventCode}.jpg`

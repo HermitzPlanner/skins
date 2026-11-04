@@ -4,13 +4,16 @@ document.getElementById('reset').addEventListener('click', () => {
 });
 
 document.getElementById('save').addEventListener('click', () => {
-    let checkedIds = Array.from(document.querySelectorAll('input[name="skin-cbox"]:checked')) // input[name="reward-cbox"]:checked, 
+    let checkedIds = Array.from(document.querySelectorAll('input[name="skin-cbox"]:checked'))
                           .map(cb => cb.id)
                           .join(',');
 
-    debug({checkedIds})
+    let initialValue = document.getElementById('initial').value;
 
-    let blob = new Blob([checkedIds], { type: 'text/plain' });
+    // Primera línea: los IDs, segunda línea: el valor de #initial
+    let content = checkedIds + '\n' + initialValue;
+
+    let blob = new Blob([content], { type: 'text/plain' });
     let link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = 'checkboxes.txt';
@@ -18,7 +21,6 @@ document.getElementById('save').addEventListener('click', () => {
     link.click();
     document.body.removeChild(link);
 });
-
 document.getElementById('load').addEventListener('click', () => {
     
     let fileInput = document.createElement('input');
@@ -34,14 +36,21 @@ document.getElementById('load').addEventListener('click', () => {
 
         let reader = new FileReader();
         reader.onload = function(e) {
-            let ids = e.target.result.split(',');
-            debug({ids})
+            let lines = e.target.result.split('\n');
+            
+            // Primera línea → IDs de los checkboxes
+            let ids = (lines[0] || '').split(',');
             ids.forEach(id => {
                 let checkbox = document.getElementById(id.trim());
                 if (checkbox && !checkbox.checked) {
                     checkbox.click();
                 }
             });
+
+            // Segunda línea → valor del input #initial
+            if (lines[1] !== undefined) {
+                document.getElementById('initial').value = lines[1].trim();
+            }
         };
         reader.readAsText(file);
     });

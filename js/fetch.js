@@ -126,6 +126,11 @@ function parseEventsData(data, skinsData, charData) {
             "fiveStars": parseRateups(group, "★★★★★："),
             "fourStars": parseRateups(group, "★★★★："),
         }
+        event.interfacePack = group.some(item => item.startsWith("interface-pack"));
+        const packItem = group.find(item => item.includes("interface-pack"));
+        event.interfacePackPrice = packItem
+            ? packItem.replace("interface-pack-", "")
+            : null;
 
         events.push(event)
     });

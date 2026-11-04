@@ -6,6 +6,8 @@
     text-align: start;
     border-left: 1px solid var(--equip-border);
     padding-left: 10px;
+
+    border-left: 0px solid var(--equip-border);
 }
 
 .calcs-row {
@@ -17,6 +19,10 @@
     padding: 5px 10px;
     width: 140px;
     color: var(--equip-txt-2);
+
+    background: hsl(0deg 0% 100% / 1.5%);
+    border-radius: 0px;
+    border-bottom: 1px solid var(--equip-border);
 }
 
 .initial-row {

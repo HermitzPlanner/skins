@@ -156,7 +156,7 @@ function renderPlannerSkin(eventSkin, event, data) {
         "plannerId": eventSkin.plannerId
     }
 
-    missingElementCheck(missingSkin, SKIN_PORTRAIT_REPOSITORY(eventSkin.plannerId))
+   // missingElementCheck(missingSkin, SKIN_PORTRAIT_REPOSITORY(eventSkin.plannerId))
 }
 
 function renderFashionSkins0(data, event) {
