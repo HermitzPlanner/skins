@@ -87,6 +87,9 @@ function animate(element, animation) {
 function artRender(container, plannerId, skinObject) {
     const size = 'art'
     const img = document.createElement('img');
+    if (isMobile) {
+        img.style.left = "-125px"
+    }
     const bg = document.createElement('img')
     const trimmedBg = document.createElement('img')
     img.id = 'viewer-image';
@@ -99,7 +102,7 @@ function artRender(container, plannerId, skinObject) {
     bg.src = `https://raw.githubusercontent.com/HermitzPlanner/ArknightsResource/main/charpack/${skinObject.skinId.replace(/[@#]/g, "_")}.png`;
     //trimmedBg.src = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/${size}/${plannerId}.png`;
 
-    animate(img, 'viewer-show-image')
+    animate(img, isMobile ? 'viewer-show-image-mobile' : 'viewer-show-image')
     animate(bg, 'viewer-show-image-background')
 
     container.append(img)
@@ -155,7 +158,8 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
     if (isMobile) {
         infoDiv.style.position = 'relative'
         infoDiv.style.height = 'unset'
-        infoDiv.style.backdropFilter = 'none'
+        //infoDiv.style.backdropFilter = 'none'
+        infoDiv.style.width = 'unset'
     }
 
     // ====================================================
@@ -214,6 +218,7 @@ function infoRender(container, plannerId, skinName, skinsData, charData, isFashi
     });
 
     infoDiv.append(colorListDiv);
+   
 
     // ====================================================
     // Viewer Header (Icon + Name + Skin Name)
@@ -717,7 +722,7 @@ function addImageInteraction(img) {
     // Image handling
     img.style.transform = 'scale(1)';
     img.style.top = '0'
-    img.style.left = '200px'
+    img.style.left = isMobile? '0px' : '200px'
     img.style.transition = 'transform 0.3s ease-out'; // add transition
 
     // Zoom in-out
@@ -791,7 +796,7 @@ function collapseOrExpand(collapseOrExpandButton) {
         viewerInfo.style.boxShadow = 'none'
         viewerInfo.style.backdropFilter = 'none'
     } else {
-        viewerInfo.style.width = "500px";
+        viewerInfo.style.width = isMobile ? "unset" : "500px";
         viewerInfo.style.height = "100%";
         viewerInfo.style.background = 'rgba(8, 8, 10, 0.5)'
         viewerInfo.style.boxShadow = 'inset 0 0 20px 20px hsla(0, 0%, 0%, 0.2)'

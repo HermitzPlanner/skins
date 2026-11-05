@@ -12,9 +12,15 @@ import { renderInterfacePacks } from "./render-interface-packs.js";
 
 export let EVENTS_DATA = ""
 export let lastSection = 'planner'
+console.log("window.innerWidth", window.innerWidth)
 
-export const isMobile = navigator.userAgentData?.mobile === true
-    || /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+export const isMobile = (
+  navigator.userAgentData?.mobile === true
+  || /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+) || (
+  window.innerWidth < 800 && 
+  window.innerHeight / window.innerWidth > 1.2  // más alto que ancho
+);
 
 console.log(isMobile ? "Estás en un móvil" : "Estás en PC o tablet grande");
 
@@ -116,7 +122,7 @@ fetchGameData().then(data => {
             renderEvent(data, event, eventIndex)
 
             if (event.interfacePack) renderInterfacePacks(data, event)
-            renderSkins(data, event)
+            renderSkins(data, event, isMobile)
             
         }
 
@@ -158,6 +164,13 @@ fetchGameData().then(data => {
         "left": "9px",
         "opacity": "0.75"
     })
+
+    if (isMobile) {
+        Object.assign(meow.style, {
+        "top": "unset",
+        "bottom": "0",
+    })
+    }
 
     document.querySelector('input[name="event"]').parentElement.parentElement.append(meow)
 

@@ -18,7 +18,7 @@ let skinSpine
 export function renderCanvas(plannerId, skinName, skinsData, perspective = 'front') {
 
     if (skinSpine) {
-        
+
         app.stage.removeChild(skinSpine);
         skinSpine.destroy(); // Free up resources
         skinSpine = null; // Clear reference
@@ -43,7 +43,7 @@ export function renderCanvas(plannerId, skinName, skinsData, perspective = 'fron
         .catch((error) => {
             console.error('Failed to load primary asset:', error);
             PIXI.Assets.load(chibiRepoBuild)
-                console.log("chibiRepoBuild", chibiRepoBuild)
+            console.log("chibiRepoBuild", chibiRepoBuild)
                 .then((fallbackAsset) => {
                     console.log("fallbackAsset", fallbackAsset)
                     renderSkinSpine(plannerId, perspective, animation, fallbackAsset);
@@ -52,10 +52,10 @@ export function renderCanvas(plannerId, skinName, skinsData, perspective = 'fron
                     console.error('Failed to load fallback asset:', fallbackError);
                 });
         });
-        
+
 
     PIXI.Assets.load(amongus)
-       
+
 
 }
 
@@ -67,6 +67,8 @@ function renderSkinSpine(plannerId, perspective, animation, skinAsset) {
     mulberryCheck(plannerId, perspective)
 
     animationList = skinSpine.spineData.animations
+    console.log("---------------------------")
+    console.log("animationList", animationList)
 
     // Spine settings
     skinSpine.x = app.screen.width / 2;
@@ -78,10 +80,21 @@ function renderSkinSpine(plannerId, perspective, animation, skinAsset) {
     skinSpine.scale.set(0.8)
     // Assuming 'skinSpine' is your Spine object and 'animation' is the variable holding the animation name
     if (perspective !== 'build') {
+        /*
         if (skinSpine.spineData.findAnimation('Start')) {
             skinSpine.state.setAnimation(0, 'Start', false);
         } else {
             skinSpine.state.setAnimation(0, 'Start_A', false);
+        }
+            */
+        if (skinSpine.spineData.findAnimation('Start')) {
+            skinSpine.state.setAnimation(0, 'Start', false);
+        } else if (skinSpine.spineData.findAnimation('Start_A')) {
+            skinSpine.state.setAnimation(0, 'Start_A', false);
+            //animation = "Start_A"
+        } else {
+            skinSpine.state.setAnimation(0, 'Start_1', false);
+            animation = "Start_1"
         }
     } else {
         skinSpine.state.setAnimation(0, 'Relax', true);
@@ -117,4 +130,4 @@ function mulberryCheck(plannerId, perspective) {
     }
 }
 
-export {skinSpine}
+export { skinSpine }

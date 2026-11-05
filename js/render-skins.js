@@ -3,15 +3,15 @@ import { cropScreenshot } from "./crop-screenshot.js";
 import { NO_EFFECT_SKINS, RESIZED_EVENT_REPOSITORY, SKIN_ICON_REPOSITORY, SKIN_PORTRAIT_REPOSITORY, CERT_SKINS } from "./constants.js";
 import { viewer } from "./viewer.js";
 
-
-export function renderSkins(data, event) {
+export function renderSkins(data, event, isMobile) {
 
     function defaultSkinRender() {
         event.skins.forEach((eventSkin, skinIndex) => {
             if (eventSkin.isBrand) {
+                if (isMobile) return
                 renderBrandLogos(skinIndex, eventSkin, event)
             } else {
-                renderPlannerSkin(eventSkin, event, data, 'portrait-size')
+                renderPlannerSkin(eventSkin, event, data, isMobile)
                 //document.getElementById("container-of-skins").append(skinContainer(event, eventSkin.name, data.skinsData, 'portrait', eventSkin.operator, eventSkin.isRerun, eventSkin.getFromPack, data.charData))
             }
         });
@@ -32,7 +32,7 @@ function createHoverEffect() {
 
 }
 
-function renderPlannerSkin(eventSkin, event, data) {
+function renderPlannerSkin(eventSkin, event, data, isMobile = false) {
 
     const template = document.getElementById('planner-skin-template');
     const clone = template.content.cloneNode(true);
@@ -104,13 +104,19 @@ function renderPlannerSkin(eventSkin, event, data) {
     clone.querySelector('.skin-portrait').id = event.code + '-' + eventSkin.plannerId + '-portrait'
 
     //clone.querySelector('.skin-portrait').alt = event.nameEnglish.includes("Fashion Review") ? eventSkin.portraitRepository : eventSkin.newRepo
-    clone.querySelector('.skin-portrait').alt = event.nameEnglish.includes("Fashion Review") ? eventSkin.portraitRepository : "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/cropped-art/crop-" + eventSkin.plannerId + ".jpg"
-    
+    if (!isMobile) {
+        clone.querySelector('.skin-portrait').alt = event.nameEnglish.includes("Fashion Review") ? eventSkin.portraitRepository : "https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/cropped-art/crop-" + eventSkin.plannerId + ".jpg"
+
+    } else {
+        clone.querySelector('.skin-portrait').alt = eventSkin.iconRepository
+        label.style.height = "206px"
+    }
+
     // Note: The observer it's the one that sets the .src for the image
     if (!event.nameEnglish.includes("Fashion Review")) {
         clone.querySelector('.skin-portrait').setAttribute('data-plannerid', eventSkin.plannerId)
         //clone.querySelector('.skin-portrait').classList.add(eventSkin.plannerId)
-    } 
+    }
 
     //clone.querySelector('.skin-portrait').classList.add(eventSkin.plannerId)
     clone.querySelector('.planner-skin-rarity').src = `static/rarity/rarity_yellow_${eventSkin.rarity - 1}.png`
@@ -156,7 +162,7 @@ function renderPlannerSkin(eventSkin, event, data) {
         "plannerId": eventSkin.plannerId
     }
 
-   // missingElementCheck(missingSkin, SKIN_PORTRAIT_REPOSITORY(eventSkin.plannerId))
+    // missingElementCheck(missingSkin, SKIN_PORTRAIT_REPOSITORY(eventSkin.plannerId))
 }
 
 function renderFashionSkins0(data, event) {

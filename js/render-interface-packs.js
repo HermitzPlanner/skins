@@ -1,6 +1,8 @@
+import { isMobile } from "./main.js";
 export function renderInterfacePacks(data, event) {
 
-    const templateBreak = document.getElementById('planner-brand-template');
+    if (!isMobile) {
+const templateBreak = document.getElementById('planner-brand-template');
     const cloneBreak = templateBreak.content.cloneNode(true);
     const bgLink = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/event-bg/${event.code}`
     const bgLink2 = `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/events/${event.code}`
@@ -13,6 +15,8 @@ export function renderInterfacePacks(data, event) {
     cloneBreak.querySelector(".planner-brand").setAttribute('data-event', event.code)
     cloneBreak.querySelector(".break").setAttribute('data-event', event.code)
     document.getElementById('container-of-skins').append(cloneBreak)
+    }
+    
 
 
 

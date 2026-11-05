@@ -1,5 +1,5 @@
 import { getPlannerId, getEventCode, getCharObject, setLightness, getYearFromTimestamp } from "./utils.js";
-import { CN_SKINS_ENGLISH, SKIN_ICON_REPOSITORY, SKIN_PORTRAIT_REPOSITORY, NO_EFFECT_SKINS } from "./constants.js";
+import { CN_SKINS_ENGLISH, NEW_SKIN_ICON_REPOSITORY, SKIN_PORTRAIT_REPOSITORY, NO_EFFECT_SKINS } from "./constants.js";
 import { findSkinByName, getColorList, findSkinByAvatar } from "./utils.js";
 
 function parseSkinsData(cnData, enData) {
@@ -249,7 +249,7 @@ function parseEventSkins(group, skinsData, charData) {
                     portraitRepository: SKIN_PORTRAIT_REPOSITORY(plannerId),
                     //portraitRepository: `https://raw.githubusercontent.com/HermitzPlanner/planner-images/main/art/${plannerId}.png`,
                     newRepo: `https://raw.githubusercontent.com/HermitzPlanner/ArknightsResource/main/charpack/${skinObject.skinId.replace(/[@#]/g, "_")}.png`,
-                    iconRepository: SKIN_ICON_REPOSITORY(plannerId),
+                    iconRepository: NEW_SKIN_ICON_REPOSITORY(skinObject),
                     price: getFromPack ? "$30" : skinObject.price, // > 0 ? skinsData.costMap[skinName] : 'Free',
                     colors: colors,
                     profession: profession,

@@ -1090,10 +1090,15 @@ section {
     -webkit-user-drag: none;
     z-index: 98;
     cursor: move;
-    right: 500px;
+    /* right: 500px; */
 }
 
 .viewer-show-image {
+    animation: slideLeft 2s;
+}
+
+.viewer-show-image-mobile {
+    /* left: 0; */
     animation: slideLeft 2s;
 }
 
