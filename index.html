@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/portrait.css">
     <link rel="stylesheet" href="css/loader.css">
-    <link rel="icon" type="image/png" href="assets/ascalon1.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="assets/ascalon1.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/char_4039_horn_epoque_59.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/char_4039_horn_epoque_59.png" sizes="32x32">
     <title>Skin Planner</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/event-calcs.css">
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.2.6/color-thief.min.js"></script>
     <script defer src="js/scroll-container.js"></script>
     <script src="js/pixi/pixi.min.js"></script>
@@ -25,6 +25,21 @@
     <script defer src="js/reset-save-load.js"></script>
 
 
+    <!-- Basic required tags -->
+    <meta property="og:title" content="HermitzPlanner">
+    <meta property="og:description" content="Arknights skin viewer and planner (not an official product).">
+    <meta property="og:image" content="assets/char_4039_horn_epoque_59.png">
+    <meta property="og:url" content="https://hermitzplanner.github.io/skins/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="HermitzPlanner">
+
+    <!-- Recommended for better image display -->
+    <!-- <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image"> -->
+
+    <!-- Discord-specific: colored left border of the embed -->
+    <meta name="theme-color" content="#ccb511">
 </head>
 
 <body>
@@ -138,8 +153,10 @@
         <div class="container scroll-contaier" id="container-of-events">
 
             <div class="initial-row">
-                <button class="toggle-button" data-target="summary" id="header-summary-button">Selection Summary</button>
-                <button class="toggle-button mobile-toggle" data-target="show-skins" id="header-show-skins-button">Show Skins</button>
+                <button class="toggle-button" data-target="summary" id="header-summary-button">Selection
+                    Summary</button>
+                <button class="toggle-button mobile-toggle" data-target="show-skins" id="header-show-skins-button">Show
+                    Skins</button>
                 <div id="initial-primes-text">Initial Primes: </div>
                 <input style="width: 140px;" type="number" class="initial-input" id="initial" value="0" min="0">
             </div>
@@ -153,8 +170,11 @@
             </script>
         </div>
         <div class="container" id="container-of-skins">
-            <div class="planner-brand-type" style="width: 100%; border-bottom: 1px solid var(--equip-border); padding-bottom: 11px; color: #fff;" id="container-of-skins-event-name">Event Name Placeholder</div>
-            <button class="toggle-button mobile-toggle" data-target="show-events" id="header-show-events-button">Show events</button>
+            <div class="planner-brand-type"
+                style="width: 100%; border-bottom: 1px solid var(--equip-border); padding-bottom: 11px; color: #fff;"
+                id="container-of-skins-event-name">Event Name Placeholder</div>
+            <button class="toggle-button mobile-toggle" data-target="show-events" id="header-show-events-button">Show
+                events</button>
             <h2 class="hide" id="container-of-skins-h2">
                 <span id="container-of-skins-h2-english" class="english"></span>
                 <span id="container-of-skins-h2-mandarin" class="mandarin"></span>
@@ -299,7 +319,7 @@
             <input type="radio" name="event" id="">
             <div class="event-code hide"></div>
             <div class="event-name mandarin text-outline"></div>
-            <div class="event-name-english english "></div> 
+            <div class="event-name-english english "></div>
             <!-- text-outline -->
             <div class="event-date hide"></div>
             <div class="event-skins hide"></div>
@@ -334,7 +354,7 @@
     </template>
 
     <template id="planner-skin-template">
-        
+
         <label class="planner-skin-label skin hide">
             <!-- <button class="skin-crop" style="z-index: 102; display: none;" disabled>crop -></button> -->
             <input type="checkbox" name="skin-cbox">
@@ -369,7 +389,7 @@
 
     <template id="planner-interface-pack-template">
         <label class="interface-pack hide">
-        <img class="interface-pack-image" src="" alt="">
+            <img class="interface-pack-image" src="" alt="">
         </label>
     </template>
 
